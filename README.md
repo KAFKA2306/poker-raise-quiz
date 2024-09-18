@@ -1,70 +1,70 @@
-# Welcome to your GPT Engineer project
+# プロポーカー レイズ計算トレーナー
 
-## Project info
+## プロジェクト概要
 
 **URL**: https://run.gptengineer.app/projects/c6fb200a-9d92-4624-a6db-8b65bfba9776/improve
 
-## How can I edit this code?
+このプロジェクトは、プロフェッショナルポーカープレイヤーがレイズ計算スキルを向上させるためのトレーニングツールです。実際のゲーム状況に基づいて、適切なレイズ額を素早く計算する練習ができます。
 
-There are several ways of editing your application.
+## 主な機能
 
-**Use GPT Engineer**
+- 現実的なポーカーシナリオの生成
+- ブラインドレベル、ポットサイズ、プレイヤーのベット額の表示
+- プレイヤーのポジションと実効スタックの表示
+- レイズ計算問題の出題と即時フィードバック
+- 回答履歴の記録と表示
 
-Simply visit the GPT Engineer project at [GPT Engineer](https://gptengineer.app/projects/c6fb200a-9d92-4624-a6db-8b65bfba9776/improve) and start prompting.
+## 技術スタック
 
-Changes made via gptengineer.app will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in the GPT Engineer UI.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
+このプロジェクトは以下の技術を使用しています：
 
 - Vite
 - React
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## 開発方法
 
-All GPT Engineer projects can be deployed directly via the GPT Engineer app.
+このプロジェクトを編集するには、以下の方法があります：
 
-Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/c6fb200a-9d92-4624-a6db-8b65bfba9776/improve) and click on Share -> Publish.
+### GPT Engineerを使用する
 
-## I want to use a custom domain - is that possible?
+[GPT Engineer](https://gptengineer.app/projects/c6fb200a-9d92-4624-a6db-8b65bfba9776/improve)にアクセスし、プロンプトを使用して変更を加えることができます。
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.gptengineer.app/tips-tricks/custom-domain/)
+### ローカル開発環境を使用する
+
+1. リポジトリをクローンします：
+   ```
+   git clone <YOUR_GIT_URL>
+   ```
+
+2. プロジェクトディレクトリに移動します：
+   ```
+   cd <YOUR_PROJECT_NAME>
+   ```
+
+3. 依存関係をインストールします：
+   ```
+   npm i
+   ```
+
+4. 開発サーバーを起動します：
+   ```
+   npm run dev
+   ```
+
+## デプロイ方法
+
+GPT Engineerアプリを通じて直接デプロイできます。プロジェクトページで「Share」→「Publish」を選択してください。
+
+## カスタムドメインの使用
+
+現在、カスタムドメインはサポートされていません。Netlifyを使用して独自ドメインでデプロイする方法については、[こちらのドキュメント](https://docs.gptengineer.app/tips-tricks/custom-domain/)を参照してください。
+
+## 貢献
+
+バグ報告や機能リクエストは、GitHubのIssuesを通じて行ってください。プルリクエストも歓迎します。
+
+## ライセンス
+
+このプロジェクトはMITライセンスの下で公開されています。詳細については、LICENSEファイルを参照してください。
