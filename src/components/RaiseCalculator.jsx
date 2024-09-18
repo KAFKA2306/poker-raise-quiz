@@ -7,7 +7,7 @@ import { calculateRaise, isWithinTolerance, generateRandomValues } from '../util
 const RaiseCalculator = () => {
   const [gameState, setGameState] = useState({
     potSize: 0,
-    currentBet: 0,
+    playerBets: [],
     raisePercentage: 0,
     calculatedRaise: 0,
     options: []
@@ -21,30 +21,31 @@ const RaiseCalculator = () => {
   }, []);
 
   const generateNewProblem = () => {
-    const { potSize, currentBet, raisePercentage } = generateRandomValues();
+    const { potSize, playerBets, raisePercentage } = generateRandomValues();
+    const currentBet = Math.max(...playerBets);
     const calculatedRaise = calculateRaise(potSize, currentBet, raisePercentage);
     const options = generateOptions(calculatedRaise);
-    setGameState({ potSize, currentBet, raisePercentage, calculatedRaise, options });
+    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options });
     setSelectedOption('');
     setFeedback('');
   };
 
   const generateOptions = (correctAnswer) => {
-    const options = [correctAnswer];
+    const options = [Math.round(correctAnswer)];
     while (options.length < 3) {
-      const randomOption = correctAnswer * (0.7 + Math.random() * 0.6);
-      if (!options.some(option => Math.abs(option - randomOption) < 1)) {
+      const randomOption = Math.round(correctAnswer * (0.7 + Math.random() * 0.6));
+      if (!options.includes(randomOption)) {
         options.push(randomOption);
       }
     }
-    return options.sort(() => Math.random() - 0.5).map(option => option.toFixed(2));
+    return options.sort((a, b) => a - b);
   };
 
   const handleSubmit = () => {
     if (!selectedOption) return;
 
     const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 5);
-    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${gameState.calculatedRaise.toFixed(2)} です。`;
+    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${Math.round(gameState.calculatedRaise)} です。`;
     setFeedback(newFeedback);
 
     const newEntry = {
@@ -59,7 +60,12 @@ const RaiseCalculator = () => {
     <div className="space-y-4">
       <div className="text-lg">
         <p>ポットサイズ: ${gameState.potSize}</p>
-        <p>現在のベット: ${gameState.currentBet}</p>
+        <p>プレイヤーのベット:</p>
+        <ul className="list-disc list-inside">
+          {gameState.playerBets.map((bet, index) => (
+            <li key={index}>プレイヤー{index + 1}: ${bet}</li>
+          ))}
+        </ul>
         <p>レイズ割合: {gameState.raisePercentage}%</p>
       </div>
       <div>
@@ -67,7 +73,7 @@ const RaiseCalculator = () => {
         <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="mt-2">
           {gameState.options.map((option, index) => (
             <div key={index} className="flex items-center space-x-2">
-              <RadioGroupItem value={option} id={`option-${index}`} />
+              <RadioGroupItem value={option.toString()} id={`option-${index}`} />
               <Label htmlFor={`option-${index}`}>${option}</Label>
             </div>
           ))}
@@ -81,8 +87,8 @@ const RaiseCalculator = () => {
         <ul className="space-y-2">
           {history.map((entry, index) => (
             <li key={index} className={`p-2 rounded ${entry.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
-              ポット: ${entry.potSize}, ベット: ${entry.currentBet}, レイズ%: {entry.raisePercentage}% 
-              → 正解: ${entry.calculatedRaise.toFixed(2)}, 回答: ${entry.userAnswer.toFixed(2)}
+              ポット: ${entry.potSize}, ベット: ${entry.playerBets.join(', ')}, レイズ%: {entry.raisePercentage}% 
+              → 正解: ${Math.round(entry.calculatedRaise)}, 回答: ${entry.userAnswer}
             </li>
           ))}
         </ul>
