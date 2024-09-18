@@ -2,15 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { calculateRaise, isWithinTolerance, generateRandomValues } from '../utils/pokerUtils';
+import { calculateRaise, isWithinTolerance, generateRandomValues, calculateEffectiveStacks, calculatePosition } from '../utils/pokerUtils';
 
 const RaiseCalculator = () => {
   const [gameState, setGameState] = useState({
     potSize: 0,
-    currentBet: 0,
+    playerBets: [],
     raisePercentage: 0,
     calculatedRaise: 0,
-    options: []
+    options: [],
+    bigBlind: 0,
+    smallBlind: 0,
+    effectiveStacks: []
   });
   const [selectedOption, setSelectedOption] = useState('');
   const [feedback, setFeedback] = useState('');
@@ -21,30 +24,32 @@ const RaiseCalculator = () => {
   }, []);
 
   const generateNewProblem = () => {
-    const { potSize, currentBet, raisePercentage } = generateRandomValues();
+    const { potSize, playerBets, raisePercentage, bigBlind, smallBlind } = generateRandomValues();
+    const currentBet = Math.max(...playerBets);
     const calculatedRaise = calculateRaise(potSize, currentBet, raisePercentage);
     const options = generateOptions(calculatedRaise);
-    setGameState({ potSize, currentBet, raisePercentage, calculatedRaise, options });
+    const effectiveStacks = calculateEffectiveStacks(playerBets, bigBlind);
+    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options, bigBlind, smallBlind, effectiveStacks });
     setSelectedOption('');
     setFeedback('');
   };
 
   const generateOptions = (correctAnswer) => {
-    const options = [correctAnswer];
+    const options = [Math.round(correctAnswer)];
     while (options.length < 3) {
-      const randomOption = correctAnswer * (0.7 + Math.random() * 0.6);
-      if (!options.some(option => Math.abs(option - randomOption) < 1)) {
+      const randomOption = Math.round(correctAnswer * (0.7 + Math.random() * 0.6));
+      if (!options.includes(randomOption)) {
         options.push(randomOption);
       }
     }
-    return options.sort(() => Math.random() - 0.5).map(option => option.toFixed(2));
+    return options.sort((a, b) => a - b);
   };
 
   const handleSubmit = () => {
     if (!selectedOption) return;
 
     const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 5);
-    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${gameState.calculatedRaise.toFixed(2)} です。`;
+    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${Math.round(gameState.calculatedRaise)} です。`;
     setFeedback(newFeedback);
 
     const newEntry = {
@@ -58,8 +63,16 @@ const RaiseCalculator = () => {
   return (
     <div className="space-y-4">
       <div className="text-lg">
+        <p>ブラインド: {gameState.smallBlind}/{gameState.bigBlind}</p>
         <p>ポットサイズ: ${gameState.potSize}</p>
-        <p>現在のベット: ${gameState.currentBet}</p>
+        <p>プレイヤーのベットとスタック:</p>
+        <ul className="list-disc list-inside">
+          {gameState.playerBets.map((bet, index) => (
+            <li key={index}>
+              {calculatePosition(index)}: ${bet} (スタック: ${gameState.effectiveStacks[index]})
+            </li>
+          ))}
+        </ul>
         <p>レイズ割合: {gameState.raisePercentage}%</p>
       </div>
       <div>
@@ -67,7 +80,7 @@ const RaiseCalculator = () => {
         <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="mt-2">
           {gameState.options.map((option, index) => (
             <div key={index} className="flex items-center space-x-2">
-              <RadioGroupItem value={option} id={`option-${index}`} />
+              <RadioGroupItem value={option.toString()} id={`option-${index}`} />
               <Label htmlFor={`option-${index}`}>${option}</Label>
             </div>
           ))}
@@ -81,8 +94,8 @@ const RaiseCalculator = () => {
         <ul className="space-y-2">
           {history.map((entry, index) => (
             <li key={index} className={`p-2 rounded ${entry.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
-              ポット: ${entry.potSize}, ベット: ${entry.currentBet}, レイズ%: {entry.raisePercentage}% 
-              → 正解: ${entry.calculatedRaise.toFixed(2)}, 回答: ${entry.userAnswer.toFixed(2)}
+              ブラインド: {entry.smallBlind}/{entry.bigBlind}, ポット: ${entry.potSize}, レイズ%: {entry.raisePercentage}% 
+              → 正解: ${Math.round(entry.calculatedRaise)}, 回答: ${entry.userAnswer}
             </li>
           ))}
         </ul>
