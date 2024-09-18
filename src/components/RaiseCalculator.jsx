@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { calculateRaise, isWithinTolerance, generateRandomValues } from '../utils/pokerUtils';
+import { calculateRaise, isWithinTolerance, generateRandomValues, calculateEffectiveStacks, calculatePosition } from '../utils/pokerUtils';
 
 const RaiseCalculator = () => {
   const [gameState, setGameState] = useState({
@@ -10,7 +10,10 @@ const RaiseCalculator = () => {
     playerBets: [],
     raisePercentage: 0,
     calculatedRaise: 0,
-    options: []
+    options: [],
+    bigBlind: 0,
+    smallBlind: 0,
+    effectiveStacks: []
   });
   const [selectedOption, setSelectedOption] = useState('');
   const [feedback, setFeedback] = useState('');
@@ -21,11 +24,12 @@ const RaiseCalculator = () => {
   }, []);
 
   const generateNewProblem = () => {
-    const { potSize, playerBets, raisePercentage } = generateRandomValues();
+    const { potSize, playerBets, raisePercentage, bigBlind, smallBlind } = generateRandomValues();
     const currentBet = Math.max(...playerBets);
     const calculatedRaise = calculateRaise(potSize, currentBet, raisePercentage);
     const options = generateOptions(calculatedRaise);
-    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options });
+    const effectiveStacks = calculateEffectiveStacks(playerBets, bigBlind);
+    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options, bigBlind, smallBlind, effectiveStacks });
     setSelectedOption('');
     setFeedback('');
   };
@@ -45,7 +49,13 @@ const RaiseCalculator = () => {
     if (!selectedOption) return;
 
     const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 5);
-    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${Math.round(gameState.calculatedRaise)} です。`;
+    const correctAnswer = Math.round(gameState.calculatedRaise);
+    const currentBet = Math.max(...gameState.playerBets);
+    const totalPot = gameState.potSize + currentBet;
+    const calculationExample = `計算例: ${totalPot} (トータルポット) × ${gameState.raisePercentage}% = ${correctAnswer}`;
+    const newFeedback = isCorrect 
+      ? `正解です！\n${calculationExample}`
+      : `不正解です。正しい答えは ${correctAnswer} です。\n${calculationExample}`;
     setFeedback(newFeedback);
 
     const newEntry = {
@@ -59,11 +69,14 @@ const RaiseCalculator = () => {
   return (
     <div className="space-y-4">
       <div className="text-lg">
+        <p>ブラインド: {gameState.smallBlind}/{gameState.bigBlind}</p>
         <p>ポットサイズ: ${gameState.potSize}</p>
-        <p>プレイヤーのベット:</p>
+        <p>プレイヤーのベットとスタック:</p>
         <ul className="list-disc list-inside">
           {gameState.playerBets.map((bet, index) => (
-            <li key={index}>プレイヤー{index + 1}: ${bet}</li>
+            <li key={index}>
+              {calculatePosition(index)}: ${bet} (スタック: ${gameState.effectiveStacks[index]})
+            </li>
           ))}
         </ul>
         <p>レイズ割合: {gameState.raisePercentage}%</p>
@@ -81,13 +94,13 @@ const RaiseCalculator = () => {
       </div>
       <Button onClick={handleSubmit}>回答する</Button>
       <Button onClick={generateNewProblem}>新しい問題</Button>
-      {feedback && <p className="text-lg font-semibold">{feedback}</p>}
+      {feedback && <p className="text-lg font-semibold whitespace-pre-line">{feedback}</p>}
       <div>
         <h3 className="text-xl font-bold mb-2">履歴</h3>
         <ul className="space-y-2">
           {history.map((entry, index) => (
             <li key={index} className={`p-2 rounded ${entry.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
-              ポット: ${entry.potSize}, ベット: ${entry.playerBets.join(', ')}, レイズ%: {entry.raisePercentage}% 
+              ブラインド: {entry.smallBlind}/{entry.bigBlind}, ポット: ${entry.potSize}, レイズ%: {entry.raisePercentage}% 
               → 正解: ${Math.round(entry.calculatedRaise)}, 回答: ${entry.userAnswer}
             </li>
           ))}
