@@ -68,3 +68,6 @@ Simply visit your project at [GPT Engineer](https://gptengineer.app/projects/c6f
 ## I want to use a custom domain - is that possible?
 
 We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.gptengineer.app/tips-tricks/custom-domain/)
+
+
+トータルポッドの計算方法を修正すること。自分のポジションをランダムに設定すること。自分のポジション移行はまだ手羽が来ていないのでベットサイズは0ですね。他のプレイヤーが降りることも想定すること
