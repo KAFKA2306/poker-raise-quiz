@@ -1,11 +1,13 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import RaiseCalculator from '../components/RaiseCalculator';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+        <div className="p-8">
+          <h1 className="text-2xl font-bold mb-6 text-center">ポーカーレイズ計算機</h1>
+          <RaiseCalculator />
+        </div>
       </div>
     </div>
   );
