@@ -1,6 +1,6 @@
 export const calculateRaise = (potSize, currentBet, raisePercentage) => {
   const totalPot = potSize + currentBet;
-  return (totalPot * raisePercentage) / 100;
+  return Math.round((totalPot * raisePercentage) / 100);
 };
 
 export const isWithinTolerance = (userValue, correctValue, tolerancePercentage) => {
@@ -13,12 +13,12 @@ export const generateRandomValues = () => {
   const bigBlind = blindLevels[Math.floor(Math.random() * blindLevels.length)];
   const smallBlind = bigBlind / 2;
 
-  const potMultipliers = [3, 4, 5, 6, 7, 8];
+  const potMultipliers = [2, 3, 4, 5, 6];
   const potSize = bigBlind * potMultipliers[Math.floor(Math.random() * potMultipliers.length)];
 
   const playerBets = Array(6).fill(0).map(() => {
     const betMultipliers = [1, 1.5, 2, 2.5, 3];
-    return bigBlind * betMultipliers[Math.floor(Math.random() * betMultipliers.length)];
+    return Math.round(bigBlind * betMultipliers[Math.floor(Math.random() * betMultipliers.length)]);
   });
 
   const raisePercentages = [50, 75, 100, 125, 150];
@@ -29,8 +29,8 @@ export const generateRandomValues = () => {
 
 export const calculateEffectiveStacks = (playerBets, bigBlind) => {
   return playerBets.map(bet => {
-    const minStack = bet * 5; // Minimum 5x the bet
-    const maxStack = bet * 200; // Maximum 200x the bet
+    const minStack = bet * 10; // Minimum 10x the bet
+    const maxStack = bet * 100; // Maximum 100x the bet
     return Math.round((Math.random() * (maxStack - minStack) + minStack) / bigBlind) * bigBlind;
   });
 };

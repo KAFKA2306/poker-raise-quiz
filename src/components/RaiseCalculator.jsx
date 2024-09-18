@@ -37,7 +37,7 @@ const RaiseCalculator = () => {
   const generateOptions = (correctAnswer) => {
     const options = [Math.round(correctAnswer)];
     while (options.length < 3) {
-      const randomOption = Math.round(correctAnswer * (0.7 + Math.random() * 0.6));
+      const randomOption = Math.round(correctAnswer * (0.9 + Math.random() * 0.2));
       if (!options.includes(randomOption)) {
         options.push(randomOption);
       }
@@ -48,7 +48,7 @@ const RaiseCalculator = () => {
   const handleSubmit = () => {
     if (!selectedOption) return;
 
-    const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 5);
+    const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 2);
     const correctAnswer = Math.round(gameState.calculatedRaise);
     const currentBet = Math.max(...gameState.playerBets);
     const totalPot = gameState.potSize + currentBet;
