@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { calculateRaise, isWithinTolerance, generateRandomValues, calculateEffectiveStacks, calculatePosition } from '../utils/pokerUtils';
+import { calculateRaise, isWithinTolerance, generateRandomValues } from '../utils/pokerUtils';
 
 const RaiseCalculator = () => {
   const [gameState, setGameState] = useState({
@@ -10,10 +10,7 @@ const RaiseCalculator = () => {
     playerBets: [],
     raisePercentage: 0,
     calculatedRaise: 0,
-    options: [],
-    bigBlind: 0,
-    smallBlind: 0,
-    effectiveStacks: []
+    options: []
   });
   const [selectedOption, setSelectedOption] = useState('');
   const [feedback, setFeedback] = useState('');
@@ -24,12 +21,11 @@ const RaiseCalculator = () => {
   }, []);
 
   const generateNewProblem = () => {
-    const { potSize, playerBets, raisePercentage, bigBlind, smallBlind } = generateRandomValues();
+    const { potSize, playerBets, raisePercentage } = generateRandomValues();
     const currentBet = Math.max(...playerBets);
     const calculatedRaise = calculateRaise(potSize, currentBet, raisePercentage);
     const options = generateOptions(calculatedRaise);
-    const effectiveStacks = calculateEffectiveStacks(playerBets, bigBlind);
-    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options, bigBlind, smallBlind, effectiveStacks });
+    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options });
     setSelectedOption('');
     setFeedback('');
   };
@@ -63,14 +59,11 @@ const RaiseCalculator = () => {
   return (
     <div className="space-y-4">
       <div className="text-lg">
-        <p>ブラインド: {gameState.smallBlind}/{gameState.bigBlind}</p>
         <p>ポットサイズ: ${gameState.potSize}</p>
-        <p>プレイヤーのベットとスタック:</p>
+        <p>プレイヤーのベット:</p>
         <ul className="list-disc list-inside">
           {gameState.playerBets.map((bet, index) => (
-            <li key={index}>
-              {calculatePosition(index)}: ${bet} (スタック: ${gameState.effectiveStacks[index]})
-            </li>
+            <li key={index}>プレイヤー{index + 1}: ${bet}</li>
           ))}
         </ul>
         <p>レイズ割合: {gameState.raisePercentage}%</p>
@@ -94,7 +87,7 @@ const RaiseCalculator = () => {
         <ul className="space-y-2">
           {history.map((entry, index) => (
             <li key={index} className={`p-2 rounded ${entry.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
-              ブラインド: {entry.smallBlind}/{entry.bigBlind}, ポット: ${entry.potSize}, レイズ%: {entry.raisePercentage}% 
+              ポット: ${entry.potSize}, ベット: ${entry.playerBets.join(', ')}, レイズ%: {entry.raisePercentage}% 
               → 正解: ${Math.round(entry.calculatedRaise)}, 回答: ${entry.userAnswer}
             </li>
           ))}
