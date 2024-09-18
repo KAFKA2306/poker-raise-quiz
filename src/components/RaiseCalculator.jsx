@@ -49,7 +49,13 @@ const RaiseCalculator = () => {
     if (!selectedOption) return;
 
     const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 5);
-    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${Math.round(gameState.calculatedRaise)} です。`;
+    const correctAnswer = Math.round(gameState.calculatedRaise);
+    const currentBet = Math.max(...gameState.playerBets);
+    const totalPot = gameState.potSize + currentBet;
+    const calculationExample = `計算例: ${totalPot} (トータルポット) × ${gameState.raisePercentage}% = ${correctAnswer}`;
+    const newFeedback = isCorrect 
+      ? `正解です！\n${calculationExample}`
+      : `不正解です。正しい答えは ${correctAnswer} です。\n${calculationExample}`;
     setFeedback(newFeedback);
 
     const newEntry = {
@@ -88,7 +94,7 @@ const RaiseCalculator = () => {
       </div>
       <Button onClick={handleSubmit}>回答する</Button>
       <Button onClick={generateNewProblem}>新しい問題</Button>
-      {feedback && <p className="text-lg font-semibold">{feedback}</p>}
+      {feedback && <p className="text-lg font-semibold whitespace-pre-line">{feedback}</p>}
       <div>
         <h3 className="text-xl font-bold mb-2">履歴</h3>
         <ul className="space-y-2">
