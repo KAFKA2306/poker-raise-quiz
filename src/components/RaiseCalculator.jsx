@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -25,7 +25,7 @@ const RaiseCalculator = () => {
       correctRaiseTo: calculation.recommendedRaiseTo,
       currentBet: scenario.currentBet,
       minimumRaiseTo: calculation.minimumRaiseTo,
-      heroStack: scenario.heroStack,
+      heroStack: scenario.heroEffectiveStack,
       chipUnit: scenario.smallBlind,
     });
 
@@ -53,10 +53,11 @@ const RaiseCalculator = () => {
     <div className="space-y-4">
       <div className="text-lg">
         <p>ブラインド: {gameState.smallBlind}/{gameState.bigBlind}</p>
+        <p>シナリオ: {gameState.scenarioType}</p>
         <p>アクション前ポット: {gameState.potBeforeAction}</p>
-        <p>ヒーロー: {gameState.heroPosition}（投入済み {gameState.heroCommitted} / スタック上限 {gameState.heroStack}）</p>
+        <p>ヒーロー: {gameState.heroPosition}（投入済み {gameState.heroCommitted} / 実効スタック上限 {gameState.heroEffectiveStack}）</p>
         <p>現在ベット: {gameState.currentBet}</p>
-        <p>直前レイズ増分: {gameState.lastRaiseIncrement}</p>
+        <p>直前フルベット／レイズ増分: {gameState.lastRaiseIncrement}</p>
         <p>アクティブ人数: {gameState.activePlayers}</p>
         <ul className="list-disc list-inside">
           {gameState.players.map((player) => (
@@ -69,6 +70,7 @@ const RaiseCalculator = () => {
         <p>コール額: {gameState.callAmount}</p>
         <p>コール後ポット: {gameState.potAfterCall}</p>
         <p>最小raise-to: {gameState.minimumRaiseTo}</p>
+        <p>最大raise-to: {gameState.maximumRaiseTo}</p>
         <p>推奨割合: {gameState.raisePercentage}%</p>
       </div>
       <div>
