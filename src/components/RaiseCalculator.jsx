@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { calculateRaise, isWithinTolerance, generateRandomValues, calculateEffectiveStacks, calculatePosition } from '../utils/pokerUtils';
+import {
+  calculateRaiseState,
+  generateRaiseOptions,
+  generateRandomValues,
+} from '../utils/pokerUtils';
 
 const RaiseCalculator = () => {
-  const [gameState, setGameState] = useState({
-    potSize: 0,
-    playerBets: [],
-    raisePercentage: 0,
-    calculatedRaise: 0,
-    options: [],
-    bigBlind: 0,
-    smallBlind: 0,
-    effectiveStacks: []
-  });
+  const [gameState, setGameState] = useState(null);
   const [selectedOption, setSelectedOption] = useState('');
   const [feedback, setFeedback] = useState('');
   const [history, setHistory] = useState([]);
@@ -24,64 +19,65 @@ const RaiseCalculator = () => {
   }, []);
 
   const generateNewProblem = () => {
-    const { potSize, playerBets, raisePercentage, bigBlind, smallBlind } = generateRandomValues();
-    const currentBet = Math.max(...playerBets);
-    const calculatedRaise = calculateRaise(potSize, currentBet, raisePercentage);
-    const options = generateOptions(calculatedRaise);
-    const effectiveStacks = calculateEffectiveStacks(playerBets, bigBlind);
-    setGameState({ potSize, playerBets, raisePercentage, calculatedRaise, options, bigBlind, smallBlind, effectiveStacks });
+    const scenario = generateRandomValues();
+    const calculation = calculateRaiseState(scenario);
+    const options = generateRaiseOptions({
+      correctRaiseTo: calculation.recommendedRaiseTo,
+      currentBet: scenario.currentBet,
+      minimumRaiseTo: calculation.minimumRaiseTo,
+      heroStack: scenario.heroStack,
+      chipUnit: scenario.smallBlind,
+    });
+
+    setGameState({ ...scenario, ...calculation, options });
     setSelectedOption('');
     setFeedback('');
   };
 
-  const generateOptions = (correctAnswer) => {
-    const options = [Math.round(correctAnswer)];
-    while (options.length < 3) {
-      const randomOption = Math.round(correctAnswer * (0.7 + Math.random() * 0.6));
-      if (!options.includes(randomOption)) {
-        options.push(randomOption);
-      }
-    }
-    return options.sort((a, b) => a - b);
-  };
-
   const handleSubmit = () => {
-    if (!selectedOption) return;
+    if (!selectedOption || !gameState) return;
 
-    const isCorrect = isWithinTolerance(Number(selectedOption), gameState.calculatedRaise, 5);
-    const newFeedback = isCorrect ? '正解です！' : `不正解です。正しい答えは ${Math.round(gameState.calculatedRaise)} です。`;
-    setFeedback(newFeedback);
-
-    const newEntry = {
-      ...gameState,
-      userAnswer: Number(selectedOption),
+    const userAnswer = Number(selectedOption);
+    const isCorrect = userAnswer === gameState.recommendedRaiseTo;
+    setFeedback(
       isCorrect
-    };
-    setHistory([newEntry, ...history]);
+        ? '正解です！'
+        : `不正解です。正しいraise-to額は ${gameState.recommendedRaiseTo} です。`,
+    );
+    setHistory([{ ...gameState, userAnswer, isCorrect }, ...history]);
   };
+
+  if (!gameState) return null;
 
   return (
     <div className="space-y-4">
       <div className="text-lg">
         <p>ブラインド: {gameState.smallBlind}/{gameState.bigBlind}</p>
-        <p>ポットサイズ: ${gameState.potSize}</p>
-        <p>プレイヤーのベットとスタック:</p>
+        <p>アクション前ポット: {gameState.potBeforeAction}</p>
+        <p>ヒーロー: {gameState.heroPosition}（投入済み {gameState.heroCommitted} / スタック上限 {gameState.heroStack}）</p>
+        <p>現在ベット: {gameState.currentBet}</p>
+        <p>直前レイズ増分: {gameState.lastRaiseIncrement}</p>
+        <p>アクティブ人数: {gameState.activePlayers}</p>
         <ul className="list-disc list-inside">
-          {gameState.playerBets.map((bet, index) => (
-            <li key={index}>
-              {calculatePosition(index)}: ${bet} (スタック: ${gameState.effectiveStacks[index]})
+          {gameState.players.map((player) => (
+            <li key={player.position}>
+              {player.position}: {player.folded ? 'folded' : `${player.committed} 投入`} / stack {player.stack}
+              {player.isHero ? '（Hero）' : ''}
             </li>
           ))}
         </ul>
-        <p>レイズ割合: {gameState.raisePercentage}%</p>
+        <p>コール額: {gameState.callAmount}</p>
+        <p>コール後ポット: {gameState.potAfterCall}</p>
+        <p>最小raise-to: {gameState.minimumRaiseTo}</p>
+        <p>推奨割合: {gameState.raisePercentage}%</p>
       </div>
       <div>
-        <Label className="text-lg font-semibold">正しいレイズ額を選んでください：</Label>
+        <Label className="text-lg font-semibold">合法なraise-to額を選んでください：</Label>
         <RadioGroup value={selectedOption} onValueChange={setSelectedOption} className="mt-2">
           {gameState.options.map((option, index) => (
-            <div key={index} className="flex items-center space-x-2">
+            <div key={option} className="flex items-center space-x-2">
               <RadioGroupItem value={option.toString()} id={`option-${index}`} />
-              <Label htmlFor={`option-${index}`}>${option}</Label>
+              <Label htmlFor={`option-${index}`}>{option}</Label>
             </div>
           ))}
         </RadioGroup>
@@ -94,8 +90,8 @@ const RaiseCalculator = () => {
         <ul className="space-y-2">
           {history.map((entry, index) => (
             <li key={index} className={`p-2 rounded ${entry.isCorrect ? 'bg-green-100' : 'bg-red-100'}`}>
-              ブラインド: {entry.smallBlind}/{entry.bigBlind}, ポット: ${entry.potSize}, レイズ%: {entry.raisePercentage}% 
-              → 正解: ${Math.round(entry.calculatedRaise)}, 回答: ${entry.userAnswer}
+              {entry.heroPosition}: call {entry.callAmount}, minimum {entry.minimumRaiseTo},
+              正解 {entry.recommendedRaiseTo}, 回答 {entry.userAnswer}
             </li>
           ))}
         </ul>
