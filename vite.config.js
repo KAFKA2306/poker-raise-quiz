@@ -1,7 +1,6 @@
 import { fileURLToPath, URL } from "url";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,7 +17,7 @@ export default defineConfig({
       },
       {
         find: "lib",
-        replacement: resolve(__dirname, "lib"),
+        replacement: fileURLToPath(new URL("./lib", import.meta.url)),
       },
     ],
   },
