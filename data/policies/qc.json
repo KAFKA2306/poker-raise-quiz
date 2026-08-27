@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "examFamily": "quality-management-and-quality-control-examination",
+  "officialTitle": "品質管理検定（QC検定）",
+  "authority": "一般財団法人日本規格協会 品質管理検定センター",
+  "checkedAt": "2026-08-28",
+  "redistributionApproved": false,
+  "catalogPolicy": "do-not-register",
+  "reason": "日本規格協会はQC検定の試験問題・基準解答について、コピーおよびホームページ等への掲載・公開を断っている。公開GitHub Pagesへ問題本文を再配布しない。",
+  "grades": [
+    {"grade": 1, "examMethod": "筆記試験", "publicQuizDataset": false},
+    {"grade": 2, "examMethod": "筆記試験", "publicQuizDataset": false},
+    {"grade": 3, "examMethod": "CBT試験", "publicQuizDataset": false},
+    {"grade": 4, "examMethod": "CBT試験", "publicQuizDataset": false}
+  ],
+  "sources": {
+    "officialTop": "https://webdesk.jsa.or.jp/common/W10K0500/index/qc",
+    "examExamples": "https://webdesk.jsa.or.jp/common/W10K0500/index/qc/qc_mondai",
+    "cbtInformation": "https://webdesk.jsa.or.jp/common/W10K0500/index/qc/qc_cbt",
+    "copyright": "https://webdesk.jsa.or.jp/common/W10K0030/?page_id=b_j_tyosakuken&post_type=book_common",
+    "grade3Round39Product": "https://webdesk.jsa.or.jp/books/W11M0100/index/?syohin_cd=350674",
+    "round39AnswerKeys": {
+      "grade1": "https://webdesk.jsa.or.jp/pdf/qc/md_4887.pdf",
+      "grade2": "https://webdesk.jsa.or.jp/pdf/qc/md_4888.pdf",
+      "grade3": "https://webdesk.jsa.or.jp/pdf/qc/md_4889.pdf",
+      "grade4": "https://webdesk.jsa.or.jp/pdf/qc/md_4890.pdf"
+    }
+  }
+}
