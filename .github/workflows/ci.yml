@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    name: 構造と本番データを確認
+    name: 構造・本番データ・実動を確認
     runs-on: ubuntu-latest
     steps:
       - name: リポジトリを取得
@@ -24,3 +24,6 @@ jobs:
 
       - name: 構造・JavaScript・問題データを確認
         run: node scripts/validate.mjs
+
+      - name: 400問とG検定のローダー・参照リンク・回答保存を実動確認
+        run: node scripts/test-runtime.mjs
