@@ -1,0 +1,11 @@
+{
+  "id": "g-test",
+  "title": "G検定",
+  "defaultSession": "official-past-questions",
+  "sessions": [
+    {
+      "id": "official-past-questions",
+      "manifest": "sessions/official-past-questions/manifest.json"
+    }
+  ]
+}
