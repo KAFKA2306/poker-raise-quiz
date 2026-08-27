@@ -3,6 +3,7 @@
   "title": "2024年度春期 午前",
   "version": "2024-spring-80-v1",
   "status": "complete",
+  "referenceOnly": false,
   "answerKey": "エエアエウエアエウエアウアイウイイイエエウウアエアウエウウイアエエイイウアイイウイアイウイエウエイイアエエアウエウアアウウアエエエエウエアエエアエエウエウアウエ",
   "coverage": { "from": 1, "to": 80, "count": 80, "total": 80 },
   "source": {
