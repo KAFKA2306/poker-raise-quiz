@@ -11,18 +11,20 @@ const choiceText = (element, value) => {
   return choice ? String(choice.text) : String(value ?? "");
 };
 
-const feedbackText = (element, state) => {
-  const mine = choiceText(element, state.answer);
-  const correct = choiceText(element, element.correctAnswer);
-  return `${state.correct ? "正解" : "不正解"}　自分の回答: ${state.answer} ${mine}　正答: ${element.correctAnswer} ${correct}`;
+const answerLabel = (element, value) => {
+  const text = choiceText(element, value);
+  return text === String(value) ? String(value) : `${value} ${text}`;
 };
+
+const feedbackText = (element, state) =>
+  `${state.correct ? "正解" : "不正解"}　自分の回答: ${answerLabel(element, state.answer)}　正答: ${answerLabel(element, element.correctAnswer)}`;
 
 const updateSummary = (dataset, elements, state) => {
   const answered = elements.filter((element) => state[element.name]).length;
   const coverage = dataset.coverage;
-  const coverageText = coverage?.total
+  const coverageText = coverage?.label || (coverage?.total
     ? `収録 ${coverage.count} / ${coverage.total}問`
-    : `${elements.length}問`;
+    : `${elements.length}問`);
   $("#summary").textContent = `回答済み ${answered} / ${elements.length}　${coverageText}`;
   $("#copy-all").disabled = answered === 0;
 };
@@ -36,13 +38,21 @@ const showCopyStatus = (message) => {
 };
 
 const toSurveyElement = (element) => {
-  const { questionNo, ...surveyElement } = element;
+  const { questionNo, referenceOnly, topic, examOccurrence, sourceUrl, ...surveyElement } = element;
+  const description = referenceOnly
+    ? `${topic} / ${examOccurrence}。問題文と選択肢はJDLA公式ページで確認してください。`
+    : surveyElement.description;
+
   return {
     ...surveyElement,
     title: `問${questionNo}　${element.title}`,
+    description,
+    descriptionLocation: description ? "underTitle" : undefined,
     choices: (element.choices || []).map((choice) => ({
       value: choice.value,
-      text: `${choice.value}　${choice.text}`,
+      text: String(choice.text) === String(choice.value)
+        ? String(choice.value)
+        : `${choice.value}　${choice.text}`,
     })),
   };
 };
@@ -151,6 +161,40 @@ const renderInformation = (dataset) => {
   quiz.append(card);
 };
 
+const appendReferenceNotice = (quiz, dataset) => {
+  if (dataset.contentMode !== "reference-answer-sheet") return;
+  const source = dataset.source || {};
+  const card = document.createElement("section");
+  card.className = "notice-card";
+
+  const heading = document.createElement("h2");
+  heading.textContent = "JDLA公式ページと一緒に使う回答シートです";
+  const note = document.createElement("p");
+  note.textContent = source.note || "問題文と選択肢本文はこのサイトへ転載していません。";
+  card.append(heading, note);
+
+  const links = [
+    [source.pageUrl, "JDLA公式問題を開く"],
+    [source.examUrl, "G検定の試験概要を開く"],
+    [source.copyrightPolicyUrl, "著作権に関するJDLA公式告知を開く"],
+  ];
+  const list = document.createElement("ul");
+  list.className = "source-list";
+  for (const [url, label] of links) {
+    if (!url) continue;
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = url;
+    link.textContent = label;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    item.append(link);
+    list.append(item);
+  }
+  card.append(list);
+  quiz.append(card);
+};
+
 const renderQuestions = (dataset, elements) => {
   const byName = Object.fromEntries(elements.map((element) => [element.name, element]));
   const storageKey = storageKeyFor(dataset);
@@ -159,6 +203,9 @@ const renderQuestions = (dataset, elements) => {
 
   const quiz = $("#quiz");
   quiz.replaceChildren();
+  appendReferenceNotice(quiz, dataset);
+  const surveyHost = document.createElement("div");
+  quiz.append(surveyHost);
 
   const survey = new Survey.Model({
     elements: elements.map(toSurveyElement),
@@ -171,7 +218,6 @@ const renderQuestions = (dataset, elements) => {
     const question = survey.getQuestionByName(name);
     const element = byName[name];
     if (!question || !element) continue;
-
     question.value = cached.answer;
     question.readOnly = true;
     question.description = feedbackText(element, cached);
@@ -181,26 +227,20 @@ const renderQuestions = (dataset, elements) => {
   survey.onValueChanged.add((sender, options) => {
     const name = options.name;
     if (state[name]) return;
-
     const question = sender.getQuestionByName(name);
     const element = byName[name];
     if (!question || !element) return;
 
-    const cached = {
-      answer: options.value,
-      correct: question.isAnswerCorrect(),
-    };
-
+    const cached = { answer: options.value, correct: question.isAnswerCorrect() };
     state[name] = cached;
     saveSession(storageKey, state);
-
     question.readOnly = true;
     question.description = feedbackText(element, cached);
     question.descriptionLocation = "underInput";
     updateSummary(dataset, elements, state);
   });
 
-  survey.render(quiz);
+  survey.render(surveyHost);
   updateSummary(dataset, elements, state);
 };
 
@@ -217,7 +257,6 @@ const renderExam = async (examEntry) => {
     renderInformation(dataset);
     return;
   }
-
   renderQuestions(dataset, elements);
 };
 
@@ -238,11 +277,16 @@ const main = async () => {
     await renderExam(exam);
   };
 
-  select.value = catalog.defaultExam;
-  await selectAndRender(catalog.defaultExam);
+  const requestedExam = new URL(window.location.href).searchParams.get("exam");
+  const initialExam = catalog.exams.some((item) => item.id === requestedExam) ? requestedExam : catalog.defaultExam;
+  select.value = initialExam;
+  await selectAndRender(initialExam);
 
   select.addEventListener("change", async () => {
     try {
+      const url = new URL(window.location.href);
+      url.searchParams.set("exam", select.value);
+      window.history.replaceState(null, "", url);
       await selectAndRender(select.value);
     } catch (error) {
       console.error(error);
