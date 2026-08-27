@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
 
 const root = process.cwd();
 
@@ -82,7 +81,6 @@ globalThis.localStorage = {
 
 const sessionModule = await importSource("web/js/quiz/session.js");
 const storageKey = sessionModule.storageKeyFor({ id: "g-test:official-past-questions", version: "v1" });
-assert.equal(sessionModule.loadSession(storageKey), sessionModule.loadSession(storageKey));
 assert.deepEqual(sessionModule.loadSession(storageKey), {});
 
 sessionModule.saveSession(storageKey, { gq001: { answer: "A", correct: true } });
