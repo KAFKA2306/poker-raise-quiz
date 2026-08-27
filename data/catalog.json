@@ -5,6 +5,18 @@
     {
       "id": "ap",
       "manifest": "exams/applied-information/manifest.json"
+    },
+    {
+      "id": "pds-management",
+      "manifest": "exams/professional-digital-skills/management/manifest.json"
+    },
+    {
+      "id": "pds-data-ai",
+      "manifest": "exams/professional-digital-skills/data-ai/manifest.json"
+    },
+    {
+      "id": "pds-system",
+      "manifest": "exams/professional-digital-skills/system/manifest.json"
     }
   ]
 }
