@@ -53,7 +53,6 @@ def native_headers(page: fitz.Page) -> list[tuple[int, float]]:
     for word in page.get_text("words", sort=True):
         x0, y0, _x1, _y1, text, block_no, line_no, _word_no = word
         lines.setdefault((block_no, line_no), []).append((x0, y0, text))
-
     found: list[tuple[int, float]] = []
     for words in lines.values():
         words.sort(key=lambda item: item[0])
@@ -74,29 +73,22 @@ def ocr_headers(page: fitz.Page) -> list[tuple[int, float]]:
             capture_output=True,
             text=True,
         )
-
     rows = csv.DictReader(io.StringIO(result.stdout), delimiter="\t")
     lines: dict[tuple[str, str, str, str], list[dict[str, str]]] = {}
     for row in rows:
-        text = (row.get("text") or "").strip()
-        if not text:
+        if not (row.get("text") or "").strip():
             continue
         key = (row["page_num"], row["block_num"], row["par_num"], row["line_num"])
         lines.setdefault(key, []).append(row)
-
     found: list[tuple[int, float]] = []
-    page_width_pixels = pixmap.width
     for words in lines.values():
         words.sort(key=lambda row: int(row["left"]))
-        left = min(int(row["left"]) for row in words)
-        if left > page_width_pixels * 0.22:
+        if min(int(row["left"]) for row in words) > pixmap.width * 0.22:
             continue
         question_no = number_from_tokens([row["text"] for row in words])
         if question_no is None:
             continue
-        top_pixels = min(int(row["top"]) for row in words)
-        found.append((question_no, top_pixels / OCR_SCALE))
-
+        found.append((question_no, min(int(row["top"]) for row in words) / OCR_SCALE))
     return sorted(found, key=lambda item: item[1])
 
 
@@ -111,35 +103,45 @@ def render_session(session: dict) -> None:
     output_dir = CACHE_ROOT / session_id / "questions"
     output_dir.mkdir(parents=True, exist_ok=True)
     download(session["questionPdfUrl"], pdf_path)
-
     document = fitz.open(pdf_path)
-    page_headers: dict[int, list[tuple[int, float]]] = {}
-    locations: dict[int, tuple[int, float, float]] = {}
 
+    raw_pages: list[tuple[int, list[tuple[int, float]]]] = []
     for page_index, page in enumerate(document):
         headers = question_headers(page)
         if headers:
-            page_headers[page_index] = headers
-        for index, (question_no, y0) in enumerate(headers):
-            if question_no in locations:
+            raw_pages.append((page_index, headers))
+
+    # IPA問題冊子は問1から問80まで昇順で並ぶ。OCRが本文中の数字を問番号と
+    # 誤認識した場合は、直前に採用した番号から大きく飛ぶ候補を捨てる。
+    filtered_pages: dict[int, list[tuple[int, float]]] = {}
+    last_number = 0
+    for page_index, headers in raw_pages:
+        accepted: list[tuple[int, float]] = []
+        for question_no, y0 in headers:
+            if question_no <= last_number:
                 continue
+            if last_number and question_no - last_number > 4:
+                continue
+            accepted.append((question_no, y0))
+            last_number = question_no
+        if accepted:
+            filtered_pages[page_index] = accepted
+
+    locations: dict[int, tuple[int, float, float]] = {}
+    for page_index, headers in filtered_pages.items():
+        page = document[page_index]
+        for index, (question_no, y0) in enumerate(headers):
             y1 = headers[index + 1][1] - 6 if index + 1 < len(headers) else page.rect.height - 18
             locations[question_no] = (page_index, max(12, y0 - 6), max(y0 + 20, y1))
 
-    missing = [number for number in range(1, 81) if number not in locations]
-    if missing:
-        detected = {page + 1: [number for number, _y in headers] for page, headers in page_headers.items()}
-        raise RuntimeError(f"{session_id}: 問題位置を検出できません: {missing}; 検出結果={detected}")
-
     matrix = fitz.Matrix(2.0, 2.0)
-    for question_no in range(1, 81):
-        page_index, y0, y1 = locations[question_no]
+    for question_no, (page_index, y0, y1) in locations.items():
         page = document[page_index]
         clip = fitz.Rect(18, y0, page.rect.width - 18, min(y1, page.rect.height - 12))
-        pixmap = page.get_pixmap(matrix=matrix, clip=clip, alpha=False)
-        pixmap.save(output_dir / f"q{question_no:03d}.png")
+        page.get_pixmap(matrix=matrix, clip=clip, alpha=False).save(output_dir / f"q{question_no:03d}.png")
 
-    print(f"{session_id}: IPA公式PDFから80問の画像領域を生成")
+    missing = [number for number in range(1, 81) if number not in locations]
+    print(f"{session_id}: 公式問題画像 {len(locations)}問分を生成。未検出={missing}")
 
 
 def main() -> None:
