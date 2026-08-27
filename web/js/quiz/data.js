@@ -12,17 +12,9 @@ const requiredEntry = (entries, id, label) => {
   return entry;
 };
 
-const officialTitle = {
-  reform: "制度見直し",
-  examPlan: "試験構成と開始予定",
-  syllabus: "シラバス",
-  sampleQuestions: "サンプル問題",
-};
-
 export const loadQuizCatalog = async () => {
   const dataRoot = new URL("./data/", document.baseURI);
-  const catalogUrl = new URL("catalog.json", dataRoot);
-  const catalog = await readJson(catalogUrl);
+  const catalog = await readJson(new URL("catalog.json", dataRoot));
 
   const exams = await Promise.all(
     (catalog.exams || []).map(async (entry) => {
@@ -47,51 +39,13 @@ export const loadQuizCatalog = async () => {
 
 export const loadQuiz = async (examEntry) => {
   const { exam, examUrl } = examEntry;
-
-  if (exam.contentMode === "metadata-only") {
-    return {
-      dataset: {
-        id: exam.id,
-        title: exam.title,
-        version: exam.examInfo?.scopeVersion || "metadata-only",
-        status: "metadata-only",
-        examInfo: exam.examInfo,
-        questionPolicy: exam.questionPolicy,
-        sources: exam.sources || [],
-      },
-      elements: [],
-    };
-  }
-
-  if (exam.status === "upcoming") {
-    return {
-      dataset: {
-        id: exam.id,
-        title: exam.title,
-        version: exam.syllabus?.version || exam.plannedStart || "upcoming",
-        status: "upcoming",
-        plannedStart: exam.plannedStart,
-        delivery: exam.delivery,
-        examPlan: exam.examPlan,
-        syllabus: exam.syllabus,
-        sampleQuestions: exam.sampleQuestions,
-        sources: Object.entries(exam.officialUrls || {}).map(([key, url]) => ({
-          title: officialTitle[key] || key,
-          url,
-        })),
-      },
-      elements: [],
-    };
-  }
-
   const sessionEntry = requiredEntry(exam.sessions || [], exam.defaultSession, "既定の試験回");
   const sessionUrl = new URL(sessionEntry.manifest, examUrl);
   const session = await readJson(sessionUrl);
 
   const elements = [];
   for (const modulePath of session.modules || []) {
-    const moduleUrl = new URL(modulePath, sessionUrl);
-    const module = await readJson(moduleUrl);
+    const module = await readJson(new URL(modulePath, sessionUrl));
     elements.push(...(module.elements || []));
   }
 
