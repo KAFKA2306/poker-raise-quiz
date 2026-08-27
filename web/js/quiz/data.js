@@ -103,6 +103,8 @@ export const loadQuiz = async (examEntry) => {
       source: session.source,
       coverage: session.coverage,
       status: session.status,
+      contentMode: session.contentMode || "full-question",
+      isFullExam: session.isFullExam !== false,
     },
     elements,
   };
