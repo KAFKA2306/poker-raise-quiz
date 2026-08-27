@@ -7,6 +7,7 @@ const readJson = async (url) => {
 };
 
 const requiredEntry = (entries, id, label) => {
+  if (!Array.isArray(entries)) throw new Error(`${label}一覧が配列ではありません`);
   const entry = entries.find((item) => item.id === id);
   if (!entry) throw new Error(`${label}が見つかりません: ${id}`);
   return entry;
@@ -15,11 +16,19 @@ const requiredEntry = (entries, id, label) => {
 export const loadQuizCatalog = async () => {
   const dataRoot = new URL("./data/", document.baseURI);
   const catalog = await readJson(new URL("catalog.json", dataRoot));
+  if (!Array.isArray(catalog.exams) || catalog.exams.length === 0) {
+    throw new Error("catalog.exams が空または不正です");
+  }
+  if (!catalog.defaultExam) throw new Error("catalog.defaultExam がありません");
 
   const exams = await Promise.all(
-    (catalog.exams || []).map(async (entry) => {
+    catalog.exams.map(async (entry) => {
+      if (!entry.id || !entry.manifest) throw new Error("catalog の試験定義が不正です");
       const examUrl = new URL(entry.manifest, dataRoot);
       const exam = await readJson(examUrl);
+      if (exam.id !== entry.id) {
+        throw new Error(`試験IDが一致しません: catalog=${entry.id}, manifest=${exam.id}`);
+      }
       return {
         id: entry.id,
         title: exam.title,
@@ -39,15 +48,28 @@ export const loadQuizCatalog = async () => {
 
 export const loadQuiz = async (examEntry) => {
   const { exam, examUrl } = examEntry;
-  const sessionEntry = requiredEntry(exam.sessions || [], exam.defaultSession, "既定の試験回");
+  if (!exam.defaultSession) throw new Error(`既定の試験回がありません: ${exam.id}`);
+
+  const sessionEntry = requiredEntry(exam.sessions, exam.defaultSession, "既定の試験回");
   const sessionUrl = new URL(sessionEntry.manifest, examUrl);
   const session = await readJson(sessionUrl);
+  if (session.id !== sessionEntry.id) {
+    throw new Error(`試験回IDが一致しません: index=${sessionEntry.id}, manifest=${session.id}`);
+  }
+  if (!Array.isArray(session.modules) || session.modules.length === 0) {
+    throw new Error(`問題モジュールがありません: ${session.id}`);
+  }
 
   const elements = [];
-  for (const modulePath of session.modules || []) {
+  for (const modulePath of session.modules) {
     const module = await readJson(new URL(modulePath, sessionUrl));
-    elements.push(...(module.elements || []));
+    if (!Array.isArray(module.elements) || module.elements.length === 0) {
+      throw new Error(`問題がありません: ${modulePath}`);
+    }
+    elements.push(...module.elements);
   }
+
+  if (elements.length === 0) throw new Error(`回答できる問題がありません: ${session.id}`);
 
   return {
     dataset: {
@@ -57,6 +79,7 @@ export const loadQuiz = async (examEntry) => {
       source: session.source,
       coverage: session.coverage,
       status: session.status,
+      referenceOnly: session.referenceOnly === true,
     },
     elements,
   };
