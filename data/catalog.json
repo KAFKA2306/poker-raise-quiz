@@ -7,6 +7,10 @@
       "manifest": "exams/applied-information/manifest.json"
     },
     {
+      "id": "statistics-grade-2",
+      "manifest": "exams/statistics-grade-2/manifest.json"
+    },
+    {
       "id": "pds-management",
       "manifest": "exams/professional-digital-skills/management/manifest.json"
     },
