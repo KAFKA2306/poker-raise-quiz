@@ -1,5 +1,9 @@
 # One-tap Quiz
 
-Browser-only quiz viewer. The current poker trainer is preserved at `archive/poker-raise-quiz-2026-08-28`.
+Browser-only, one-tap multiple-choice quiz viewer.
 
-Canonical Stage 0 requirements are tracked in Issues #7 and #8.
+The previous poker trainer is preserved unchanged at `archive/poker-raise-quiz-2026-08-28`.
+
+Stage 0 has one interaction only: tap one choice. The app immediately shows correctness and the correct answer, locks that question, and stores the answered state in the browser.
+
+Implementation work is tracked by Issues #7 and #8.
