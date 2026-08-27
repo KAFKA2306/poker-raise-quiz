@@ -124,6 +124,34 @@ for (const examEntry of catalog.exams) {
   assert(["active", "upcoming"].includes(examStatus), `試験の status が不正です: ${exam.id}`);
   assert(Array.isArray(exam.sessions), `sessions が配列ではありません: ${exam.id}`);
 
+  const contentMode = exam.contentMode ?? "questions";
+  assert(["questions", "metadata-only"].includes(contentMode), `contentMode が不正です: ${exam.id}`);
+
+  if (exam.questionPolicy) {
+    assert(["authorized", "not-authorized"].includes(exam.questionPolicy.publication), `問題公開方針が不正です: ${exam.id}`);
+    assert(isHttpsUrl(exam.questionPolicy.termsUrl), `問題利用条件URLがありません: ${exam.id}`);
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(exam.questionPolicy.checkedAt || ""), `問題利用条件の確認日が不正です: ${exam.id}`);
+    assert(typeof exam.questionPolicy.note === "string" && exam.questionPolicy.note.trim(), `問題利用条件の説明がありません: ${exam.id}`);
+  }
+
+  if (contentMode === "metadata-only") {
+    assert(exam.sessions.length === 0, `metadata-only に本番問題の試験回があります: ${exam.id}`);
+    assert(!exam.defaultSession, `metadata-only に既定の試験回があります: ${exam.id}`);
+    assert(exam.examInfo?.method, `受験方法がありません: ${exam.id}`);
+    assert(exam.examInfo?.questionFormat, `出題形式がありません: ${exam.id}`);
+    assert(exam.examInfo?.questionCount, `問題数がありません: ${exam.id}`);
+    assert(Number.isInteger(exam.examInfo?.durationMinutes), `試験時間が不正です: ${exam.id}`);
+    assert(exam.examInfo?.passScore, `合格水準がありません: ${exam.id}`);
+    assert(exam.examInfo?.scopeVersion, `出題範囲の版がありません: ${exam.id}`);
+    assert(isHttpsUrl(exam.examInfo?.scopeUrl), `出題範囲URLがありません: ${exam.id}`);
+    assert(Array.isArray(exam.examInfo?.topics) && exam.examInfo.topics.length > 0, `出題範囲がありません: ${exam.id}`);
+    assert(exam.questionPolicy?.publication === "not-authorized", `metadata-only の問題公開方針が不正です: ${exam.id}`);
+    assert(exam.questionPolicy?.requirePerQuestionEvidence === true, `問題ごとの再利用根拠を必須にしていません: ${exam.id}`);
+    assert(Array.isArray(exam.sources) && exam.sources.length > 0, `公式情報の出典がありません: ${exam.id}`);
+    assert(exam.sources.every((source) => source.title && isHttpsUrl(source.url)), `公式情報の出典が不正です: ${exam.id}`);
+    continue;
+  }
+
   if (examStatus === "upcoming") {
     assert(exam.sessions.length === 0, `未実施の試験に本番問題の試験回があります: ${exam.id}`);
     assert(!exam.defaultSession, `未実施の試験に既定の試験回があります: ${exam.id}`);
@@ -145,6 +173,10 @@ for (const examEntry of catalog.exams) {
       `公式URLが不足しています: ${exam.id}`,
     );
     continue;
+  }
+
+  if (exam.questionPolicy) {
+    assert(exam.questionPolicy.publication === "authorized", `問題公開が許可されていない試験に問題データがあります: ${exam.id}`);
   }
 
   assert(exam.sessions.length > 0, `試験回がありません: ${exam.id}`);
@@ -184,6 +216,15 @@ for (const examEntry of catalog.exams) {
         assert(choiceValues.size === 4, `選択肢の値が重複しています: ${question.name}`);
         assert(question.choices.every((choice) => choice.value && typeof choice.text === "string" && choice.text.trim()), `選択肢が不正です: ${question.name}`);
         assert(choiceValues.has(question.correctAnswer), `正答が選択肢にありません: ${question.name}`);
+
+        if (exam.questionPolicy?.requirePerQuestionEvidence) {
+          assert(question.examId === exam.id, `問題の試験IDがありません: ${question.name}`);
+          assert(String(question.grade) === String(exam.grade), `問題の級が一致しません: ${question.name}`);
+          assert(isHttpsUrl(question.provenance?.sourceUrl), `問題の出典URLがありません: ${question.name}`);
+          assert(typeof question.provenance?.reuseBasis === "string" && question.provenance.reuseBasis.trim(), `問題の再利用根拠がありません: ${question.name}`);
+          assert(question.provenance?.reuseConfirmed === true, `問題の再利用確認が完了していません: ${question.name}`);
+        }
+
         if (exam.id.startsWith("pds-")) {
           assert(question.officialExam === true, `新制度の問題が本試験問題として確認されていません: ${question.name}`);
         }
