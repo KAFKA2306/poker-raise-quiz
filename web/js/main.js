@@ -8,30 +8,38 @@ const $ = (selector) => {
   return element;
 };
 
-if (typeof window.markdownit !== "function") throw new Error("Markdown表示ライブラリを読み込めません");
-const markdownRenderer = window.markdownit({ html: false, linkify: true, breaks: true });
-let activeQuiz = null;
-let catalog = null;
-
-const renderFatal = (error) => {
+const renderFatal = (error, context = {}) => {
   const failure = error instanceof Error ? error : new Error(String(error));
   const output = document.createElement("pre");
+  const details = Object.entries(context).map(([key, value]) => `${key}: ${value}`);
   output.className = "fatal-error";
-  output.textContent = `FATAL ERROR\n\n${failure.stack}`;
+  output.textContent = [
+    "FATAL ERROR",
+    "",
+    `URL: ${window.location.href}`,
+    ...details,
+    "",
+    failure.stack,
+  ].join("\n");
   document.body.replaceChildren(output);
 };
 
 window.addEventListener("unhandledrejection", (event) => {
-  renderFatal(event.reason);
+  renderFatal(event.reason, { 段階: "未処理Promise" });
 });
 
 window.addEventListener("error", (event) => {
   if (event.error instanceof Error) {
-    renderFatal(event.error);
+    renderFatal(event.error, { 段階: "JavaScript実行" });
     return;
   }
-  throw new Error(event.message);
+  renderFatal(new Error(event.message), { 段階: "JavaScript実行" });
 });
+
+let markdownRenderer = null;
+let activeQuiz = null;
+let catalog = null;
+let renderGeneration = 0;
 
 const choiceText = (element, value) => {
   const choice = element.choices.find((item) => item.value === value);
@@ -65,12 +73,17 @@ const toSurveyElement = (element) => {
   };
 };
 
-const renderReferenceLink = (dataset) => {
+const resetReferenceLink = () => {
   const link = $("#reference-link");
   link.hidden = true;
   link.removeAttribute("href");
+};
+
+const renderReferenceLink = (dataset) => {
+  resetReferenceLink();
   if (!dataset.referenceOnly) return;
   if (!dataset.source.referenceUrl) throw new Error(`参照専用なのに referenceUrl がありません: ${dataset.id}`);
+  const link = $("#reference-link");
   link.href = dataset.source.referenceUrl;
   link.hidden = false;
 };
@@ -141,21 +154,47 @@ const populateSessions = (examEntry) => {
   select.disabled = examEntry.exam.sessions.length <= 1;
 };
 
-const renderSelectedQuiz = async () => {
-  const examEntry = currentExam();
-  const sessionId = $("#session-select").value;
-  if (!sessionId) throw new Error(`試験回が選択されていません: ${examEntry.id}`);
-  $("#summary").textContent = "読み込み中";
+const renderSelectedQuiz = async (generation, examEntry, sessionId) => {
+  const sessionEntry = examEntry.exam.sessions.find((session) => session.id === sessionId);
+  if (!sessionEntry) throw new Error(`試験回が見つかりません: ${examEntry.id}/${sessionId}`);
+
+  activeQuiz = null;
+  resetReferenceLink();
+  $("#title").textContent = `${examEntry.title} ${sessionEntry.title}`;
+  $("#summary").textContent = `読み込み中: ${examEntry.id} / ${sessionId}`;
   $("#copy-all").disabled = true;
   $("#quiz").replaceChildren();
+
   const { dataset, elements } = await loadQuiz(examEntry, sessionId);
+  if (generation !== renderGeneration) return;
+
   document.title = dataset.title;
   $("#title").textContent = dataset.title;
   renderReferenceLink(dataset);
   renderQuestions(dataset, elements);
 };
 
+const startSelectedQuizRender = () => {
+  const examEntry = currentExam();
+  const sessionId = $("#session-select").value;
+  if (!sessionId) throw new Error(`試験回が選択されていません: ${examEntry.id}`);
+
+  const generation = ++renderGeneration;
+  renderSelectedQuiz(generation, examEntry, sessionId).then(undefined, (error) => {
+    if (generation !== renderGeneration) return;
+    renderFatal(error, {
+      段階: "問題データ読み込み・表示",
+      試験: examEntry.id,
+      試験回: sessionId,
+    });
+  });
+};
+
 const main = async () => {
+  if (typeof window.markdownit !== "function") throw new Error("Markdown表示ライブラリを読み込めません");
+  if (!window.Survey || typeof window.Survey.Model !== "function") throw new Error("SurveyJSを読み込めません");
+  markdownRenderer = window.markdownit({ html: false, linkify: true, breaks: true });
+
   catalog = await loadQuizCatalog();
   const examSelect = $("#exam-select");
   for (const exam of catalog.exams) {
@@ -167,14 +206,13 @@ const main = async () => {
   examSelect.value = catalog.defaultExam;
   if (examSelect.value !== catalog.defaultExam) throw new Error(`既定の試験を選択できません: ${catalog.defaultExam}`);
   populateSessions(currentExam());
-  await renderSelectedQuiz();
 
-  examSelect.addEventListener("change", async () => {
+  examSelect.addEventListener("change", () => {
     populateSessions(currentExam());
-    await renderSelectedQuiz();
+    startSelectedQuizRender();
   });
-  $("#session-select").addEventListener("change", async () => {
-    await renderSelectedQuiz();
+  $("#session-select").addEventListener("change", () => {
+    startSelectedQuizRender();
   });
 
   $("#copy-all").addEventListener("click", async () => {
@@ -183,6 +221,10 @@ const main = async () => {
     await navigator.clipboard.writeText(output);
     showCopyStatus("コピーしました");
   });
+
+  startSelectedQuizRender();
 };
 
-main();
+main().then(undefined, (error) => {
+  renderFatal(error, { 段階: "起動" });
+});
