@@ -1,5 +1,6 @@
 import { loadQuiz, loadQuizCatalog } from "./quiz/data.js";
 import { buildChatGptMarkdown } from "./quiz/export.js";
+import { updateReferenceLink } from "./quiz/reference.js";
 import { loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
 
 const $ = (selector) => {
@@ -54,6 +55,7 @@ const renderQuestions = (dataset, elements) => {
   const quiz = $("#quiz");
   quiz.replaceChildren();
 
+  if (!globalThis.Survey || typeof globalThis.Survey.Model !== "function") throw new Error("SurveyJSが読み込まれていません");
   const survey = new Survey.Model({ elements: elements.map(toSurveyElement), showQuestionNumbers: "off", showCompleteButton: false, showNavigationButtons: false });
   survey.onTextMarkdown.add((_sender, options) => { options.html = markdownRenderer.render(options.text); });
 
@@ -90,33 +92,43 @@ const renderQuestions = (dataset, elements) => {
 };
 
 const currentExam = () => {
-  const exam = catalog.exams.find((item) => item.id === $("#exam-select").value);
-  if (!exam) throw new Error(`試験が見つかりません: ${$("#exam-select").value}`);
+  const examId = $("#exam-select").value;
+  if (typeof examId !== "string" || examId.length === 0) throw new Error("試験IDが選択されていません");
+  const exam = catalog.exams.find((item) => item.id === examId);
+  if (!exam) throw new Error(`試験が見つかりません: ${examId}`);
   return exam;
 };
 
 const populateSessions = (examEntry) => {
+  if (!Array.isArray(examEntry.exam.sessions) || examEntry.exam.sessions.length === 0) throw new Error(`試験回がありません: ${examEntry.id}`);
   const select = $("#session-select");
   select.replaceChildren();
   for (const session of examEntry.exam.sessions) {
+    if (typeof session.id !== "string" || session.id.length === 0) throw new Error(`試験回IDがありません: ${examEntry.id}`);
+    if (typeof session.title !== "string" || session.title.length === 0) throw new Error(`試験回名がありません: ${examEntry.id}:${session.id}`);
     const option = document.createElement("option");
     option.value = session.id;
-    option.textContent = session.title || session.id;
+    option.textContent = session.title;
     select.append(option);
   }
+  if (typeof examEntry.exam.defaultSession !== "string" || examEntry.exam.defaultSession.length === 0) throw new Error(`既定の試験回がありません: ${examEntry.id}`);
+  if (!examEntry.exam.sessions.some((session) => session.id === examEntry.exam.defaultSession)) throw new Error(`既定の試験回が一覧にありません: ${examEntry.id}`);
   select.value = examEntry.exam.defaultSession;
-  select.disabled = examEntry.exam.sessions.length <= 1;
+  if (select.value !== examEntry.exam.defaultSession) throw new Error(`既定の試験回を選択できません: ${examEntry.id}:${examEntry.exam.defaultSession}`);
+  select.disabled = examEntry.exam.sessions.length === 1;
 };
 
 const renderSelectedQuiz = async () => {
   const examEntry = currentExam();
   const sessionId = $("#session-select").value;
+  if (typeof sessionId !== "string" || sessionId.length === 0) throw new Error(`試験回が選択されていません: ${examEntry.id}`);
   $("#summary").textContent = "読み込み中";
   $("#copy-all").disabled = true;
   $("#quiz").replaceChildren();
   const { dataset, elements } = await loadQuiz(examEntry, sessionId);
   document.title = dataset.title;
   $("#title").textContent = dataset.title;
+  updateReferenceLink($("#reference-link"), dataset);
   renderQuestions(dataset, elements);
 };
 
@@ -124,12 +136,15 @@ const main = async () => {
   catalog = await loadQuizCatalog();
   const examSelect = $("#exam-select");
   for (const exam of catalog.exams) {
+    if (typeof exam.id !== "string" || exam.id.length === 0) throw new Error("試験IDがありません");
+    if (typeof exam.title !== "string" || exam.title.length === 0) throw new Error(`試験名がありません: ${exam.id}`);
     const option = document.createElement("option");
     option.value = exam.id;
     option.textContent = exam.title;
     examSelect.append(option);
   }
   examSelect.value = catalog.defaultExam;
+  if (examSelect.value !== catalog.defaultExam) throw new Error(`既定の試験を選択できません: ${catalog.defaultExam}`);
   populateSessions(currentExam());
   await renderSelectedQuiz();
 
@@ -142,14 +157,23 @@ const main = async () => {
   $("#copy-all").addEventListener("click", async () => {
     if (!activeQuiz) throw new Error("有効な問題集がありません");
     const output = buildChatGptMarkdown(activeQuiz.dataset, activeQuiz.elements, activeQuiz.state);
+    if (typeof output !== "string" || output.length === 0) throw new Error("コピーする回答履歴がありません");
     await navigator.clipboard.writeText(output);
     showCopyStatus("コピーしました");
   });
 };
 
 main().catch((error) => {
-  $("#summary").textContent = `致命的エラー: ${error.message}`;
-  $("#copy-all").disabled = true;
-  $("#quiz").textContent = "問題データが壊れています。開発者コンソールを確認してください。";
+  document.body.replaceChildren();
+  document.body.style.margin = "0";
+  document.body.style.padding = "24px";
+  document.body.style.background = "#2b0000";
+  document.body.style.color = "#ffffff";
+  const fatal = document.createElement("pre");
+  fatal.id = "fatal-error";
+  fatal.style.whiteSpace = "pre-wrap";
+  fatal.style.font = "700 16px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace";
+  fatal.textContent = `FATAL\n\n${error.stack}`;
+  document.body.append(fatal);
   throw error;
 });
