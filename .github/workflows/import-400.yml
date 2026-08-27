@@ -8,6 +8,8 @@ on:
       - data/sources/ipa/**
       - scripts/import/**
       - .github/workflows/import-400.yml
+      - scripts/validate.mjs
+      - web/**
 
 permissions:
   contents: write
@@ -28,26 +30,10 @@ jobs:
         with:
           node-version: 24
 
-      - name: Pythonを用意
-        uses: actions/setup-python@v6
-        with:
-          python-version: "3.13"
-
-      - name: 問番号検出用の日本語OCRを用意
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-jpn
-
-      - name: PDF処理ライブラリを用意
-        run: python -m pip install --disable-pip-version-check --no-cache-dir PyMuPDF==1.26.4
-
-      - name: IPA公式PDFから問題画像を生成
-        run: python scripts/import/render-official-question-crops.py
-
       - name: 400問を取得してIPA公式正答と照合
         run: node scripts/import/import-400.mjs
 
-      - name: 既存の自動確認も実行
+      - name: 400問構成とWebを自動確認
         run: node scripts/validate.mjs
 
       - name: 生成した本番データをブランチへ保存
