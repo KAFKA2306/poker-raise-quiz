@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    name: 構造と本番データを確認
+    name: 構造・本番データ・ブラウザを確認
     runs-on: ubuntu-latest
     steps:
       - name: リポジトリを取得
@@ -24,3 +24,9 @@ jobs:
 
       - name: 構造・JavaScript・問題データを確認
         run: node scripts/validate.mjs
+
+      - name: Chromeを確認
+        run: /usr/bin/google-chrome --version
+
+      - name: 実ブラウザで主要操作を確認
+        run: node scripts/smoke-browser.mjs
