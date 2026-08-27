@@ -1,23 +1,26 @@
-const choiceText = (element, value) => {
-  const choice = (element.choices || []).find((item) => item.value === value);
-  return choice ? String(choice.text) : String(value ?? "");
+const requiredText = (value, label) => {
+  if (typeof value !== "string" || !value.trim()) throw new Error(`${label}がありません`);
+  return value;
 };
 
-const sourceLines = (source) => {
-  if (!source) return [];
-  return [
-    "## 出典",
-    source.publisher || "",
-    source.questionPdfUrl || "",
-    source.answerPdfUrl || "",
-    "",
-  ].filter((line, index, lines) => line !== "" || lines[index - 1] !== "");
+const choiceText = (element, value) => {
+  const choice = element.choices.find((item) => item.value === value);
+  if (!choice) throw new Error(`選択肢が見つかりません: ${element.name} / ${value}`);
+  return String(choice.text);
 };
+
+const sourceLines = (source) => [
+  "## 出典",
+  requiredText(source.publisher, "出典publisher"),
+  requiredText(source.questionPdfUrl, "問題出典URL"),
+  requiredText(source.answerPdfUrl, "正答出典URL"),
+  "",
+];
 
 export const buildChatGptMarkdown = (dataset, elements, state) => {
   const answered = elements.filter((element) => state[element.name]);
   const correctCount = answered.filter((element) => state[element.name].correct).length;
-  const coverage = dataset.coverage || {};
+  const coverage = dataset.coverage;
 
   const lines = [
     "# クイズ回答履歴",
@@ -25,7 +28,7 @@ export const buildChatGptMarkdown = (dataset, elements, state) => {
     `回答済み: ${answered.length}`,
     `正解: ${correctCount}`,
     `不正解: ${answered.length - correctCount}`,
-    coverage.total ? `収録範囲: ${coverage.count}問 / 全${coverage.total}問` : "",
+    `収録範囲: ${coverage.count}問 / 全${coverage.total}問`,
     "",
     ...sourceLines(dataset.source),
   ].filter((line) => line !== "");
@@ -37,7 +40,7 @@ export const buildChatGptMarkdown = (dataset, elements, state) => {
       element.title,
       "",
       "### 選択肢",
-      ...(element.choices || []).map((choice) => `- ${choice.value}: ${choice.text}`),
+      ...element.choices.map((choice) => `- ${choice.value}: ${choice.text}`),
       "",
       "### 自分の回答",
       `${result.answer}: ${choiceText(element, result.answer)}`,
