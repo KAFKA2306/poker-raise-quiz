@@ -30,7 +30,6 @@ const requiredFiles = [
   "web/js/quiz/data.js",
   "web/js/quiz/session.js",
   "web/js/quiz/export.js",
-  "web/js/quiz/reference.js",
   "data/catalog.json",
   "scripts/validate.mjs",
   "scripts/verify-pages.mjs",
@@ -45,12 +44,27 @@ for (const file of ["index.html", "app.js", "style.css"]) {
 }
 const dataEntries = new Set(await readdir(dataRoot));
 assert(!dataEntries.has("questions.json"), "古い平置きファイルが残っています: data/questions.json");
+const quizEntries = new Set(await readdir(path.join(root, "web/js/quiz")));
+assert(!quizEntries.has("reference.js"), "公式問題リンク専用の別ローダーを置けません: web/js/quiz/reference.js");
 
+const frontendJavaScriptFiles = (await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js"));
 const javaScriptFiles = [
-  ...(await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js")),
+  ...frontendJavaScriptFiles,
   ...(await walk(path.join(root, "scripts"))).filter((file) => file.endsWith(".mjs")),
 ];
 for (const file of javaScriptFiles) execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
+
+for (const file of frontendJavaScriptFiles) {
+  const source = await readFile(file, "utf8");
+  const relative = path.relative(root, file);
+  assert(!/\btry\s*\{/.test(source), `フロントエンドで例外を握り潰せません: ${relative}`);
+  assert(!/\bcatch\s*\(/.test(source), `フロントエンドで例外を握り潰せません: ${relative}`);
+  assert(!source.includes(".catch(console.error)"), `例外をconsoleへ捨てています: ${relative}`);
+  assert(!source.includes("session.title || session.id"), `試験回表示名をIDで代替できません: ${relative}`);
+  assert(!source.includes("referenceOnly === true"), `referenceOnlyを暗黙falseとして扱えません: ${relative}`);
+  assert(!/\|\|\s*\[\]/.test(source), `配列fallbackを置けません: ${relative}`);
+  assert(!/\|\|\s*\{\}/.test(source), `オブジェクトfallbackを置けません: ${relative}`);
+}
 
 for (const file of await walk(dataRoot)) {
   const relative = path.relative(dataRoot, file);
@@ -89,6 +103,7 @@ for (const examEntry of catalog.exams) {
 
   for (const sessionEntry of exam.sessions) {
     assert(typeof sessionEntry.id === "string" && sessionEntry.id, `試験回の id がありません: ${exam.id}`);
+    assert(typeof sessionEntry.title === "string" && sessionEntry.title.trim(), `試験回の表示名がありません: ${sessionEntry.id}`);
     assert(typeof sessionEntry.manifest === "string" && sessionEntry.manifest, `試験回 manifest がありません: ${sessionEntry.id}`);
     assert(!sessionIds.has(sessionEntry.id), `試験回IDが重複しています: ${sessionEntry.id}`);
     sessionIds.add(sessionEntry.id);
@@ -99,6 +114,7 @@ for (const examEntry of catalog.exams) {
     assert(typeof session.title === "string" && session.title.trim(), `試験回 title がありません: ${session.id}`);
     assert(typeof session.version === "string" && session.version.trim(), `試験回 version がありません: ${session.id}`);
     assert(["partial", "complete"].includes(session.status), `試験回の status が不正です: ${session.id}`);
+    assert(typeof session.referenceOnly === "boolean", `referenceOnly を明示してください: ${session.id}`);
     assert(session.source && typeof session.source === "object", `source がありません: ${session.id}`);
     assert(typeof session.source.publisher === "string" && session.source.publisher, `出典 publisher がありません: ${session.id}`);
     assert(typeof session.source.questionPdfUrl === "string" && session.source.questionPdfUrl.startsWith("https://"), `問題出典URLがありません: ${session.id}`);
@@ -115,7 +131,7 @@ for (const examEntry of catalog.exams) {
       assert(typeof session.answerKey === "string" && [...session.answerKey].length === session.coverage.count, `answerKey が収録問題数と一致しません: ${session.id}`);
     }
 
-    if (session.referenceOnly === true) {
+    if (session.referenceOnly) {
       assert(session.isFullExam === false, `参照専用データは本試験扱いにできません: ${session.id}`);
       assert(typeof session.answerKey === "string" && session.answerKey.length === session.coverage.count, `answerKey が不正です: ${session.id}`);
       assert(typeof session.questionTitleTemplate === "string" && session.questionTitleTemplate.includes("{questionNo}"), `questionTitleTemplate が不正です: ${session.id}`);
@@ -151,7 +167,7 @@ for (const examEntry of catalog.exams) {
         assert(question.choices.every((choice) => typeof choice.value === "string" && choice.value && typeof choice.text === "string" && choice.text.trim()), `選択肢が不正です: ${question.name}`);
         assert(choiceValues.has(question.correctAnswer), `正答が選択肢にありません: ${question.name}`);
 
-        if (session.referenceOnly === true) {
+        if (session.referenceOnly) {
           assert(question.referenceOnly === true, `参照専用問題ではありません: ${question.name}`);
           assert(question.questionTextStored === false, `問題本文を保存しています: ${question.name}`);
           assert(question.choiceTextStored === false, `選択肢本文を保存しています: ${question.name}`);
