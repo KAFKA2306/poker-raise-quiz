@@ -4,8 +4,21 @@ const readJson = async (url) => {
   return response.json();
 };
 
-const link = document.querySelector("#reference-link");
-const select = document.querySelector("#exam-select");
+const requiredElement = (selector) => {
+  const element = document.querySelector(selector);
+  if (!element) throw new Error(`DOM要素がありません: ${selector}`);
+  return element;
+};
+
+const requiredEntry = (entries, id, label) => {
+  if (!Array.isArray(entries)) throw new Error(`${label}一覧が配列ではありません`);
+  const entry = entries.find((item) => item.id === id);
+  if (!entry) throw new Error(`${label}が見つかりません: ${id}`);
+  return entry;
+};
+
+const link = requiredElement("#reference-link");
+const select = requiredElement("#exam-select");
 const dataRoot = new URL("./data/", document.baseURI);
 
 const updateReferenceLink = async () => {
@@ -13,24 +26,27 @@ const updateReferenceLink = async () => {
   link.removeAttribute("href");
 
   const catalog = await readJson(new URL("catalog.json", dataRoot));
-  const examEntry = (catalog.exams || []).find((entry) => entry.id === select.value);
-  if (!examEntry) return;
-
+  const examEntry = requiredEntry(catalog.exams, select.value, "試験");
   const examUrl = new URL(examEntry.manifest, dataRoot);
   const exam = await readJson(examUrl);
-  if (!exam.defaultSession) return;
+  if (!exam.defaultSession) throw new Error(`既定の試験回がありません: ${exam.id}`);
 
-  const sessionEntry = (exam.sessions || []).find((entry) => entry.id === exam.defaultSession);
-  if (!sessionEntry) return;
+  const sessionEntry = requiredEntry(exam.sessions, exam.defaultSession, "既定の試験回");
   const session = await readJson(new URL(sessionEntry.manifest, examUrl));
-  if (session.referenceOnly !== true || !session.source?.referenceUrl) return;
+
+  if (session.referenceOnly !== true) return;
+  if (!session.source?.referenceUrl) {
+    throw new Error(`参照専用なのに referenceUrl がありません: ${session.id}`);
+  }
 
   link.href = session.source.referenceUrl;
   link.hidden = false;
 };
 
-select.addEventListener("change", () => {
-  updateReferenceLink().catch(console.error);
+select.addEventListener("change", async () => {
+  await updateReferenceLink();
 });
 
-queueMicrotask(() => updateReferenceLink().catch(console.error));
+queueMicrotask(async () => {
+  await updateReferenceLink();
+});
