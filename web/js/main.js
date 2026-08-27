@@ -2,13 +2,18 @@ import { loadQuiz, loadQuizCatalog } from "./quiz/data.js";
 import { buildChatGptMarkdown } from "./quiz/export.js";
 import { loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
 
-const $ = (selector) => document.querySelector(selector);
+const $ = (selector) => {
+  const element = document.querySelector(selector);
+  if (!element) throw new Error(`DOM要素がありません: ${selector}`);
+  return element;
+};
 
 let activeQuiz = null;
 
 const choiceText = (element, value) => {
-  const choice = (element.choices || []).find((item) => item.value === value);
-  return choice ? String(choice.text) : String(value ?? "");
+  const choice = element.choices.find((item) => item.value === value);
+  if (!choice) throw new Error(`選択肢が見つかりません: ${element.name}=${value}`);
+  return String(choice.text);
 };
 
 const feedbackText = (element, state) => {
@@ -18,12 +23,10 @@ const feedbackText = (element, state) => {
 };
 
 const updateSummary = (dataset, elements, state) => {
-  const answered = elements.filter((element) => state[element.name]).length;
+  if (!dataset.coverage) throw new Error("coverage がありません");
+  const answered = elements.filter((element) => state[element.name] !== undefined).length;
   const coverage = dataset.coverage;
-  const coverageText = coverage?.total
-    ? `収録 ${coverage.count} / ${coverage.total}問`
-    : `${elements.length}問`;
-  $("#summary").textContent = `回答済み ${answered} / ${elements.length}　${coverageText}`;
+  $("#summary").textContent = `回答済み ${answered} / ${elements.length}　収録 ${coverage.count} / ${coverage.total}問`;
   $("#copy-all").disabled = answered === 0;
 };
 
@@ -36,11 +39,14 @@ const showCopyStatus = (message) => {
 };
 
 const toSurveyElement = (element) => {
+  if (!Array.isArray(element.choices) || element.choices.length !== 4) {
+    throw new Error(`選択肢が4個ではありません: ${element.name}`);
+  }
   const { questionNo, ...surveyElement } = element;
   return {
     ...surveyElement,
     title: `問${questionNo}　${element.title}`,
-    choices: (element.choices || []).map((choice) => ({
+    choices: element.choices.map((choice) => ({
       value: choice.value,
       text: `${choice.value}　${choice.text}`,
     })),
@@ -49,6 +55,8 @@ const toSurveyElement = (element) => {
 
 const renderQuestions = (dataset, elements) => {
   const byName = Object.fromEntries(elements.map((element) => [element.name, element]));
+  if (Object.keys(byName).length !== elements.length) throw new Error("問題IDが重複しています");
+
   const storageKey = storageKeyFor(dataset);
   const state = loadSession(storageKey);
   activeQuiz = { dataset, elements, state };
@@ -66,7 +74,11 @@ const renderQuestions = (dataset, elements) => {
   for (const [name, cached] of Object.entries(state)) {
     const question = survey.getQuestionByName(name);
     const element = byName[name];
-    if (!question || !element) continue;
+    if (!question || !element) throw new Error(`保存データが現行問題と一致しません: ${name}`);
+    if (!cached || typeof cached !== "object" || typeof cached.correct !== "boolean") {
+      throw new Error(`保存データが不正です: ${name}`);
+    }
+    choiceText(element, cached.answer);
 
     question.value = cached.answer;
     question.readOnly = true;
@@ -76,11 +88,12 @@ const renderQuestions = (dataset, elements) => {
 
   survey.onValueChanged.add((sender, options) => {
     const name = options.name;
-    if (state[name]) return;
+    if (state[name] !== undefined) throw new Error(`回答済み問題が再更新されました: ${name}`);
 
     const question = sender.getQuestionByName(name);
     const element = byName[name];
-    if (!question || !element) return;
+    if (!question || !element) throw new Error(`問題が見つかりません: ${name}`);
+    choiceText(element, options.value);
 
     const cached = {
       answer: options.value,
@@ -124,7 +137,7 @@ const main = async () => {
 
   const selectAndRender = async (examId) => {
     const exam = catalog.exams.find((item) => item.id === examId);
-    if (!exam) return;
+    if (!exam) throw new Error(`試験が見つかりません: ${examId}`);
     await renderExam(exam);
   };
 
@@ -132,35 +145,21 @@ const main = async () => {
   await selectAndRender(catalog.defaultExam);
 
   select.addEventListener("change", async () => {
-    try {
-      await selectAndRender(select.value);
-    } catch (error) {
-      console.error(error);
-      activeQuiz = null;
-      $("#summary").textContent = "読み込みに失敗しました";
-      $("#copy-all").disabled = true;
-      $("#quiz").textContent = "問題データを読み込めませんでした。";
-    }
+    await selectAndRender(select.value);
   });
 
   $("#copy-all").addEventListener("click", async () => {
-    if (!activeQuiz) return;
+    if (!activeQuiz) throw new Error("有効な問題集がありません");
     const { dataset, elements, state } = activeQuiz;
     const markdown = buildChatGptMarkdown(dataset, elements, state);
-    if (!markdown) return;
-
-    try {
-      await navigator.clipboard.writeText(markdown);
-      showCopyStatus("コピーしました");
-    } catch (error) {
-      console.error(error);
-      showCopyStatus("コピーできませんでした");
-    }
+    await navigator.clipboard.writeText(markdown);
+    showCopyStatus("コピーしました");
   });
 };
 
 main().catch((error) => {
-  console.error(error);
-  $("#summary").textContent = "読み込みに失敗しました";
-  $("#quiz").textContent = "問題データを読み込めませんでした。";
+  $("#summary").textContent = `致命的エラー: ${error.message}`;
+  $("#copy-all").disabled = true;
+  $("#quiz").textContent = "問題データが壊れています。開発者コンソールを確認してください。";
+  throw error;
 });
