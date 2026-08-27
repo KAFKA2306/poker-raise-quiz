@@ -49,6 +49,7 @@ const requiredFiles = [
   "web/js/quiz/session.js",
   "web/js/quiz/export.js",
   "data/catalog.json",
+  "data/policies/qc.json",
   "scripts/verify-pages.mjs",
   ".github/workflows/ci.yml",
   ".github/workflows/pages.yml",
@@ -85,6 +86,28 @@ const catalog = await readJson(path.join(dataRoot, "catalog.json"));
 assert(Number.isInteger(catalog.version), "catalog.json の version が不正です");
 assert(Array.isArray(catalog.exams) && catalog.exams.length > 0, "catalog.json に試験がありません");
 assert(catalog.exams.some((exam) => exam.id === catalog.defaultExam), "既定の試験が catalog.json にありません");
+
+const qcPolicy = await readJson(path.join(dataRoot, "policies/qc.json"));
+assert(qcPolicy.version === 1, "QC検定ポリシーの version が不正です");
+assert(qcPolicy.officialTitle === "品質管理検定（QC検定）", "QC検定の正式名称が不正です");
+assert(typeof qcPolicy.redistributionApproved === "boolean", "QC検定の再配布可否が不正です");
+assert(Array.isArray(qcPolicy.grades) && qcPolicy.grades.length === 4, "QC検定の級情報が不正です");
+assert(new Set(qcPolicy.grades.map((item) => item.grade)).size === 4, "QC検定の級が重複しています");
+assert(qcPolicy.grades.every((item) => [1, 2, 3, 4].includes(item.grade)), "QC検定の級が不正です");
+
+const qcSourceUrls = [];
+for (const value of Object.values(qcPolicy.sources || {})) {
+  if (typeof value === "string") qcSourceUrls.push(value);
+  else qcSourceUrls.push(...Object.values(value || {}));
+}
+assert(qcSourceUrls.length > 0 && qcSourceUrls.every(isHttpsUrl), "QC検定ポリシーの出典URLが不正です");
+
+const qcCatalogEntries = catalog.exams.filter((exam) => /^qc(?:-|$)/.test(exam.id));
+if (!qcPolicy.redistributionApproved) {
+  assert(qcPolicy.catalogPolicy === "do-not-register", "再配布未承認時のQC検定catalog方針が不正です");
+  assert(qcPolicy.grades.every((item) => item.publicQuizDataset === false), "再配布未承認なのに公開可能なQC検定級があります");
+  assert(qcCatalogEntries.length === 0, "再配布許諾が確認できるまでQC検定を catalog.json に登録できません");
+}
 
 const catalogIds = new Set();
 for (const examEntry of catalog.exams) {
