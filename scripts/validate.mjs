@@ -47,6 +47,7 @@ const requiredFiles = [
   "web/js/quiz/session.js",
   "web/js/quiz/export.js",
   "data/catalog.json",
+  "scripts/verify-pages.mjs",
   ".github/workflows/ci.yml",
   ".github/workflows/pages.yml",
 ];
@@ -60,8 +61,11 @@ for (const file of forbiddenFlatFiles) {
   assert(!(await exists(file)), `古い平置きファイルが残っています: ${file}`);
 }
 
-const webJavaScriptFiles = (await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js"));
-for (const file of webJavaScriptFiles) {
+const javaScriptFiles = [
+  ...(await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js")),
+  ...(await walk(path.join(root, "scripts"))).filter((file) => file.endsWith(".mjs")),
+];
+for (const file of javaScriptFiles) {
   execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
 }
 
