@@ -10,13 +10,15 @@ https://kafka2306.github.io/poker-raise-quiz/
 
 問題データは `data/exams/` 以下で、試験 → 試験回 → 問題モジュールの順に分けます。Web側へ試験名や年度を直接書きません。
 
+参照専用の回答シートは、正答列や表示形式などの検証条件を試験回の `manifest.json` に宣言します。試験ごとの検証スクリプトは作りません。
+
 ## 構造
 
 ```text
 web/                  # 共通のクイズ画面
 data/catalog.json     # 公開する試験一覧
 data/exams/           # 問題データ
-scripts/              # 自動確認と公開後確認
+scripts/              # 共通の自動確認と公開後確認
 .github/workflows/    # CI/CD
 ```
 
@@ -24,7 +26,6 @@ scripts/              # 自動確認と公開後確認
 
 ```text
 node scripts/validate.mjs
-node scripts/validate-g-test.mjs
 ```
 
-Pull Requestと`main`で検証し、成功した`main`だけをGitHub Pagesへ公開します。公開後は本番URLのファイルがデプロイ元と一致することも確認します。
+Pull Requestと`main`で共通検証を実行し、失敗時はその場で停止します。成功した`main`だけをGitHub Pagesへ公開し、公開後は本番URLの全Web・データファイルがデプロイ元と完全一致することを1回で確認します。不一致や取得失敗は再試行せず失敗にします。
