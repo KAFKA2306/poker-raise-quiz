@@ -3,6 +3,7 @@
   "title": "2024年度秋期 午前",
   "version": "2024-autumn-80-v1",
   "status": "complete",
+  "referenceOnly": false,
   "answerKey": "ウエウアウイウウウイウエエイアウアエウウウウウウイエイウイイイウウウエアウウアウウイエイイアウイイエウエアエエウイアアウイエイイウアエウウウウアイウイイアイアウ",
   "coverage": { "from": 1, "to": 80, "count": 80, "total": 80 },
   "source": {
