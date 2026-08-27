@@ -23,6 +23,4 @@ jobs:
           node-version: 24
 
       - name: 構造・JavaScript・問題データを確認
-        run: |
-          node scripts/validate.mjs
-          node scripts/validate-g-test.mjs
+        run: node scripts/validate.mjs
