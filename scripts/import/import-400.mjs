@@ -163,44 +163,48 @@ for (const session of sourceConfig.sessions) {
       cursor += 1;
       if (questionNo > 80) return;
 
-      const sourceName = `ap_${session.externalSlug}_q${sourcePad(questionNo)}.md`;
-      const sourceUrl = `${sourceBaseUrl}/${session.externalSlug}/${sourceName}`;
-      const markdown = await fetchWithRetry(sourceUrl);
-      const { values, body } = parseFrontMatter(markdown);
+      try {
+        const sourceName = `ap_${session.externalSlug}_q${sourcePad(questionNo)}.md`;
+        const sourceUrl = `${sourceBaseUrl}/${session.externalSlug}/${sourceName}`;
+        const markdown = await fetchWithRetry(sourceUrl);
+        const { values, body } = parseFrontMatter(markdown);
 
-      const sourceQuestionNo = Number(values.question_no);
-      if (sourceQuestionNo !== questionNo) throw new Error(`${session.id} 問${questionNo}: 転記元の問題番号が一致しません`);
-      const sourceAnswer = values.answer;
-      const officialAnswer = answerKey[questionNo - 1];
-      if (sourceAnswer !== officialAnswer) {
-        throw new Error(`${session.id} 問${questionNo}: 転記元の正答 ${sourceAnswer} とIPA公式正答 ${officialAnswer} が一致しません`);
+        const sourceQuestionNo = Number(values.question_no);
+        if (sourceQuestionNo !== questionNo) throw new Error("転記元の問題番号が一致しません");
+        const sourceAnswer = values.answer;
+        const officialAnswer = answerKey[questionNo - 1];
+        if (sourceAnswer !== officialAnswer) {
+          throw new Error(`転記元の正答 ${sourceAnswer} とIPA公式正答 ${officialAnswer} が一致しません`);
+        }
+
+        const questionSection = section(body, "問題文", "参照画像");
+        const imageSection = section(body, "参照画像", "正解");
+        const { stem, choices } = parseQuestion(questionSection);
+        const title = await rewriteStemWithImages({
+          stem,
+          images: realImageReferences(imageSection),
+          session,
+          sourceBaseUrl,
+          sessionDir,
+        });
+
+        questions[questionNo - 1] = {
+          type: "radiogroup",
+          name: `q${pad(questionNo)}`,
+          questionNo,
+          title,
+          choices,
+          correctAnswer: officialAnswer,
+          category: values.category || null,
+          subcategory: values.subcategory || null,
+          provenance: {
+            canonicalPublisher: "独立行政法人情報処理推進機構（IPA）",
+            transcriptionInput: `sk0517/ExamPractice:${sourceName}`,
+          },
+        };
+      } catch (error) {
+        throw new Error(`${session.id} 問${questionNo}: ${error.message}`, { cause: error });
       }
-
-      const questionSection = section(body, "問題文", "参照画像");
-      const imageSection = section(body, "参照画像", "正解");
-      const { stem, choices } = parseQuestion(questionSection);
-      const title = await rewriteStemWithImages({
-        stem,
-        images: realImageReferences(imageSection),
-        session,
-        sourceBaseUrl,
-        sessionDir,
-      });
-
-      questions[questionNo - 1] = {
-        type: "radiogroup",
-        name: `q${pad(questionNo)}`,
-        questionNo,
-        title,
-        choices,
-        correctAnswer: officialAnswer,
-        category: values.category || null,
-        subcategory: values.subcategory || null,
-        provenance: {
-          canonicalPublisher: "独立行政法人情報処理推進機構（IPA）",
-          transcriptionInput: `sk0517/ExamPractice:${sourceName}`,
-        },
-      };
     }
   };
 
