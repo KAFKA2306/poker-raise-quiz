@@ -29,13 +29,14 @@ export const loadQuizCatalog = async () => {
   return { defaultExam: catalog.defaultExam, exams };
 };
 
-export const loadQuiz = async (examEntry, sessionId = examEntry.exam.defaultSession) => {
+export const loadQuiz = async (examEntry, sessionId) => {
   const { exam, examUrl } = examEntry;
   if (!sessionId) throw new Error(`試験回が指定されていません: ${exam.id}`);
   const sessionEntry = requiredEntry(exam.sessions, sessionId, "試験回");
   const sessionUrl = new URL(sessionEntry.manifest, examUrl);
   const session = await readJson(sessionUrl);
   if (session.id !== sessionEntry.id) throw new Error(`試験回IDが一致しません: index=${sessionEntry.id}, manifest=${session.id}`);
+  if (typeof session.referenceOnly !== "boolean") throw new Error(`referenceOnly を明示してください: ${session.id}`);
   if (!Array.isArray(session.modules) || session.modules.length === 0) throw new Error(`問題モジュールがありません: ${session.id}`);
 
   const elements = [];
@@ -54,7 +55,7 @@ export const loadQuiz = async (examEntry, sessionId = examEntry.exam.defaultSess
       source: session.source,
       coverage: session.coverage,
       status: session.status,
-      referenceOnly: session.referenceOnly === true,
+      referenceOnly: session.referenceOnly,
     },
     elements,
   };
