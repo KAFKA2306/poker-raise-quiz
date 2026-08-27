@@ -1,0 +1,45 @@
+{
+  "sessions": [
+    {
+      "id": "2023-autumn",
+      "title": "2023年度秋期 午前",
+      "externalSlug": "2023_autumn_am",
+      "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+      "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_ans.pdf"
+    },
+    {
+      "id": "2024-spring",
+      "title": "2024年度春期 午前",
+      "externalSlug": "2024_spring_am",
+      "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+      "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_ans.pdf"
+    },
+    {
+      "id": "2024-autumn",
+      "title": "2024年度秋期 午前",
+      "externalSlug": "2024_autumn_am",
+      "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+      "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_ans.pdf"
+    },
+    {
+      "id": "2025-spring",
+      "title": "2025年度春期 午前",
+      "externalSlug": "2025_spring_am",
+      "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+      "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_ans.pdf"
+    },
+    {
+      "id": "2025-autumn",
+      "title": "2025年度秋期 午前",
+      "externalSlug": "2025_autumn_am",
+      "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+      "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf"
+    }
+  ],
+  "transcriptionInput": {
+    "repository": "sk0517/ExamPractice",
+    "ref": "main",
+    "baseRawUrl": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam",
+    "usage": "問題文・選択肢の入力補助だけに使用し、第三者の解説文は取り込まない。正答はIPA公式解答キーで照合する。"
+  }
+}
