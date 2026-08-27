@@ -12,6 +12,13 @@ const requiredEntry = (entries, id, label) => {
   return entry;
 };
 
+const officialTitle = {
+  reform: "制度見直し",
+  examPlan: "試験構成と開始予定",
+  syllabus: "シラバス",
+  sampleQuestions: "サンプル問題",
+};
+
 export const loadQuizCatalog = async () => {
   const dataRoot = new URL("./data/", document.baseURI);
   const catalogUrl = new URL("catalog.json", dataRoot);
@@ -69,7 +76,7 @@ export const loadQuiz = async (examEntry) => {
         syllabus: exam.syllabus,
         sampleQuestions: exam.sampleQuestions,
         sources: Object.entries(exam.officialUrls || {}).map(([key, url]) => ({
-          title: key,
+          title: officialTitle[key] || key,
           url,
         })),
       },
