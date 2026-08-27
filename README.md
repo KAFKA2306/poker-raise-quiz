@@ -8,15 +8,9 @@
 - `data/questions.json` を差し替えるだけで別テーマに再利用
 - ビルド工程、バックエンド、ログインは不要
 
-## Run
+## Open
 
-静的HTTPサーバでこのディレクトリを配信してください。
-
-```sh
-python -m http.server 8000
-```
-
-Pythonはアプリ実装には使っていません。上記はローカル確認用の静的HTTPサーバ例です。任意の静的HTTPサーバで構いません。
+GitHub Pagesなど、任意の静的HTTP配信でそのまま動きます。ビルドは不要です。
 
 ## Question data
 
@@ -36,6 +30,8 @@ Pythonはアプリ実装には使っていません。上記はローカル確�
   "source": "Optional source"
 }
 ```
+
+`explanation` と `source` は任意です。問題内容や正答を変更したときは `dataset.version` も更新すると、以前の回答キャッシュと分離できます。
 
 問題本文はブラウザ保存しません。ブラウザには問題ID・ユーザー回答・正誤だけを保存します。
 
