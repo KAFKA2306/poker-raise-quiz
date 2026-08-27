@@ -1,8 +1,6 @@
 const readJson = async (url) => {
   const response = await fetch(url, { cache: "no-store" });
-  if (!response.ok) {
-    throw new Error(`読み込みに失敗しました: ${url} (${response.status})`);
-  }
+  if (!response.ok) throw new Error(`読み込みに失敗しました: ${url} (${response.status})`);
   return response.json();
 };
 
@@ -12,16 +10,15 @@ const requiredEntry = (entries, id, label) => {
   return entry;
 };
 
-export const loadDefaultQuiz = async () => {
+export const loadQuiz = async (requestedSessionId = null) => {
   const dataRoot = new URL("./data/", document.baseURI);
-  const catalogUrl = new URL("catalog.json", dataRoot);
-  const catalog = await readJson(catalogUrl);
-
+  const catalog = await readJson(new URL("catalog.json", dataRoot));
   const examEntry = requiredEntry(catalog.exams || [], catalog.defaultExam, "既定の試験");
   const examUrl = new URL(examEntry.manifest, dataRoot);
   const exam = await readJson(examUrl);
 
-  const sessionEntry = requiredEntry(exam.sessions || [], exam.defaultSession, "既定の試験回");
+  const sessionId = requestedSessionId || exam.defaultSession;
+  const sessionEntry = requiredEntry(exam.sessions || [], sessionId, "試験回");
   const sessionUrl = new URL(sessionEntry.manifest, examUrl);
   const session = await readJson(sessionUrl);
 
@@ -29,7 +26,12 @@ export const loadDefaultQuiz = async () => {
   for (const modulePath of session.modules || []) {
     const moduleUrl = new URL(modulePath, sessionUrl);
     const module = await readJson(moduleUrl);
-    elements.push(...(module.elements || []));
+    for (const element of module.elements || []) {
+      elements.push({
+        ...element,
+        images: (element.images || []).map((imagePath) => new URL(imagePath, moduleUrl).href),
+      });
+    }
   }
 
   return {
@@ -41,6 +43,8 @@ export const loadDefaultQuiz = async () => {
       coverage: session.coverage,
       status: session.status,
     },
+    sessions: exam.sessions || [],
+    selectedSessionId: session.id,
     elements,
   };
 };
