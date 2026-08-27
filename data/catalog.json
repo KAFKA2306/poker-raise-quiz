@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "defaultExam": "ap",
+  "exams": [
+    {
+      "id": "ap",
+      "manifest": "exams/applied-information/manifest.json"
+    }
+  ]
+}

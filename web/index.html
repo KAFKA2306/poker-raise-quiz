@@ -3,23 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="四択を1回タップするだけの静かなクイズ画面">
   <title>Quiz</title>
   <link rel="stylesheet" href="https://unpkg.com/survey-core@3.0.2/survey-core.min.css">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
   <main class="shell">
     <header class="header">
-      <h1 id="title">Quiz</h1>
-      <span id="summary">回答済み 0 / 0</span>
-      <button id="copy-all" class="copy-button" type="button" disabled>回答をChatGPT用にコピー</button>
-      <span id="copy-status" role="status" aria-live="polite"></span>
+      <div class="heading">
+        <h1 id="title">Quiz</h1>
+        <p id="summary">読み込み中</p>
+      </div>
+      <div class="tools">
+        <button id="copy-all" class="copy-button" type="button" disabled>回答をChatGPT用にコピー</button>
+        <span id="copy-status" role="status" aria-live="polite"></span>
+      </div>
     </header>
     <section id="quiz" aria-label="クイズ"></section>
   </main>
 
   <script src="https://unpkg.com/survey-core@3.0.2/survey.core.min.js"></script>
   <script src="https://unpkg.com/survey-js-ui@3.0.2/survey-js-ui.min.js"></script>
-  <script src="./app.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
