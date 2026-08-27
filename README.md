@@ -1,40 +1,81 @@
 # One-tap Quiz
 
-静かなタブレット向け四択クイズです。操作は選択肢を1回タップするだけです。
+https://kafka2306.github.io/poker-raise-quiz/
 
-- タップ直後に正誤と正答を表示
-- 回答済み問題はブラウザに保存して再読込後も復元
-- 保存済みの全回答をChatGPT向けMarkdownとして一括コピー
-- `data/questions.json` を差し替えるだけで別テーマに再利用
-- ビルド工程、バックエンド、ログインは不要
+四択を1回タップするだけの、静かなタブレット向けクイズです。
 
-## Open
+回答すると、その場で正解・不正解と正答を表示します。回答済みの状態はブラウザに保存され、再読み込みしても残ります。保存済みの回答は、ChatGPTへ貼り付けやすい文章として一括コピーできます。
 
-GitHub Pagesなど、任意の静的HTTP配信でそのまま動きます。ビルドは不要です。
+## リポジトリ構造
 
-## Question data
+役割ごとにディレクトリを分けています。
 
-正準問題データは [`data/questions.json`](data/questions.json) です。通常の四択は SurveyJS の `radiogroup` と `correctAnswer` を使います。
-
-```json
-{
-  "type": "radiogroup",
-  "name": "q001",
-  "title": "Question text",
-  "choices": [
-    { "value": "A", "text": "Choice A" },
-    { "value": "B", "text": "Choice B" }
-  ],
-  "correctAnswer": "B",
-  "explanation": "Optional explanation",
-  "source": "Optional source"
-}
+```text
+README.md
+web/
+  index.html
+  css/
+    app.css
+  js/
+    main.js
+    quiz/
+      data.js
+      session.js
+      export.js
+data/
+  catalog.json
+  exams/
+    applied-information/
+      manifest.json
+      sessions/
+        2025-autumn/
+          manifest.json
+          modules/
+            q044-q053.json
+scripts/
+  validate.mjs
+.github/
+  workflows/
+    ci.yml
+    pages.yml
 ```
 
-`explanation` と `source` は任意です。問題内容や正答を変更したときは `dataset.version` も更新すると、以前の回答キャッシュと分離できます。
+- `web/`：ブラウザで使う画面と処理
+- `data/`：本番の問題データ
+- `scripts/`：自動確認に使う処理
+- `.github/workflows/`：自動確認とGitHub Pages公開
 
-問題本文はブラウザ保存しません。ブラウザには問題ID・ユーザー回答・正誤だけを保存します。
+## 問題データ
 
-## Previous poker trainer
+問題データは、試験 → 試験回 → モジュールの順で分けています。
 
-旧ポーカートレーナーは `archive/poker-raise-quiz-2026-08-28` ブランチに保存しています。
+最初の本番データは、IPAが公開した2025年度秋期 応用情報技術者試験 午前の問44〜53です。現在は10問だけの部分収録であり、全80問を収録済みとは扱いません。
+
+問題冊子
+https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf
+
+解答例
+https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf
+
+サンプル問題、架空問題、動作確認用のダミー問題は `main` の本番データに置きません。第三者サイトの解説文も収録しません。
+
+新しい年度や別の試験を追加するときは、`data/` に新しいmanifestと問題モジュールを追加します。Web側に試験名や年度を直接書く必要はありません。
+
+## 自動確認と公開
+
+Pull Requestと`main`への変更では、GitHub Actionsが次を自動確認します。
+
+- ディレクトリ構造
+- JavaScriptの文法
+- manifestから問題モジュールまでの参照
+- 四択問題の必須項目
+- 正答が選択肢に含まれていること
+- 本番データ配下にサンプル用データがないこと
+
+`main` の自動確認に成功したコミットだけをGitHub Pagesへ公開します。
+
+## 旧ポーカークイズ
+
+置き換え前のポーカークイズは、次のブランチに保存しています。
+
+`archive/poker-raise-quiz-2026-08-28`
