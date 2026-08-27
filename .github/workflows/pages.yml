@@ -39,8 +39,14 @@ jobs:
         with:
           node-version: 24
 
-      - name: 公開前に同じ内容を再確認
+      - name: 公開前に構造・データを再確認
         run: node scripts/validate.mjs
+
+      - name: 公開前にfail-fast契約を再確認
+        run: node scripts/validate-fail-fast.mjs
+
+      - name: 公開前にブラウザ用データローダーと回答保存を実動確認
+        run: node scripts/test-runtime.mjs
 
       - name: 公開用ファイルをまとめる
         shell: bash
