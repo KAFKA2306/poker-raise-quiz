@@ -88,14 +88,18 @@ const renderReferenceLink = (dataset) => {
   link.hidden = false;
 };
 
+const clearQuizRenderer = () => {
+  const quiz = $("#quiz");
+  window.SurveyUI.unmountComponentAtNode(quiz);
+  quiz.replaceChildren();
+};
+
 const renderQuestions = (dataset, elements) => {
   const byName = Object.fromEntries(elements.map((element) => [element.name, element]));
   if (Object.keys(byName).length !== elements.length) throw new Error("問題IDが重複しています");
   const storageKey = storageKeyFor(dataset);
   const state = loadSession(storageKey);
   activeQuiz = { dataset, elements, state };
-  const quiz = $("#quiz");
-  quiz.replaceChildren();
 
   const survey = new Survey.Model({ elements: elements.map(toSurveyElement), showQuestionNumbers: "off", showCompleteButton: false, showNavigationButtons: false });
   survey.onTextMarkdown.add((_sender, options) => { options.html = markdownRenderer.render(options.text); });
@@ -128,7 +132,7 @@ const renderQuestions = (dataset, elements) => {
     updateSummary(dataset, elements, state);
   });
 
-  survey.render(quiz);
+  window.SurveyUI.renderSurvey(survey, $("#quiz"));
   updateSummary(dataset, elements, state);
 };
 
@@ -160,10 +164,10 @@ const renderSelectedQuiz = async (generation, examEntry, sessionId) => {
 
   activeQuiz = null;
   resetReferenceLink();
+  clearQuizRenderer();
   $("#title").textContent = `${examEntry.title} ${sessionEntry.title}`;
   $("#summary").textContent = `読み込み中: ${examEntry.id} / ${sessionId}`;
   $("#copy-all").disabled = true;
-  $("#quiz").replaceChildren();
 
   const { dataset, elements } = await loadQuiz(examEntry, sessionId);
   if (generation !== renderGeneration) return;
@@ -192,7 +196,8 @@ const startSelectedQuizRender = () => {
 
 const main = async () => {
   if (typeof window.markdownit !== "function") throw new Error("Markdown表示ライブラリを読み込めません");
-  if (!window.Survey || typeof window.Survey.Model !== "function") throw new Error("SurveyJSを読み込めません");
+  if (!window.Survey || typeof window.Survey.Model !== "function") throw new Error("SurveyJS coreを読み込めません");
+  if (!window.SurveyUI || typeof window.SurveyUI.renderSurvey !== "function" || typeof window.SurveyUI.unmountComponentAtNode !== "function") throw new Error("SurveyJS UI rendererを読み込めません");
   markdownRenderer = window.markdownit({ html: false, linkify: true, breaks: true });
 
   catalog = await loadQuizCatalog();
