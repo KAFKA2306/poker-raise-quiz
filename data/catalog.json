@@ -2,25 +2,11 @@
   "version": 1,
   "defaultExam": "ap",
   "exams": [
-    {
-      "id": "ap",
-      "manifest": "exams/applied-information/manifest.json"
-    },
-    {
-      "id": "statistics-grade-2",
-      "manifest": "exams/statistics-grade-2/manifest.json"
-    },
-    {
-      "id": "pds-management",
-      "manifest": "exams/professional-digital-skills/management/manifest.json"
-    },
-    {
-      "id": "pds-data-ai",
-      "manifest": "exams/professional-digital-skills/data-ai/manifest.json"
-    },
-    {
-      "id": "pds-system",
-      "manifest": "exams/professional-digital-skills/system/manifest.json"
-    }
+    { "id": "ap", "manifest": "exams/applied-information/manifest.json" },
+    { "id": "g-test", "manifest": "exams/g-test/manifest.json" },
+    { "id": "statistics-grade-2", "manifest": "exams/statistics-grade-2/manifest.json" },
+    { "id": "pds-management", "manifest": "exams/professional-digital-skills/management/manifest.json" },
+    { "id": "pds-data-ai", "manifest": "exams/professional-digital-skills/data-ai/manifest.json" },
+    { "id": "pds-system", "manifest": "exams/professional-digital-skills/system/manifest.json" }
   ]
 }
