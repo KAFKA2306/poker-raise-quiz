@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "auditedAt": "2026-08-28",
+  "account": "https://github.com/sk0517?tab=repositories",
+  "repositories": [
+    {
+      "repository": "sk0517/oyojoho_am",
+      "url": "https://github.com/sk0517/oyojoho_am",
+      "classification": "candidate-input",
+      "exam": "応用情報技術者試験",
+      "period": "午前",
+      "coverage": "2015年度春期〜2025年度秋期（2020年度春期を除く21回）",
+      "questionCount": 1680,
+      "format": "四肢択一",
+      "hasImages": true,
+      "hasAnswers": true,
+      "decision": "採用",
+      "reason": "21回×80問を機械的に取り込める。第三者の解説・難易度・タグは使わず、問題文・選択肢・図表の入力補助だけに使う。正答はIPA公式解答PDFと自動照合する。"
+    },
+    {
+      "repository": "sk0517/ExamPractice",
+      "url": "https://github.com/sk0517/ExamPractice",
+      "classification": "overlap",
+      "exam": "応用情報技術者試験",
+      "period": "午前",
+      "coverage": "2023年度秋期、2024年度春期・秋期、2025年度春期・秋期",
+      "questionCount": 400,
+      "format": "四肢択一",
+      "hasImages": true,
+      "hasAnswers": true,
+      "decision": "重複のため別収録しない",
+      "reason": "oyojoho_amの21回に全て含まれるため、同じ本試験問題を二重登録しない。"
+    },
+    {
+      "repository": "sk0517/PmExam",
+      "url": "https://github.com/sk0517/PmExam",
+      "classification": "different-question-type",
+      "exam": "応用情報技術者試験",
+      "period": "午後",
+      "coverage": "2015年度〜2025年度（2020年度春期を除く21回）",
+      "questionCount": 231,
+      "format": "記述式を含む午後問題",
+      "hasImages": true,
+      "hasAnswers": true,
+      "decision": "現行四択UIには収録しない",
+      "reason": "午後問題を四択へ変換すると本試験形式を壊すため。問題形式対応は別責務とする。"
+    },
+    {
+      "repository": "sk0517/sample_20240408",
+      "url": "https://github.com/sk0517/sample_20240408",
+      "classification": "empty",
+      "decision": "対象外",
+      "reason": "公開リポジトリに問題データがない。"
+    },
+    {
+      "repository": "sk0517/test",
+      "url": "https://github.com/sk0517/test",
+      "classification": "empty",
+      "decision": "対象外",
+      "reason": "公開リポジトリに問題データがない。"
+    }
+  ]
+}
