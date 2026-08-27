@@ -1,7 +1,12 @@
 from __future__ import annotations
 
+import csv
+import io
 import json
 import re
+import subprocess
+import tempfile
+import unicodedata
 import urllib.request
 from pathlib import Path
 
@@ -10,6 +15,7 @@ import fitz
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE_CONFIG = ROOT / "data" / "sources" / "ipa" / "sessions.json"
 CACHE_ROOT = ROOT / ".cache" / "official-question-crops"
+OCR_SCALE = 2.0
 
 
 def download(url: str, destination: Path) -> None:
@@ -19,7 +25,17 @@ def download(url: str, destination: Path) -> None:
         destination.write_bytes(response.read())
 
 
-def question_headers(page: fitz.Page) -> list[tuple[int, float]]:
+def normalize(text: str) -> str:
+    return unicodedata.normalize("NFKC", text).replace(" ", "").replace("　", "")
+
+
+def match_question_header(text: str) -> int | None:
+    text = normalize(text)
+    match = re.match(r"^[問間閣門][:\-]?([1-9]|[1-7][0-9]|80)(?:\D|$)", text)
+    return int(match.group(1)) if match else None
+
+
+def native_headers(page: fitz.Page) -> list[tuple[int, float]]:
     lines: dict[tuple[int, int], list[tuple[float, float, str]]] = {}
     for word in page.get_text("words", sort=True):
         x0, y0, _x1, _y1, text, block_no, line_no, _word_no = word
@@ -28,11 +44,53 @@ def question_headers(page: fitz.Page) -> list[tuple[int, float]]:
     found: list[tuple[int, float]] = []
     for words in lines.values():
         words.sort(key=lambda item: item[0])
-        text = "".join(item[2] for item in words).strip()
-        match = re.match(r"^問\s*([1-9]|[1-7][0-9]|80)(?:\D|$)", text)
-        if match:
-            found.append((int(match.group(1)), min(item[1] for item in words)))
+        question_no = match_question_header("".join(item[2] for item in words))
+        if question_no is not None:
+            found.append((question_no, min(item[1] for item in words)))
     return sorted(found, key=lambda item: item[1])
+
+
+def ocr_headers(page: fitz.Page) -> list[tuple[int, float]]:
+    pixmap = page.get_pixmap(matrix=fitz.Matrix(OCR_SCALE, OCR_SCALE), alpha=False)
+    with tempfile.TemporaryDirectory() as temporary_directory:
+        image_path = Path(temporary_directory) / "page.png"
+        pixmap.save(image_path)
+        result = subprocess.run(
+            ["tesseract", str(image_path), "stdout", "-l", "jpn+eng", "--psm", "6", "tsv"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+
+    rows = csv.DictReader(io.StringIO(result.stdout), delimiter="\t")
+    lines: dict[tuple[str, str, str, str], list[dict[str, str]]] = {}
+    for row in rows:
+        text = (row.get("text") or "").strip()
+        if not text:
+            continue
+        key = (row["page_num"], row["block_num"], row["par_num"], row["line_num"])
+        lines.setdefault(key, []).append(row)
+
+    found: list[tuple[int, float]] = []
+    page_width_pixels = pixmap.width
+    for words in lines.values():
+        words.sort(key=lambda row: int(row["left"]))
+        left = min(int(row["left"]) for row in words)
+        if left > page_width_pixels * 0.22:
+            continue
+        line_text = "".join(row["text"] for row in words)
+        question_no = match_question_header(line_text)
+        if question_no is None:
+            continue
+        top_pixels = min(int(row["top"]) for row in words)
+        found.append((question_no, top_pixels / OCR_SCALE))
+
+    return sorted(found, key=lambda item: item[1])
+
+
+def question_headers(page: fitz.Page) -> list[tuple[int, float]]:
+    found = native_headers(page)
+    return found if found else ocr_headers(page)
 
 
 def render_session(session: dict) -> None:
@@ -43,19 +101,23 @@ def render_session(session: dict) -> None:
     download(session["questionPdfUrl"], pdf_path)
 
     document = fitz.open(pdf_path)
+    page_headers: dict[int, list[tuple[int, float]]] = {}
     locations: dict[int, tuple[int, float, float]] = {}
 
     for page_index, page in enumerate(document):
         headers = question_headers(page)
+        if headers:
+            page_headers[page_index] = headers
         for index, (question_no, y0) in enumerate(headers):
             if question_no in locations:
                 continue
-            y1 = headers[index + 1][1] - 7 if index + 1 < len(headers) else page.rect.height - 18
-            locations[question_no] = (page_index, max(12, y0 - 7), max(y0 + 20, y1))
+            y1 = headers[index + 1][1] - 6 if index + 1 < len(headers) else page.rect.height - 18
+            locations[question_no] = (page_index, max(12, y0 - 6), max(y0 + 20, y1))
 
     missing = [number for number in range(1, 81) if number not in locations]
     if missing:
-        raise RuntimeError(f"{session_id}: 問題位置を検出できません: {missing}")
+        detected = {page + 1: [number for number, _y in headers] for page, headers in page_headers.items()}
+        raise RuntimeError(f"{session_id}: 問題位置を検出できません: {missing}; 検出結果={detected}")
 
     matrix = fitz.Matrix(2.0, 2.0)
     for question_no in range(1, 81):
