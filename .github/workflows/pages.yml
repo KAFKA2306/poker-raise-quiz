@@ -39,8 +39,11 @@ jobs:
         with:
           node-version: 24
 
-      - name: 公開前に同じ内容を再確認
+      - name: 公開前に構造・問題データを再確認
         run: node scripts/validate.mjs
+
+      - name: 公開前に400問とG検定の実動経路を再確認
+        run: node scripts/test-runtime.mjs
 
       - name: 公開用ファイルをまとめる
         shell: bash
