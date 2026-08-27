@@ -13,6 +13,26 @@ const markdownRenderer = window.markdownit({ html: false, linkify: true, breaks:
 let activeQuiz = null;
 let catalog = null;
 
+const renderFatal = (error) => {
+  const failure = error instanceof Error ? error : new Error(String(error));
+  const output = document.createElement("pre");
+  output.className = "fatal-error";
+  output.textContent = `FATAL ERROR\n\n${failure.stack}`;
+  document.body.replaceChildren(output);
+};
+
+window.addEventListener("unhandledrejection", (event) => {
+  renderFatal(event.reason);
+});
+
+window.addEventListener("error", (event) => {
+  if (event.error instanceof Error) {
+    renderFatal(event.error);
+    return;
+  }
+  throw new Error(event.message);
+});
+
 const choiceText = (element, value) => {
   const choice = element.choices.find((item) => item.value === value);
   if (!choice) throw new Error(`選択肢が見つかりません: ${element.name}=${value}`);
@@ -43,6 +63,16 @@ const toSurveyElement = (element) => {
     title: `問${questionNo}　${element.title}`,
     choices: element.choices.map((choice) => ({ value: choice.value, text: `${choice.value}　${choice.text}` })),
   };
+};
+
+const renderReferenceLink = (dataset) => {
+  const link = $("#reference-link");
+  link.hidden = true;
+  link.removeAttribute("href");
+  if (!dataset.referenceOnly) return;
+  if (!dataset.source.referenceUrl) throw new Error(`参照専用なのに referenceUrl がありません: ${dataset.id}`);
+  link.href = dataset.source.referenceUrl;
+  link.hidden = false;
 };
 
 const renderQuestions = (dataset, elements) => {
@@ -90,8 +120,9 @@ const renderQuestions = (dataset, elements) => {
 };
 
 const currentExam = () => {
-  const exam = catalog.exams.find((item) => item.id === $("#exam-select").value);
-  if (!exam) throw new Error(`試験が見つかりません: ${$("#exam-select").value}`);
+  const examId = $("#exam-select").value;
+  const exam = catalog.exams.find((item) => item.id === examId);
+  if (!exam) throw new Error(`試験が見つかりません: ${examId}`);
   return exam;
 };
 
@@ -99,24 +130,28 @@ const populateSessions = (examEntry) => {
   const select = $("#session-select");
   select.replaceChildren();
   for (const session of examEntry.exam.sessions) {
+    if (!session.title) throw new Error(`試験回の表示名がありません: ${session.id}`);
     const option = document.createElement("option");
     option.value = session.id;
-    option.textContent = session.title || session.id;
+    option.textContent = session.title;
     select.append(option);
   }
   select.value = examEntry.exam.defaultSession;
+  if (select.value !== examEntry.exam.defaultSession) throw new Error(`既定の試験回を選択できません: ${examEntry.exam.defaultSession}`);
   select.disabled = examEntry.exam.sessions.length <= 1;
 };
 
 const renderSelectedQuiz = async () => {
   const examEntry = currentExam();
   const sessionId = $("#session-select").value;
+  if (!sessionId) throw new Error(`試験回が選択されていません: ${examEntry.id}`);
   $("#summary").textContent = "読み込み中";
   $("#copy-all").disabled = true;
   $("#quiz").replaceChildren();
   const { dataset, elements } = await loadQuiz(examEntry, sessionId);
   document.title = dataset.title;
   $("#title").textContent = dataset.title;
+  renderReferenceLink(dataset);
   renderQuestions(dataset, elements);
 };
 
@@ -130,6 +165,7 @@ const main = async () => {
     examSelect.append(option);
   }
   examSelect.value = catalog.defaultExam;
+  if (examSelect.value !== catalog.defaultExam) throw new Error(`既定の試験を選択できません: ${catalog.defaultExam}`);
   populateSessions(currentExam());
   await renderSelectedQuiz();
 
@@ -137,7 +173,9 @@ const main = async () => {
     populateSessions(currentExam());
     await renderSelectedQuiz();
   });
-  $("#session-select").addEventListener("change", renderSelectedQuiz);
+  $("#session-select").addEventListener("change", async () => {
+    await renderSelectedQuiz();
+  });
 
   $("#copy-all").addEventListener("click", async () => {
     if (!activeQuiz) throw new Error("有効な問題集がありません");
@@ -147,9 +185,4 @@ const main = async () => {
   });
 };
 
-main().catch((error) => {
-  $("#summary").textContent = `致命的エラー: ${error.message}`;
-  $("#copy-all").disabled = true;
-  $("#quiz").textContent = "問題データが壊れています。開発者コンソールを確認してください。";
-  throw error;
-});
+main();
