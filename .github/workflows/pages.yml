@@ -1,0 +1,65 @@
+name: GitHub Pages公開
+
+on:
+  workflow_run:
+    workflows:
+      - 自動確認
+    types:
+      - completed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: 確認済みのmainを公開
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'push' &&
+      github.event.workflow_run.head_branch == 'main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 自動確認済みのコミットを取得
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Node.js 24を用意
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: 公開前に同じ内容を再確認
+        run: node scripts/validate.mjs
+
+      - name: 公開用ファイルをまとめる
+        shell: bash
+        run: |
+          set -euo pipefail
+          site="${RUNNER_TEMP}/site"
+          mkdir -p "$site"
+          cp -R web/. "$site/"
+          cp -R data "$site/data"
+          touch "$site/.nojekyll"
+
+      - name: GitHub Pagesを設定
+        uses: actions/configure-pages@v6
+
+      - name: 公開用ファイルをアップロード
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ runner.temp }}/site
+
+      - name: GitHub Pagesへ公開
+        id: deployment
+        uses: actions/deploy-pages@v5
