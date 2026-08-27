@@ -15,6 +15,17 @@ body {
   color: #24211d;
 }
 
+.fatal-error {
+  min-height: 100vh;
+  margin: 0;
+  padding: 24px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #2b0000;
+  color: #fff;
+  font: 700 15px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
 .shell {
   width: min(960px, 100%);
   margin: 0 auto;
