@@ -1,15 +1,22 @@
 const STORAGE_PREFIX = "one-tap-quiz";
 
-export const storageKeyFor = (dataset) =>
-  `${STORAGE_PREFIX}:${dataset.id}:${dataset.version || "1"}`;
+const assert = (condition, message) => {
+  if (!condition) throw new Error(message);
+};
+
+export const storageKeyFor = (dataset) => {
+  assert(typeof dataset.id === "string" && dataset.id, "問題集IDがありません");
+  assert(typeof dataset.version === "string" && dataset.version, "問題集versionがありません");
+  return `${STORAGE_PREFIX}:${dataset.id}:${dataset.version}`;
+};
 
 export const loadSession = (key) => {
-  try {
-    const value = JSON.parse(localStorage.getItem(key) || "{}");
-    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
-  } catch {
-    return {};
-  }
+  const raw = localStorage.getItem(key);
+  if (raw === null) return {};
+
+  const value = JSON.parse(raw);
+  assert(value && typeof value === "object" && !Array.isArray(value), `回答履歴が壊れています: ${key}`);
+  return value;
 };
 
 export const saveSession = (key, state) => {
