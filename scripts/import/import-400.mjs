@@ -127,8 +127,13 @@ const appendImages = (stem, images) => {
   return `${stem.trim()}\n\n${markdown}`.trim();
 };
 
-const decodeAttribute = (value) => value
+const decodeHtml = (value) => String(value)
+  .replace(/&#x([0-9a-f]+);/gi, (_match, hex) => String.fromCodePoint(Number.parseInt(hex, 16)))
+  .replace(/&#(\d+);/g, (_match, decimal) => String.fromCodePoint(Number.parseInt(decimal, 10)))
+  .replaceAll("&nbsp;", " ")
   .replaceAll("&amp;", "&")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&gt;", ">")
   .replaceAll("&#39;", "'")
   .replaceAll("&quot;", '"');
 
@@ -136,6 +141,42 @@ const exactImageName = (questionNo, suffix = "") => {
   const number = String(questionNo);
   const padded = number.padStart(2, "0");
   return new RegExp(`^(?:${number}|${padded})${suffix}\\.(?:png|gif|jpe?g|webp)$`, "i");
+};
+
+const htmlChoiceTexts = (html) => {
+  const labels = ["ア", "イ", "ウ", "エ"];
+  const marked = html
+    .replace(/<input\b[^>]*(?:value|aria-label|data-answer)=["']([アイウエ])["'][^>]*>/gi, "\n@@$1@@ ")
+    .replace(/<button\b[^>]*>\s*([アイウエ])\s*<\/button>/gi, "\n@@$1@@ ")
+    .replace(/<br\s*\/?\s*>/gi, "\n")
+    .replace(/<\/(?:li|p|div|tr|td|dd|dt|section)>/gi, "\n")
+    .replace(/<script\b[\s\S]*?<\/script>/gi, "")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, "");
+
+  const text = decodeHtml(marked)
+    .replaceAll("\r\n", "\n")
+    .replace(/[ \t　]+/g, " ");
+  const direct = [];
+  for (const line of text.split("\n")) {
+    const match = line.trim().match(/^@@([アイウエ])@@\s*(.+)$/);
+    if (match && match[2].trim()) direct.push({ value: match[1], text: match[2].trim() });
+  }
+  for (let index = 0; index <= direct.length - 4; index += 1) {
+    const candidate = direct.slice(index, index + 4);
+    if (candidate.every((choice, offset) => choice.value === labels[offset])) return candidate;
+  }
+
+  const fallback = [];
+  for (const line of text.split("\n")) {
+    const match = line.trim().match(/^([アイウエ])[.．:：)）\s　]+(.+)$/);
+    if (match && match[2].trim()) fallback.push({ value: match[1], text: match[2].trim() });
+  }
+  for (let index = 0; index <= fallback.length - 4; index += 1) {
+    const candidate = fallback.slice(index, index + 4);
+    if (candidate.every((choice, offset) => choice.value === labels[offset])) return candidate;
+  }
+  return null;
 };
 
 const fetchVisualAssets = async (session, questionNo, visualBaseUrl) => {
@@ -147,7 +188,7 @@ const fetchVisualAssets = async (session, questionNo, visualBaseUrl) => {
   const urls = [...html.matchAll(/<img\b[^>]*?src=["']([^"']+)["'][^>]*>/gi)]
     .map((match) => {
       try {
-        return new URL(decodeAttribute(match[1]), pageUrl).href;
+        return new URL(decodeHtml(match[1]), pageUrl).href;
       } catch {
         return null;
       }
@@ -160,12 +201,15 @@ const fetchVisualAssets = async (session, questionNo, visualBaseUrl) => {
   const choiceImages = Object.fromEntries(
     Object.entries(suffixes).map(([label, suffix]) => [label, byFile(exactImageName(questionNo, suffix))]),
   );
+  const choiceTexts = htmlChoiceTexts(html);
 
   return {
     pageUrl,
     main,
     choiceImages,
+    choiceTexts,
     hasAllChoiceImages: Object.values(choiceImages).every(Boolean),
+    hasAllChoiceTexts: Array.isArray(choiceTexts) && choiceTexts.length === 4,
   };
 };
 
@@ -185,6 +229,7 @@ const examSessions = [];
 let totalQuestions = 0;
 let graphicalChoiceQuestions = 0;
 let visualStemQuestions = 0;
+let recoveredTextChoiceQuestions = 0;
 
 for (const session of sourceConfig.sessions) {
   const answerKey = [...answerKeys[session.id]];
@@ -242,11 +287,14 @@ for (const session of sourceConfig.sessions) {
           graphicalChoiceQuestions += 1;
         } else if (parsed) {
           choices = parsed.choices;
+        } else if (visual?.hasAllChoiceTexts) {
+          choices = visual.choiceTexts;
+          recoveredTextChoiceQuestions += 1;
         } else if (sourceImages.length) {
           choices = ["ア", "イ", "ウ", "エ"].map((value) => ({ value, text: value }));
           graphicalChoiceQuestions += 1;
         } else {
-          throw new Error("図形選択肢を原問題の形で取得できません");
+          throw new Error("選択肢を原問題の形で取得できません");
         }
 
         questions[questionNo - 1] = {
@@ -295,7 +343,7 @@ for (const session of sourceConfig.sessions) {
       publisher: "独立行政法人情報処理推進機構（IPA）",
       questionPdfUrl: session.questionPdfUrl,
       answerPdfUrl: session.answerPdfUrl,
-      note: "問題文と文字選択肢は公開転記を入力補助として正規化し、図表は公開過去問ページの元問題図を参照した。正答はIPA公式解答キーと全80問照合した。第三者の解説文・解説画像は収録していない。",
+      note: "問題文と文字選択肢は公開転記又は公開過去問ページの問題欄だけを入力補助として正規化し、図表は元問題図を参照した。正答はIPA公式解答キーと全80問照合した。第三者の解説文・解説画像は収録していない。",
     },
     transcriptionInput: {
       repository: sourceConfig.transcriptionInput.repository,
@@ -319,4 +367,4 @@ await writeJson(path.join(examRoot, "manifest.json"), {
   sessions: examSessions,
 });
 
-console.log(`合計400問の本番データ生成に成功。図形選択肢=${graphicalChoiceQuestions}問、問題図=${visualStemQuestions}問`);
+console.log(`合計400問の本番データ生成に成功。図形選択肢=${graphicalChoiceQuestions}問、問題図=${visualStemQuestions}問、欠落文字選択肢の復元=${recoveredTextChoiceQuestions}問`);
