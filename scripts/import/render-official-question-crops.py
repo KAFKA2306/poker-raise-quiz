@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SOURCE_CONFIG = ROOT / "data" / "sources" / "ipa" / "sessions.json"
 CACHE_ROOT = ROOT / ".cache" / "official-question-crops"
 OCR_SCALE = 2.0
+HEADER_CHARS = "問間閣門"
 
 
 def download(url: str, destination: Path) -> None:
@@ -29,10 +30,22 @@ def normalize(text: str) -> str:
     return unicodedata.normalize("NFKC", text).replace(" ", "").replace("　", "")
 
 
-def match_question_header(text: str) -> int | None:
-    text = normalize(text)
-    match = re.match(r"^[問間閣門][:\-]?([1-9]|[1-7][0-9]|80)(?:\D|$)", text)
-    return int(match.group(1)) if match else None
+def valid_question_number(value: str) -> int | None:
+    if not re.fullmatch(r"\d{1,2}", value):
+        return None
+    number = int(value)
+    return number if 1 <= number <= 80 else None
+
+
+def number_from_tokens(tokens: list[str]) -> int | None:
+    cleaned = [normalize(token).strip() for token in tokens if normalize(token).strip()]
+    for index, token in enumerate(cleaned[:4]):
+        joined = re.fullmatch(rf"[{HEADER_CHARS}][:\-]?(\d{{1,2}})", token)
+        if joined:
+            return valid_question_number(joined.group(1))
+        if re.fullmatch(rf"[{HEADER_CHARS}][:\-]?", token) and index + 1 < len(cleaned):
+            return valid_question_number(re.sub(r"\D", "", cleaned[index + 1]))
+    return None
 
 
 def native_headers(page: fitz.Page) -> list[tuple[int, float]]:
@@ -44,7 +57,7 @@ def native_headers(page: fitz.Page) -> list[tuple[int, float]]:
     found: list[tuple[int, float]] = []
     for words in lines.values():
         words.sort(key=lambda item: item[0])
-        question_no = match_question_header("".join(item[2] for item in words))
+        question_no = number_from_tokens([item[2] for item in words])
         if question_no is not None:
             found.append((question_no, min(item[1] for item in words)))
     return sorted(found, key=lambda item: item[1])
@@ -78,8 +91,7 @@ def ocr_headers(page: fitz.Page) -> list[tuple[int, float]]:
         left = min(int(row["left"]) for row in words)
         if left > page_width_pixels * 0.22:
             continue
-        line_text = "".join(row["text"] for row in words)
-        question_no = match_question_header(line_text)
+        question_no = number_from_tokens([row["text"] for row in words])
         if question_no is None:
             continue
         top_pixels = min(int(row["top"]) for row in words)
