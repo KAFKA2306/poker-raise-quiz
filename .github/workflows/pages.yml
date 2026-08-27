@@ -63,3 +63,6 @@ jobs:
       - name: GitHub Pagesへ公開
         id: deployment
         uses: actions/deploy-pages@v5
+
+      - name: 公開URLを実際に確認
+        run: node scripts/verify-pages.mjs "${{ steps.deployment.outputs.page_url }}"
