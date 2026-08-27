@@ -1,11 +1,7 @@
 {
   "id": "ap",
   "title": "応用情報技術者試験",
-  "defaultSession": "2025-autumn",
-  "sessions": [
-    {
-      "id": "2025-autumn",
-      "manifest": "sessions/2025-autumn/manifest.json"
-    }
-  ]
+  "generatedBy": "scripts/prepare-data.mjs",
+  "sourceSpec": "../../sources/ap-morning-import.json",
+  "note": "CIとGitHub Pages公開時に、2015年度春期から2025年度秋期までの21回・1680問へ再生成する。"
 }
