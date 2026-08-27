@@ -6,6 +6,7 @@
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: #f3eee4; color: #24211d; }
+.fatal-error { min-height: 100vh; margin: 0; padding: 24px; white-space: pre-wrap; overflow-wrap: anywhere; background: #2b0000; color: #fff; font: 700 15px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .shell { width: min(960px, 100%); margin: 0 auto; padding: 24px 18px 64px; }
 .header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0; background: color-mix(in srgb, #f3eee4 94%, transparent); backdrop-filter: blur(8px); }
 .heading { flex: 1 1 420px; }
