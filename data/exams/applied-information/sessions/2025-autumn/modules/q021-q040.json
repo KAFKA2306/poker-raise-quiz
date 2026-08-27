@@ -1,0 +1,705 @@
+{
+  "id": "q021-q040",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q021",
+      "questionNo": 21,
+      "title": "組込みシステムのプログラムで，放された状態では0になり，押された状態では1になるスイッチの値を読み込んでいる。このプログラムによって，スイッチの値は周期的に適切なタイミングで読み込まれ，チャタリング処理などの適切な処理が行われるものとし，aが今回の値で，bが前回の値とする。このスイッチが放された状態から押された状態に変化したことを検出するための論理式はどれか。ここで，\"・\"は論理積，\"+\"は論理和，\"￣\"は論理否定を表す。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "a・b̅"
+        },
+        {
+          "value": "イ",
+          "text": "ā・b"
+        },
+        {
+          "value": "ウ",
+          "text": "a+b̅"
+        },
+        {
+          "value": "エ",
+          "text": "ā+b"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q21.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q022",
+      "questionNo": 22,
+      "title": "入力がAとB，出力がYの論理回路を動作させたとき，図のタイミングチャートが得られた。この論理回路として，適切なものはどれか。\n\n（タイミングチャート：A, B, Yの波形図）\n\n![タイミングチャート](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q22_1.png)\n\n![選択肢の論理回路図](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q22_2.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ORゲート（入力側に二重線、出力に否定円なし）"
+        },
+        {
+          "value": "イ",
+          "text": "NORゲート（入力側に二重線、出力に否定円あり）"
+        },
+        {
+          "value": "ウ",
+          "text": "NANDゲート（AND形状、出力に否定円あり）"
+        },
+        {
+          "value": "エ",
+          "text": "NORゲート（OR形状、出力に否定円あり）"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q22.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q22.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q023",
+      "questionNo": 23,
+      "title": "16ビットのダウンカウンターを用い，カウンターの値が0になると割込みを発生するハードウェアタイマーがある。カウンターに初期値として10進数の150をセットしてタイマーをスタートすると，最初の割込みが発生するまでの時間は何マイクロ秒か。ここで，タイマーの入力クロック周波数は16MHzを32分周したものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.3"
+        },
+        {
+          "value": "イ",
+          "text": "2"
+        },
+        {
+          "value": "ウ",
+          "text": "150"
+        },
+        {
+          "value": "エ",
+          "text": "300"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q23.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q024",
+      "questionNo": 24,
+      "title": "画面サイズの制約によって，レイアウト上，常にメニューを表示しておくことが難しいときに使用する仕組みであって，三本線のアイコンを選択するとメニューが表示されるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アコーディオンメニュー"
+        },
+        {
+          "value": "イ",
+          "text": "ドロップダウンメニュー"
+        },
+        {
+          "value": "ウ",
+          "text": "ハンバーガーメニュー"
+        },
+        {
+          "value": "エ",
+          "text": "ポップアップメニュー"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "UI/UXデザイン",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q24.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q025",
+      "questionNo": 25,
+      "title": "0kHz～20kHzの帯域幅のオーディオ信号をデジタル信号に変換するのに必要な最大のサンプリング周期を標本化定理によって求めると，何マイクロ秒か。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2.5"
+        },
+        {
+          "value": "イ",
+          "text": "5"
+        },
+        {
+          "value": "ウ",
+          "text": "25"
+        },
+        {
+          "value": "エ",
+          "text": "50"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q25.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q026",
+      "questionNo": 26,
+      "title": "BASE特性を満たし，次の特徴をもつNoSQLデータベースシステムに関する記述のうち，適切なものはどれか。\n\n〔NoSQLデータベースシステムの特徴〕\n・ネットワーク上に分散した複数のノードから構成される。\n・一つのノードでデータを更新した後，他の全てのノードにその更新を反映する。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "クライアントからの更新要求を2相コミットによって全てのノードに反映する。"
+        },
+        {
+          "value": "イ",
+          "text": "データの更新結果は，システムに障害がなければ，いつかは全てのノードに反映される。"
+        },
+        {
+          "value": "ウ",
+          "text": "同一の主キーの値による同時の参照要求に対し，全てのノードは同じ結果を返す。"
+        },
+        {
+          "value": "エ",
+          "text": "ノード間のネットワークが分断されると，クライアントからの処理要求を受け付けなくなる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q26.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q027",
+      "questionNo": 27,
+      "title": "\"売上\"表への次の検索処理のうち，B⁺木インデックスよりもハッシュインデックスを設定した方が適切なものはどれか。ここで，インデックスを設定する列を<>内に示す。\n\n売上（伝票番号，売上年月日，商品名，利用者ID，店舗番号，売上金額）",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "売上金額が1万円以上の売上を検索する。<売上金額>"
+        },
+        {
+          "value": "イ",
+          "text": "売上年月日が今月の売上を検索する。<売上年月日>"
+        },
+        {
+          "value": "ウ",
+          "text": "商品名が'DB'で始まる売上を検索する。<商品名>"
+        },
+        {
+          "value": "エ",
+          "text": "利用者IDが'1001'の売上を検索する。<利用者ID>"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q27.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q028",
+      "questionNo": 28,
+      "title": "関係データベースのビューに関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ビューの列名は，基の表の列名と異なる名称で定義することができる。"
+        },
+        {
+          "value": "イ",
+          "text": "ビューは，基の表から指定した列を抜き出すように定義するものであり，行を抜き出すように定義することはできない。"
+        },
+        {
+          "value": "ウ",
+          "text": "二つ以上の表の結合によって定義されたビューは，結合の仕方によらず更新操作ができる。"
+        },
+        {
+          "value": "エ",
+          "text": "和両立な二つの表に対し，和集合演算を用いてビューを定義することはできない。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "データベース",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q28.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q029",
+      "questionNo": 29,
+      "title": "RDBMSにおいて，同じデータ項目の異なる版を用意することによって，トランザクションの同時実行性を高める仕組みはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2相ロッキングプロトコル"
+        },
+        {
+          "value": "イ",
+          "text": "MVCC"
+        },
+        {
+          "value": "ウ",
+          "text": "WALプロトコル"
+        },
+        {
+          "value": "エ",
+          "text": "共有ロック"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q29.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q030",
+      "questionNo": 30,
+      "title": "100Mビット/秒のLANと1Gビット/秒のLANがある。ヘッダーを含めて1,250バイトのパケットをN個送信するときに，100Mビット/秒のLANの送信時間が1Gビット/秒のLANより9ミリ秒多く掛かった。Nは幾らか。ここで，いずれのLANにおいても，パケットの送信間隔（パケットの送信が完了してから次のパケットを送信開始するまでの時間）は1ミリ秒であり，パケット送信間隔も送信時間に含める。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10"
+        },
+        {
+          "value": "イ",
+          "text": "80"
+        },
+        {
+          "value": "ウ",
+          "text": "100"
+        },
+        {
+          "value": "エ",
+          "text": "800"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q30.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q031",
+      "questionNo": 31,
+      "title": "リバースプロキシの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インターネットから内部ネットワークの公開Webサーバへの通信を，中継するために利用される。"
+        },
+        {
+          "value": "イ",
+          "text": "インターネットと内部ネットワークとの通信を監視し，インターネットからの攻撃を検知するための技術である。"
+        },
+        {
+          "value": "ウ",
+          "text": "仮想的な専用ネットワークを確立するための技術である。"
+        },
+        {
+          "value": "エ",
+          "text": "内部ネットワークのPCからインターネットへの通信を，中継するために利用される。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q31.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q032",
+      "questionNo": 32,
+      "title": "IPv4のアドレス割当てを行う際に，クラスA～Cといった区分にとらわれずに，ネットワークアドレス部とホストアドレス部を任意のブロック単位に区切り，IPアドレスを無駄なく効率的に割り当てる方式はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CIDR"
+        },
+        {
+          "value": "イ",
+          "text": "DHCP"
+        },
+        {
+          "value": "ウ",
+          "text": "DNS"
+        },
+        {
+          "value": "エ",
+          "text": "NAPT"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q32.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q033",
+      "questionNo": 33,
+      "title": "UDPのヘッダーフィールドにはないが，TCPのヘッダーフィールドには含まれる情報はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "宛先ポート番号"
+        },
+        {
+          "value": "イ",
+          "text": "シーケンス番号"
+        },
+        {
+          "value": "ウ",
+          "text": "送信元ポート番号"
+        },
+        {
+          "value": "エ",
+          "text": "チェックサム"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q33.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q034",
+      "questionNo": 34,
+      "title": "複数台のレイヤー2スイッチで構成されるネットワークが複数の経路をもつ場合に，イーサネットフレームのループが発生することがある。そのループの発生を防ぐためのTCP/IPネットワークインタフェース層のプロトコルはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "IGMP"
+        },
+        {
+          "value": "イ",
+          "text": "RIP"
+        },
+        {
+          "value": "ウ",
+          "text": "SIP"
+        },
+        {
+          "value": "エ",
+          "text": "スパニングツリープロトコル"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q34.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q035",
+      "questionNo": 35,
+      "title": "ビット誤り率が0.0001%の回線を使って，1,500バイトのパケットを10,000個送信するとき，誤りが含まれるパケットの個数の期待値はおよそ幾らか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10"
+        },
+        {
+          "value": "イ",
+          "text": "15"
+        },
+        {
+          "value": "ウ",
+          "text": "80"
+        },
+        {
+          "value": "エ",
+          "text": "120"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q35.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q036",
+      "questionNo": 36,
+      "title": "サイバー攻撃の攻撃段階をモデル化したサイバーキルチェーンにおいて，\"エクスプロイト\"に該当する行為はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "公開情報の閲覧，顧客を装った電子メールでの問合せなどを行い，標的とする組織を調査する。"
+        },
+        {
+          "value": "イ",
+          "text": "標的とする組織のPCでOSの脆弱性を悪用し，攻撃ツールを実行させる。"
+        },
+        {
+          "value": "ウ",
+          "text": "標的とする組織のサーバから秘密情報を窃取し，攻撃者が用意したサーバに送信する。"
+        },
+        {
+          "value": "エ",
+          "text": "標的とする組織の従業員にマルウェアを添付した電子メールを送りつける。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "セキュリティ",
+      "subcategory": "攻撃手法",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q36.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q037",
+      "questionNo": 37,
+      "title": "デジタル署名が付与されたソフトウェアをインストールするときに，そのソフトウェアの発行元を確認するために使用する証明書はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "EV SSL証明書"
+        },
+        {
+          "value": "イ",
+          "text": "クライアント証明書"
+        },
+        {
+          "value": "ウ",
+          "text": "コードサイニング証明書"
+        },
+        {
+          "value": "エ",
+          "text": "サーバ証明書"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "セキュリティ",
+      "subcategory": "認証技術",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q37.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q038",
+      "questionNo": 38,
+      "title": "サイドチャネル攻撃はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "暗号化処理時における暗号化装置の消費電力などの測定や統計処理によって，当該装置内部の秘密情報を推定する攻撃"
+        },
+        {
+          "value": "イ",
+          "text": "攻撃者が任意に選択した平文とその平文に対応した暗号文から数学的手法を用いて暗号鍵を推測し，同じ暗号鍵を用いて作成された暗号文を解読する攻撃"
+        },
+        {
+          "value": "ウ",
+          "text": "操作中の人の横から，入力操作の内容を観察することによって，利用者IDとパスワードを盗み取る攻撃"
+        },
+        {
+          "value": "エ",
+          "text": "無線LANのアクセスポイントを不正に設置し，チャネル間の干渉を発生させることによって，通信を妨害する攻撃"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "セキュリティ",
+      "subcategory": "攻撃手法",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q38.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q039",
+      "questionNo": 39,
+      "title": "CRLに関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "RFC 5280では，認証局は，発行したデジタル証明書のうち失効したものについては，シリアル番号を失効後1年間CRLに記載するよう義務付けている。"
+        },
+        {
+          "value": "イ",
+          "text": "Webサイトの利用者のWebブラウザは，そのWebサイトにサーバ証明書を発行した認証局の公開鍵がWebブラウザに組み込まれていれば，CRLを参照しなくてもよい。"
+        },
+        {
+          "value": "ウ",
+          "text": "認証局は，発行した全てのデジタル証明書の有効期限をCRLに記載する。"
+        },
+        {
+          "value": "エ",
+          "text": "認証局は，有効期限内のデジタル証明書が失効されたとき，そのシリアル番号をCRLに記載する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "セキュリティ",
+      "subcategory": "認証技術",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q39.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q040",
+      "questionNo": 40,
+      "title": "ある組織ではCSIRTとPSIRTが設置されている。セキュリティインシデントのうち，PSIRTが対応するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "組織が顧客に販売した製品とその利用において発生したセキュリティインシデント"
+        },
+        {
+          "value": "イ",
+          "text": "組織が製品の在庫を管理するシステムにおいて発生したセキュリティインシデント"
+        },
+        {
+          "value": "ウ",
+          "text": "組織が製品の販売を管理するシステムにおいて発生したセキュリティインシデント"
+        },
+        {
+          "value": "エ",
+          "text": "組織の従業員の個人情報を管理するシステムにおいて発生したセキュリティインシデント"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "セキュリティ",
+      "subcategory": "組織的セキュリティ対策",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q40.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

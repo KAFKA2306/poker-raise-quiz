@@ -1,7 +1,7 @@
 {
-  "id": "2025-autumn",
-  "title": "2025年度秋期 午前",
-  "version": "2025-autumn-80-v1",
+  "id": "2023-autumn",
+  "title": "2023年度秋期 午前",
+  "version": "2023-autumn-80-v1",
   "status": "complete",
   "coverage": {
     "from": 1,
@@ -11,14 +11,14 @@
   },
   "source": {
     "publisher": "独立行政法人情報処理推進機構（IPA）",
-    "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
-    "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf",
+    "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+    "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_ans.pdf",
     "note": "問題文と文字選択肢は公開転記又は公開過去問ページの問題欄だけを入力補助として正規化し、図表は元問題図を参照した。正答はIPA公式解答キーを正準とし全80問に適用した。第三者の解説文・解説画像は収録していない。"
   },
   "transcriptionInput": {
     "repository": "sk0517/ExamPractice",
     "ref": "main",
-    "path": "exam/2025_autumn_am"
+    "path": "exam/2023_autumn_am"
   },
   "modules": [
     "modules/q001-q020.json",

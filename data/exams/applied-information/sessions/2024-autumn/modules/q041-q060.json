@@ -1,0 +1,705 @@
+{
+  "id": "q041-q060",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q041",
+      "questionNo": 41,
+      "title": "JVNなどの脆弱性情報サイトで採用されているCVE（Common Vulnerabilities and Exposures）識別子の説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "コンピュータで必要なセキュリティ設定項目を識別するための識別子"
+        },
+        {
+          "value": "イ",
+          "text": "脆弱性が悪用されて改ざんされたWebサイトのスクリーンショットを識別するための識別子"
+        },
+        {
+          "value": "ウ",
+          "text": "製品に含まれる脆弱性を識別するための識別子"
+        },
+        {
+          "value": "エ",
+          "text": "セキュリティ製品の種別を識別するための識別子"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（脆弱性情報・CVE）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q41.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q042",
+      "questionNo": 42,
+      "title": "DNSキャッシュポイズニング攻撃に対して有効な対策はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSサーバにおいて，侵入したマルウェアをリアルタイムに隔離する。"
+        },
+        {
+          "value": "イ",
+          "text": "DNS問合せに使用するDNSヘッダー内のIDを固定せずにランダムに変更する。"
+        },
+        {
+          "value": "ウ",
+          "text": "DNS問合せに使用する送信元ポート番号を53番に固定する。"
+        },
+        {
+          "value": "エ",
+          "text": "外部からのDNS問合せに対しては，宛先ポート番号53のものだけに応答する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（DNS攻撃対策）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q42.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q043",
+      "questionNo": 43,
+      "title": "ソフトウェアのセキュリティ管理に使用されるSBOMはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "セキュリティアラートやログを集約，分析し，潜在的な脅威を見つけるシステム"
+        },
+        {
+          "value": "イ",
+          "text": "組織内にあるソフトウェアを含むIT資産をリスト化したデータベース"
+        },
+        {
+          "value": "ウ",
+          "text": "組織のソフトウェアのセキュリティ脆弱性と設定ミスを特定，評価，処理，報告するためのプロセス，ツール，戦略"
+        },
+        {
+          "value": "エ",
+          "text": "ソフトウェアを構成するコンポーネント，相互の依存関係などをリスト化した一覧"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（ソフトウェア管理・SBOM）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q43.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q044",
+      "questionNo": 44,
+      "title": "DNSSECの仕様はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSキャッシュサーバで，権威DNSサーバに名前を問い合わせるときの送信元ポート番号を問合せのたびにランダムに変える。"
+        },
+        {
+          "value": "イ",
+          "text": "権威DNSサーバで公開鍵を公開し，秘密鍵を使ってリソースレコードにデジタル署名を付与する。DNSキャッシュサーバで，権威DNSサーバから受信したリソースレコードのデジタル署名を検証する。"
+        },
+        {
+          "value": "ウ",
+          "text": "電子メールを送信するメールサーバのIPアドレスを権威DNSサーバに登録する。電子メールを受信するメールサーバで，権威DNSサーバに登録されている情報を用いて，送信元メールサーバのIPアドレスを検証する。"
+        },
+        {
+          "value": "エ",
+          "text": "電子メールを送信するメールサーバの公開鍵を権威DNSサーバで公開し，秘密鍵を使って電子メールにデジタル署名を付与する。電子メールを受信するメールサーバで，電子メールのデジタル署名を検証する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（DNSSEC）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q44.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q045",
+      "questionNo": 45,
+      "title": "VLAN機能をもった1台のレイヤー3スイッチに40台のPCを接続している。スイッチのポートをグループ化して複数のセグメントに分けたとき，スイッチのポートをセグメントに分けない場合に比べて得られるセキュリティ上の効果の一つはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "スイッチが，PCから送出されるICMPパケットを同一セグメント内も含め，全て遮断するので，PC間のマルウェア感染のリスクを低減できる。"
+        },
+        {
+          "value": "イ",
+          "text": "スイッチが，PCからのブロードキャストパケットの到達範囲を制限するので，アドレス情報の不要な流出のリスクを低減できる。"
+        },
+        {
+          "value": "ウ",
+          "text": "スイッチが，PCのMACアドレスから接続可否を判別するので，PCの不正接続のリスクを低減できる。"
+        },
+        {
+          "value": "エ",
+          "text": "スイッチが，物理ポートごとに，決まったIPアドレスをもつPCの接続だけを許可するので，PCの不正接続のリスクを低減できる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（VLAN・セキュリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q45.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q046",
+      "questionNo": 46,
+      "title": "エクスプロイトコードの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "攻撃コードとも呼ばれ，ソフトウェアの脆弱性を悪用するコードのことであり，使い方によっては脆弱性の検証に役立つこともある。"
+        },
+        {
+          "value": "イ",
+          "text": "マルウェア定義ファイルとも呼ばれ，マルウェアを特定するための特徴的なコードのことであり，マルウェア対策ソフトによるマルウェアの検知に用いられる。"
+        },
+        {
+          "value": "ウ",
+          "text": "メッセージとシークレットデータから計算されるハッシュコードのことであり，メッセージの改ざん検知に用いられる。"
+        },
+        {
+          "value": "エ",
+          "text": "ログインのたびに変化する認証コードのことであり，不正に取得しても再利用できないので不正アクセスを防ぐ。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（エクスプロイトコード）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q46.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q047",
+      "questionNo": 47,
+      "title": "マイクロサービスアーキテクチャを利用するとき，システム構築上の利点はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "各サービスが使用する，プログラム言語，ライブラリ及びミドルウェアを統一しやすい。"
+        },
+        {
+          "value": "イ",
+          "text": "各サービスが保有するデータの整合性を確保しやすい。"
+        },
+        {
+          "value": "ウ",
+          "text": "各サービスの変更がしやすい。"
+        },
+        {
+          "value": "エ",
+          "text": "各サービスを呼び出す回数が減るので，オーバヘッドが削減できる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発（マイクロサービスアーキテクチャ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q47.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q048",
+      "questionNo": 48,
+      "title": "ソフトウェアの使用性を評価する指標の目標設定の例として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ソフトウェアに障害が発生してから1時間以内に，利用者が使用できること"
+        },
+        {
+          "value": "イ",
+          "text": "ソフトウェアの使用方法を，利用者が1時間以内に習得できること"
+        },
+        {
+          "value": "ウ",
+          "text": "利用者から要望のある機能の改善を，1週間以内に完了できること"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の使用したい機能が，100%提供できていること"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（ソフトウェア品質特性）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q48.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q049",
+      "questionNo": 49,
+      "title": "アジャイル開発の初期段階において，プロジェクトの目的，スコープなどに対する共通認識を得るために，あらかじめ設定されている設問と課題について関係者が集まって確認し合い，その成果を共有する手法はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アジャイルモデリング"
+        },
+        {
+          "value": "イ",
+          "text": "インセプションデッキ"
+        },
+        {
+          "value": "ウ",
+          "text": "プランニングポーカー"
+        },
+        {
+          "value": "エ",
+          "text": "ユーザーストーリーマッピング"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（アジャイル開発手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q49.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q050",
+      "questionNo": 50,
+      "title": "レスポンシブWebデザインを実現するに当たって，単一のHTML文書を用いて，Webコンテンツを各種端末のディスプレイの大きさに合わせた形式で表示するために使用する機能はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "User-Agent"
+        },
+        {
+          "value": "イ",
+          "text": "WebSocket"
+        },
+        {
+          "value": "ウ",
+          "text": "マッシュアップ"
+        },
+        {
+          "value": "エ",
+          "text": "メディアクエリ"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ユーザーインタフェース（レスポンシブWebデザイン）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q50.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q051",
+      "questionNo": 51,
+      "title": "プロジェクトマネジメントにおけるスコープの管理の活動はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "開発ツールの新機能の教育が不十分と分かったので，開発ツールの教育期間を2日間延長した。"
+        },
+        {
+          "value": "イ",
+          "text": "要件定義が完了した時点で再見積りをしたところ，当初見積もった開発コストを超過することが判明したので，追加予算を確保した。"
+        },
+        {
+          "value": "ウ",
+          "text": "連携する計画であった外部システムのリリースが延期になったので，この外部システムとの連携に関わる作業は別プロジェクトで実施することにした。"
+        },
+        {
+          "value": "エ",
+          "text": "割り当てたテスト担当者が期待した成果を出せなかったので，経験豊富なテスト担当者と交代した。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（スコープ管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q51.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q052",
+      "questionNo": 52,
+      "title": "PMBOKガイド第7版によれば，WBSの最下位のレベルの作業を何と呼ぶか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "WBS辞書"
+        },
+        {
+          "value": "イ",
+          "text": "アクティビティ・リスト"
+        },
+        {
+          "value": "ウ",
+          "text": "プロジェクト・スコープ"
+        },
+        {
+          "value": "エ",
+          "text": "ワーク・パッケージ"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（WBS）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q52.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q053",
+      "questionNo": 53,
+      "title": "プロジェクトマネジメントにおいて，プロジェクトチームのパフォーマンスを高めるために，チームメンバーを同じ作業場所に集めることを何というか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "コロケーション"
+        },
+        {
+          "value": "イ",
+          "text": "ネットワーキング"
+        },
+        {
+          "value": "ウ",
+          "text": "バーチャルチーム"
+        },
+        {
+          "value": "エ",
+          "text": "ファシリテーション"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（資源マネジメント・チーム育成）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q53.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q054",
+      "questionNo": 54,
+      "title": "プロジェクトマネジメントにおけるファストトラッキングの例として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "クリティカルパス上のアクティビティの開始が遅れたので，そのアクティビティに人的資源を追加した。"
+        },
+        {
+          "value": "イ",
+          "text": "コストを削減するために，これまで承認されていた残業を禁止した。"
+        },
+        {
+          "value": "ウ",
+          "text": "仕様の確定が大幅に遅れたので，プロジェクトの完了予定日を延期した。"
+        },
+        {
+          "value": "エ",
+          "text": "設計が終わったモジュールから順にプログラム開発を実施するようにして，スケジュールを短縮した。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（スケジュール短縮技法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q54.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q055",
+      "questionNo": 55,
+      "title": "サービスマネジメントにおいて，中断したサービスを復旧させるときの目標を定めた指標に，RTO（目標復旧時間），RPO（目標復旧時点）及びRLO（目標復旧レベル）がある。RTOとRLOとを定めた例として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "サービスが中断する3時間前の時点の状態にデータを復旧し，利用者の50%以上にサービスを提供できるようにする。"
+        },
+        {
+          "value": "イ",
+          "text": "サービスが中断する直前の状態にデータを復旧し，当日のサービス終了時刻を，サービスが中断していた時間だけ延長する。"
+        },
+        {
+          "value": "ウ",
+          "text": "サービスの中断から1時間以内に，中断する1時間前の時点の状態にデータを復旧する。"
+        },
+        {
+          "value": "エ",
+          "text": "サービスの中断から1日以内に，中断したサービスのうちの重要なサービスに限定してサービスを復旧する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（事業継続・復旧目標指標）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q55.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q056",
+      "questionNo": 56,
+      "title": "JIS Q 20000-1:2020（サービスマネジメントシステム要求事項）によれば，継続的改善に関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "改善活動では，品質と費用の両方について改善の目標を設定しなければならない。"
+        },
+        {
+          "value": "イ",
+          "text": "改善活動は，提供するサービスを改善の対象にして，サービスマネジメントシステムを改善の対象にしない。"
+        },
+        {
+          "value": "ウ",
+          "text": "改善の機会に対して適用する評価基準には，改善とサービスマネジメントの目的との整合性が含まれなければならない。"
+        },
+        {
+          "value": "エ",
+          "text": "実施された改善は，設定した目標に照らして測定するのではなく，改善前と比較した改善の効果を測定する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（JIS Q 20000-1）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q56.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q057",
+      "questionNo": 57,
+      "title": "入出力データの管理方針の例として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "出力帳票の利用状況を定期的に点検し，利用されていないと判断したものは，情報システム部門の判断で出力を停止する。"
+        },
+        {
+          "value": "イ",
+          "text": "出力帳票は授受管理表などを用いて確実に受渡しを行い，情報の重要度によっては業務部門の管理者に手渡しする。"
+        },
+        {
+          "value": "ウ",
+          "text": "チェックによって発見された入力データの誤りは，情報システム部門の判断で迅速に修正する。"
+        },
+        {
+          "value": "エ",
+          "text": "入力原票やEDI受信ファイルなどの取引情報は，機密性を確保するために，データをシステムに取り込んだ後に速やかに廃棄する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（入出力管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q57.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q058",
+      "questionNo": 58,
+      "title": "システム監査において，監査手続の適用に際して用いられる技法のうち，データの生成から入力，処理，出力，活用までのプロセス，及び組み込まれているコントロールを，書面上で，又は実際に追跡するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ウォークスルー法"
+        },
+        {
+          "value": "イ",
+          "text": "チェックリスト法"
+        },
+        {
+          "value": "ウ",
+          "text": "突合・照合法"
+        },
+        {
+          "value": "エ",
+          "text": "ドキュメントレビュー法"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（監査技法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q58.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q059",
+      "questionNo": 59,
+      "title": "システム監査基準（令和5年）における予備調査についての記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "監査対象先の事務手続やマニュアルなどを通じて，業務内容，業務分掌，体制などを把握する。"
+        },
+        {
+          "value": "イ",
+          "text": "監査対象の実態を把握するために，必ず現地に赴いて実施する。"
+        },
+        {
+          "value": "ウ",
+          "text": "監査の結論を裏付けるために，十分な監査証拠を入手する。"
+        },
+        {
+          "value": "エ",
+          "text": "調査の範囲は，監査対象先だけに限定する。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（予備調査）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q59.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q060",
+      "questionNo": 60,
+      "title": "システム監査基準（令和5年）におけるフォローアップの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "監査対象先が，監査報告書の指摘事項及び改善提案を基に改善計画の策定を行うこと"
+        },
+        {
+          "value": "イ",
+          "text": "監査部門の責任者が，監査報告書を基に監査の実施状況と指摘事項の妥当性を確認すること"
+        },
+        {
+          "value": "ウ",
+          "text": "システム監査人が，監査報告書に記載した改善提案の実施状況に関する情報を収集し，改善状況をモニタリングすること"
+        },
+        {
+          "value": "エ",
+          "text": "システム監査人が，時間の関係で調査が終了しなかった監査項目を追跡調査して報告すること"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（フォローアップ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q60.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,705 @@
+{
+  "id": "q001-q020",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q001",
+      "questionNo": 1,
+      "title": "M/M/1の待ち行列モデルにおいて，窓口の利用率が25%から40%に増えると，平均待ち時間は何倍になるか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1.25"
+        },
+        {
+          "value": "イ",
+          "text": "1.60"
+        },
+        {
+          "value": "ウ",
+          "text": "2.00"
+        },
+        {
+          "value": "エ",
+          "text": "3.00"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "待ち行列理論（M/M/1モデル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q01.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q002",
+      "questionNo": 2,
+      "title": "AIにおける教師あり学習での交差検証に関する記述はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "過学習を防ぐために，回帰モデルに複雑さを表すペナルティ項を加え，訓練データへ過剰に適合しないようにモデルを調整する。"
+        },
+        {
+          "value": "イ",
+          "text": "学習の精度を高めるために，複数の異なるアルゴリズムのモデルで学習し，学習の結果は組み合わせて評価する。"
+        },
+        {
+          "value": "ウ",
+          "text": "学習モデルの汎化性能を高めるために，単一のモデルで関連する複数の課題を学習することによって，課題間に共通する要因を獲得する。"
+        },
+        {
+          "value": "エ",
+          "text": "学習モデルの汎化性能を評価するために，データを複数のグループに分割し，一部を学習に残りを評価に使い，順にグループを入れ替えて学習と評価を繰り返す。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "AI・機械学習（モデル評価手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q02.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q003",
+      "questionNo": 3,
+      "title": "式A＋B×Cの逆ポーランド表記法による表現として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "＋×CBA"
+        },
+        {
+          "value": "イ",
+          "text": "×＋ABC"
+        },
+        {
+          "value": "ウ",
+          "text": "ABC×＋"
+        },
+        {
+          "value": "エ",
+          "text": "CBA＋×"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズム（逆ポーランド表記法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q03.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q004",
+      "questionNo": 4,
+      "title": "自動車の先進運転支援システムで使用されるセンサーの説明のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "可視光カメラは，天候などの影響を受けやすいが，交通標識の認識に使用できる。"
+        },
+        {
+          "value": "イ",
+          "text": "超音波センサーは，天候などの影響を受けやすいが，測定可能距離が500メートル以上と長い。"
+        },
+        {
+          "value": "ウ",
+          "text": "ミリ波レーダーは，天候などの影響を受けにくく，交通信号機の灯色の判別に使用できる。"
+        },
+        {
+          "value": "エ",
+          "text": "レーザーレーダーは，天候などの影響を受けにくく，建物の後ろにある物体を検知できる。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "センサー技術（先進運転支援システム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q04.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q005",
+      "questionNo": 5,
+      "title": "次の2分探索木から要素12を削除したとき，その位置に別の要素を移動するだけで2分探索木を再構成するには，削除された要素の位置にどの要素を移動すればよいか。\n\n```\n                  6\n              /       \\\n             4         8\n           /   \\      / \\\n          2     5    7   12\n         / \\              |  \\\n        1   3            10   14\n                         / \\   / \\\n                        9  11 13  15\n```\n\n![図5](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q05.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "9"
+        },
+        {
+          "value": "イ",
+          "text": "10"
+        },
+        {
+          "value": "ウ",
+          "text": "13"
+        },
+        {
+          "value": "エ",
+          "text": "14"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データ構造（2分探索木の削除）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q05.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q05.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q006",
+      "questionNo": 6,
+      "title": "自然数をキーとするデータを，ハッシュ表を用いて管理する。キーxのハッシュ関数h(x)を\n\nh(x) = x mod n\n\nとすると，任意のキーaとbが衝突する条件はどれか。ここで，nはハッシュ表の大きさであり，x mod nはxをnで割った余りを表す。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "a+bがnの倍数"
+        },
+        {
+          "value": "イ",
+          "text": "a−bがnの倍数"
+        },
+        {
+          "value": "ウ",
+          "text": "nがa+bの倍数"
+        },
+        {
+          "value": "エ",
+          "text": "nがa−bの倍数"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズム（ハッシュ法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q06.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q007",
+      "questionNo": 7,
+      "title": "次の特徴をもつプログラム言語及び実行環境であって，オープンソースソフトウェアとして提供されているものはどれか。\n\n〔特徴〕\n・統計解析や機械学習に適している。\n・データ分析，グラフ描画などの，多数のソフトウェアパッケージが提供されている。\n・変数自体には型がなく，変数に代入されるオブジェクトの型は実行時に決まる。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "Go"
+        },
+        {
+          "value": "イ",
+          "text": "Kotlin"
+        },
+        {
+          "value": "ウ",
+          "text": "R"
+        },
+        {
+          "value": "エ",
+          "text": "Scala"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "プログラム言語（特徴と用途）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q07.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_aki/q7.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q008",
+      "questionNo": 8,
+      "title": "RISCプロセッサの5段パイプラインの命令実行制御の順序はどれか。ここで，このパイプラインのステージは次の五つとする。\n\n① 書込み\n② 実行とアドレス生成\n③ 命令デコードとレジスタファイル読出し\n④ 命令フェッチ\n⑤ メモリアクセス",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "③，④，②，⑤，①"
+        },
+        {
+          "value": "イ",
+          "text": "③，⑤，②，④，①"
+        },
+        {
+          "value": "ウ",
+          "text": "④，③，②，⑤，①"
+        },
+        {
+          "value": "エ",
+          "text": "④，⑤，③，②，①"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（パイプライン制御）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q08.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q009",
+      "questionNo": 9,
+      "title": "量子超越性（Quantum Supremacy）の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "重ね合わせという現象を用いた量子暗号が，現在の暗号化方式よりもはるかに安全であること"
+        },
+        {
+          "value": "イ",
+          "text": "従来のコンピュータが古典物理学に依拠する段階にとどまっているのに比べて，量子コンピュータが量子力学に依拠して作られていること"
+        },
+        {
+          "value": "ウ",
+          "text": "従来のコンピュータでは実用的な時間で処理することができない計算を，量子コンピュータでは高速に実行できること"
+        },
+        {
+          "value": "エ",
+          "text": "同一の性能を実現した従来のコンピュータに比べて，量子コンピュータの物理的な大きさを圧倒的に小さくできること"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "量子コンピュータ",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q09.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q010",
+      "questionNo": 10,
+      "title": "キャッシュメモリのアクセス時間が主記憶のアクセス時間の1/30で，ヒット率が95%のとき，実効メモリアクセス時間は，主記憶のアクセス時間の約何倍になるか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.03"
+        },
+        {
+          "value": "イ",
+          "text": "0.08"
+        },
+        {
+          "value": "ウ",
+          "text": "0.37"
+        },
+        {
+          "value": "エ",
+          "text": "0.95"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（キャッシュメモリ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q10.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q011",
+      "questionNo": 11,
+      "title": "ストレージのインタフェースとして用いられるFC（ファイバチャネル）の特徴として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "TCP/IPの上位層として作られた規格である。"
+        },
+        {
+          "value": "イ",
+          "text": "接続形態は，スイッチを用いたn対n接続に限られる。"
+        },
+        {
+          "value": "ウ",
+          "text": "伝送媒体には電気ケーブル又は光ケーブルを用いることができる。"
+        },
+        {
+          "value": "エ",
+          "text": "物理層としてパラレルSCSIを用いることができる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（入出力デバイス・ストレージインタフェース）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q11.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q012",
+      "questionNo": 12,
+      "title": "Webアプリケーションサーバの信頼性に関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "コールドスタンバイ構成で稼働しているサーバに障害が発生した場合，サービスは中断しないが，トランザクションは継続できない。"
+        },
+        {
+          "value": "イ",
+          "text": "コールドスタンバイ構成で稼働しているサーバに障害が発生した場合，サービスは中断するが，トランザクションは継続できる。"
+        },
+        {
+          "value": "ウ",
+          "text": "セッションを共有しないクラスタ構成で1台のサーバに障害が発生した場合，サービスは継続できないが，トランザクションは継続できる。"
+        },
+        {
+          "value": "エ",
+          "text": "セッションを共有するクラスタ構成で1台のサーバに障害が発生した場合，サービス及びトランザクションは継続できる。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "システム構成要素（信頼性・冗長化）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q12.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q013",
+      "questionNo": 13,
+      "title": "データアクセス方式の一つであるオブジェクトストレージに関する記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ストレージにファイルシステムを構成し，ファイル単位でデータにアクセスする。"
+        },
+        {
+          "value": "イ",
+          "text": "ストレージの論理ボリュームを決まったサイズに分割し，その単位でデータにアクセスする。"
+        },
+        {
+          "value": "ウ",
+          "text": "データとメタデータをセットにして保存し，階層構造にすることによってデータにアクセスする。"
+        },
+        {
+          "value": "エ",
+          "text": "データとメタデータをセットにして保存し，固有の識別子でデータにアクセスする。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（ストレージ方式）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q13.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q014",
+      "questionNo": 14,
+      "title": "稼働率が等しい装置Xを直列や並列に組み合わせたとき，システム全体の稼働率を高い順に並べたものはどれか。ここで，装置Xの稼働率は0よりも大きく1未満である。\n\n```\nA：Xが2台、並列に接続された構成\nB：Xが1台と、（Xが2台並列接続されたユニット）が直列に接続された構成\nC：（Xが2台並列接続されたユニット）が2つ、直列に接続された構成\n```\n\n![図14](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q14.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "A，B，C"
+        },
+        {
+          "value": "イ",
+          "text": "A，C，B"
+        },
+        {
+          "value": "ウ",
+          "text": "C，A，B"
+        },
+        {
+          "value": "エ",
+          "text": "C，B，A"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの性能・信頼性（稼働率計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q14.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q14.md",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q015",
+      "questionNo": 15,
+      "title": "あるクライアントサーバシステムにおいて，クライアントから要求された1件の検索を処理するために，サーバで平均100万命令が実行される。1件の検索につき，ネットワーク内で転送されるデータは平均2×10⁵バイトである。このサーバの性能は100MIPSであり，ネットワークの転送速度は8×10⁷ビット／秒である。このシステムにおいて，1秒間に処理できる検索要求は何件か。ここで，処理できる件数は，サーバとネットワークの処理能力だけで決まるものとする。また，1バイトは8ビットとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "50"
+        },
+        {
+          "value": "イ",
+          "text": "100"
+        },
+        {
+          "value": "ウ",
+          "text": "200"
+        },
+        {
+          "value": "エ",
+          "text": "400"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "システムの性能（MIPS・転送速度計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q15.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q016",
+      "questionNo": 16,
+      "title": "タスクスケジューリング方式の説明のうち，特定のタスクがCPU資源の割当てを待ち続ける可能性が最も高いものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "各タスクの優先度を決めて，優先度が高い順に実行し，CPU割当てまでの待ち時間の長さに応じて優先度を徐々に上げていく。"
+        },
+        {
+          "value": "イ",
+          "text": "各タスクを実行可能待ち行列に置かれた順に実行し，一定時間が経過したら実行を中断して実行可能待ち行列の最後尾に加える。"
+        },
+        {
+          "value": "ウ",
+          "text": "処理予定時間が最も短いタスクから順に処理を実行する。現在実行中の処理が終了するか，又は何らかの要因によって中断されたとき，次のタスクを開始する。"
+        },
+        {
+          "value": "エ",
+          "text": "タスクがシステムに到着した順に実行可能待ち行列の最後尾に加え，常に実行可能待ち行列の先頭のタスクにCPUを割り当てる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（タスクスケジューリング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q16.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q017",
+      "questionNo": 17,
+      "title": "ページング方式の仮想記憶において，ページ置換えの発生頻度が高くなり，システムの処理能力が急激に低下することがある。このような現象を何と呼ぶか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "スラッシング"
+        },
+        {
+          "value": "イ",
+          "text": "スワップアウト"
+        },
+        {
+          "value": "ウ",
+          "text": "フラグメンテーション"
+        },
+        {
+          "value": "エ",
+          "text": "ページフォールト"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（仮想記憶）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q17.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q018",
+      "questionNo": 18,
+      "title": "仮想記憶方式において，セグメンテーション方式と比較した場合のページング方式の長所はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "記憶領域へのアクセス保護を論理的な単位で行うことができる。"
+        },
+        {
+          "value": "イ",
+          "text": "記憶領域をプログラム間で容易に共用することができる。"
+        },
+        {
+          "value": "ウ",
+          "text": "実行時に記憶領域の大きさを動的に変えることができる。"
+        },
+        {
+          "value": "エ",
+          "text": "主記憶の外部断片化が発生しない。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（仮想記憶方式の比較）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q18.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q019",
+      "questionNo": 19,
+      "title": "分散開発環境において，各開発者のローカル環境に全履歴を含んだ中央リポジトリの完全な複製をもつことによって，中央リポジトリにアクセスできないときでも履歴の調査や変更の記録を可能にする，バージョン管理ツールはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "Apache Subversion"
+        },
+        {
+          "value": "イ",
+          "text": "CVS"
+        },
+        {
+          "value": "ウ",
+          "text": "Git"
+        },
+        {
+          "value": "エ",
+          "text": "RCS"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "開発ツール（バージョン管理システム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q19.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q020",
+      "questionNo": 20,
+      "title": "手続型言語のコンパイラがコード生成までに行う処理のうち，最後に行うものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "意味解析"
+        },
+        {
+          "value": "イ",
+          "text": "構文解析"
+        },
+        {
+          "value": "ウ",
+          "text": "最適化"
+        },
+        {
+          "value": "エ",
+          "text": "字句解析"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア（コンパイラ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q20.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

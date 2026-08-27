@@ -1,0 +1,705 @@
+{
+  "id": "q061-q080",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q061",
+      "questionNo": 61,
+      "title": "DX認定制度における認定基準に含まれている事項はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "経営ビジョン及びDX戦略を策定して対外発信を行うことに加えて，ビジネスモデルの革新などデジタル技術活用の成果目標も既に達成していること"
+        },
+        {
+          "value": "イ",
+          "text": "経営ビジョン及びビジネスモデルの方向性を公表するとともに，策定したビジネスモデルを実現するための方策として，DX戦略を公表していること"
+        },
+        {
+          "value": "ウ",
+          "text": "申請対象が，中小企業基本法で定められた中小企業であること"
+        },
+        {
+          "value": "エ",
+          "text": "デジタルガバナンス・コード3.0の全項目に対応していること"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（DX認定制度）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q61.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q062",
+      "questionNo": 62,
+      "title": "A社は，ソリューションプロバイダから，顧客に対するワントゥワンマーケティングを実現する統合的なソリューションの提案を受けた。この提案に該当するソリューションとして，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CRMソリューション"
+        },
+        {
+          "value": "イ",
+          "text": "HRMソリューション"
+        },
+        {
+          "value": "ウ",
+          "text": "SCMソリューション"
+        },
+        {
+          "value": "エ",
+          "text": "財務管理ソリューション"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（業務分野別ソリューション）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q62.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q063",
+      "questionNo": 63,
+      "title": "クラウドサービスなどの提供を迅速に実現するためのプロビジョニングの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "企業の情報システムの企画，設計，開発，導入，保守などのサービスを，一貫して又は工程の幾つかを部分的に提供する。"
+        },
+        {
+          "value": "イ",
+          "text": "業種や事業内容などで共通する複数の企業や組織が共同でデータセンターを運用して，それぞれがインターネットを通して各種サービスを利用する。"
+        },
+        {
+          "value": "ウ",
+          "text": "自社でハードウェア，ネットワークなどの環境を用意し，業務パッケージなどを導入して利用する運用形態にする。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の需要を予測し，ネットワーク設備やシステムリソースなどを計画的に調達して強化し，利用者の要求に応じたサービスを提供できるように備える。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（クラウドサービス・プロビジョニング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q63.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q064",
+      "questionNo": 64,
+      "title": "製品Xと製品Yを販売している企業が，見積作成と提案書作成に掛かる業務時間を，それぞれ20%削減できるシステムの構築を検討している。Activity-Based Costingを用いて，次の条件が洗い出された。本システム構築による製品Xの見積作成と製品Xの提案書作成に関する月間総人件費削減効果は幾らか。\n\n〔条件〕\n・製品Xの見積作成に掛かる月間業務時間は，50時間\n・製品Xの提案書作成に掛かる月間業務時間は，50時間\n・製品Yの見積作成に掛かる月間業務時間は，100時間\n・製品Yの提案書作成に掛かる月間業務時間は，400時間\n・製品Xと製品Yの見積作成に掛かる月間総人件費は，60万円\n・製品Xと製品Yの提案書作成に掛かる月間総人件費は，360万円\n・見積作成と提案書作成は，それぞれ人件費単価が異なる部門が担っている。\n・製品Xと製品Yの見積作成に掛かる人件費単価は，同じである。\n・製品Xと製品Yの提案書作成に掛かる人件費単価は，同じである。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "4万円"
+        },
+        {
+          "value": "イ",
+          "text": "8万円"
+        },
+        {
+          "value": "ウ",
+          "text": "12万円"
+        },
+        {
+          "value": "エ",
+          "text": "14万円"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（Activity-Based Costing・計算問題）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q64.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q065",
+      "questionNo": 65,
+      "title": "システム管理基準（令和5年）によれば，企画プロセスにおけるビジネス分析の達成目標の一つとして，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "あるべきビジネスモデル及び業務プロセスによって生じる問題やメリットが明確にされている。"
+        },
+        {
+          "value": "イ",
+          "text": "関連する情報システム及び情報システムの構成要素間のインタフェースが特定されている。"
+        },
+        {
+          "value": "ウ",
+          "text": "重要な情報システムの遂行能力・性能・稼動率などの実績の測定量が明確にされている。"
+        },
+        {
+          "value": "エ",
+          "text": "優先順位付けされた要望が業務要件として明確にされ，利用者及び関係者と合意されている。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "システム戦略（システム管理基準・企画プロセス）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q65.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q066",
+      "questionNo": 66,
+      "title": "ベンダーX社に対して，表に示すように要件定義フェーズから運用テストフェーズまでを委託したい。X社との契約に当たって，\"情報システム・モデル取引・契約書＜第二版＞\"に照らし，各フェーズの契約形態を整理した。a～dの契約形態のうち，準委任型が適切であるとされるものはどれか。\n\n| 要件定義 | システム外部設計 | システム内部設計 | ソフトウェア設計，プログラミング，ソフトウェアテスト | システム結合 | システムテスト | 運用テスト |\n|:--|:--|:--|:--|:--|:--|:--|\n| a | 準委任型又は請負型 | b | 請負型 | c | 準委任型又は請負型 | d |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "a, b"
+        },
+        {
+          "value": "イ",
+          "text": "a, d"
+        },
+        {
+          "value": "ウ",
+          "text": "b, c"
+        },
+        {
+          "value": "エ",
+          "text": "b, d"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "システム企画（情報システム・モデル取引・契約書）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q66.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q067",
+      "questionNo": 67,
+      "title": "市場成長率と相対的市場シェアから，市場と企業との関係を分析し，自社製品や事業についての最適な資源配分方針を求めるための手法はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "3C"
+        },
+        {
+          "value": "イ",
+          "text": "BSC"
+        },
+        {
+          "value": "ウ",
+          "text": "PPM"
+        },
+        {
+          "value": "エ",
+          "text": "SWOT"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（経営分析・経営戦略手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q67.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q068",
+      "questionNo": 68,
+      "title": "プライスライニング戦略はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "消費者が選択しやすいように，複数の価格帯に分けて商品を用意する。"
+        },
+        {
+          "value": "イ",
+          "text": "商品の品質の良さやステータスを訴えるために意図的に価格を高く設定する。"
+        },
+        {
+          "value": "ウ",
+          "text": "商品本体の価格を安く設定し，関連消耗品の販売で利益を得る。"
+        },
+        {
+          "value": "エ",
+          "text": "新商品に高い価格を設定して早い段階で利益を回収する。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "マーケティング（価格戦略）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q68.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q68.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q069",
+      "questionNo": 69,
+      "title": "カーシェアビジネスをビジネスモデルキャンバスに当てはめた。bに該当するものはどれか。なお，ア～エはa～dのいずれかに該当する。\n\n〔カーシェアビジネス〕\n・カーディーラーから車両を調達し，維持・メンテナンスしながら，その車両を提携駐車場に保管・準備する。\n・必要なときだけ車両を使いたい人が登録する会員制度を構築し，会員から月会費を徴収する。\n・会員向けのWebサイトで，会員に使いたい車両や利用時間などを予約してもらい，会員に対して車両の時間貸しを行い，利用料を徴収する。\n\n〔ビジネスモデルキャンバス〕\n\n| KP（パートナー）<br>カーディーラー・提携駐車場 | KA（主要活動）<br>維持・メンテナンス | VP（価値提案）<br>**b** | CR（顧客との関係）<br>会員制度 |\n|:--|:--|:--|:--|\n| | KR（リソース）<br>**a** | | CS（顧客セグメント）<br>**c** |\n| | | | CH（チャネル）<br>Webサイト |\n\nC$（コスト構造）：調達・維持・メンテナンス費用，駐車場代　　R$（収益の流れ）：**d**\n\n![図69](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q69.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "月会費，利用料"
+        },
+        {
+          "value": "イ",
+          "text": "車両"
+        },
+        {
+          "value": "ウ",
+          "text": "車両の時間貸し"
+        },
+        {
+          "value": "エ",
+          "text": "必要なときだけ車両を使いたい人"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（ビジネスモデルキャンバス）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q69.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q69.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q070",
+      "questionNo": 70,
+      "title": "フリーミアムの特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "Webサイト内の広告だけを収益源としているので，サービスの維持・拡大が困難である。"
+        },
+        {
+          "value": "イ",
+          "text": "全ての利用者に広く課金するモデルである。"
+        },
+        {
+          "value": "ウ",
+          "text": "有料と無料の境界が明確になっていて，高度な機能や充実した内容など有料のサービスの優位性がはっきりしている。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者ごとに掛かるコストが大きいので，少数の利用者が限定的に使うような場合にだけ，より高い効果が見込める。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（収益モデル・フリーミアム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q70.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q071",
+      "questionNo": 71,
+      "title": "クラウドで学習し，エッジデバイスで推論する機械学習ベースのエッジAIにおいて，エッジデバイスで行われる推論処理として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "一定の環境の中で試行錯誤を行い，行動に報酬を与えることで学習するプロセス"
+        },
+        {
+          "value": "イ",
+          "text": "学習したモデルに従い，実際にデータの識別などを行うプロセス"
+        },
+        {
+          "value": "ウ",
+          "text": "識別などを行うためのモデルを，正解のラベルを付けたデータによって作成するプロセス"
+        },
+        {
+          "value": "エ",
+          "text": "識別などを行うためのモデルを，正解のラベルを付けないデータによって作成するプロセス"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "技術戦略マネジメント（エッジAI）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q71.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q072",
+      "questionNo": 72,
+      "title": "スマートファクトリーで使用されるAIを用いたマシンビジョンの目的として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "クラウドに蓄積した入出荷データを用いてAIが需要予測し，生産数を最適化する。"
+        },
+        {
+          "value": "イ",
+          "text": "作業者が装着したVRゴーグルにAIが作業状況に応じたガイドを表示することによって，作業効率を向上させる。"
+        },
+        {
+          "value": "ウ",
+          "text": "設計変更内容をAIによって整理し，製造現場に正確に伝達する。"
+        },
+        {
+          "value": "エ",
+          "text": "人間の目視検査をAIが代替し，検査効率を向上させる。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "技術戦略マネジメント（スマートファクトリー・マシンビジョン）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q72.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q073",
+      "questionNo": 73,
+      "title": "コンピテンシーモデルの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "権限行使と命令統制による労務管理を批判し，目標管理制度や経営参加制度などによる動機付けが有効であるとしたもの"
+        },
+        {
+          "value": "イ",
+          "text": "最適なリーダーシップの唯一のスタイルは存在せず，望ましいリーダーシップのスタイルは，状況に応じて異なるとしたもの"
+        },
+        {
+          "value": "ウ",
+          "text": "人材の評価や育成の基準とするために，恒常的に成果に結び付けることができる個人の行動や思考特性を定義したもの"
+        },
+        {
+          "value": "エ",
+          "text": "人間の基本的欲求を低次から，生理的欲求，安全の欲求，所属と愛の欲求，承認の欲求，自己実現の欲求としたもの"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（人的資源管理・コンピテンシーモデル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q73.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q074",
+      "questionNo": 74,
+      "title": "様々な需要予測モデルのもととなっている時系列モデルに関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "移動平均法では，平均する期間を長くするほど，短期的な需要の変化の影響が大きくなる。"
+        },
+        {
+          "value": "イ",
+          "text": "移動平均法は，長期的な需要のトレンドを把握するのには向かないが，直近の需要の変化を把握するのには向いている。"
+        },
+        {
+          "value": "ウ",
+          "text": "指数平滑法では，平滑化定数の値が0%に近いほど直前の実績値を重視し，100%に近いほど過去の実績値を重視する。"
+        },
+        {
+          "value": "エ",
+          "text": "指数平滑法は，過去の実績値よりも直近の実績値を用いるほど予測の精度が向上すると考えられる場合に有効な手法である。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（需要予測・時系列モデル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q74.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q075",
+      "questionNo": 75,
+      "title": "引き出された多くの事実やアイディアを，類似するものでグルーピングしていく収束技法はどれか。\n\n![問75の図](https://www.ap-siken.com/kakomon/07_haru/img/75.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "NM法"
+        },
+        {
+          "value": "イ",
+          "text": "ゴードン法"
+        },
+        {
+          "value": "ウ",
+          "text": "親和図法"
+        },
+        {
+          "value": "エ",
+          "text": "ブレーンストーミング"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（発想法・問題解決技法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q75.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q75.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q076",
+      "questionNo": 76,
+      "title": "表から，卸売業A社と小売業B社の財務指標を比較したとき，卸売業A社について適切な記述はどれか。\n\n〔単位 百万円〕\n\n| | 卸売業A社 | 小売業B社 |\n|:--|:--|:--|\n| 売上高 | 800 | 1,000 |\n| 営業利益 | 20 | 90 |\n| 総資産 | 100 | 900 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "売上高，総資産の額がともに低く，総資産回転率も低い。"
+        },
+        {
+          "value": "イ",
+          "text": "売上高営業利益率が高く，総資産営業利益率も高い。"
+        },
+        {
+          "value": "ウ",
+          "text": "営業利益，総資産の額がともに低く，総資産営業利益率も低い。"
+        },
+        {
+          "value": "エ",
+          "text": "総資産回転率が高く，総資産営業利益率も高い。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（会計・財務・財務指標）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q76.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q077",
+      "questionNo": 77,
+      "title": "売上高が7,000万円のとき，200万円の損失，売上高が9,000万円のとき，600万円の利益と予想された。売上高が8,000万円のときの変動費は何万円か。ここで，売上高が変わっても変動費率は変わらないものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "3,200"
+        },
+        {
+          "value": "イ",
+          "text": "4,000"
+        },
+        {
+          "value": "ウ",
+          "text": "4,800"
+        },
+        {
+          "value": "エ",
+          "text": "5,600"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（CVP分析・損益分岐点）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q77.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q078",
+      "questionNo": 78,
+      "title": "著作権法及び関連法令によれば，生成AIを利用して画像を生成する行為又はその生成物の利用が著作権侵害にあたるか否かに関して，適切な記述はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "AIが既存の著作権で保護されている画像をデータセットとして学習している場合は，そのAIを利用して画像を生成すると，いかなる場合も著作権侵害になる。"
+        },
+        {
+          "value": "イ",
+          "text": "AIを利用して生成した画像が著作権で保護された既存の画像と類似しており，それを公開した場合，著作権侵害となる可能性がある。"
+        },
+        {
+          "value": "ウ",
+          "text": "AIを利用して生成した画像は，AIが自動的に創作したものであるため，いかなる状況でも著作権の対象外となり，著作権侵害の懸念は生じない。"
+        },
+        {
+          "value": "エ",
+          "text": "AIを利用して生成した画像は，生成した本人の私的使用に限って，利用が認められており，商業利用を行った場合は，いかなる場合も著作権侵害となる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（著作権法・生成AI）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q78.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q78.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q079",
+      "questionNo": 79,
+      "title": "資金決済法における暗号資産に関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "暗号資産交換業者は，情報の安全管理や広告・勧誘規制などの行為規制は受けるが，資本金額や純資産額などの財務的規制は受けない。"
+        },
+        {
+          "value": "イ",
+          "text": "暗号資産は，不特定の者に対して使用でき，電子的に記録され，移転できるものであり，法定通貨又は法定通貨建ての資産ではないが，法定通貨と相互に交換できる。"
+        },
+        {
+          "value": "ウ",
+          "text": "暗号資産は，ブロックチェーン技術を用いて集中管理されており，法定通貨と同様，銀行などの金融機関で入手・交換できる。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の保有する暗号資産の残高や取引は，発行者によって利用者ごとに管理されているので，利用者は保有している暗号資産を発行者の指定する加盟店だけで使用できる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（資金決済法・暗号資産）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q79.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q080",
+      "questionNo": 80,
+      "title": "欧州へ電子部品を輸出するには，RoHS指令への対応が必要である。このRoHS指令の目的として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "家電製品から有用な部品や材料をリサイクルし，廃棄物を減量するとともに，資源の有効利用を推進する。"
+        },
+        {
+          "value": "イ",
+          "text": "機器が発生する電磁妨害が，無線通信機器及びその他の機器の正常な動作を妨げるレベルを超えないようにする。"
+        },
+        {
+          "value": "ウ",
+          "text": "大量破壊兵器の開発及び拡散，通常兵器の過剰備蓄に関わるおそれがある場合など，国際社会の平和と安全を脅かす輸出行為を防止する。"
+        },
+        {
+          "value": "エ",
+          "text": "電気電子製品の生産から処分までの全ての段階で，有害物質が環境及び人の健康に及ぼす危険を最小化する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（環境規制・RoHS指令）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q80.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

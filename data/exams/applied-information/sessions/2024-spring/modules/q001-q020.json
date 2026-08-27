@@ -1,0 +1,705 @@
+{
+  "id": "q001-q020",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q001",
+      "questionNo": 1,
+      "title": "複数の袋からそれぞれ白と赤の玉を幾つかずつ取り出すとき，ベイズの定理を利用して事後確率を求める場合はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ある袋から取り出した二つの玉の色が同じと推定することができる確率を求める場合"
+        },
+        {
+          "value": "イ",
+          "text": "異なる袋から取り出した玉が同じ色であると推定することができる確率を求める場合"
+        },
+        {
+          "value": "ウ",
+          "text": "玉を一つ取り出すために，ある袋が選ばれると推定することができる確率を求める場合"
+        },
+        {
+          "value": "エ",
+          "text": "取り出した玉の色から，どの袋から取り出されたのかを推定するための確率を求める場合"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（応用数学・確率統計）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q01.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q002",
+      "questionNo": 2,
+      "title": "ATM（現金自動預払機）が1台ずつ設置してある二つの支店を統合し，統合後の支店にはATMを1台設置する。統合後のATMの平均待ち時間を求める式はどれか。ここで，待ち時間はM/M/1の待ち行列モデルに従い，平均待ち時間にはサービス時間を含まず，ATMを1台に統合しても十分に処理できるものとする。\n\n〔条件〕\n\n(1) 統合後の平均サービス時間：T_s\n(2) 統合前のATMの利用率：両支店ともρ\n(3) 統合後の利用者数：統合前の両支店の利用者数の合計",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ρ／(1－ρ) × T_s"
+        },
+        {
+          "value": "イ",
+          "text": "ρ／(1－2ρ) × T_s"
+        },
+        {
+          "value": "ウ",
+          "text": "2ρ／(1－ρ) × T_s"
+        },
+        {
+          "value": "エ",
+          "text": "2ρ／(1－2ρ) × T_s"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（応用数学・待ち行列理論）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q02.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q003",
+      "questionNo": 3,
+      "title": "AI におけるディープラーニングに関する記述として，最も適切なものはどれか。\n\n![問3の図](https://www.ap-siken.com/kakomon/06_haru/img/03.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "あるデータから結果を求める処理を，人間の脳神経回路のように多層の処理を重ねることによって，複雑な判断をできるようにする。"
+        },
+        {
+          "value": "イ",
+          "text": "大量のデータからまだ知られていない新たな規則や仮説を発見するために，想定値から大きく外れている例外事項を取り除きながら分析を繰り返す手法である。"
+        },
+        {
+          "value": "ウ",
+          "text": "多様なデータや大量のデータに対して，三段論法，統計的手法やパターン認識手法を組み合わせることによって，高度なデータ分析を行う手法である。"
+        },
+        {
+          "value": "エ",
+          "text": "知識がルールに従って表現されており，演繹手法を利用した推論によって有意な結論を導く手法である。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "情報システム戦略（AI・人工知能）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q03.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_haru/q3.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q004",
+      "questionNo": 4,
+      "title": "符号長7ビット，情報ビット数4ビットのハミング符号による誤り訂正の方法を，次のとおりとする。\n\n受信した7ビットの符号語 x1 x2 x3 x4 x5 x6 x7（xkは0又は1）に対して\n\n```\nc0 = x1 + x3 + x5 + x7\nc1 =      x2 + x3      + x6 + x7\nc2 =                x4 + x5 + x6 + x7\n```\n\n（いずれも mod 2 での計算）\n\nを計算し，c0，c1，c2 の中に少なくとも一つは0でないものがある場合には，\n\n```\ni = c0 + c1×2 + c2×4\n```\n\nを求めて，左から i ビット目を反転することによって誤りを訂正する。\n\n受信した符号語が 1000101 であった場合，誤り訂正後の符号語はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1000001"
+        },
+        {
+          "value": "イ",
+          "text": "1000101"
+        },
+        {
+          "value": "ウ",
+          "text": "1001101"
+        },
+        {
+          "value": "エ",
+          "text": "1010101"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（情報に関する理論・誤り訂正符号）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q04.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q005",
+      "questionNo": 5,
+      "title": "正の整数Mに対して，次の二つの流れ図に示すアルゴリズムを実行したとき，結果xの値が等しくなるようにしたい。aに入れる条件として，適切なものはどれか。\n\n【左の流れ図】\n```\n開始\nx ← 1\n[演算] n: M, -1, 1 （ループ端の繰り返し指定は、変数名：初期値、増分、終値を示す）\n  x ← (x × n)\n[演算終わり]\n終了\n```\n\n【右の流れ図】\n```\n開始\nx ← 1\nn ← 1\n↓\nx ← (x × n)\nn ← (n + 1)\n[ a ] --No-→ （x←(x×n)へ戻る）\n  ↓ Yes\n終了\n```\n\n![図5](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q05.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "n＜M"
+        },
+        {
+          "value": "イ",
+          "text": "n＞M－1"
+        },
+        {
+          "value": "ウ",
+          "text": "n＞M"
+        },
+        {
+          "value": "エ",
+          "text": "n＞M＋1"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズムとプログラミング（流れ図・繰り返し処理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q05.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q05.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q006",
+      "questionNo": 6,
+      "title": "各ノードがもつデータを出力する再帰処理 f(ノードn) を定義した。この処理を，図の2分木の根（最上位のノード）から始めたときの出力はどれか。\n\n〔f(ノードn)の定義〕\n\n1. ノードnの右に子ノードrがあれば，f(ノードr)を実行\n2. ノードnの左に子ノードlがあれば，f(ノードl)を実行\n3. 再帰処理 f(ノードr)，f(ノードl) を未実行の子ノード，又は子ノードがなければ，ノード自身がもつデータを出力\n4. 終了\n\n【2分木の構造】\n\n```\n            +\n          /   \\\n         A     ÷\n             /    \\\n            ×      -\n          /  \\    /  \\\n         B    C  D    E\n```\n\n![図6](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q06.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "＋÷－ED×CBA"
+        },
+        {
+          "value": "イ",
+          "text": "ABC×DE－÷＋"
+        },
+        {
+          "value": "ウ",
+          "text": "E－D÷C×B＋A"
+        },
+        {
+          "value": "エ",
+          "text": "ED－CB×÷A＋"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズムとプログラミング（再帰処理・木構造の走査）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q06.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q06.md",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q007",
+      "questionNo": 7,
+      "title": "整列方法に関するアルゴリズムの記述のうち，バブルソートの記述はどれか。ここで，整列対象は重複のない1から9の数字がランダムに並んでいる数字列とする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "数字列の最後の数字から最初の数字に向かって，隣り合う二つの数字を比較して小さい数字が前に来るよう数字を入れ替える操作を繰り返し行う。"
+        },
+        {
+          "value": "イ",
+          "text": "数字列の中からランダムに基準となる数を選び，基準より小さい数と大きい数の二つのグループに分け，それぞれのグループ内も同じ操作を繰り返し行う。"
+        },
+        {
+          "value": "ウ",
+          "text": "数字列をほぼ同じ長さの二つの数字列のグループに分割していき，分割できなくなった時点から，グループ内で数字が小さい順に並べる操作を繰り返し行う。"
+        },
+        {
+          "value": "エ",
+          "text": "未処理の数字列の中から最小値を探索し，未処理の数字列の最初の数字と入れ替える操作を繰り返し行う。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズムとプログラミング（整列アルゴリズム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q07.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q008",
+      "questionNo": 8,
+      "title": "同一メモリ空間で，転送元の開始アドレス，転送先の開始アドレス，方向フラグ及び転送語数をパラメータとして指定することによって，データをブロック転送できる機能をもつ CPU がある。図のようにアドレス 1001 から 1004 のデータをアドレス 1003 から 1006 に転送するとき，指定するパラメータとして適切なものはどれか。ここで，転送は開始アドレスから 1 語ずつ行われ，方向フラグに 0 を指定するとアドレスの昇順に，1 を指定するとアドレスの降順に転送を行うものとする。\n\n| | 転送元の開始アドレス | 転送先の開始アドレス | 方向フラグ | 転送語数 |\n|:--|:--:|:--:|:--:|:--:|\n\n![図8](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q08.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1001 | 1003 | 0 | 4"
+        },
+        {
+          "value": "イ",
+          "text": "1001 | 1003 | 1 | 4"
+        },
+        {
+          "value": "ウ",
+          "text": "1004 | 1006 | 0 | 4"
+        },
+        {
+          "value": "エ",
+          "text": "1004 | 1006 | 1 | 4"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（メモリ・データ転送）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q08.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q08.md",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q009",
+      "questionNo": 9,
+      "title": "量子ゲート方式の量子コンピュータの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "演算は2進数で行われ，結果も2進数で出力される。"
+        },
+        {
+          "value": "イ",
+          "text": "特定のアルゴリズムによる演算だけができ，加算演算はできない。"
+        },
+        {
+          "value": "ウ",
+          "text": "複数の状態を同時に表現する量子ビットと，その重ね合わせを利用する。"
+        },
+        {
+          "value": "エ",
+          "text": "量子状態を変化させながら観測するので，100℃以上の高温で動作する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（プロセッサ・量子コンピュータ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q09.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q010",
+      "questionNo": 10,
+      "title": "主記憶のアクセス時間が60ナノ秒，キャッシュメモリのアクセス時間が10ナノ秒であるシステムがある。キャッシュメモリを介して主記憶にアクセスする場合の実効アクセス時間が15ナノ秒であるとき，キャッシュメモリのヒット率は幾らか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.1"
+        },
+        {
+          "value": "イ",
+          "text": "0.17"
+        },
+        {
+          "value": "ウ",
+          "text": "0.83"
+        },
+        {
+          "value": "エ",
+          "text": "0.9"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（メモリ・キャッシュ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q10.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q011",
+      "questionNo": 11,
+      "title": "15Mバイトのプログラムを圧縮して，フラッシュメモリに格納している。プログラムのサイズは圧縮によって元のサイズの40%になっている。フラッシュメモリから主記憶への転送速度が20Mバイト／秒であり，1Mバイトに圧縮されたデータの展開に主記憶上で0.03秒が掛かるとき，このプログラムが主記憶に展開されるまでの時間は何秒か。ここで，フラッシュメモリから主記憶への転送と圧縮データの展開は同時には行われないものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.48"
+        },
+        {
+          "value": "イ",
+          "text": "0.75"
+        },
+        {
+          "value": "ウ",
+          "text": "0.93"
+        },
+        {
+          "value": "エ",
+          "text": "1.20"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（メモリ・データ転送）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q11.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q012",
+      "questionNo": 12,
+      "title": "システムの信頼性設計に関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "フェールセーフとは，利用者の誤操作によってシステムが異常終了してしまうことのないように，単純なミスを発生させないようにする設計方法である。"
+        },
+        {
+          "value": "イ",
+          "text": "フェールソフトとは，故障が発生した場合でも機能を縮退させることなく稼働を継続する概念である。"
+        },
+        {
+          "value": "ウ",
+          "text": "フォールトアボイダンスとは，システム構成要素の個々の品質を高めて故障が発生しないようにする概念である。"
+        },
+        {
+          "value": "エ",
+          "text": "フォールトトレランスとは，故障が生じてもシステムに重大な影響が出ないように，あらかじめ定められた安全状態にシステムを固定し，全体として安全が維持されるような設計方法である。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの構成要素（信頼性設計）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q12.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q013",
+      "questionNo": 13,
+      "title": "オブジェクトストレージの記述として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "更新頻度の少ない非構造型データの格納に適しており，大容量で拡張性のあるストレージ空間を仮想的に実現することができる。"
+        },
+        {
+          "value": "イ",
+          "text": "高速のストレージ専用ネットワークを介して，複数のサーバからストレージを共有することによって，高速にデータを格納することができる。"
+        },
+        {
+          "value": "ウ",
+          "text": "サーバごとに割り当てられた専用ストレージであり，容量が不足したときにはストレージを追加することができる。"
+        },
+        {
+          "value": "エ",
+          "text": "複数のストレージを組み合わせることによって，仮想的な1台のストレージとして運用することができる。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "システム構成要素（システムの構成・ストレージ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q13.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q014",
+      "questionNo": 14,
+      "title": "1台のCPUの性能を1とするとき，そのCPUをn台用いたマルチプロセッサの性能Pが，\n\nP ＝ n ／ {1 ＋ (n－1)a}\n\nで表されるとする。ここで，aはオーバーヘッドを表す定数である。例えば，a＝0.1，n＝4とすると，P≒3なので，4台のCPUから成るマルチプロセッサの性能は約3になる。この式で表されるマルチプロセッサの性能には上限があり，nを幾ら大きくしてもPはある値以上には大きくならない。a＝0.1の場合，Pの上限は幾らか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "5"
+        },
+        {
+          "value": "イ",
+          "text": "10"
+        },
+        {
+          "value": "ウ",
+          "text": "15"
+        },
+        {
+          "value": "エ",
+          "text": "20"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（マルチプロセッサ・性能評価）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q14.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q015",
+      "questionNo": 15,
+      "title": "コンピュータの性能評価には，シミュレーションを用いた方法，解析的な方法などがある。シミュレーションを用いた方法の特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "解析的な方法よりも計算量が少なく，効率的に解が求まる。"
+        },
+        {
+          "value": "イ",
+          "text": "解析的な方法よりも，乱数を用いることで高精度の解が得られる。"
+        },
+        {
+          "value": "ウ",
+          "text": "解析的に解が求められないモデルに対しても，数値的に解が求まる。"
+        },
+        {
+          "value": "エ",
+          "text": "解析的に解が求められるモデルの検証には使用できない。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "システム構成要素（システムの評価指標・性能評価）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q15.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q016",
+      "questionNo": 16,
+      "title": "ノンプリエンプティブ方式のタスクの状態遷移に関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "OSは実行中のタスクの優先度を他のタスクよりも上げることによって，実行中のタスクが終了するまでタスクが切り替えられるのを防ぐ。"
+        },
+        {
+          "value": "イ",
+          "text": "実行中のタスクが自らの中断をOSに要求することによってだけ，OSは実行中のタスクを中断し，動作可能な他のタスクを実行中に切り替えることができる。"
+        },
+        {
+          "value": "ウ",
+          "text": "実行中のタスクが無限ループに陥っていることをOSが検知した場合，OSは実行中のタスクを終了させ，動作可能な他のタスクを実行中に切り替える。"
+        },
+        {
+          "value": "エ",
+          "text": "実行中のタスクより優先度が高い動作可能なタスクが実行待ち行列に追加された場合，OSは実行中のタスクを中断し，優先度が高い動作可能なタスクを実行中に切り替える。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（タスク管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q16.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q017",
+      "questionNo": 17,
+      "title": "三つの資源X～Zを占有して処理を行う四つのプロセスA～Dがある。各プロセスは処理の進行に伴い，表中の数値の順に資源を占有し，実行終了時に三つの資源を一括して解放する。プロセスAと同時にもう一つプロセスを動かした場合に，デッドロックを起こす可能性があるプロセスはどれか。\n\n| プロセス | 資源X | 資源Y | 資源Z |\n|:--:|:--:|:--:|:--:|\n| A | 1 | 2 | 3 |\n| B | 1 | 2 | 3 |\n| C | 2 | 3 | 1 |\n| D | 3 | 1 | 2 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "B，C，D"
+        },
+        {
+          "value": "イ",
+          "text": "C，D"
+        },
+        {
+          "value": "ウ",
+          "text": "Cだけ"
+        },
+        {
+          "value": "エ",
+          "text": "Dだけ"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（排他制御・デッドロック）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q17.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q018",
+      "questionNo": 18,
+      "title": "複数のクライアントから接続されるサーバがある。このサーバのタスクの多重度が2以下の場合，タスク処理時間は常に4秒である。このサーバに1秒間隔で4件の処理要求が到着した場合，全ての処理が終わるまでの時間はタスクの多重度が1のときと2のときとで，何秒の差があるか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "6"
+        },
+        {
+          "value": "イ",
+          "text": "7"
+        },
+        {
+          "value": "ウ",
+          "text": "8"
+        },
+        {
+          "value": "エ",
+          "text": "9"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（タスク管理・性能評価）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q18.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q019",
+      "questionNo": 19,
+      "title": "プログラムを構成するモジュールや関数の実行回数，実行時間など，性能改善のための分析に役立つ情報を収集するツールはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "エミュレーター"
+        },
+        {
+          "value": "イ",
+          "text": "シミュレーター"
+        },
+        {
+          "value": "ウ",
+          "text": "デバッガ"
+        },
+        {
+          "value": "エ",
+          "text": "プロファイラ"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "開発ツール（プログラム性能分析）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q19.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q020",
+      "questionNo": 20,
+      "title": "エアコンや電気自動車でエネルギー効率のよい制御や電力変換をするためにパワー半導体が用いられる。このパワー半導体の活用例の一つであるインバータの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "直流電圧をより高い直流電圧に変換する。"
+        },
+        {
+          "value": "イ",
+          "text": "直流電圧をより低い直流電圧に変換する。"
+        },
+        {
+          "value": "ウ",
+          "text": "交流電力を直流電力に変換する。"
+        },
+        {
+          "value": "エ",
+          "text": "直流電力を交流電力に変換する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（パワー半導体・電力変換）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q20.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

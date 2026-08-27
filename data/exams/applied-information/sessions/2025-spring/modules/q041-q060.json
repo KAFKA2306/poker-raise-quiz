@@ -1,0 +1,705 @@
+{
+  "id": "q041-q060",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q041",
+      "questionNo": 41,
+      "title": "cookieにSecure属性を設定しなかったときと比較した，設定したときのWebブラウザの動作として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "cookieに設定された有効期間を過ぎると，Webブラウザがcookieを無効であると判断する。"
+        },
+        {
+          "value": "イ",
+          "text": "URL内のスキームがhttpsのときだけ，Webブラウザからcookieが送出される。"
+        },
+        {
+          "value": "ウ",
+          "text": "WebブラウザがアクセスするURL内のパスとcookieに設定されたパスのプレフィックスが一致するときだけ，Webブラウザからcookieが送出される。"
+        },
+        {
+          "value": "エ",
+          "text": "WebブラウザではJavaScriptによるcookieの読出しが禁止される。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（Cookie属性）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q41.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q042",
+      "questionNo": 42,
+      "title": "Webアプリケーションソフトウェアの開発におけるOSコマンドインジェクション対策はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "SQL文の組立ては全てプレースホルダで実装する。"
+        },
+        {
+          "value": "イ",
+          "text": "シェルを起動できる言語機能を利用した実装を避ける。"
+        },
+        {
+          "value": "ウ",
+          "text": "直接メモリにアクセスできる言語機能を利用した実装を避ける。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者が入力したファイル名にディレクトリが含まれていないかのエラーチェックを実装する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（OSコマンドインジェクション対策）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q42.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q043",
+      "questionNo": 43,
+      "title": "VPNで使用されるプロトコルであるIPsec，L2TP，TLSの，OSI基本参照モデルにおける相対的な位置関係はどれか。\n\nOSI基本参照モデル\n上位層（アプリケーション層）\n↕\n下位層（物理層）\n\n| | A | B | C | D |\n|:--|:--|:--|:--|:--|\n| 上位 | IPsec | IPsec | TLS | TLS |\n| ↕ | L2TP | TLS | IPsec | L2TP |\n| 下位 | TLS | L2TP | L2TP | IPsec |\n\n![図43](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q43.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "A"
+        },
+        {
+          "value": "イ",
+          "text": "B"
+        },
+        {
+          "value": "ウ",
+          "text": "C"
+        },
+        {
+          "value": "エ",
+          "text": "D"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（VPNプロトコルとOSI参照モデル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q43.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q43.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q044",
+      "questionNo": 44,
+      "title": "パスワードクラックの対策のうち，ストレッチングに該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "あらかじめ利用者だけが知っている質問と答えをシステムに登録しておき，普段と異なるログイン方法の場合に追加で質問を行う。"
+        },
+        {
+          "value": "イ",
+          "text": "一定時間内にパスワードを一定回数誤ったとき，それ以降のログインを試行できないようにする。"
+        },
+        {
+          "value": "ウ",
+          "text": "パスワードの照合のためのハッシュ値を，パスワードに対してハッシュ化を繰り返して，求める。"
+        },
+        {
+          "value": "エ",
+          "text": "パスワードの照合のためのハッシュ値を，パスワードに利用者IDごとに異なる文字列を付加してからハッシュ化して，求める。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（パスワード認証・ストレッチング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q44.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q045",
+      "questionNo": 45,
+      "title": "デザインレビューの目的はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "設計工程内で，設計工程の成果物の問題点を発見する。"
+        },
+        {
+          "value": "イ",
+          "text": "品質保証部門が，全成果物の出荷の可否を判定する。"
+        },
+        {
+          "value": "ウ",
+          "text": "品質保証部門によるプログラムのサンプリング検査によって，設計者では気付かない品質上の問題点を発見する。"
+        },
+        {
+          "value": "エ",
+          "text": "プロジェクトマネジメントのプロセス上の問題点を発見する。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "システム開発技術（デザインレビュー）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q45.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q046",
+      "questionNo": 46,
+      "title": "システムをバージョンアップするとき，システムの稼働環境を二つ用意しておき，一方の環境で現バージョンのシステムを稼働させた状態のままで他方の環境のシステムをバージョンアップし，ロードバランサーなどを使って稼働環境を切り替える。これによって，切替えに伴うシステムのダウンタイムを短くするとともに，バージョンアップしたシステムで不具合が発生したときには，元のバージョンに切り戻す時間を短くすることができる。この手法を何というか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ブルーグリーンデプロイメント"
+        },
+        {
+          "value": "イ",
+          "text": "ホットスタンバイ"
+        },
+        {
+          "value": "ウ",
+          "text": "ホットスワップ"
+        },
+        {
+          "value": "エ",
+          "text": "ローリングアップデート"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（デプロイ・リリース手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q46.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q047",
+      "questionNo": 47,
+      "title": "ソフトウェアの保守性を定量評価するときに使用する指標として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "（運用期間中に発生した不具合件数）÷（プログラムの規模）"
+        },
+        {
+          "value": "イ",
+          "text": "（適正規模の基準を満たすプログラムの数）÷（プログラムの総数）"
+        },
+        {
+          "value": "ウ",
+          "text": "（テスト実施済みの分岐の数）÷（プログラムの総分岐数）"
+        },
+        {
+          "value": "エ",
+          "text": "（プログラムの推定総エラー数）－（摘出エラー数）"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（保守性の評価指標）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q47.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q048",
+      "questionNo": 48,
+      "title": "XP（Extreme Programming）のプラクティスの一つであるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "構造化プログラミング"
+        },
+        {
+          "value": "イ",
+          "text": "コンポーネント指向プログラミング"
+        },
+        {
+          "value": "ウ",
+          "text": "ビジュアルプログラミング"
+        },
+        {
+          "value": "エ",
+          "text": "ペアプログラミング"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（アジャイル開発・XP）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q48.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q049",
+      "questionNo": 49,
+      "title": "分散システムの脆弱性を実験によって発見する手法であるカオスエンジニアリングには，五つの原則がある。この原則のうちの三つは，\"定常状態における振る舞いの仮説を立てる\"，\"実世界の事象を多様化させる\"，\"継続的に実行できるよう実験を自動化する\"である。あと二つの原則の組みはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "\"開発環境で実験を行う\"，\"影響範囲を局所化する\""
+        },
+        {
+          "value": "イ",
+          "text": "\"開発環境で実験を行う\"，\"影響範囲を広く捉える\""
+        },
+        {
+          "value": "ウ",
+          "text": "\"本番環境で実験を行う\"，\"影響範囲を局所化する\""
+        },
+        {
+          "value": "エ",
+          "text": "\"本番環境で実験を行う\"，\"影響範囲を広く捉える\""
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア開発管理技術（カオスエンジニアリング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q49.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q050",
+      "questionNo": 50,
+      "title": "スクラムにおいて繰り返し実行するイベントのうち，ステークホルダに作業の結果をプレゼンテーションして，プロダクトゴールに対する進捗について話し合い，必要に応じてスコープを調整するイベントはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "スプリントプランニング"
+        },
+        {
+          "value": "イ",
+          "text": "スプリントレビュー"
+        },
+        {
+          "value": "ウ",
+          "text": "デイリースクラム"
+        },
+        {
+          "value": "エ",
+          "text": "レトロスペクティブ"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア開発管理技術（スクラムのイベント）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q50.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q051",
+      "questionNo": 51,
+      "title": "プロジェクトマネジメントにおける\"プロジェクト憲章\"の説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "プロジェクトの実行，監視，管理の方法を規定するために，スケジュール，リスクなどに関するマネジメントの役割や責任などを記した文書"
+        },
+        {
+          "value": "イ",
+          "text": "プロジェクトのスコープを定義するために，プロジェクトの目標，成果物，要求事項及び境界を記した文書"
+        },
+        {
+          "value": "ウ",
+          "text": "プロジェクトの目標を達成し，必要な成果物を作成するために，プロジェクトで実行する作業を階層構造で記した文書"
+        },
+        {
+          "value": "エ",
+          "text": "プロジェクトを正式に認可するために，ビジネスニーズ，目標，成果物，プロジェクトマネージャ，及びプロジェクトマネージャの責任・権限を記した文書"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（プロジェクト憲章）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q51.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q052",
+      "questionNo": 52,
+      "title": "EVMを使用してマネジメントをしているプロジェクトで，進捗に関する指標値は次のとおりであった。このプロジェクトに対する適切な評価と対策はどれか。\n\n〔進捗に関する指標値〕\nCPI（コスト効率指数）：0.9\nSPI（スケジュール効率指数）：1.1\nBAC（完成時総予算）に基づくTCPI（残作業効率指数）：1.2",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "コストが予算を超えているが，スケジュールには余裕があり，残作業のコスト効率を計画よりも上げる必要はないので，CPIに基づいて完成までに必要なコストを予測する。"
+        },
+        {
+          "value": "イ",
+          "text": "コストが予算を超えているので，完成時総予算を超過するおそれがあるが，スケジュールには余裕があるので，残作業のコスト効率を上げる対策を検討するか，コンティンジェンシー予備費の使用を検討する。"
+        },
+        {
+          "value": "ウ",
+          "text": "コストには余裕があるが，スケジュールが予定より遅れており，残作業のコスト効率を計画よりも上げる必要があるので，ファストトラッキングなどを用いたスケジュール短縮を検討するとともに，コンティンジェンシー予備費の使用を検討する。"
+        },
+        {
+          "value": "エ",
+          "text": "コストには余裕があるので，残作業のコスト効率を計画よりも上げる必要はないが，スケジュールが予定より遅れているので，クラッシングなどを用いたスケジュール短縮を検討する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（EVM）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q52.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q053",
+      "questionNo": 53,
+      "title": "プロジェクトの期間を短縮する方法のうち，クラッシングに該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "作業の前後関係を組み直し，実施する順番を変える。"
+        },
+        {
+          "value": "イ",
+          "text": "作業を分析し，同時に実施できる部分を複数の作業に分割し，並行して実施する。"
+        },
+        {
+          "value": "ウ",
+          "text": "先行作業の一部の成果物が完成した時点で，後続作業を開始する。"
+        },
+        {
+          "value": "エ",
+          "text": "プロジェクトの外部から要員を調達し，クリティカルパス上の作業に投入する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（スケジュール短縮技法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q53.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q054",
+      "questionNo": 54,
+      "title": "あるシステム開発プロジェクトのシステムテストにおけるテスト密度及び欠陥密度の値は，図に示した領域①～④のうち，領域④の範囲内であった。品質管理基準に照らして評価すると，行うべき活動として最も適切なものはどれか。ここで，このプロジェクトの品質管理基準では，定量評価の基準として，表に従ってテスト密度及び欠陥密度の基準値を設定した上で，テスト密度は基準値の80%以上であること，かつ，欠陥密度は基準値の80%以上120%未満であることと定めている。\n\n〔品質指標と基準値〕\n\n| 品質指標 | 算出方法 | 基準値 |\n|:--|:--|:--|\n| テスト密度 | テストケース数（件）÷システムの規模（KLOC） | 20（件/KLOC） |\n| 欠陥密度 | 検出欠陥数（件）÷システムの規模（KLOC） | 0.1（件/KLOC） |\n\n〔テスト結果の領域分析〕\n縦軸：欠陥密度（件/KLOC）、横軸：テスト密度（件/KLOC）\n境界線：テスト密度＝16（件/KLOC），欠陥密度＝0.08，0.12（件/KLOC）\n領域①：テスト密度16未満（左側全体）\n領域②：テスト密度16以上，欠陥密度0.12以上\n領域③：テスト密度16以上，欠陥密度0.08以上0.12未満\n領域④：テスト密度16以上，欠陥密度0.08未満\n\n![図54](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q54.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "欠陥密度は基準を満たしているが，システムの品質に問題がないか，欠陥の妥当性を確認する。"
+        },
+        {
+          "value": "イ",
+          "text": "システムの欠陥が多いので，検出した欠陥の原因を分析した上で，システムの品質改善に取り組む。"
+        },
+        {
+          "value": "ウ",
+          "text": "システムの欠陥を十分に検出できていない懸念があるので，テストの観点に漏れがないかなど，テストケースの妥当性を確認する。"
+        },
+        {
+          "value": "エ",
+          "text": "テスト密度が不足しているので，システムの規模に見合うテストケース数以上となるように，テストケースを追加する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（品質管理・テスト密度と欠陥密度）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q54.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q54.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q055",
+      "questionNo": 55,
+      "title": "あるサービスでは〔サービス可用性のSLA〕に基づき，サービス可用性の目標値の遵守状況を月ごとに測定して評価している。ある月の実績値は99.3%だった。この月にサービス可用性の目標値を達成するためには，サービス停止時間は，最低，何時間少なければよかったか。\n\n〔サービス可用性のSLA〕\n・サービス可用性の目標値：99.5%以上\n・サービス提供時間帯：7時～22時\n・サービス提供日数：20日／月",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.4"
+        },
+        {
+          "value": "イ",
+          "text": "0.6"
+        },
+        {
+          "value": "ウ",
+          "text": "1.3"
+        },
+        {
+          "value": "エ",
+          "text": "1.95"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（SLA・サービス可用性）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q55.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q056",
+      "questionNo": 56,
+      "title": "A社は，自社がオンプレミスで運用している業務システムを，クラウドサービスへ段階的に移行する。段階的移行では，初めにネットワークとサーバをIaaSに移行し，次に全てのミドルウェアをPaaSに移行する。A社が行っているシステム運用作業のうち，この移行によって不要となるシステム運用作業の組合せはどれか。\n\n〔A社が行っているシステム運用作業〕\n①　業務システムのバッチ処理のジョブ監視\n②　物理サーバの起動，停止のオペレーション\n③　ハードウェアの異常を警告する保守ランプの目視監視\n④　ミドルウェアへのパッチ適用\n\n| | IaaSへの移行によって不要となるシステム運用作業 | PaaSへの移行によって不要となるシステム運用作業 |\n|:--|:--|:--|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "① | ②, ④"
+        },
+        {
+          "value": "イ",
+          "text": "①, ③ | ②"
+        },
+        {
+          "value": "ウ",
+          "text": "②, ③ | ④"
+        },
+        {
+          "value": "エ",
+          "text": "③ | ②, ④"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（クラウド移行とシステム運用作業）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q56.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q057",
+      "questionNo": 57,
+      "title": "サービスの継続的改善で，改善の達成目標を設定して活動するとき，\"サービスの提供やマネジメントの成功に重要な要因\"を特定したものを何というか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CSF"
+        },
+        {
+          "value": "イ",
+          "text": "KGI"
+        },
+        {
+          "value": "ウ",
+          "text": "KPI"
+        },
+        {
+          "value": "エ",
+          "text": "OKR"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（継続的改善・目標管理指標）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q57.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q058",
+      "questionNo": 58,
+      "title": "システム監査におけるウォークスルー法の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "機密データの保管状況に関する資料及び文書類を入手し，内容を点検する。"
+        },
+        {
+          "value": "イ",
+          "text": "システムの運用状況について，関係者に口頭で問い合わせ，回答を入手する。"
+        },
+        {
+          "value": "ウ",
+          "text": "データの生成から入力，処理，出力，利活用までのプロセス，及び組み込まれている一連のコントロールを確認する。"
+        },
+        {
+          "value": "エ",
+          "text": "テストデータを監査対象プログラムで処理し，期待した結果が出力されるかどうかを確かめる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（監査技法・ウォークスルー法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q58.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q059",
+      "questionNo": 59,
+      "title": "システム監査における\"監査手続\"として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "監査計画の立案や監査業務の進捗管理を行うための手続"
+        },
+        {
+          "value": "イ",
+          "text": "監査結果を受けて，監査報告書に監査人の結論や指摘事項を記述する手続"
+        },
+        {
+          "value": "ウ",
+          "text": "監査項目について，十分かつ適切な証拠を入手するための手続"
+        },
+        {
+          "value": "エ",
+          "text": "監査テーマに合わせて，監査チームを編成する手続"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（監査手続の定義）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q59.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q060",
+      "questionNo": 60,
+      "title": "システム管理基準（令和5年）における，ユーザ受入テストに関する監査のチェックポイントとして，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "構築された情報システムに，業務要件が適切に反映されていることを確認するために，利用者の立場からテストされていること"
+        },
+        {
+          "value": "イ",
+          "text": "情報システムの稼働後に，IT戦略における目標を達成しているかどうかを確認するために，客観的な情報に基づいてテストされていること"
+        },
+        {
+          "value": "ウ",
+          "text": "利用者からのシステム要件が適切に反映されていることを確認するために，情報システムの全ての構成要素について，中間成果物も含めてレビューされていること"
+        },
+        {
+          "value": "エ",
+          "text": "利用者が情報システムを利用できるようにするために，情報システムの移行後に，移行結果について，本番環境が利用可能かどうかレビューされていること"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（ユーザ受入テストの監査チェックポイント）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q60.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

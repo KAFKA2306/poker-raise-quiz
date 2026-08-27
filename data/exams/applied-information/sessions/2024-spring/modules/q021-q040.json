@@ -1,0 +1,705 @@
+{
+  "id": "q021-q040",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q021",
+      "questionNo": 21,
+      "title": "入力がAとB，出力がYの論理回路を動作させたとき，図のタイムチャートが得られた。この論理回路として，適切なものはどれか。\n\n【タイムチャート】\n\nA，B，Yはそれぞれ0または1の値を時間経過とともに取り、図中の各区間における（A，B，Y）の組合せは次のようになっている：①（0，1，1）、②（0，0，1）、③（1，1，0）、④（0，0，1）、⑤（1，1，0）、⑥（0，0，1）、⑦（1，0，1）\n\nこれらを重複を除いて整理すると、以下の真理値表が得られる。\n\n| A | B | Y |\n|:-:|:-:|:-:|\n| 0 | 0 | 1 |\n| 0 | 1 | 1 |\n| 1 | 0 | 1 |\n| 1 | 1 | 0 |\n\n![図21-1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q21_1.png)\n\n![図21-2](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q21_2.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "（OR形状の記号、出力に丸なし）"
+        },
+        {
+          "value": "イ",
+          "text": "（OR形状の記号、出力に丸あり：NOR）"
+        },
+        {
+          "value": "ウ",
+          "text": "（AND形状の記号、出力に丸あり：NAND）"
+        },
+        {
+          "value": "エ",
+          "text": "（OR形状の記号、出力に丸あり：NOR、ただし入力線の形状が異なるもの）"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（論理回路）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q21.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q21.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q022",
+      "questionNo": 22,
+      "title": "次の方式で画素にメモリを割り当てる640×480のグラフィックLCDモジュールがある。始点(5, 4)から終点(9, 8)まで直線を描画するとき，直線上のx=7の画素に割り当てられたメモリのアドレスの先頭は何番地か。ここで，画素の座標は(x, y)で表すものとする。\n\n〔方式〕\n\n- メモリは0番地から昇順に使用する。\n- 1画素は16ビットとする。\n- 座標(0, 0)から座標(639, 479)までメモリを連続して割り当てる。\n- 各画素は，x=0からx軸の方向にメモリを割り当てていく。\n- x=639の次はx=0とし，yを1増やす。\n\n![図22](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q22.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "3847"
+        },
+        {
+          "value": "イ",
+          "text": "7680"
+        },
+        {
+          "value": "ウ",
+          "text": "7694"
+        },
+        {
+          "value": "エ",
+          "text": "8978"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（グラフィックメモリ・画像処理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q22.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q22.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q023",
+      "questionNo": 23,
+      "title": "データセンターなどで採用されているサーバ，ネットワーク機器に対する直流給電の利点として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "交流から直流への変換，直流から交流への変換で生じる電力損失を低減できる。"
+        },
+        {
+          "value": "イ",
+          "text": "受電設備からCPUなどのLSIまで，同じ電圧のまま給電できる。"
+        },
+        {
+          "value": "ウ",
+          "text": "停電の危険がないので，電源バックアップ用のバッテリを不要にできる。"
+        },
+        {
+          "value": "エ",
+          "text": "トランスを用いて容易に昇圧，降圧ができる。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "システムの構成要素（データセンター・電源設備）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q23.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q024",
+      "questionNo": 24,
+      "title": "ビットマップフォントよりも，アウトラインフォントの利用が適している場合はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "英数字だけでなく，漢字も表示する。"
+        },
+        {
+          "value": "イ",
+          "text": "各文字の幅を一定にして表示する。"
+        },
+        {
+          "value": "ウ",
+          "text": "画面上にできるだけ高速に表示する。"
+        },
+        {
+          "value": "エ",
+          "text": "文字を任意の倍率に拡大して表示する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "マルチメディア技術（フォント・情報メディア）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q24.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q025",
+      "questionNo": 25,
+      "title": "ストアドプロシージャの利点はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アプリケーションプログラムからネットワークを介してDBMSにアクセスする場合，両者間の通信量を減少させる。"
+        },
+        {
+          "value": "イ",
+          "text": "アプリケーションプログラムからの一連の要求を一括して処理することによって，DBMS内の実行計画の数を減少させる。"
+        },
+        {
+          "value": "ウ",
+          "text": "アプリケーションプログラムからの一連の要求を一括して処理することによって，DBMS内の必要バッファ数を減少させる。"
+        },
+        {
+          "value": "エ",
+          "text": "データが格納されているディスク装置へのI/O回数を減少させる。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（ストアドプロシージャ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q25.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q026",
+      "questionNo": 26,
+      "title": "\"部品\"表及び\"在庫\"表に対し，SQL文を実行して結果を得た。SQL文のaに入れる字句はどれか。\n\n【部品】\n\n| 部品ID | 発注点 |\n|:--:|:--:|\n| P01 | 100 |\n| P02 | 150 |\n| P03 | 100 |\n\n【在庫】\n\n| 部品ID | 倉庫ID | 在庫数 |\n|:--:|:--:|:--:|\n| P01 | W01 | 90 |\n| P01 | W02 | 90 |\n| P02 | W01 | 150 |\n\n【結果】\n\n| 部品ID | 発注要否 |\n|:--:|:--:|\n| P01 | 不要 |\n| P02 | 不要 |\n| P03 | 必要 |\n\n〔SQL文〕\n\n```sql\nSELECT 部品.部品ID AS 部品ID,\n    CASE WHEN 部品.発注点 > [ a ]\n        THEN N'必要' ELSE N'不要' END AS 発注要否\nFROM 部品 LEFT OUTER JOIN 在庫\n    ON 部品.部品ID = 在庫.部品ID\nGROUP BY 部品.部品ID, 部品.発注点\n```\n\n![図26](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q26.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "COALESCE(MIN(在庫.在庫数), 0)"
+        },
+        {
+          "value": "イ",
+          "text": "COALESCE(MIN(在庫.在庫数), NULL)"
+        },
+        {
+          "value": "ウ",
+          "text": "COALESCE(SUM(在庫.在庫数), 0)"
+        },
+        {
+          "value": "エ",
+          "text": "COALESCE(SUM(在庫.在庫数), NULL)"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（SQL・集計関数・NULL処理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q26.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q26.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q027",
+      "questionNo": 27,
+      "title": "トランザクションTはチェックポイント後にコミットしたが，その後にシステム障害が発生した。トランザクションTの更新内容をその終了直後の状態にするために用いられる復旧技法はどれか。ここで，トランザクションはWALプロトコルに従い，チェックポイントの他に，トランザクションログを利用する。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2相ロック"
+        },
+        {
+          "value": "イ",
+          "text": "シャドウページ"
+        },
+        {
+          "value": "ウ",
+          "text": "ロールバック"
+        },
+        {
+          "value": "エ",
+          "text": "ロールフォワード"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（障害回復・トランザクション管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q27.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q028",
+      "questionNo": 28,
+      "title": "データウェアハウスのテーブル構成をスタースキーマとする場合，分析対象のトランザクションデータを格納するテーブルはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "サマリテーブル"
+        },
+        {
+          "value": "イ",
+          "text": "ディメンジョンテーブル"
+        },
+        {
+          "value": "ウ",
+          "text": "ファクトテーブル"
+        },
+        {
+          "value": "エ",
+          "text": "ルックアップテーブル"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（データウェアハウス・スタースキーマ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q28.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q029",
+      "questionNo": 29,
+      "title": "ビッグデータの基盤技術として利用されるNoSQLに分類されるデータベースはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "関係データモデルをオブジェクト指向データモデルに拡張し，操作の定義や型の継承関係の定義を可能としたデータベース"
+        },
+        {
+          "value": "イ",
+          "text": "経営者の意思決定を支援するために，ある主題に基づくデータを現在の情報とともに過去の情報も蓄積したデータベース"
+        },
+        {
+          "value": "ウ",
+          "text": "様々な形式のデータを一つのキーに対応付けて管理するキーバリュー型データベース"
+        },
+        {
+          "value": "エ",
+          "text": "データ項目の名称，形式など，データそのものの特性を表すメタ情報を管理するデータベース"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（ビッグデータ・NoSQL）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q29.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q030",
+      "questionNo": 30,
+      "title": "CSMA/CD方式のLANに接続されたノードの送信動作として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "各ノードに論理的な順位付けを行い，送信権を順次受け渡し，これを受け取ったノードだけが送信を行う。"
+        },
+        {
+          "value": "イ",
+          "text": "各ノードは伝送媒体が使用中かどうかを調べ，使用中でなければ送信を行う。衝突を検出したらランダムな時間の経過後に再度送信を行う。"
+        },
+        {
+          "value": "ウ",
+          "text": "各ノードを環状に接続して，送信権を制御するための特殊なフレームを巡回させ，これを受け取ったノードだけが送信を行う。"
+        },
+        {
+          "value": "エ",
+          "text": "タイムスロットを割り当てられたノードだけが送信を行う。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（データ通信と制御・LANアクセス制御方式）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q30.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q031",
+      "questionNo": 31,
+      "title": "IPアドレス 208.77.188.166 は，どのアドレスに該当するか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "グローバルアドレス"
+        },
+        {
+          "value": "イ",
+          "text": "プライベートアドレス"
+        },
+        {
+          "value": "ウ",
+          "text": "ブロードキャストアドレス"
+        },
+        {
+          "value": "エ",
+          "text": "マルチキャストアドレス"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（IPアドレス）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q31.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q032",
+      "questionNo": 32,
+      "title": "ルータを冗長化するために用いられるプロトコルはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "PPP"
+        },
+        {
+          "value": "イ",
+          "text": "RARP"
+        },
+        {
+          "value": "ウ",
+          "text": "SNMP"
+        },
+        {
+          "value": "エ",
+          "text": "VRRP"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（プロトコル・冗長化技術）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q32.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q033",
+      "questionNo": 33,
+      "title": "ビット誤り率が0.0001%の回線を使って，1,500バイトのパケットを10,000個送信するとき，誤りが含まれるパケットの個数の期待値はおよそ幾らか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10"
+        },
+        {
+          "value": "イ",
+          "text": "15"
+        },
+        {
+          "value": "ウ",
+          "text": "80"
+        },
+        {
+          "value": "エ",
+          "text": "120"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（ビット誤り率・伝送品質）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q33.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q034",
+      "questionNo": 34,
+      "title": "OpenFlowを使ったSDN(Software-Defined Networking)の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "単一の物理サーバ内の仮想サーバ同士が，外部のネットワーク機器を経由せずに，物理サーバ内部のソフトウェアで実現された仮想スイッチを経由して，通信する方式"
+        },
+        {
+          "value": "イ",
+          "text": "データを転送するネットワーク機器とは分離したソフトウェアによって，ネットワーク機器を集中的に制御，管理するアーキテクチャ"
+        },
+        {
+          "value": "ウ",
+          "text": "プロトコルの文法を形式言語を使って厳密に定義する，ISOで標準化された通信プロトコルの規格"
+        },
+        {
+          "value": "エ",
+          "text": "ルータやスイッチの機器内部で動作するソフトウェアを，オープンソースソフトウェア(OSS)で実現する方式"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（ネットワーク管理・SDN）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q34.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q035",
+      "questionNo": 35,
+      "title": "3Dセキュア2.0（EMV 3-Dセキュア）は，オンラインショッピングにおけるクレジットカード決済時に，不正取引を防止するための本人認証サービスである。3Dセキュア2.0で利用される本人認証の特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "利用者がカード会社による本人認証に用いるパスワードを忘れた場合でも，安全にパスワードを再発行することができる。"
+        },
+        {
+          "value": "イ",
+          "text": "利用者の過去の取引履歴や決済に用いているデバイスの情報から不正利用や高リスクと判断される場合に，カード会社が追加の本人認証を行う。"
+        },
+        {
+          "value": "ウ",
+          "text": "利用者の過去の取引履歴や決済に用いているデバイスの情報にかかわらず，カード会社がパスワードと生体認証を併用した本人認証を行う。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の過去の取引履歴や決済に用いているデバイスの情報に加えて，操作しているのが人間であることを確認した上で，カード会社が追加の本人認証を行う。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（本人認証・決済セキュリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q35.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q036",
+      "questionNo": 36,
+      "title": "企業のDMZ上で1台のDNSサーバを，インターネット公開用と，社内のPC及びサーバからの名前解決の問合せに対応する社内用とで共用している。このDNSサーバが，DNSキャッシュポイズニング攻撃による被害を受けた結果，直接引き起こされ得る現象はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSサーバのハードディスク上に定義されているDNSサーバ名が書き換わり，インターネットからDNSサーバに接続できなくなる。"
+        },
+        {
+          "value": "イ",
+          "text": "DNSサーバのメモリ上にワームが常駐し，DNS参照元に対して不正プログラムを送り込む。"
+        },
+        {
+          "value": "ウ",
+          "text": "社内の利用者が，インターネット上の特定のWebサーバにアクセスしようとすると，本来とは異なるWebサーバに誘導される。"
+        },
+        {
+          "value": "エ",
+          "text": "社内の利用者間の電子メールについて，宛先メールアドレスが書き換えられ，送信ができなくなる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（DNS攻撃）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q36.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q037",
+      "questionNo": 37,
+      "title": "DNSSECで実現できることはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSキャッシュサーバが得た応答の中のリソースレコードが，権威DNSサーバで管理されているものであり，改ざんされていないことの検証"
+        },
+        {
+          "value": "イ",
+          "text": "権威DNSサーバとDNSキャッシュサーバとの通信を暗号化することによる，ゾーン情報の漏えいの防止"
+        },
+        {
+          "value": "ウ",
+          "text": "長音\"ー\"と漢数字\"一\"などの似た文字をドメイン名に用いて，正規サイトのように見せかける攻撃の防止"
+        },
+        {
+          "value": "エ",
+          "text": "利用者のURLの入力誤りを悪用して，偽サイトに誘導する攻撃の検知"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（セキュリティ実装技術・DNS）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q37.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q038",
+      "questionNo": 38,
+      "title": "公開鍵暗号方式を使った暗号通信をn人が相互に行う場合，全部で何個の異なる鍵が必要になるか。ここで，一組の公開鍵と秘密鍵は2個と数える。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "n＋1"
+        },
+        {
+          "value": "イ",
+          "text": "2n"
+        },
+        {
+          "value": "ウ",
+          "text": "n(n－1)／2"
+        },
+        {
+          "value": "エ",
+          "text": "n²"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（暗号技術・公開鍵暗号方式）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q38.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q039",
+      "questionNo": 39,
+      "title": "自社製品の脆弱性に起因するリスクに対応するための社内機能として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CSIRT"
+        },
+        {
+          "value": "イ",
+          "text": "PSIRT"
+        },
+        {
+          "value": "ウ",
+          "text": "SOC"
+        },
+        {
+          "value": "エ",
+          "text": "WHOISデータベースの技術連絡担当"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（情報セキュリティ管理・組織体制）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q39.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q040",
+      "questionNo": 40,
+      "title": "JIS Q 31000:2019（リスクマネジメント－指針）において，リスク特定で考慮することが望ましいとされている事項はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "結果の性質及び大きさ"
+        },
+        {
+          "value": "イ",
+          "text": "残留リスクが許容可能かどうかの判断"
+        },
+        {
+          "value": "ウ",
+          "text": "資産及び組織の資源の性質及び価値"
+        },
+        {
+          "value": "エ",
+          "text": "事象の起こりやすさ及び結果"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（情報セキュリティ管理・リスクマネジメント）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q40.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

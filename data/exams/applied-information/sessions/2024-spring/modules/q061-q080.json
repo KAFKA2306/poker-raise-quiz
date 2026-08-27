@@ -1,0 +1,705 @@
+{
+  "id": "q061-q080",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q061",
+      "questionNo": 61,
+      "title": "エンタープライズアーキテクチャの参照モデルのうち，BRM（Business Reference Model）として提供されるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アプリケーションサービスを機能的な観点から分類・体系化したサービスコンポーネント"
+        },
+        {
+          "value": "イ",
+          "text": "サービスコンポーネントを実際に活用するためのプラットフォームやテクノロジの標準仕様"
+        },
+        {
+          "value": "ウ",
+          "text": "参照モデルの中で最も業務に近い階層として提供される，業務分類に従った業務体系及びシステム体系と各種業務モデル"
+        },
+        {
+          "value": "エ",
+          "text": "組織間で共有される可能性の高い情報について，名称，定義及び各種属性を総体的に記述したモデル"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "システム戦略（情報システム戦略・エンタープライズアーキテクチャ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q61.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q062",
+      "questionNo": 62,
+      "title": "\"デジタルガバナンス・コード2.0\"の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "企業の自主的なDX推進を促すために，デジタル技術による社会変革を踏まえた経営ビジョン策定など経営者に求められる対応を，経済産業省がまとめたもの"
+        },
+        {
+          "value": "イ",
+          "text": "教育委員会に対して，教育情報セキュリティポリシーの基本理念や情報セキュリティ対策基準の記述例を，文部科学省がまとめたもの"
+        },
+        {
+          "value": "ウ",
+          "text": "全国どこでも誰もが便利で快適に暮らせる社会を目指し，自治体が重点的に取り組むべき事項を，総務省がまとめたもの"
+        },
+        {
+          "value": "エ",
+          "text": "デジタル社会形成のために政府が迅速かつ重点的に実施すべき施策などを，デジタル庁がまとめたもの"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（情報システム戦略・DX関連政策）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q62.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q063",
+      "questionNo": 63,
+      "title": "SOAの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "会計，人事，製造，購買，在庫管理，販売などの企業の業務プロセスを一元管理することによって，業務の効率化や経営資源の全体最適を図る手法"
+        },
+        {
+          "value": "イ",
+          "text": "企業の業務プロセス，システム化要求などのニーズと，ソフトウェアパッケージの機能性がどれだけ適合し，どれだけかい離しているかを分析する手法"
+        },
+        {
+          "value": "ウ",
+          "text": "業務プロセスの問題点を洗い出して，目標設定，実行，チェック，修正行動のマネジメントサイクルを適用し，継続的な改善を図る手法"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の視点から業務システムの機能を幾つかの独立した部品に分けることによって，業務プロセスとの対応付けや他のソフトウェアとの連携を容易にする手法"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "システム戦略（ソリューションビジネス・SOA）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q63.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_haru/q63.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q064",
+      "questionNo": 64,
+      "title": "IT投資案件において，投資効果をPBP（Pay Back Period）で評価する。投資額が500のとき，期待できるキャッシュインの四つのシナリオa～dのうち，効果が最も高いものはどれか。\n\n【シナリオa】\n\n| 年目 | 1 | 2 | 3 | 4 | 5 |\n|:--:|:--:|:--:|:--:|:--:|:--:|\n| キャッシュイン | 100 | 150 | 200 | 250 | 300 |\n\n【シナリオb】\n\n| 年目 | 1 | 2 | 3 | 4 | 5 |\n|:--:|:--:|:--:|:--:|:--:|:--:|\n| キャッシュイン | 100 | 200 | 300 | 200 | 100 |\n\n【シナリオc】\n\n| 年目 | 1 | 2 | 3 | 4 | 5 |\n|:--:|:--:|:--:|:--:|:--:|:--:|\n| キャッシュイン | 200 | 150 | 100 | 150 | 200 |\n\n【シナリオd】\n\n| 年目 | 1 | 2 | 3 | 4 | 5 |\n|:--:|:--:|:--:|:--:|:--:|:--:|\n| キャッシュイン | 300 | 200 | 100 | 50 | 50 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "a"
+        },
+        {
+          "value": "イ",
+          "text": "b"
+        },
+        {
+          "value": "ウ",
+          "text": "c"
+        },
+        {
+          "value": "エ",
+          "text": "d"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "システム戦略（情報システム戦略・IT投資評価）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q64.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q065",
+      "questionNo": 65,
+      "title": "EMS（Electronics Manufacturing Services）の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "相手先ブランドで販売する電子機器の設計だけを受託し，製造は相手先で行う。"
+        },
+        {
+          "value": "イ",
+          "text": "外部から調達した電子機器に付加価値を加えて，自社ブランドで販売する。"
+        },
+        {
+          "value": "ウ",
+          "text": "自社ブランドで販売する電子機器のソフトウェア開発だけを外部に委託し，ハードウェアは自社で設計製造する。"
+        },
+        {
+          "value": "エ",
+          "text": "生産設備をもつ企業が，他社からの委託を受けて電子機器を製造する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "システム企画（調達計画・実施・EMS）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q65.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q066",
+      "questionNo": 66,
+      "title": "組込み機器のハードウェアの製造を外部に委託する場合のコンティンジェンシープランの記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "実績のある外注先の利用によって，リスクの発生確率を低減する。"
+        },
+        {
+          "value": "イ",
+          "text": "製造品質が担保されていることを確認できるように委託先と契約する。"
+        },
+        {
+          "value": "ウ",
+          "text": "複数の会社の見積りを比較検討して，委託先を選定する。"
+        },
+        {
+          "value": "エ",
+          "text": "部品調達のリスクが顕在化したときに備えて，対処するための計画を策定する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "システム企画（調達計画・実施・リスク対応）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q66.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q067",
+      "questionNo": 67,
+      "title": "PPMにおいて，投資用の資金源として位置付けられる事業はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "市場成長率が高く，相対的市場占有率が高い事業"
+        },
+        {
+          "value": "イ",
+          "text": "市場成長率が高く，相対的市場占有率が低い事業"
+        },
+        {
+          "value": "ウ",
+          "text": "市場成長率が低く，相対的市場占有率が高い事業"
+        },
+        {
+          "value": "エ",
+          "text": "市場成長率が低く，相対的市場占有率が低い事業"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（経営戦略手法・PPM）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q67.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q068",
+      "questionNo": 68,
+      "title": "企業が属する業界の競争状態と収益構造を，\"新規参入の脅威\"，\"供給者の支配力\"，\"買い手の交渉力\"，\"代替製品・サービスの脅威\"，\"既存競合者同士の敵対関係\"の要素に分類して，分析するフレームワークはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "PEST分析"
+        },
+        {
+          "value": "イ",
+          "text": "VRIO分析"
+        },
+        {
+          "value": "ウ",
+          "text": "バリューチェーン分析"
+        },
+        {
+          "value": "エ",
+          "text": "ファイブフォース分析"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（経営戦略手法・競争分析フレームワーク）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q68.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q069",
+      "questionNo": 69,
+      "title": "フィージビリティスタディの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "企業が新規事業立ち上げや海外進出する際の検証，公共事業の採算性検証，情報システムの導入手段の検証など，実現性を調査・検証する投資前評価のこと"
+        },
+        {
+          "value": "イ",
+          "text": "技術革新，社会変動などに関する未来予測によく用いられ，専門家グループなどがもつ直観的意見や経験的判断を，反復型アンケートを使って組織的に集約・洗練して収束すること"
+        },
+        {
+          "value": "ウ",
+          "text": "集団（小グループ）によるアイディア発想法の一つで，会議の参加メンバー各自が自由奔放にアイディアを出し合い，互いの発想の異質さを利用して，連想を行うことによって，さらに多数のアイディアを生み出そうという集団思考法・発想法のこと"
+        },
+        {
+          "value": "エ",
+          "text": "商品が市場に投入されてから，次第に売れなくなり姿を消すまでのプロセスを，導入期，成長期，成熟（市場飽和）期，衰退期の4段階で表現して，その市場における製品の寿命を検討すること"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（ビジネス戦略と目標・評価・フィージビリティスタディ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q69.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q070",
+      "questionNo": 70,
+      "title": "IoT活用におけるデジタルツインの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インターネットを介して遠隔地に設置した3Dプリンターへ設計データを送り，短時間に製品を製作すること"
+        },
+        {
+          "value": "イ",
+          "text": "システムを正副の二重に用意し，災害や故障時にシステムの稼働の継続を保証すること"
+        },
+        {
+          "value": "ウ",
+          "text": "自宅の家電機器とインターネットでつながり，稼働監視や操作を遠隔で行うことができるウェアラブルデバイスのこと"
+        },
+        {
+          "value": "エ",
+          "text": "デジタル空間に現実世界と同等な世界を，様々なセンサーで収集したデータを用いて構築し，現実世界では実施できないようなシミュレーションを行うこと"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "ビジネスインダストリ（IoT活用・デジタルツイン）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q70.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q071",
+      "questionNo": 71,
+      "title": "IoTを活用したビジネスモデルの事例のうち，マスカスタマイゼーションの事例はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "建機メーカーが，建設機械にエンジンの稼働状況が分かるセンサーとGPSを搭載して，機械の稼働場所と稼働状況を可視化する。これによって，盗難された機械にキーを入れても，遠隔操作によってエンジンが掛からないようにする。"
+        },
+        {
+          "value": "イ",
+          "text": "航空機メーカーが，エンジンに組み込まれたセンサーから稼働状況に関するデータを収集し，これを分析して，航空会社にエンジンの予防保守情報を提供する。"
+        },
+        {
+          "value": "ウ",
+          "text": "自動車メーカーが，稼働状況を把握するセンサーと，遠隔地からドアロックを解錠できる装置を自動車に搭載して，カーシェアサービスを提供する。"
+        },
+        {
+          "value": "エ",
+          "text": "眼鏡メーカーが，店内で顧客の顔の形状を3Dスキャナーによってデジタル化し，パターンの組み合わせで顧客に合ったフレーム形状を設計する。その後，工場に設計情報を送信し，パーツを組み合わせてフレームを効率的に製造する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "ビジネスインダストリ（IoT活用・マスカスタマイゼーション）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q71.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q072",
+      "questionNo": 72,
+      "title": "IoTの技術として注目されている，エッジコンピューティングの説明として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "演算処理のリソースをセンサー端末の近傍に置くことによって，アプリケーション処理の低遅延化や通信トラフィックの最適化を行う。"
+        },
+        {
+          "value": "イ",
+          "text": "人体に装着して脈拍センサーなどで人体の状態を計測して解析を行う。"
+        },
+        {
+          "value": "ウ",
+          "text": "ネットワークを介して複数のコンピュータを結ぶことによって，全体として処理能力が高いコンピュータシステムを作る。"
+        },
+        {
+          "value": "エ",
+          "text": "周りの環境から微小なエネルギーを収穫して，電力に変換する。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "ビジネスインダストリ（IoT活用・エッジコンピューティング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q72.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q073",
+      "questionNo": 73,
+      "title": "ゲーム理論における\"ナッシュ均衡\"の説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "一部プレイヤーの受取が，そのまま残りのプレイヤーの支払となるような，各プレイヤーの利得（正負の支払）の総和がゼロとなる状態"
+        },
+        {
+          "value": "イ",
+          "text": "戦略を決定するに当たって，相手側の各戦略（行動）について，相手の結果が最大利得となる場合同士を比較して，その中で相手の利得を最小化する行動を選択している状態"
+        },
+        {
+          "value": "ウ",
+          "text": "戦略を決定するに当たって，自身の各戦略（行動）について，自身の結果が最小利得となる場合同士を比較して，その中で自身の利得を最大化する行動を選択している状態"
+        },
+        {
+          "value": "エ",
+          "text": "非協力ゲームのモデルであり，相手の行動に対して最適な行動をとる行動原理の中で，どのプレイヤーも自分だけが戦略を変更しても利得を増やせない戦略の組合せ状態"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（業務分析・データ利活用・ゲーム理論）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q73.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q074",
+      "questionNo": 74,
+      "title": "分析対象としている問題に数多くの要因が関係し，それらが相互に絡み合っているとき，原因と結果，目的と手段といった関係を追求していくことによって，因果関係を明らかにし，解決の糸口をつかむための図はどれか。\n\n![問74の図](https://www.ap-siken.com/kakomon/06_haru/img/74.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アローダイアグラム"
+        },
+        {
+          "value": "イ",
+          "text": "パレート図"
+        },
+        {
+          "value": "ウ",
+          "text": "マトリックス図"
+        },
+        {
+          "value": "エ",
+          "text": "連関図"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（業務分析・データ利活用・新QC七つ道具）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q74.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_haru/q74.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q075",
+      "questionNo": 75,
+      "title": "製品X，Yを1台製造するのに必要な部品数は，表のとおりである。製品1台当たりの利益がX，Yともに1万円のとき，利益は最大何万円になるか。ここで，部品Aは120個，部品Bは60個まで使えるものとする。\n\n【部品数表（単位：個）】\n\n| 部品＼製品 | X | Y |\n|:--:|:--:|:--:|\n| A | 3 | 2 |\n| B | 1 | 2 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "30"
+        },
+        {
+          "value": "イ",
+          "text": "40"
+        },
+        {
+          "value": "ウ",
+          "text": "45"
+        },
+        {
+          "value": "エ",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（業務分析・データ利活用・線形計画法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q75.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q076",
+      "questionNo": 76,
+      "title": "今年度のA社の販売実績と費用（固定費，変動費）を表に示す。来年度，固定費が5%増加し，販売単価が5%低下すると予測されるとき，今年度と同じ営業利益を確保するためには，最低何台を販売する必要があるか。\n\n| | |\n|:--|--:|\n| 販売台数 | 2,500台 |\n| 販売単価 | 200千円 |\n| 固定費 | 150,000千円 |\n| 変動費 | 100千円／台 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2,575"
+        },
+        {
+          "value": "イ",
+          "text": "2,750"
+        },
+        {
+          "value": "ウ",
+          "text": "2,778"
+        },
+        {
+          "value": "エ",
+          "text": "2,862"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（会計・財務・損益分析）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q76.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q077",
+      "questionNo": 77,
+      "title": "損益計算資料から求められる損益分岐点売上高は，何百万円か。\n\n【損益計算資料（単位：百万円）】\n\n| 項目 | 金額 |\n|:--|--:|\n| 売上高 | 500 |\n| 材料費（変動費） | 200 |\n| 外注費（変動費） | 100 |\n| 製造固定費 | 100 |\n| 総利益 | 100 |\n| 販売固定費 | 80 |\n| 利益 | 20 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "225"
+        },
+        {
+          "value": "イ",
+          "text": "300"
+        },
+        {
+          "value": "ウ",
+          "text": "450"
+        },
+        {
+          "value": "エ",
+          "text": "480"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（会計・財務・損益分岐点分析）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q77.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q078",
+      "questionNo": 78,
+      "title": "特許法による保護の対象となるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "自然法則を利用した技術的思想の創作のうち高度なもの"
+        },
+        {
+          "value": "イ",
+          "text": "思想又は感情を創作的に表現したもの"
+        },
+        {
+          "value": "ウ",
+          "text": "物品の形状，模様，色彩など，視覚を通じて美感を起こさせるもの"
+        },
+        {
+          "value": "エ",
+          "text": "文字，図形，記号などの標章で，商品や役務について使用するもの"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "企業と法務（知的財産権・特許法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q78.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_haru/q78.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q079",
+      "questionNo": 79,
+      "title": "不正競争防止法の不正競争行為に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "A社と競争関係になっていないB社が，偶然に，A社の社名に類似のドメイン名を取得した。"
+        },
+        {
+          "value": "イ",
+          "text": "ある地方だけで有名な和菓子に類似した商品名の飲料を，その和菓子が有名ではない地方で販売し，利益を取得した。"
+        },
+        {
+          "value": "ウ",
+          "text": "商標権のない商品名を用いたドメイン名を取得し，当該商品のコピー商品を販売し，利益を取得した。"
+        },
+        {
+          "value": "エ",
+          "text": "他社サービスと類似しているが，自社サービスに適しており，正当な利益を得る目的があると認められるドメインを取得し，それを利用した。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "企業と法務（知的財産権・不正競争防止法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q79.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q080",
+      "questionNo": 80,
+      "title": "個人情報のうち，個人情報保護法における要配慮個人情報に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "個人情報の取得時に，本人が取扱いの配慮を申告することによって設定される情報"
+        },
+        {
+          "value": "イ",
+          "text": "個人に割り当てられた，運転免許証，クレジットカードなどの番号"
+        },
+        {
+          "value": "ウ",
+          "text": "生存する個人に関する，個人を特定するために用いられる勤務先や住所などの情報"
+        },
+        {
+          "value": "エ",
+          "text": "本人の病歴，犯罪の経歴など不当な差別や不利益を生じさせるおそれのある情報"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業と法務（セキュリティ関連法規・個人情報保護法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q80.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

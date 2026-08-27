@@ -1,0 +1,705 @@
+{
+  "id": "q021-q040",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q021",
+      "questionNo": 21,
+      "title": "MOSトランジスタの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "pn接合における電子と正孔の再結合によって光を放出するという性質を利用した半導体素子"
+        },
+        {
+          "value": "イ",
+          "text": "pn接合部に光が当たると電流が発生するという性質を利用した半導体素子"
+        },
+        {
+          "value": "ウ",
+          "text": "金属と半導体との間に酸化物絶縁体を挟んだ構造をもつことが特徴の半導体素子"
+        },
+        {
+          "value": "エ",
+          "text": "逆方向電圧をある電圧以上印加すると、電流だけが増加し電圧がほぼ一定に保たれるという特性をもつ半導体素子"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（半導体素子）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q21.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q022",
+      "questionNo": 22,
+      "title": "図の論理回路において、S=1、R=1、X=0、Y=1のとき、Sを一旦0にした後、再び1に戻した。この操作を行った後のX、Yの値はどれか。\n\n（図：S、Rを入力とし、それぞれNANDゲートとNOTゲート（丸印）を組み合わせてクロス結合した回路。上段の出力がX、下段の出力がY）\n\n![問22の図](https://www.ap-siken.com/kakomon/05_aki/img/22.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "X=0, Y=0"
+        },
+        {
+          "value": "イ",
+          "text": "X=0, Y=1"
+        },
+        {
+          "value": "ウ",
+          "text": "X=1, Y=0"
+        },
+        {
+          "value": "エ",
+          "text": "X=1, Y=1"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（論理回路・フリップフロップ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q22.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q22.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q023",
+      "questionNo": 23,
+      "title": "真理値表に示す3入力多数決回路はどれか。\n\n| 入力A | 入力B | 入力C | 出力Y |\n|:-:|:-:|:-:|:-:|\n| 0 | 0 | 0 | 0 |\n| 0 | 0 | 1 | 0 |\n| 0 | 1 | 0 | 0 |\n| 0 | 1 | 1 | 1 |\n| 1 | 0 | 0 | 0 |\n| 1 | 0 | 1 | 1 |\n| 1 | 1 | 0 | 1 |\n| 1 | 1 | 1 | 1 |\n\n![問23の図](https://www.ap-siken.com/kakomon/05_aki/img/23.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "![ア](https://www.ap-siken.com/kakomon/05_aki/img/23a.png)"
+        },
+        {
+          "value": "イ",
+          "text": "![イ](https://www.ap-siken.com/kakomon/05_aki/img/23i.png)"
+        },
+        {
+          "value": "ウ",
+          "text": "![ウ](https://www.ap-siken.com/kakomon/05_aki/img/23u.png)"
+        },
+        {
+          "value": "エ",
+          "text": "![エ](https://www.ap-siken.com/kakomon/05_aki/img/23e.png)"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（論理回路・多数決回路）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q23.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q23.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q024",
+      "questionNo": 24,
+      "title": "JIS X 9303-1:2006（ユーザシステムインタフェース及びシンボル―アイコン及び機能―アイコン一般）で規定されているアイコンの習得性の説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アイコンによって表現されたシステム機能が、それが理解された後に、どれだけ容易に思い出すことができるかを示す。"
+        },
+        {
+          "value": "イ",
+          "text": "アイコンの図柄の詳細を、どれだけ容易に区別できるかを示す。"
+        },
+        {
+          "value": "ウ",
+          "text": "同じ又は類似したアイコンによる以前の経験に基づいて、どれだけ容易にアイコンを識別できるかを示す。"
+        },
+        {
+          "value": "エ",
+          "text": "空間的、時間的又は文脈的に近くに表示された別のアイコンから、与えられたアイコンをどれだけ容易に区別できるかを示す。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ヒューマンインタフェース（アイコン設計規格）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q24.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q24.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q025",
+      "questionNo": 25,
+      "title": "バーチャルリアリティに関する記述のうち、レンダリングの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ウェアラブルカメラ、慣性センサーなどを用いて非言語情報を認識する処理"
+        },
+        {
+          "value": "イ",
+          "text": "仮想世界の情報をディスプレイに描画可能な形式の画像に変換する処理"
+        },
+        {
+          "value": "ウ",
+          "text": "視覚的に現実世界と仮想世界を融合させるために、それぞれの世界の中に定義された3次元座標を一致させる処理"
+        },
+        {
+          "value": "エ",
+          "text": "時間経過とともに生じる物の移動などの変化について、モデル化したものを物理法則などに当てはめて変化させる処理"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "マルチメディア技術（バーチャルリアリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q25.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q25.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q026",
+      "questionNo": 26,
+      "title": "\"売上\"表への次の検索処理のうち、B⁺木インデックスよりもハッシュインデックスを設定した方が適切なものはどれか。ここで、インデックスを設定する列を＜＞内に示す。\n\n売上（伝票番号、売上年月日、商品名、利用者ID、店舗番号、売上金額）",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "売上金額が1万円以上の売上を検索する。＜売上金額＞"
+        },
+        {
+          "value": "イ",
+          "text": "売上年月日が今月の売上を検索する。＜売上年月日＞"
+        },
+        {
+          "value": "ウ",
+          "text": "商品名が'DB'で始まる売上を検索する。＜商品名＞"
+        },
+        {
+          "value": "エ",
+          "text": "利用者IDが'1001'の売上を検索する。＜利用者ID＞"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（インデックス設計）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q26.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q027",
+      "questionNo": 27,
+      "title": "関係モデルにおける外部キーの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ある関係の候補キーを参照する属性、又は属性の組"
+        },
+        {
+          "value": "イ",
+          "text": "主キー以外で、タプルを一意に識別できる属性、又は属性の組"
+        },
+        {
+          "value": "ウ",
+          "text": "タプルを一意に識別できる属性、又は属性の組の集合のうち極小のもの"
+        },
+        {
+          "value": "エ",
+          "text": "タプルを一意に識別できる属性、又は属性の組を含む集合"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（関係モデル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q27.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q028",
+      "questionNo": 28,
+      "title": "更新可能なビューを作成するSQL文はどれか。ここで、SQL文中に現れる基底表は全て更新可能とする。\n\nア\n```sql\nCREATE VIEW 高額商品（商品番号, 商品名, 商品単価）\nAS SELECT 商品番号, 商品名, 商品単価 FROM 商品 WHERE 商品単価 > 1000\n```\n\nイ\n```sql\nCREATE VIEW 受注商品（商品番号）\nAS SELECT DISTINCT 商品番号 FROM 受注\n```\n\nウ\n```sql\nCREATE VIEW 商品受注（商品番号, 受注数量）\nAS SELECT 商品番号, SUM(受注数量) FROM 受注 GROUP BY 商品番号\n```\n\nエ\n```sql\nCREATE VIEW 商品平均受注数量（平均受注数量）\nAS SELECT AVG(受注数量) FROM 受注\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "![ア](https://www.ap-siken.com/kakomon/05_aki/img/28a.png)"
+        },
+        {
+          "value": "イ",
+          "text": "![イ](https://www.ap-siken.com/kakomon/05_aki/img/28i.png)"
+        },
+        {
+          "value": "ウ",
+          "text": "![ウ](https://www.ap-siken.com/kakomon/05_aki/img/28u.png)"
+        },
+        {
+          "value": "エ",
+          "text": "![エ](https://www.ap-siken.com/kakomon/05_aki/img/28e.png)"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（SQL・ビュー）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q28.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q28.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q029",
+      "questionNo": 29,
+      "title": "\"製品\"表と\"在庫\"表に対し、次のSQL文を実行した結果として得られる表の行数は幾つか。\n\n```sql\nSELECT DISTINCT 製品番号 FROM 製品\n    WHERE NOT EXISTS (SELECT 製品番号 FROM 在庫\n        WHERE 在庫数 > 30 AND 製品.製品番号 = 在庫.製品番号)\n```\n\n製品\n\n| 製品番号 | 製品名 | 単価 |\n|:-:|:--|:-:|\n| AB1805 | CD-ROMドライブ | 15,000 |\n| CC5001 | デジタルカメラ | 65,000 |\n| MZ1000 | プリンタA | 54,000 |\n| XZ3000 | プリンタB | 78,000 |\n| ZZ9900 | イメージスキャナ | 98,000 |\n\n在庫\n\n| 倉庫コード | 製品番号 | 在庫数 |\n|:-:|:-:|:-:|\n| WH100 | AB1805 | 20 |\n| WH100 | CC5001 | 200 |\n| WH100 | ZZ9900 | 130 |\n| WH101 | AB1805 | 150 |\n| WH101 | XZ3000 | 30 |\n| WH102 | XZ3000 | 20 |\n| WH102 | ZZ9900 | 10 |\n| WH103 | CC5001 | 40 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1"
+        },
+        {
+          "value": "イ",
+          "text": "2"
+        },
+        {
+          "value": "ウ",
+          "text": "3"
+        },
+        {
+          "value": "エ",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（SQL・相関副問合せ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q29.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q030",
+      "questionNo": 30,
+      "title": "DBMSをシステム障害発生後に再立上げするとき、ロールフォワードすべきトランザクションとロールバックすべきトランザクションの組合せとして、適切なものはどれか。ここで、トランザクションの中で実行される処理内容は次のとおりとする。\n\n| トランザクション | データベースに対するRead回数とWrite回数 |\n|:-:|:--|\n| T1, T2 | Read10, Write20 |\n| T3, T4 | Read100 |\n| T5, T6 | Read20, Write10 |\n\n（図：時間軸上に、チェックポイントと障害発生のタイミング、各トランザクションの開始・終了（コミット）位置を示すタイムチャート。T1はチェックポイント前にコミット、T2とT5はチェックポイント後・障害発生前にコミット、T3・T4・T6は障害発生時点で未コミット）\n\n|  | ロールフォワード | ロールバック |\n|:-:|:--|:--|\n\n![問30の図](https://www.ap-siken.com/kakomon/05_aki/img/30.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "T2, T5 | T6"
+        },
+        {
+          "value": "イ",
+          "text": "T2, T5 | T3, T6"
+        },
+        {
+          "value": "ウ",
+          "text": "T1, T2, T5 | T6"
+        },
+        {
+          "value": "エ",
+          "text": "T1, T2, T5 | T3, T6"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（障害回復・ロールフォワード/ロールバック）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q30.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q30.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q031",
+      "questionNo": 31,
+      "title": "100Mビット/秒のLANを使用し、1件のレコード長が1,000バイトの電文を1,000件連続して伝送するとき、伝送時間は何秒か。ここで、LANの伝送効率は50%とする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.02"
+        },
+        {
+          "value": "イ",
+          "text": "0.08"
+        },
+        {
+          "value": "ウ",
+          "text": "0.16"
+        },
+        {
+          "value": "エ",
+          "text": "1.6"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（伝送時間計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q31.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q032",
+      "questionNo": 32,
+      "title": "プライベートIPアドレスを割り当てられたPCがNAPT（IPマスカレード）機能をもつルータを経由して、インターネット上のWebサーバにアクセスしている。WebサーバからPCへの応答パケットに含まれるヘッダー情報のうち、このルータで書き換えられるフィールドの組合せとして、適切なものはどれか。ここで、表中の〇はフィールドの情報が書き換えられることを表す。\n\n|  | 宛先IPアドレス | 送信元IPアドレス | 宛先ポート番号 | 送信元ポート番号 |\n|:-:|:-:|:-:|:-:|:-:|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "〇 |  | 〇"
+        },
+        {
+          "value": "イ",
+          "text": "〇 |  |  | 〇"
+        },
+        {
+          "value": "ウ",
+          "text": "| 〇 | 〇"
+        },
+        {
+          "value": "エ",
+          "text": "| 〇 |  | 〇"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（NAPT・アドレス変換）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q32.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q033",
+      "questionNo": 33,
+      "title": "TCP/IP環境において、pingによってホストの接続確認をするときに使用されるプロトコルはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CHAP"
+        },
+        {
+          "value": "イ",
+          "text": "ICMP"
+        },
+        {
+          "value": "ウ",
+          "text": "SMTP"
+        },
+        {
+          "value": "エ",
+          "text": "SNMP"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（プロトコル基礎）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q33.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q034",
+      "questionNo": 34,
+      "title": "サブネットマスクが255.255.252.0のとき、IPアドレス172.30.123.45のホストが属するサブネットワークのアドレスはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "172.30.3.0"
+        },
+        {
+          "value": "イ",
+          "text": "172.30.120.0"
+        },
+        {
+          "value": "ウ",
+          "text": "172.30.123.0"
+        },
+        {
+          "value": "エ",
+          "text": "172.30.252.0"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（サブネットマスク計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q34.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q035",
+      "questionNo": 35,
+      "title": "IPv4ネットワークにおけるマルチキャストの使用例に関する記述として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "LANに初めて接続するPCが、DHCPプロトコルを使用して、自分自身に割り当てられるIPアドレスを取得する際に使用する。"
+        },
+        {
+          "value": "イ",
+          "text": "ネットワーク機器が、ARPプロトコルを使用して、宛先IPアドレスからMACアドレスを得るためのリクエストを送信する際に使用する。"
+        },
+        {
+          "value": "ウ",
+          "text": "メーリングリストの利用者が、SMTPプロトコルを使用して、メンバー全員に対し、同一内容の電子メールを一斉送信する際に使用する。"
+        },
+        {
+          "value": "エ",
+          "text": "ルータがRIP-2プロトコルを使用して、隣接するルータのグループに、経路の更新情報を送信する際に使用する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（マルチキャスト）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q35.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q036",
+      "questionNo": 36,
+      "title": "パスワードクラック手法の一種である、レインボーテーブル攻撃に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "何らかの方法で事前に利用者IDと平文のパスワードのリストを入手しておき、複数のシステム間で使い回されている利用者IDとパスワードの組みを狙って、ログインを試行する。"
+        },
+        {
+          "value": "イ",
+          "text": "パスワードに成り得る文字列の全てを用いて、総当たりでログインを試行する。"
+        },
+        {
+          "value": "ウ",
+          "text": "平文のパスワードとハッシュ値をチェーンによって管理するテーブルを準備しておき、それを用いて、不正に入手したハッシュ値からパスワードを解読する。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の誕生日、電話番号などの個人情報を言葉巧みに聞き出して、パスワードを類推する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（パスワードクラック手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q36.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q037",
+      "questionNo": 37,
+      "title": "楕円曲線暗号の特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "RSA暗号と比べて、短い鍵長で同レベルの安全性が実現できる。"
+        },
+        {
+          "value": "イ",
+          "text": "共通鍵暗号方式であり、暗号化や復号の処理を高速に行うことができる。"
+        },
+        {
+          "value": "ウ",
+          "text": "総当たりによる解読が不可能なことが、数学的に証明されている。"
+        },
+        {
+          "value": "エ",
+          "text": "データを秘匿する目的で用いる場合、復号鍵を秘密にしておく必要がない。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（暗号技術）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q37.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q038",
+      "questionNo": 38,
+      "title": "自社の中継用メールサーバで、接続元IPアドレス、電子メールの送信者のメールアドレスのドメイン名、及び電子メールの受信者のメールアドレスのドメイン名から成るログを取得するとき、外部ネットワークからの第三者中継と判断できるログはどれか。ここで、AAA.168.1.5とAAA.168.1.10は自社のグローバルIPアドレスとし、BBB.45.67.89とBBB.45.67.90は社外のグローバルIPアドレスとする。a.b.cは自社のドメイン名とし、a.b.dとa.b.eは他社のドメイン名とする。また、IPアドレスとドメイン名は詐称されていないものとする。\n\n|  | 接続元IPアドレス | 電子メールの送信者のメールアドレスのドメイン名 | 電子メールの受信者のメールアドレスのドメイン名 |\n|:-:|:-:|:-:|:-:|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "AAA.168.1.5 | a.b.c | a.b.d"
+        },
+        {
+          "value": "イ",
+          "text": "AAA.168.1.10 | a.b.c | a.b.c"
+        },
+        {
+          "value": "ウ",
+          "text": "BBB.45.67.89 | a.b.d | a.b.e"
+        },
+        {
+          "value": "エ",
+          "text": "BBB.45.67.90 | a.b.d | a.b.c"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（メールの第三者中継）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q38.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q039",
+      "questionNo": 39,
+      "title": "JPCERTコーディネーションセンター\"CSIRTガイド（2021年11月30日）\"では、CSIRTを機能とサービス対象によって六つに分類しており、その一つにコーディネーションセンターがある。コーディネーションセンターの機能とサービス対象の組合せとして、適切なものはどれか。\n\n|  | 機能 | サービス対象 |\n|:-:|:--|:--|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インシデント対応の中で、CSIRT間の情報連携、調整を行う。 | 他のCSIRT"
+        },
+        {
+          "value": "イ",
+          "text": "インシデントの傾向分析やマルウェアの解析、攻撃の痕跡の分析を行い、必要に応じて注意を喚起する。 | 関係組織、国又は地域"
+        },
+        {
+          "value": "ウ",
+          "text": "自社製品の脆弱性に対応し、パッチ作成や注意喚起を行う。 | 自社製品の利用者"
+        },
+        {
+          "value": "エ",
+          "text": "組織内CSIRTの機能の一部又は全部をサービスプロバイダとして、有償で請け負う。 | 顧客"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（CSIRT・組織体制）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q39.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q040",
+      "questionNo": 40,
+      "title": "JIS Q 27000:2019（情報セキュリティマネジメントシステム－用語）において、認可されていない個人、エンティティ又はプロセスに対して、情報を使用させず、また、開示しない特性として定義されているものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "機密性"
+        },
+        {
+          "value": "イ",
+          "text": "真正性"
+        },
+        {
+          "value": "ウ",
+          "text": "認証"
+        },
+        {
+          "value": "エ",
+          "text": "否認防止"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（情報セキュリティの基本用語）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q40.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}
