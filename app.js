@@ -21,6 +21,12 @@ const choiceLine = (choice) => {
   return `- ${choice}`;
 };
 
+const sourceText = (source) => {
+  if (!source) return "";
+  if (typeof source === "string") return source;
+  return [source.title, source.url].filter(Boolean).join(" — ");
+};
+
 const feedbackText = (element, state) => {
   const mine = choiceText(element, state.answer);
   const correct = choiceText(element, element.correctAnswer);
@@ -29,7 +35,8 @@ const feedbackText = (element, state) => {
 
 const loadState = (key) => {
   try {
-    return JSON.parse(localStorage.getItem(key) || "{}");
+    const state = JSON.parse(localStorage.getItem(key) || "{}");
+    return state && typeof state === "object" && !Array.isArray(state) ? state : {};
   } catch {
     return {};
   }
@@ -72,8 +79,10 @@ const buildMarkdown = (dataset, elements, state) => {
       answer.correct ? "Correct" : "Incorrect",
       "",
     );
+
     if (element.explanation) lines.push("### Explanation", String(element.explanation), "");
-    if (element.source) lines.push("### Source", String(element.source), "");
+    const source = sourceText(element.source);
+    if (source) lines.push("### Source", source, "");
   }
 
   return lines.join("\n").trim();
@@ -104,14 +113,14 @@ const main = async () => {
   document.title = dataset.title || "Quiz";
   $("#title").textContent = dataset.title || "Quiz";
 
-  const surveyJson = {
-    ...raw,
-    dataset: undefined,
+  const { dataset: _dataset, elements: _elements, ...surveySettings } = raw;
+  const surveyElements = elements.map(({ explanation: _explanation, source: _source, ...element }) => element);
+  const survey = new Survey.Model({
+    ...surveySettings,
+    elements: surveyElements,
     showCompleteButton: false,
     showNavigationButtons: false,
-  };
-
-  const survey = new Survey.Model(surveyJson);
+  });
 
   for (const [name, cached] of Object.entries(state)) {
     const question = survey.getQuestionByName(name);
@@ -150,8 +159,13 @@ const main = async () => {
   $("#copy-all").addEventListener("click", async () => {
     const markdown = buildMarkdown(dataset, elements, state);
     if (!markdown) return;
-    await navigator.clipboard.writeText(markdown);
-    showStatus("コピーしました");
+    try {
+      await navigator.clipboard.writeText(markdown);
+      showStatus("コピーしました");
+    } catch (error) {
+      console.error(error);
+      showStatus("コピーできませんでした");
+    }
   });
 };
 
