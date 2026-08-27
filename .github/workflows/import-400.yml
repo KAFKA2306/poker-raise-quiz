@@ -6,7 +6,7 @@ on:
       - feat/400-production-questions
     paths:
       - data/sources/ipa/**
-      - scripts/import/import-400.mjs
+      - scripts/import/**
       - .github/workflows/import-400.yml
 
 permissions:
@@ -27,6 +27,17 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: 24
+
+      - name: Pythonを用意
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: PDF処理ライブラリを用意
+        run: python -m pip install --disable-pip-version-check --no-cache-dir PyMuPDF==1.26.4
+
+      - name: IPA公式PDFから問題画像を生成
+        run: python scripts/import/render-official-question-crops.py
 
       - name: 400問を取得してIPA公式正答と照合
         run: node scripts/import/import-400.mjs
