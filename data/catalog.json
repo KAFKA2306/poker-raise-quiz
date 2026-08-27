@@ -7,6 +7,10 @@
       "manifest": "exams/applied-information/manifest.json"
     },
     {
+      "id": "g-test",
+      "manifest": "exams/g-test/manifest.json"
+    },
+    {
       "id": "statistics-grade-2",
       "manifest": "exams/statistics-grade-2/manifest.json"
     },
