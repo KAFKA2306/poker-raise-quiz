@@ -1,15 +1,20 @@
 const STORAGE_PREFIX = "one-tap-quiz";
 
-export const storageKeyFor = (dataset) =>
-  `${STORAGE_PREFIX}:${dataset.id}:${dataset.version || "1"}`;
+export const storageKeyFor = (dataset) => {
+  if (!dataset.id) throw new Error("dataset.id がありません");
+  if (!dataset.version) throw new Error("dataset.version がありません");
+  return `${STORAGE_PREFIX}:${dataset.id}:${dataset.version}`;
+};
 
 export const loadSession = (key) => {
-  try {
-    const value = JSON.parse(localStorage.getItem(key) || "{}");
-    return value && typeof value === "object" && !Array.isArray(value) ? value : {};
-  } catch {
-    return {};
+  const raw = localStorage.getItem(key);
+  if (raw === null) return {};
+
+  const value = JSON.parse(raw);
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new Error(`保存データが不正です: ${key}`);
   }
+  return value;
 };
 
 export const saveSession = (key, state) => {

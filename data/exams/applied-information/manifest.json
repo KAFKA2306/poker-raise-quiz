@@ -1,27 +1,13 @@
 {
   "id": "ap",
   "title": "応用情報技術者試験",
+  "status": "active",
   "defaultSession": "2025-autumn",
   "sessions": [
-    {
-      "id": "2023-autumn",
-      "manifest": "sessions/2023-autumn/manifest.json"
-    },
-    {
-      "id": "2024-spring",
-      "manifest": "sessions/2024-spring/manifest.json"
-    },
-    {
-      "id": "2024-autumn",
-      "manifest": "sessions/2024-autumn/manifest.json"
-    },
-    {
-      "id": "2025-spring",
-      "manifest": "sessions/2025-spring/manifest.json"
-    },
-    {
-      "id": "2025-autumn",
-      "manifest": "sessions/2025-autumn/manifest.json"
-    }
+    { "id": "2023-autumn", "manifest": "sessions/2023-autumn/manifest.json" },
+    { "id": "2024-spring", "manifest": "sessions/2024-spring/manifest.json" },
+    { "id": "2024-autumn", "manifest": "sessions/2024-autumn/manifest.json" },
+    { "id": "2025-spring", "manifest": "sessions/2025-spring/manifest.json" },
+    { "id": "2025-autumn", "manifest": "sessions/2025-autumn/manifest.json" }
   ]
 }
