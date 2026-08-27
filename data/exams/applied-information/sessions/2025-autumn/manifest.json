@@ -3,6 +3,7 @@
   "title": "2025年度秋期 午前",
   "version": "2025-autumn-80-v1",
   "status": "complete",
+  "referenceOnly": false,
   "answerKey": "エイイウイイアエイアイウアイエイウイエアアウエウウイエアイウアアイエエイウアエアアアウイアエイイエエアエウアアアイエウイアエイウイウウイアイイイウエウエイエアア",
   "coverage": { "from": 1, "to": 80, "count": 80, "total": 80 },
   "source": {
