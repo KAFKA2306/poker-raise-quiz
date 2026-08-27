@@ -30,3 +30,11 @@ jobs:
 
       - name: 実ブラウザで主要操作を確認
         run: node scripts/smoke-browser.mjs
+
+      - name: 画面確認画像を保存
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: browser-smoke-${{ github.run_id }}
+          path: artifacts/browser-smoke/*.png
+          if-no-files-found: warn
