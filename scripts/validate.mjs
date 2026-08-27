@@ -41,7 +41,6 @@ const requiredFiles = [
   "web/js/quiz/export.js",
   "web/js/quiz/reference.js",
   "data/catalog.json",
-  "scripts/validate-g-test.mjs",
   "scripts/verify-pages.mjs",
   ".github/workflows/ci.yml",
   ".github/workflows/pages.yml",
@@ -103,6 +102,11 @@ for (const examEntry of catalog.exams) {
     assert(session.source?.answerPdfUrl?.startsWith("https://"), `正答出典URLがありません: ${session.id}`);
     assert(Array.isArray(session.modules) && session.modules.length > 0, `問題モジュールがありません: ${session.id}`);
 
+    if (session.referenceOnly === true) {
+      assert(session.source?.referenceUrl?.startsWith("https://"), `参照先URLがありません: ${session.id}`);
+      assert(session.source?.rightsNoticeUrl?.startsWith("https://"), `権利告知URLがありません: ${session.id}`);
+    }
+
     const names = new Set();
     const questionNumbers = new Set();
     let questionCount = 0;
@@ -132,6 +136,17 @@ for (const examEntry of catalog.exams) {
           `選択肢が不正です: ${question.name}`,
         );
         assert(choiceValues.has(question.correctAnswer), `正答が選択肢にありません: ${question.name}`);
+
+        if (session.referenceOnly === true) {
+          assert(question.referenceOnly === true, `参照専用問題ではありません: ${question.name}`);
+          assert(question.questionTextStored === false, `問題本文を保存しています: ${question.name}`);
+          assert(question.choiceTextStored === false, `選択肢本文を保存しています: ${question.name}`);
+          assert(question.sourceUrl === session.source.referenceUrl, `問題の参照先URLが試験回と一致しません: ${question.name}`);
+          assert(
+            question.choices.every((choice) => choice.text === choice.value),
+            `参照専用問題に選択肢本文が混入しています: ${question.name}`,
+          );
+        }
       }
     }
 
