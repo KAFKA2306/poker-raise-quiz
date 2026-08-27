@@ -1,0 +1,705 @@
+{
+  "id": "q001-q020",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q001",
+      "questionNo": 1,
+      "title": "2桁の2進数x1x2が表す整数をxとする。2進数x2x1が表す整数を、xの式で表したものはどれか。ここで、int(r)は非負の実数rの小数点以下を切り捨てた整数を表す。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2x+4 int(x/2)"
+        },
+        {
+          "value": "イ",
+          "text": "2x+5 int(x/2)"
+        },
+        {
+          "value": "ウ",
+          "text": "2x−3 int(x/2)"
+        },
+        {
+          "value": "エ",
+          "text": "2x−4 int(x/2)"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（数値表現・基数変換）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q01.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q002",
+      "questionNo": 2,
+      "title": "複数の変数をもつデータに対する分析手法の記述のうち、主成分分析はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "変数に共通して影響を与える新たな変数を計算して、データの背後にある構造を取得する方法"
+        },
+        {
+          "value": "イ",
+          "text": "変数の値からほかの変数の値を予測して、データがもつ変数間の関連性を確認する方法"
+        },
+        {
+          "value": "ウ",
+          "text": "変数の値が互いに類似するものを集めることによって、データを分類する方法"
+        },
+        {
+          "value": "エ",
+          "text": "変数を統合した新たな変数を使用して、データがもつ変数の数を減らす方法"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（応用数学・データ分析）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q02.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q003",
+      "questionNo": 3,
+      "title": "逆ポーランド表記法（後置記法）で表現されている式 ABCD−×＋において、A＝16，B＝8，C＝4，D＝2 のときの演算結果はどれか。逆ポーランド表記法による式 AB＋は、中置記法による式 A＋B と同一である。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "32"
+        },
+        {
+          "value": "イ",
+          "text": "46"
+        },
+        {
+          "value": "ウ",
+          "text": "48"
+        },
+        {
+          "value": "エ",
+          "text": "94"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（データ構造とアルゴリズム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q03.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q004",
+      "questionNo": 4,
+      "title": "図のように16ビットのデータを4×4の正方形状に並べ、行と列にパリティビットを付加することによって何ビットまでの誤りを訂正できるか。ここで、図の網掛け部分はパリティビットを表す。\n\n| 1 | 0 | 0 | 0 | 1 |\n|:-:|:-:|:-:|:-:|:-:|\n| 0 | 1 | 1 | 0 | 0 |\n| 0 | 0 | 1 | 0 | 1 |\n| 1 | 1 | 0 | 1 | 1 |\n| 0 | 0 | 0 | 1 |   |\n\n※右端と下端の網掛け部分がパリティビット\n\n![問4の図](https://www.ap-siken.com/kakomon/05_aki/img/04.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1"
+        },
+        {
+          "value": "イ",
+          "text": "2"
+        },
+        {
+          "value": "ウ",
+          "text": "3"
+        },
+        {
+          "value": "エ",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（誤り検出・訂正）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q04.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q4.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q005",
+      "questionNo": 5,
+      "title": "双方向リストを三つの一次元配列 elem[i], next[i], prev[i] の組で実現する。双方向リストが図の状態のとき、要素Dの次に要素Cを挿入した後の next[6], prev[6] の値の組合せはどれか。ここで、双方向リストは次のように表現する。\n\n- 双方向リストの要素は、elem[i]に値、next[i]に次の要素の要素番号、prev[i]に前の要素の要素番号を設定\n- 双方向リストの先頭、末尾の要素番号は、それぞれ変数Head、Tailに設定\n- next[i], prev[i]の値が0である要素は、それぞれ双方向リストの末尾、先頭を表す。\n- 双方向リストへの要素の追加は、一次元配列の末尾に追加\n\n| 要素番号 | 1 | 2 | 3 | 4 | 5 | (6) |\n|:-:|:-:|:-:|:-:|:-:|:-:|:-:|\n| elem | A | F | D | B | E | |\n\n| 要素番号 | 1 | 2 | 3 | 4 | 5 | (6) |\n|:-:|:-:|:-:|:-:|:-:|:-:|:-:|\n| next | 4 | 0 | 5 | 3 | 2 | |\n\n| 要素番号 | 1 | 2 | 3 | 4 | 5 | (6) |\n|:-:|:-:|:-:|:-:|:-:|:-:|:-:|\n| prev | 0 | 5 | 4 | 1 | 3 | |\n\nHead: 1　　Tail: 2\n\n|  | next[6] | prev[6] |\n|:-:|:-:|:-:|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2 | 3"
+        },
+        {
+          "value": "イ",
+          "text": "3 | 4"
+        },
+        {
+          "value": "ウ",
+          "text": "5 | 3"
+        },
+        {
+          "value": "エ",
+          "text": "5 | 4"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データ構造とアルゴリズム（双方向リスト）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q05.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q5.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q006",
+      "questionNo": 6,
+      "title": "あるデータ列を整列したら状態0から順に状態1, 2, …, Nへと推移した。整列に使ったアルゴリズムはどれか。\n\n状態0　3, 5, 9, 6, 1, 2\n状態1　3, 5, 6, 1, 2, 9\n状態2　3, 5, 1, 2, 6, 9\n　　　　：\n　　　　：\n状態N　1, 2, 3, 5, 6, 9",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "クイックソート"
+        },
+        {
+          "value": "イ",
+          "text": "挿入ソート"
+        },
+        {
+          "value": "ウ",
+          "text": "バブルソート"
+        },
+        {
+          "value": "エ",
+          "text": "ヒープソート"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データ構造とアルゴリズム（整列アルゴリズム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q06.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q007",
+      "questionNo": 7,
+      "title": "JavaScriptのオブジェクトの表記法などを基にして規定したものであって、\"名前と値との組みの集まり\"と\"値の順序付きリスト\"の二つの構造に基づいてオブジェクトを表現する、データ記述の仕様はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DOM"
+        },
+        {
+          "value": "イ",
+          "text": "JSON"
+        },
+        {
+          "value": "ウ",
+          "text": "SOAP"
+        },
+        {
+          "value": "エ",
+          "text": "XML"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア（データ記述形式）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q07.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q008",
+      "questionNo": 8,
+      "title": "スマートフォンなどで高い処理性能と低消費電力の両立のために、異なる目的に適した複数の種類のコアを搭載したプロセッサはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "スーパースカラプロセッサ"
+        },
+        {
+          "value": "イ",
+          "text": "ソフトコアプロセッサ"
+        },
+        {
+          "value": "ウ",
+          "text": "ヘテロジニアスマルチコアプロセッサ"
+        },
+        {
+          "value": "エ",
+          "text": "ホモジニアスマルチコアプロセッサ"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（プロセッサ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q08.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q009",
+      "questionNo": 9,
+      "title": "パイプラインの性能を向上させるための技法の一つで、分岐条件の結果が決定する前に、分岐先を予測して命令を実行するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アウトオブオーダー実行"
+        },
+        {
+          "value": "イ",
+          "text": "遅延分岐"
+        },
+        {
+          "value": "ウ",
+          "text": "投機実行"
+        },
+        {
+          "value": "エ",
+          "text": "レジスタリネーミング"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（パイプライン制御）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q09.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q010",
+      "questionNo": 10,
+      "title": "ファイルシステムをフラッシュメモリで構成するとき、ブロックごとの書換え回数を管理することによって、フラッシュメモリの寿命を延ばす技術はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ウェアレベリング"
+        },
+        {
+          "value": "イ",
+          "text": "ジャーナリング"
+        },
+        {
+          "value": "ウ",
+          "text": "デフラグ"
+        },
+        {
+          "value": "エ",
+          "text": "ライトアンプリフィケーション"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（補助記憶装置・フラッシュメモリ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q10.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q011",
+      "questionNo": 11,
+      "title": "画面表示用フレームバッファがユニファイドメモリ方式であるシステムの特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "主記憶とは別に専用のフレームバッファをもつ。"
+        },
+        {
+          "value": "イ",
+          "text": "主記憶の一部を表示領域として使用する。"
+        },
+        {
+          "value": "ウ",
+          "text": "シリアル接続した表示デバイスに、描画コマンドを用いて表示する。"
+        },
+        {
+          "value": "エ",
+          "text": "表示リフレッシュが不要である。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（メモリアーキテクチャ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q11.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q012",
+      "questionNo": 12,
+      "title": "SAN（Storage Area Network）におけるサーバとストレージの接続形態の説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "シリアルATAなどの接続方式によって内蔵ストレージとして1対1に接続する。"
+        },
+        {
+          "value": "イ",
+          "text": "ファイバチャネルなどによる専用ネットワークで接続する。"
+        },
+        {
+          "value": "ウ",
+          "text": "プロトコルはCIFS（Common Internet File System）を使用し、LANで接続する。"
+        },
+        {
+          "value": "エ",
+          "text": "プロトコルはNFS（Network File System）を使用し、LANで接続する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システム構成要素（ストレージ接続形態）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q12.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q013",
+      "questionNo": 13,
+      "title": "システムの性能を向上させるための方法として、スケールアウトが適しているシステムはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "一連の大きな処理を一括して実行しなければならないので、並列処理が困難な処理が中心のシステム"
+        },
+        {
+          "value": "イ",
+          "text": "参照系のトランザクションが多いので、複数のサーバで分散処理を行っているシステム"
+        },
+        {
+          "value": "ウ",
+          "text": "データを追加するトランザクションが多いので、データの整合性を取るためのオーバーヘッドを小さくしなければならないシステム"
+        },
+        {
+          "value": "エ",
+          "text": "同一のマスターデータベースがシステム内に複数配置されているので、マスターを更新する際にはデータベース間で整合性を保持しなければならないシステム"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システム構成要素（スケーラビリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q13.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q014",
+      "questionNo": 14,
+      "title": "IaC（Infrastructure as Code）に関する記述として、最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インフラストラクチャの自律的なシステム運用を実現するために、インシデントへの対応手順をコードに定義すること"
+        },
+        {
+          "value": "イ",
+          "text": "各種開発支援ツールを利用するために、ツールの連携手順をコードに定義すること"
+        },
+        {
+          "value": "ウ",
+          "text": "継続的インテグレーションを実現するために、アプリケーションの生成手順や試験の手順をコードに定義すること"
+        },
+        {
+          "value": "エ",
+          "text": "ソフトウェアによる自動実行を可能にするために、システムの構成や状態をコードに定義すること"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（DevOps・インフラ自動化）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q14.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q015",
+      "questionNo": 15,
+      "title": "アクティブスタンバイ構成の2台のサーバから成るシステムがある。各サーバのMTBFは99時間、MTTRは10時間、フェールオーバーに要する時間は2時間であるとき、このシステムの稼働率はおよそ幾らか。ここで、二重に障害は発生しないものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.82"
+        },
+        {
+          "value": "イ",
+          "text": "0.89"
+        },
+        {
+          "value": "ウ",
+          "text": "0.91"
+        },
+        {
+          "value": "エ",
+          "text": "0.98"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの信頼性（可用性計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q15.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q016",
+      "questionNo": 16,
+      "title": "ページング方式の仮想記憶において、あるプログラムを実行したとき、1回のページフォールトの平均処理時間は30ミリ秒であった。ページフォールト発生時の処理時間が次の条件であったとすると、ページアウトを伴わないページインだけの処理の割合は幾らか。\n\n〔ページフォールト発生時の処理時間〕\n(1) ページアウトを伴わない場合、ページインの処理時間は20ミリ秒である。\n(2) ページアウトを伴う場合、置換えページの選択、ページアウト、ページインの合計処理時間は60ミリ秒である。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0.25"
+        },
+        {
+          "value": "イ",
+          "text": "0.33"
+        },
+        {
+          "value": "ウ",
+          "text": "0.67"
+        },
+        {
+          "value": "エ",
+          "text": "0.75"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（仮想記憶・ページング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q16.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q017",
+      "questionNo": 17,
+      "title": "プリエンプティブな優先度ベースのスケジューリングで実行する二つの周期タスクA及びBがある。タスクBが周期内に処理を完了できるタスクA及びBの最大実行時間及び周期の組合せはどれか。ここで、タスクAの方がタスクBより優先度が高く、かつ、タスクAとBの共有資源はなく、タスク切替え時間は考慮しないものとする。また、時間及び周期の単位はミリ秒とする。\n\n|  | タスクの最大実行時間 | タスクの周期 |\n|:-:|:-:|:-:|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "タスクA: 2　タスクB: 3 | タスクA: 4　タスクB: 8"
+        },
+        {
+          "value": "イ",
+          "text": "タスクA: 3　タスクB: 4 | タスクA: 6　タスクB: 9"
+        },
+        {
+          "value": "ウ",
+          "text": "タスクA: 3　タスクB: 5 | タスクA: 5　タスクB: 13"
+        },
+        {
+          "value": "エ",
+          "text": "タスクA: 4　タスクB: 5 | タスクA: 6　タスクB: 15"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（タスクスケジューリング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q17.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q018",
+      "questionNo": 18,
+      "title": "あるコンピュータ上で、当該コンピュータとは異なる命令形式のコンピュータで実行できる目的プログラムを生成する言語処理プログラムはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "エミュレーター"
+        },
+        {
+          "value": "イ",
+          "text": "クロスコンパイラ"
+        },
+        {
+          "value": "ウ",
+          "text": "最適化コンパイラ"
+        },
+        {
+          "value": "エ",
+          "text": "プログラムジェネレーター"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（言語処理プログラム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q18.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q019",
+      "questionNo": 19,
+      "title": "Linuxカーネルの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CUIによるコマンド入力のためのシェルと呼ばれるソフトウェアが組み込まれていて、文字での操作が可能である。"
+        },
+        {
+          "value": "イ",
+          "text": "GUIを利用できるデスクトップ環境が組み込まれていて、マウスを使った直感的な操作が可能である。"
+        },
+        {
+          "value": "ウ",
+          "text": "Webブラウザ、ワープロソフト、表計算ソフトなどが含まれており、Linuxカーネルだけで多くの業務が行える。"
+        },
+        {
+          "value": "エ",
+          "text": "プロセス管理やメモリ管理などの、アプリケーションソフトウェアが動作するための基本機能を提供する。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム（Linuxカーネル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q19.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q020",
+      "questionNo": 20,
+      "title": "FPGAの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "電気的に記憶内容の書換えを行うことができる不揮発性メモリ"
+        },
+        {
+          "value": "イ",
+          "text": "特定の分野及びアプリケーション用に限定した特定用途向け汎用集積回路"
+        },
+        {
+          "value": "ウ",
+          "text": "浮動小数点数の演算を高速に実行する演算ユニット"
+        },
+        {
+          "value": "エ",
+          "text": "論理回路を基板上に実装した後で再プログラムできる集積回路"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（プログラマブルロジック）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q20.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q20.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

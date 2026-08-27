@@ -1,0 +1,705 @@
+{
+  "id": "q021-q040",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q021",
+      "questionNo": 21,
+      "title": "図はスイッチA及びBの状態によって，LEDが点灯又は消灯する回路である。スイッチAがオンの状態をA=1，オフの状態をA=0とし，スイッチBも同様にオンの状態をB=1，オフの状態をB=0とする。また，LEDが点灯する状態をY=1，消灯する状態をY=0とする。このとき，図の回路を動作させたときのタイミングチャートとして，適切なものはどれか。\n\n```\n回路図：電源 ── スイッチA ── スイッチB ── LED ── 電源（直列接続）\n```\n\nア・イ・ウ・エ：A, B, Yの波形を示すタイミングチャート（4択）\n\n![図21_1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q21_1.png)\n\n![図21_2](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q21_2.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "![ア](https://www.ap-siken.com/kakomon/06_aki/img/21a.png)"
+        },
+        {
+          "value": "イ",
+          "text": "![イ](https://www.ap-siken.com/kakomon/06_aki/img/21i.png)"
+        },
+        {
+          "value": "ウ",
+          "text": "![ウ](https://www.ap-siken.com/kakomon/06_aki/img/21u.png)"
+        },
+        {
+          "value": "エ",
+          "text": "![エ](https://www.ap-siken.com/kakomon/06_aki/img/21e.png)"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（論理回路・タイミングチャート）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q21.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_aki/q21.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q022",
+      "questionNo": 22,
+      "title": "SoCの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "システムLSIに内蔵されたソフトウェア"
+        },
+        {
+          "value": "イ",
+          "text": "複数のMCUを搭載したボード"
+        },
+        {
+          "value": "ウ",
+          "text": "複数のチップで構成していたコンピュータシステムを，一つのチップで実現したLSI"
+        },
+        {
+          "value": "エ",
+          "text": "複数のチップを単一のパッケージに封入してシステム化したデバイス"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素（SoC・集積回路）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q22.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q023",
+      "questionNo": 23,
+      "title": "アクチュエーターの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "与えられた目標値と，センサーから得られた制御量を比較し，制御量を目標値に一致させるように操作量を出力する。"
+        },
+        {
+          "value": "イ",
+          "text": "位置，角度，速度，加速度，力，温度などを検出し，電気的な情報に変換する。"
+        },
+        {
+          "value": "ウ",
+          "text": "エネルギー源からのパワーを，回転，直進などの動きに変換する。"
+        },
+        {
+          "value": "エ",
+          "text": "マイクロフォン，センサーなどが出力する微小な電気信号を増幅する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ハードウェア（センサー・アクチュエーター）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q23.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q024",
+      "questionNo": 24,
+      "title": "マイクロプロセッサの耐タンパ性を向上させる手法として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ESD（Electrostatic Discharge）に対する耐性を強化する。"
+        },
+        {
+          "value": "イ",
+          "text": "チップ検査終了後に検査用パッドを残しておく。"
+        },
+        {
+          "value": "ウ",
+          "text": "チップ内部を物理的に解析しようとすると，内部回路が破壊されるようにする。"
+        },
+        {
+          "value": "エ",
+          "text": "内部メモリを物理アドレスに合わせて整然と配置する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（耐タンパ性）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q24.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_aki/q24.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q025",
+      "questionNo": 25,
+      "title": "Webページの構成要素のうち，図のような固定の表示領域内でマウス操作やタッチ操作を行うことによってスクロールし，複数の画像などが横方向に順次表示されるものを何というか。\n\n```\n[固定の表示領域]\n◀ [画像1] [画像2] [画像3] ▶\n       ○ ○ ● ○ ○\n```\n\n![図25](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q25.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アコーディオン"
+        },
+        {
+          "value": "イ",
+          "text": "カルーセル"
+        },
+        {
+          "value": "ウ",
+          "text": "タブ"
+        },
+        {
+          "value": "エ",
+          "text": "モーダルウィンドウ"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ユーザーインタフェース（UX/UIデザイン）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q25.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q25.md",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q026",
+      "questionNo": 26,
+      "title": "800×600ピクセル，24ビットカラーで30フレーム／秒の動画像の配信に最小限必要な帯域幅はおよそ幾らか。ここで，通信時にデータ圧縮は行わないものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "350kビット／秒"
+        },
+        {
+          "value": "イ",
+          "text": "3.5Mビット／秒"
+        },
+        {
+          "value": "ウ",
+          "text": "35Mビット／秒"
+        },
+        {
+          "value": "エ",
+          "text": "350Mビット／秒"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "マルチメディア（動画データ量・帯域幅計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q26.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_aki/q26.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q027",
+      "questionNo": 27,
+      "title": "2相コミットで分散トランザクションの原子性を保証する場合，ネットワーク障害の発生によって参加者のトランザクションが，コミットすべきか又はロールバックすべきかを判断できなくなることがある。このような状況を発生させるネットワーク障害に関する説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "調停者のトランザクションが，コミット又はロールバック可否の問合せを参加者に送る直前に障害になった。"
+        },
+        {
+          "value": "イ",
+          "text": "調停者のトランザクションが，コミット又はロールバックの決定を参加者に送る直前に障害になった。"
+        },
+        {
+          "value": "ウ",
+          "text": "調停者のトランザクションに，コミット又はロールバック可否の応答を参加者が返す直前に障害になった。"
+        },
+        {
+          "value": "エ",
+          "text": "調停者のトランザクションに，コミット又はロールバックの完了を参加者が返す直前に障害になった。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（分散トランザクション・2相コミット）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q27.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q028",
+      "questionNo": 28,
+      "title": "化粧品の製造を行っているA社では，販売代理店を通じて商品販売を行っている。今後の販売戦略に活用するために，次の三つの表を設計した。これらの表を用いるだけでは得ることのできない情報はどれか。\n\n```\n顧客\n| 顧客ID | 氏名 | 性別 | 生年月日 |\n\n販売代理店別日別販売\n| 販売代理店ID | 日付 | 商品ID | 販売数量 |\n\n商品購入\n| 顧客ID | 販売代理店ID | 商品ID | 購入数量 |\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "商品ごとの販売数量の日別差異"
+        },
+        {
+          "value": "イ",
+          "text": "性別ごとの売れ筋商品"
+        },
+        {
+          "value": "ウ",
+          "text": "販売代理店ごとの購入者数の日別差異"
+        },
+        {
+          "value": "エ",
+          "text": "販売代理店ごとの売れ筋商品"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（テーブル設計・データ取得可否）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q28.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q029",
+      "questionNo": 29,
+      "title": "次のオブジェクト図（インスタンスを表す図）に対応する概念データモデルはどれか。ここで，オブジェクト図及び概念データモデルの表記にはUMLを用いる。\n\n```\nオブジェクト図（インスタンス）:\n東京:地域 ── 11:仕入先 ── #01:仕入 ┐\n                        ├ #02:仕入 ┼─ 136:部品\n                        └ #03:仕入 ┘\n大阪:地域 ── 25:仕入先 ── #04:仕入 ┐\n            │            └ #05:仕入 ┼─ 205:部品\n            └ 37:仕入先 ── #06:仕入 ┴─ 338:部品\n```\n\n![図29_1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q29_1.png)\n\n![図29_2](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q29_2.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "地域 1─1 仕入先 1─* 仕入 *─1 部品"
+        },
+        {
+          "value": "イ",
+          "text": "地域 1─* 仕入先 1─* 仕入 *─1 部品"
+        },
+        {
+          "value": "ウ",
+          "text": "地域 1─* 仕入先 *─1 仕入 1─* 部品"
+        },
+        {
+          "value": "エ",
+          "text": "地域 *─* 仕入先 *─1 仕入 1─* 部品"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（概念データモデル・UML多重度）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q29.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_autumn_am/ap_2024_autumn_am_q29.md",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q030",
+      "questionNo": 30,
+      "title": "\"成績\"表に対して，SQL文1と同一の結果を得るために，SQL文2の a に入れる字句はどれか。\n\n```\n成績\n| 学生番号 | 実施回 | 得点 |\n|:--|:--|:--|\n| S01 | 1  | 70  |\n| S01 | 7  | 80  |\n| S02 | 2  | 85  |\n| S02 | 5  | 82  |\n| S03 | 3  | 83  |\n| S03 | 9  | 78  |\n| S03 | 12 | 90  |\n| S04 | 6  | 100 |\n```\n\n〔SQL文1〕\n```sql\nSELECT R1.学生番号, R1.実施回, R1.得点 FROM 成績 R1\n    INNER JOIN\n    (SELECT 学生番号, MIN(実施回) AS 初回 FROM 成績\n        GROUP BY 学生番号) R2\n    ON R1.学生番号 = R2.学生番号\n    AND R1.実施回 = R2.初回\n```\n\n〔SQL文2〕\n```sql\nSELECT 学生番号, 実施回, 得点\n    FROM (SELECT 学生番号, 実施回, 得点, ROW_NUMBER() OVER ( a ) AS 番号\n        FROM 成績) R1\n    WHERE R1.番号 = 1\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ORDER BY 学生番号, 実施回"
+        },
+        {
+          "value": "イ",
+          "text": "PARTITION BY 学生番号 ORDER BY 実施回"
+        },
+        {
+          "value": "ウ",
+          "text": "PARTITION BY 学生番号 ORDER BY 得点 ASC"
+        },
+        {
+          "value": "エ",
+          "text": "PARTITION BY 学生番号 ORDER BY 得点 DESC"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（SQL・ウィンドウ関数）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q30.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q031",
+      "questionNo": 31,
+      "title": "DBMSのチェックポイントに関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "制約のチェックを行う時点を指し，データ操作ごとに即時にチェックを行うか，トランザクションのコミット時までチェックを遅延させるかの指定ができる。"
+        },
+        {
+          "value": "イ",
+          "text": "データベースバッファの内容を二次記憶に書き出した時点を指し，障害回復処理の際，その時点までにコミットされたトランザクションの回復作業を不要にできる。"
+        },
+        {
+          "value": "ウ",
+          "text": "一つのトランザクションの途中に任意に設定できる時点を指し，プログラムによってその時点まで明示的にロールバックできる。"
+        },
+        {
+          "value": "エ",
+          "text": "分散トランザクションの調停者が，全参加者からコミット可否を受け取り，コミットかロールバックかの判定を行う時点を指し，その後に全参加者にコミット又はロールバックの実行要求を発行することによって，分散トランザクションの原子性，一貫性が保証できる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（チェックポイント・障害回復）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q31.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q032",
+      "questionNo": 32,
+      "title": "1Mバイトのデータの送信を5秒以内に行うための，最低速度の回線サービスはどれか。ここで，伝送制御のための情報は考慮しないこととし，回線の伝送効率は60%とする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1Mビット／秒の回線サービス"
+        },
+        {
+          "value": "イ",
+          "text": "2Mビット／秒の回線サービス"
+        },
+        {
+          "value": "ウ",
+          "text": "4Mビット／秒の回線サービス"
+        },
+        {
+          "value": "エ",
+          "text": "10Mビット／秒の回線サービス"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（回線速度・伝送効率計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q32.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q033",
+      "questionNo": 33,
+      "title": "DNSに関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSサーバのホスト名を登録するレコードをMXレコードという。"
+        },
+        {
+          "value": "イ",
+          "text": "DNSサーバに問い合わせを行うソフトウェアをレゾリューションという。"
+        },
+        {
+          "value": "ウ",
+          "text": "IPアドレスに対応するホスト名を調べることを逆引きという。"
+        },
+        {
+          "value": "エ",
+          "text": "ホスト名に対し別名を登録するレコードをNSレコードという。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（DNS）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q33.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q034",
+      "questionNo": 34,
+      "title": "IPv4ネットワークにおけるICMPの機能として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "MACアドレスだけが分かっているときにIPアドレスの解決を可能にする。"
+        },
+        {
+          "value": "イ",
+          "text": "グローバルIPアドレスとプライベートIPアドレスとを相互に変換する。"
+        },
+        {
+          "value": "ウ",
+          "text": "送信元ホストへ，IPパケットの送信エラー報告などの制御メッセージを通知する。"
+        },
+        {
+          "value": "エ",
+          "text": "ネットワーク内のIPアドレスを一元管理し，クライアントに動的に割り当てる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（ICMP）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q34.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q035",
+      "questionNo": 35,
+      "title": "クラスDのIPv4アドレスを使用するのはどの場合か。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "端末数が250台程度までの比較的小規模なネットワークのホストアドレスを割り振る。"
+        },
+        {
+          "value": "イ",
+          "text": "端末数が65,000台程度の中規模なネットワークのホストアドレスを割り振る。"
+        },
+        {
+          "value": "ウ",
+          "text": "プライベートアドレスを割り振り，ユニキャスト通信を行う。"
+        },
+        {
+          "value": "エ",
+          "text": "マルチキャストアドレスを割り振り，マルチキャスト通信を行う。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（IPアドレスクラス）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q35.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q036",
+      "questionNo": 36,
+      "title": "IPv4のLANに接続されているプリンターのMACアドレスを，同一LAN上のPCから調べるときに使用するコマンドはどれか。ここで，PCはこのプリンターを直前に使用しており，プリンターのIPアドレスは分かっているものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "arp"
+        },
+        {
+          "value": "イ",
+          "text": "ipconfig又はifconfig"
+        },
+        {
+          "value": "ウ",
+          "text": "netstat"
+        },
+        {
+          "value": "エ",
+          "text": "ping"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（コマンド・ARP）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q36.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q037",
+      "questionNo": 37,
+      "title": "企業内のクライアントからクラウドサービスへのアクセスにSAML認証を利用したときのシステムの動作に関する記述のうち，適切なものはどれか。ここで，利用者IDとパスワードは企業内のディレクトリサービスで管理し，利用者認証は企業内の認証サーバで行う。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "クラウドサービスがディレクトリサービスに利用者IDとパスワードの送信を要求する。"
+        },
+        {
+          "value": "イ",
+          "text": "認証サーバからクラウドサービスに，利用者IDとパスワードを送信する。"
+        },
+        {
+          "value": "ウ",
+          "text": "認証サーバから認証結果をクライアント経由でクラウドサービスに送信する。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者が入力したパスワードとクラウドサービスから送信された乱数を組み合わせ，さらにハッシュ値に変換した結果をクライアントからクラウドサービスに送信する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（認証・SAML）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q37.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q038",
+      "questionNo": 38,
+      "title": "インターネット上の使われていないIPアドレス空間に大量に届くパケットはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インターネット上で公開されているWebサイトに対してPCから送信するパケット"
+        },
+        {
+          "value": "イ",
+          "text": "インターネットにつながっており，実在するIoT機器から実在するサーバに送信されるパケット"
+        },
+        {
+          "value": "ウ",
+          "text": "攻撃者やマルウェアがIoT機器やサーバなどの攻撃対象を探すために送信するパケット"
+        },
+        {
+          "value": "エ",
+          "text": "有効な電子メールアドレスに対して攻撃者が標的型攻撃メールを送信するSMTPのパケット"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（ダークネット）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q38.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q039",
+      "questionNo": 39,
+      "title": "ディープフェイクを悪用した攻撃に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "AI技術によって加工したCEOの音声を使用して従業員に電話をかけ，指定した銀行口座に送金するよう指示した。"
+        },
+        {
+          "value": "イ",
+          "text": "企業のPCをランサムウェアに感染させ，暗号化されたデータを復号するための鍵と引き換えに，指定した方法で暗号資産を送付するよう指示した。"
+        },
+        {
+          "value": "ウ",
+          "text": "企業の秘密情報を含むデータを不正に取得したと誤認させる電子メールを従業員に送付し，不正に取得したデータを公開しないことと引き換えに，指定した方法で暗号資産を送付するよう指示した。"
+        },
+        {
+          "value": "エ",
+          "text": "ディープウェブにて入手した認証情報でCEOの電子メールアカウントに不正にログインして偽りの電子メールを従業員に送付し，指定した銀行口座に送金するよう指示した。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（ディープフェイク・なりすまし詐欺）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q39.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q040",
+      "questionNo": 40,
+      "title": "パスワードリスト攻撃に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "一般的な単語や人名からパスワードのリストを作成し，インターネットバンキングへのログインを試行する。"
+        },
+        {
+          "value": "イ",
+          "text": "想定し得るパスワードとそのハッシュ値との対のリストを用いて，入手したハッシュ値からパスワードを効率的に解析する。"
+        },
+        {
+          "value": "ウ",
+          "text": "どこかのWebサイトから流出した利用者IDとパスワードのリストを用いて，他のWebサイトに対してログインを試行する。"
+        },
+        {
+          "value": "エ",
+          "text": "ピクチャパスワードの入力を録画してリスト化しておき，それを利用することによってタブレット端末へのログインを試行する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（不正アクセス手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q40.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

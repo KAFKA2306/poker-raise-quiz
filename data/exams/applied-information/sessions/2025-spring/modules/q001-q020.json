@@ -1,0 +1,705 @@
+{
+  "id": "q001-q020",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q001",
+      "questionNo": 1,
+      "title": "論理式 P，Q がいずれも真であるとき，論理式 R の真偽にかかわらず真になる式はどれか。ここで，\"￣\"は否定を，\"∨\"は論理和を，\"∧\"は論理積を，\"→\"は含意（\"真→偽\"となるときに限り偽となる演算）を表す。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "((P→Q) ∧ (Q→P)) → (R→Q̄)"
+        },
+        {
+          "value": "イ",
+          "text": "((P→Q) ∧ (Q̄→P̄)) → (Q→R)"
+        },
+        {
+          "value": "ウ",
+          "text": "((P→Q̄) ∨ (Q→P)) → (R→Q̄)"
+        },
+        {
+          "value": "エ",
+          "text": "((P→Q̄) ∨ (Q→P̄)) → (Q→R)"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論（離散数学）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q01.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q002",
+      "questionNo": 2,
+      "title": "0 ≦ x ≦ 1 の範囲で単調に増加する連続関数 f(x) が f(0)＜0 ≦ f(1) を満たすときに，区間内で f(x)＝0 である x の値を近似的に求めるアルゴリズムにおいて，(2) は何回実行されるか。\n\n〔アルゴリズム〕\n\n(1) x₀←0，x₁←1 とする。\n\n(2) x ← (x₀＋x₁)／2 とする。\n\n(3) x₁－x ＜ 0.001 ならば x の値を近似値として終了する。\n\n(4) f(x) ≧ 0 ならば x₁←x として，そうでなければ x₀←x とする。\n\n(5) (2) に戻る。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10"
+        },
+        {
+          "value": "イ",
+          "text": "20"
+        },
+        {
+          "value": "ウ",
+          "text": "100"
+        },
+        {
+          "value": "エ",
+          "text": "1,000"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズムとプログラミング",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q02.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q003",
+      "questionNo": 3,
+      "title": "AI における機械学習の過程において，過学習と疑われたときの解消方法として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "訓練した時と同じ精度を出すために，訓練データをテストデータとして使用する。"
+        },
+        {
+          "value": "イ",
+          "text": "精度を高めるために，元の訓練データに加工を施し，訓練データの量を増やす。"
+        },
+        {
+          "value": "ウ",
+          "text": "予測した結果に近づけるために，モデルをより複雑にする。"
+        },
+        {
+          "value": "エ",
+          "text": "より多くの未知のデータに対して予測できるように，汎化性能を下げる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "機械学習・AI",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q03.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q004",
+      "questionNo": 4,
+      "title": "リアルタイム性が求められる組込みシステムにおいて，システムへの入力に対するリアルタイムな応答の方法として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "OS を使用しないで応答する。"
+        },
+        {
+          "value": "イ",
+          "text": "定められた制限時間内に応答する。"
+        },
+        {
+          "value": "ウ",
+          "text": "入力された順序を守って応答する。"
+        },
+        {
+          "value": "エ",
+          "text": "入力時刻を記録して応答する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "組込みシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q04.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q005",
+      "questionNo": 5,
+      "title": "A，B，C の順序で入力されるデータがある。各データについてスタックへの挿入と取出しを1回ずつ行うことができる場合，データの出力順序は何通りあるか。\n\n（図：A, B, C が右からスタックに挿入され、左に取り出される構成）\n\n![図5](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q05.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "3"
+        },
+        {
+          "value": "イ",
+          "text": "4"
+        },
+        {
+          "value": "ウ",
+          "text": "5"
+        },
+        {
+          "value": "エ",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データ構造",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q05.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q05.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q006",
+      "questionNo": 6,
+      "title": "図の2分探索木に1と0の二つの要素を順に追加したAVL木として，適切なものはどれか。\n\n（初期の2分探索木：ルート5、左部分木は3(左2, 右4)、右部分木は7(左6)）\n\n選択肢ア〜エはそれぞれ異なる木構造（詳細は参照画像参照）。\n\n![図1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q06.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "![ア](https://www.ap-siken.com/kakomon/07_haru/img/06a.png)"
+        },
+        {
+          "value": "イ",
+          "text": "![イ](https://www.ap-siken.com/kakomon/07_haru/img/06i.png)"
+        },
+        {
+          "value": "ウ",
+          "text": "![ウ](https://www.ap-siken.com/kakomon/07_haru/img/06u.png)"
+        },
+        {
+          "value": "エ",
+          "text": "![エ](https://www.ap-siken.com/kakomon/07_haru/img/06e.png)"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データ構造（木構造）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q06.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q6.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q007",
+      "questionNo": 7,
+      "title": "fact(n) は，非負の整数 n に対して n の階乗を返す。fact(n) の再帰的な定義はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "if n=0 then return 0 else return n×fact(n−1)"
+        },
+        {
+          "value": "イ",
+          "text": "if n=0 then return 0 else return n×fact(n+1)"
+        },
+        {
+          "value": "ウ",
+          "text": "if n=0 then return 1 else return n×fact(n−1)"
+        },
+        {
+          "value": "エ",
+          "text": "if n=0 then return 1 else return n×fact(n+1)"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズムとプログラミング",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q07.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q008",
+      "questionNo": 8,
+      "title": "同じ命令セットをもつコンピュータ A と B とがある。それぞれの CPU クロック周期，及びあるプログラムを実行したときの CPI（Cycles Per Instruction）は，表のとおりである。そのプログラムを実行したとき，コンピュータ A の処理時間は，コンピュータ B の処理時間の何倍になるか。\n\n| | CPUクロック周期 | CPI |\n|:--|:--|:--|\n| コンピュータA | 1ナノ秒 | 4.0 |\n| コンピュータB | 4ナノ秒 | 0.5 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1/32"
+        },
+        {
+          "value": "イ",
+          "text": "1/2"
+        },
+        {
+          "value": "ウ",
+          "text": "2"
+        },
+        {
+          "value": "エ",
+          "text": "8"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q08.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q009",
+      "questionNo": 9,
+      "title": "DMA コントローラーの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "MPU では時間が掛かる積和演算を，高速に行う。"
+        },
+        {
+          "value": "イ",
+          "text": "仮想メモリ機能，メモリ保護機能などのメモリ管理機能を提供する。"
+        },
+        {
+          "value": "ウ",
+          "text": "動作クロックに合わせてカウントするカウントレジスタをもち，それによって時間の経過を保持する。"
+        },
+        {
+          "value": "エ",
+          "text": "メモリと入出力装置，又はメモリとメモリとの間のデータ転送を，MPU を介さずに行う。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q09.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q010",
+      "questionNo": 10,
+      "title": "オブジェクトストレージの特徴として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "オブジェクトにはユニークな識別子が割り当てられ，識別子を使ってアクセスする。"
+        },
+        {
+          "value": "イ",
+          "text": "オブジェクトの内容を更新する際，上書き更新をする。"
+        },
+        {
+          "value": "ウ",
+          "text": "広域分散を実現するためには，遠隔地のストレージと静止点を設けて同期を行う必要がある。"
+        },
+        {
+          "value": "エ",
+          "text": "ストレージはディレクトリの概念を使った階層構造である。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "記憶管理・ストレージ",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q10.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q011",
+      "questionNo": 11,
+      "title": "マルチプロセッサによる並列処理で得られる高速化率（単一プロセッサのときと比べた倍率）E を，次の式によって評価する。r＝0.9 のアプリケーションの高速化率が r＝0.3 のものの3倍となるのは，プロセッサが何台のときか。\n\nE ＝ 1 ／ (1－r＋r／n)\n\nここで，\nn：プロセッサの台数（1≦n）\nr：対象とする処理のうち，並列化が可能な部分の割合（0≦r≦1）\nとし，並列化に伴うオーバーヘッドは考慮しないものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "3"
+        },
+        {
+          "value": "イ",
+          "text": "4"
+        },
+        {
+          "value": "ウ",
+          "text": "5"
+        },
+        {
+          "value": "エ",
+          "text": "6"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの性能評価",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q11.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q012",
+      "questionNo": 12,
+      "title": "二つのシステム A，B の稼働率をそれぞれ αA（0＜αA＜1），αB（0＜αB＜1），MTBF をそれぞれ MTBFA，MTBFB，MTTR をそれぞれ MTTRA，MTTRB としたとき，これらの関係として，常に成り立つものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "αA＝αB ならば，MTBFA＝MTBFB であり，かつ MTTRA＝MTTRB である。"
+        },
+        {
+          "value": "イ",
+          "text": "αA＝αB ならば，MTTRA／MTBFA＝MTTRB／MTBFB である。"
+        },
+        {
+          "value": "ウ",
+          "text": "αA＞αB ならば，MTBFA＞MTBFB であり，かつ MTTRA＞MTTRB である。"
+        },
+        {
+          "value": "エ",
+          "text": "αA＞αB ならば，MTTRA／MTBFA＞MTTRB／MTBFB である。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの信頼性",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q12.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q013",
+      "questionNo": 13,
+      "title": "図のように3個の装置を並列と直列に組み合わせて構成したシステムがある。装置単体の稼働率と，システムの稼働率の関係を示したグラフはどれか。ここで，3個の装置の稼働率は，全て等しいものとする。\n\n（構成：2台の装置を並列接続し、その並列部分にさらに1台の装置を直列接続）\n\n![図13_1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q13_1.png)\n\n![図13_2](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q13_2.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "![ア](https://www.ap-siken.com/kakomon/07_haru/img/13a.png)"
+        },
+        {
+          "value": "イ",
+          "text": "![イ](https://www.ap-siken.com/kakomon/07_haru/img/13i.png)"
+        },
+        {
+          "value": "ウ",
+          "text": "![ウ](https://www.ap-siken.com/kakomon/07_haru/img/13u.png)"
+        },
+        {
+          "value": "エ",
+          "text": "![エ](https://www.ap-siken.com/kakomon/07_haru/img/13e.png)"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの信頼性",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q13.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q13.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q014",
+      "questionNo": 14,
+      "title": "リアルタイム OS において，実行中のタスクがプリエンプションによって遷移する状態はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "休止状態"
+        },
+        {
+          "value": "イ",
+          "text": "実行可能状態"
+        },
+        {
+          "value": "ウ",
+          "text": "終了状態"
+        },
+        {
+          "value": "エ",
+          "text": "待ち状態"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q14.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q015",
+      "questionNo": 15,
+      "title": "仮想記憶管理におけるページ置換えアルゴリズムとして LRU 方式を採用する。主記憶のページ枠が，4000，5000，6000，7000番地（いずれも16進数）の4ページ分で，プログラムが参照するページ番号の順が，1→2→3→4→2→5→3→1→6→5→4のとき，最後の参照ページ4は何番地にページインされているか。ここで，最初の1→2→3→4の参照で，それぞれのページは4000，5000，6000，7000番地にページインされるものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "4000"
+        },
+        {
+          "value": "イ",
+          "text": "5000"
+        },
+        {
+          "value": "ウ",
+          "text": "6000"
+        },
+        {
+          "value": "エ",
+          "text": "7000"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "記憶管理（仮想記憶）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q15.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q016",
+      "questionNo": 16,
+      "title": "表は，OSS のライセンスごとに，そのライセンスの OSS を利用したプログラムを配布するとき，ソースコードを公開しなければならないかどうかを示す。a〜d に入れるライセンスの適切な組合せはどれか。ここで，表中の\"○\"は公開しなければならないことを表し，\"×\"は公開しなくてもよいことを表す。\n\n| 配布プログラム | a | b | c | d |\n|:--|:--:|:--:|:--:|:--:|\n| OSSのソースコードを修正して作ったプログラム | ○ | ○ | ○ | × |\n| OSSに静的にリンクしたプログラム | ○ | ○ | × | × |\n| OSSに動的にリンクしたプログラム | ○ | × | × | × |\n\n|  | a | b | c | d |\n|:--|:--|:--|:--|:--|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "GPL | LGPL | MPL | BSD"
+        },
+        {
+          "value": "イ",
+          "text": "GPL | MPL | BSD | LGPL"
+        },
+        {
+          "value": "ウ",
+          "text": "LGPL | GPL | MPL | BSD"
+        },
+        {
+          "value": "エ",
+          "text": "LGPL | MPL | BSD | GPL"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "知的財産権・OSSライセンス",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q16.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q017",
+      "questionNo": 17,
+      "title": "OpenAPI Specification に従った API の定義・開発を支援する機能を提供する OSS はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "curl"
+        },
+        {
+          "value": "イ",
+          "text": "OpenAM"
+        },
+        {
+          "value": "ウ",
+          "text": "Serverspec"
+        },
+        {
+          "value": "エ",
+          "text": "Swagger"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "開発ツール・API",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q17.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q018",
+      "questionNo": 18,
+      "title": "8 ビット D/A 変換器を使って負でない電圧を発生させる。使用する D/A 変換器は，最下位の1ビットの変化で出力が10ミリVボルト変化する。データに0を与えたときの出力は0ミリVである。データに16進数で82を与えたときの出力は何ミリVか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "820"
+        },
+        {
+          "value": "イ",
+          "text": "1,024"
+        },
+        {
+          "value": "ウ",
+          "text": "1,300"
+        },
+        {
+          "value": "エ",
+          "text": "1,312"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ハードウェア（D/A変換）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q18.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q019",
+      "questionNo": 19,
+      "title": "産業機器の制御装置として使われる PLC の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "自動制御であり，偏差の比例，積分及び微分の3要素で制御する。"
+        },
+        {
+          "value": "イ",
+          "text": "主としてラダー図を用いたシーケンスプログラムによって制御する。"
+        },
+        {
+          "value": "ウ",
+          "text": "電圧及び電流のアナログ信号をデジタル信号に変換する。"
+        },
+        {
+          "value": "エ",
+          "text": "リレーシーケンス回路のハードウェアによって制御する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "組込みシステム（産業用制御）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q19.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q19.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q020",
+      "questionNo": 20,
+      "title": "FPGA などに実装するデジタル回路を記述し，論理合成を行うために使用される言語はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DDL"
+        },
+        {
+          "value": "イ",
+          "text": "HDL"
+        },
+        {
+          "value": "ウ",
+          "text": "UML"
+        },
+        {
+          "value": "エ",
+          "text": "XML"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ハードウェア（デジタル回路設計）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q20.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q20.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

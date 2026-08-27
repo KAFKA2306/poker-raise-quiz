@@ -2,11 +2,13 @@
   "id": "ap",
   "title": "応用情報技術者試験",
   "status": "active",
+  "expectedQuestionCount": 400,
   "defaultSession": "2025-autumn",
   "sessions": [
-    {
-      "id": "2025-autumn",
-      "manifest": "sessions/2025-autumn/manifest.json"
-    }
+    { "id": "2023-autumn", "title": "2023年度秋期", "manifest": "sessions/2023-autumn/manifest.json" },
+    { "id": "2024-spring", "title": "2024年度春期", "manifest": "sessions/2024-spring/manifest.json" },
+    { "id": "2024-autumn", "title": "2024年度秋期", "manifest": "sessions/2024-autumn/manifest.json" },
+    { "id": "2025-spring", "title": "2025年度春期", "manifest": "sessions/2025-spring/manifest.json" },
+    { "id": "2025-autumn", "title": "2025年度秋期", "manifest": "sessions/2025-autumn/manifest.json" }
   ]
 }

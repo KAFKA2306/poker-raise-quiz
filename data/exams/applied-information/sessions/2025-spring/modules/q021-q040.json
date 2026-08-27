@@ -1,0 +1,705 @@
+{
+  "id": "q021-q040",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q021",
+      "questionNo": 21,
+      "title": "IoT システムにおいて，センサーの値をゲートウェイに送信するセンサーノードの消費電流を抑えるため，図のような間欠動作を考える。センサーノードの動作時間は10ミリ秒で，その間は平均して10mAの電流が流れる。待機中は常に0.1μAの電流が流れる。間欠動作の平均電流を1μA以下にするための待機時間として，最も短いものはどれか。ここで，平均電流の値を求める時間は十分に長いものとする。\n\n![図21](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q21.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1.1秒"
+        },
+        {
+          "value": "イ",
+          "text": "11.1秒"
+        },
+        {
+          "value": "ウ",
+          "text": "111.1秒"
+        },
+        {
+          "value": "エ",
+          "text": "1111.1秒"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "IoT・組込みシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q21.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q21.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q022",
+      "questionNo": 22,
+      "title": "ユーザーインタフェースのユーザビリティを評価する手法には，利用者が参加するものと専門家だけで実施するものとがある。利用者が参加する手法と専門家だけで実施する手法との適切な組合せはどれか。\n\n| | 利用者が参加する手法 | 専門家だけで実施する手法 |\n|:--|:--|:--|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アンケート | 回顧法"
+        },
+        {
+          "value": "イ",
+          "text": "回顧法 | 思考発話法"
+        },
+        {
+          "value": "ウ",
+          "text": "思考発話法 | ヒューリスティック評価法"
+        },
+        {
+          "value": "エ",
+          "text": "認知的ウォークスルー法 | ヒューリスティック評価法"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "UI/UXデザイン・ユーザビリティ評価",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q22.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q023",
+      "questionNo": 23,
+      "title": "W3C で仕様が定義され，矩形や円，直線，文字列などの図形オブジェクトを XML 形式で記述し，Web ページでの図形描画にも使うことができる画像フォーマットはどれか。\n\n![問23の図](https://www.ap-siken.com/kakomon/07_haru/img/23.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "OpenGL"
+        },
+        {
+          "value": "イ",
+          "text": "PNG"
+        },
+        {
+          "value": "ウ",
+          "text": "SVG"
+        },
+        {
+          "value": "エ",
+          "text": "TIFF"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "マルチメディア・ファイルフォーマット",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q23.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q23.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q024",
+      "questionNo": 24,
+      "title": "大量の IoT デバイスから送信される大量で，かつ様々な形式のデータを格納可能なデータモデルのうち，行ごとに任意の列数をもち，かつ列ごとに複数の値をもつことによって，柔軟なデータ格納を実現しているデータモデルはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "グラフ"
+        },
+        {
+          "value": "イ",
+          "text": "ドキュメント"
+        },
+        {
+          "value": "ウ",
+          "text": "リレーショナル"
+        },
+        {
+          "value": "エ",
+          "text": "ワイドカラム"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（NoSQL）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q24.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_haru/q24.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q025",
+      "questionNo": 25,
+      "title": "UML を用いて表した図のデータモデルを関係データベース上に実装する際の解釈のうち，適切なものはどれか。\n\n（クラス図の構成）\n- 顧客（顧客番号，請求先，主送付先）－1対多－注文（注文番号，受注日，数量）\n- 顧客（1）－1対多（*）－付加情報（識別番号，副送付先）：役割名「注文主」\n- 注文（*）－0..1－付加情報：役割名「指定送付先」\n- 注文（*）－1－品目（品目番号，名称）\n\n制約1：「\"注文\"のインスタンスが指定送付先をもつときは，その\"付加情報\"の注文主と\"注文\"の顧客は一致すること。」\n制約2：「\"注文\"のインスタンスが指定送付先をもつときは，当該\"注文\"の\"顧客\"の主送付先ではなく，\"指定送付先\"の副送付先を用いること。」\n\n![図25](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q25.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "\"指定送付先\"を指定する際，\"付加情報\"表のどの行でも選択できる。"
+        },
+        {
+          "value": "イ",
+          "text": "\"付加情報\"表と\"顧客\"表の行数は一致していなければならない。"
+        },
+        {
+          "value": "ウ",
+          "text": "\"付加情報\"表には\"顧客\"表に対する参照制約を指定する。"
+        },
+        {
+          "value": "エ",
+          "text": "\"付加情報\"表には\"注文\"表に対する参照制約を指定する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース設計（概念設計）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q25.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_spring_am/ap_2025_spring_am_q25.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q026",
+      "questionNo": 26,
+      "title": "関係を第2正規形から第3正規形に変換する手順はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "候補キー以外の属性から，候補キーの一部の属性に対して関数従属性がある場合，その関係を分解する。"
+        },
+        {
+          "value": "イ",
+          "text": "候補キー以外の属性間に関数従属性がある場合，その関係を分解する。"
+        },
+        {
+          "value": "ウ",
+          "text": "候補キーの一部の属性から，候補キー以外の属性への関数従属性がある場合，その関係を分解する。"
+        },
+        {
+          "value": "エ",
+          "text": "一つの属性に複数の値が入っている場合，単一の値になるように分解する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース設計",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q26.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q027",
+      "questionNo": 27,
+      "title": "SQL 文に示す参照制約が存在する\"商品\"表と\"受注\"表とがある。\"商品\"表の行を削除したとき，削除した行の商品コードと同じ値の商品コードをもつ\"受注\"表の行を自動的に削除する SQL 文として，a に入れる字句はどれか。\n\n〔SQL 文〕\n\n```sql\nCREATE TABLE 商品 (\n    商品コード    CHAR(4) PRIMARY KEY,\n    商品名        VARCHAR(64)\n)\n\nCREATE TABLE 受注 (\n    受注番号      INTEGER PRIMARY KEY,\n    商品コード    CHAR(4),\n    受注個数      INTEGER,\n    納品日        CHAR(8),\n    FOREIGN KEY (商品コード) REFERENCES 商品(商品コード)\n    ON DELETE   a\n)\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CASCADE"
+        },
+        {
+          "value": "イ",
+          "text": "RESTRICT"
+        },
+        {
+          "value": "ウ",
+          "text": "SET DEFAULT"
+        },
+        {
+          "value": "エ",
+          "text": "SET NULL"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（SQL）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q27.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q028",
+      "questionNo": 28,
+      "title": "和両立である関係 R と S がある。R∩S と等しいものはどれか。ここで，－は差演算，∩は共通演算を表す。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "(R－S)－(S－R)"
+        },
+        {
+          "value": "イ",
+          "text": "R－(R－S)"
+        },
+        {
+          "value": "ウ",
+          "text": "R－(S－R)"
+        },
+        {
+          "value": "エ",
+          "text": "S－(R－S)"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "データベース（関係演算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q28.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q029",
+      "questionNo": 29,
+      "title": "無線 LAN のアクセスポイントや IP 電話機などに，LAN ケーブルを利用して給電も行う仕組みはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "PLC"
+        },
+        {
+          "value": "イ",
+          "text": "PoE"
+        },
+        {
+          "value": "ウ",
+          "text": "UPS"
+        },
+        {
+          "value": "エ",
+          "text": "USB"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q29.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q030",
+      "questionNo": 30,
+      "title": "MTU (Maximum Transmission Unit) が 1,500 バイトに設定された IPv4 ネットワークで，2,000 バイトのデータを TCP を用いて送信するときに，二つ目に送信されるパケットに含まれるデータは何バイトか。ここで，TCP ヘッダー長は 20 バイト，IP ヘッダー長は 20 バイトとする。イーサネットのヘッダー長とトレーラー長は，それぞれ 14 バイトと 4 バイトとする。また，データを複数パケットに分割して送信するときは，先に送信するパケットに格納できる上限までデータを含めて送信するものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "500"
+        },
+        {
+          "value": "イ",
+          "text": "540"
+        },
+        {
+          "value": "ウ",
+          "text": "580"
+        },
+        {
+          "value": "エ",
+          "text": "598"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（TCP/IP）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q30.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q031",
+      "questionNo": 31,
+      "title": "次のルーティングテーブルをもつルータが宛先 IP アドレス 192.168.1.1 のパケットを受信したとき，選択されるネクストホップはどれか。ここで，宛先 IP アドレスの条件を満たす宛先ネットワークが複数あるときは，それらのうちで，サブネットマスクが最も長い宛先ネットワークのネクストホップを選択する。\n\n| 宛先ネットワーク | ネクストホップ |\n|:--|:--|\n| 0.0.0.0/0 | 10.1.0.1 |\n| 192.168.0.0/16 | 10.1.0.2 |\n| 192.168.1.0/24 | 10.1.0.3 |\n| 192.168.1.0/26 | 10.1.0.4 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10.1.0.1"
+        },
+        {
+          "value": "イ",
+          "text": "10.1.0.2"
+        },
+        {
+          "value": "ウ",
+          "text": "10.1.0.3"
+        },
+        {
+          "value": "エ",
+          "text": "10.1.0.4"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（ルーティング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q31.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q032",
+      "questionNo": 32,
+      "title": "あるサブネットでは，ルータやスイッチなどのネットワーク機器に IP アドレスを割り当てる際，割当て可能なアドレスの末尾から降順に使用するルールを採用している。このサブネットのネットワークアドレスを 10.16.32.64/26 とするとき，10 番目に割り当てられるネットワーク機器のアドレスはどれか。ここで，ネットワーク機器 1 台に対して，このサブネット内のアドレス 1 個を割り当てるものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10.16.32.54"
+        },
+        {
+          "value": "イ",
+          "text": "10.16.32.55"
+        },
+        {
+          "value": "ウ",
+          "text": "10.16.32.117"
+        },
+        {
+          "value": "エ",
+          "text": "10.16.32.118"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（IPアドレス）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q32.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q033",
+      "questionNo": 33,
+      "title": "TCP/IP ネットワークで，データ転送用と制御用とに異なるウェルノウンポート番号が割り当てられているプロトコルはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "FTP"
+        },
+        {
+          "value": "イ",
+          "text": "POP3"
+        },
+        {
+          "value": "ウ",
+          "text": "SMTP"
+        },
+        {
+          "value": "エ",
+          "text": "SNMP"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（TCP/IPプロトコル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q33.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q034",
+      "questionNo": 34,
+      "title": "30 k バイトの JPEG ファイルを電子メールに添付するとき，実際の転送データはおよそ何 k バイトになるか。ここで，添付ファイルは MIME base64 を用いてエンコーディングされるものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "20"
+        },
+        {
+          "value": "イ",
+          "text": "30"
+        },
+        {
+          "value": "ウ",
+          "text": "40"
+        },
+        {
+          "value": "エ",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク（電子メール）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q34.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q035",
+      "questionNo": 35,
+      "title": "デジタル庁，総務省及び経済産業省が策定した\"電子政府における調達のために参照すべき暗号のリスト（CRYPTREC 暗号リスト）\"を構成する暗号リストの説明のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "推奨候補暗号リストとは，CRYPTREC によって安全性及び実装性能が確認された暗号技術のうち，市場における利用実績が十分であるか今後の普及が見込まれると判断され，当該技術の利用を推奨するもののリストである。"
+        },
+        {
+          "value": "イ",
+          "text": "推奨候補暗号リストとは，候補段階に格下げされ，互換性維持目的で利用する暗号技術のリストである。"
+        },
+        {
+          "value": "ウ",
+          "text": "電子政府推奨暗号リストとは，CRYPTREC によって安全性及び実装性能が確認された暗号技術のうち，市場における利用実績が十分であるか今後の普及が見込まれると判断され，当該技術の利用を推奨するもののリストである。"
+        },
+        {
+          "value": "エ",
+          "text": "電子政府推奨暗号リストとは，推奨段階に格下げされ，互換性維持目的で利用する暗号技術のリストである。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（暗号技術）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q35.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q036",
+      "questionNo": 36,
+      "title": "Web サーバのログを分析したところ，Web サーバへの攻撃と思われる HTTP リクエストヘッダーが記録されていた。次の HTTP リクエストヘッダーから推測できる，攻撃者が悪用しようとしていた可能性が高い脆弱性はどれか。ここで，HTTP リクエストヘッダー中の \"%20\" は空白を意味する。\n\n〔HTTP リクエストヘッダーの一部〕\n\n```\nGET /cgi-bin/submit.cgi?user=;cat%20/etc/passwd HTTP/1.1\nAccept: */*\nAccept-Language: ja\nUA-CPU: x86\nAccept-Encoding: gzip, deflate\nUser-Agent: （省略）\nHost: test.example.com\nConnection: Keep-Alive\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "HTTP ヘッダーインジェクション（HTTP Response Splitting）"
+        },
+        {
+          "value": "イ",
+          "text": "OS コマンドインジェクション"
+        },
+        {
+          "value": "ウ",
+          "text": "SQL インジェクション"
+        },
+        {
+          "value": "エ",
+          "text": "クロスサイトスクリプティング"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（脆弱性・攻撃手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q36.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q037",
+      "questionNo": 37,
+      "title": "暗号機能を実装した IoT 機器における脅威のうち，サイドチャネル攻撃に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "暗号化関数を線形近似する式を導き，その線形近似式から秘密情報の取得を試みる。"
+        },
+        {
+          "value": "イ",
+          "text": "機器が発する電磁波を測定することによって秘密情報の取得を試みる。"
+        },
+        {
+          "value": "ウ",
+          "text": "二つの平文の差とそれぞれの暗号文の差の関係から，秘密情報の取得を試みる。"
+        },
+        {
+          "value": "エ",
+          "text": "理論的にあり得る復号鍵の全てを機器に入力して秘密情報の取得を試みる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（暗号・IoT）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q37.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q038",
+      "questionNo": 38,
+      "title": "PKI を構成する OCSP を利用する目的はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "誤って破棄してしまった秘密鍵の再発行処理の進捗状況を問い合わせる。"
+        },
+        {
+          "value": "イ",
+          "text": "デジタル証明書から生成した鍵情報の交換が OCSP クライアントと OCSP レスポンダーの間で失敗した際，認証状態を確認する。"
+        },
+        {
+          "value": "ウ",
+          "text": "デジタル証明書が失効しているかどうかの状態を問い合わせる。"
+        },
+        {
+          "value": "エ",
+          "text": "有効期限が切れたデジタル証明書の更新処理の進捗状況を確認する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（PKI）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q38.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q039",
+      "questionNo": 39,
+      "title": "欧米などの企業，組織で行われている\"セキュリティクリアランス\"の事例はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インターネットと重要な秘密情報を取り扱う組織内ネットワークとを，物理的に分離する。"
+        },
+        {
+          "value": "イ",
+          "text": "重要な秘密情報へのアクセス権を付与されたアカウントを定期的に調べ，不要な場合は削除する。"
+        },
+        {
+          "value": "ウ",
+          "text": "重要な秘密情報を取り扱う部署に配属される予定の個人の適性を評価する。"
+        },
+        {
+          "value": "エ",
+          "text": "離席時に机の上の重要な秘密情報を含む書類や媒体を片付ける。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "セキュリティ（組織的対策）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q39.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q040",
+      "questionNo": 40,
+      "title": "ソフトウェアの情報セキュリティ対策のうち，SBOM（Software Bill Of Materials）管理ツールを用いることができるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ソフトウェアでの利用者認証に用いるアカウントの一元管理"
+        },
+        {
+          "value": "イ",
+          "text": "ソフトウェアについての脆弱性管理"
+        },
+        {
+          "value": "ウ",
+          "text": "ソフトウェアのソースコードについてのバージョン管理，アクセス制御及び改ざん防止"
+        },
+        {
+          "value": "エ",
+          "text": "ソフトウェアのソースコードのバックアップとマルウェア混入防止"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（ソフトウェア管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_spring_am_q40.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

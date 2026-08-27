@@ -1,0 +1,705 @@
+{
+  "id": "q061-q080",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q061",
+      "questionNo": 61,
+      "title": "事業目標達成のためのプログラムマネジメントの考え方として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "活動全体を複数のプロジェクトの結合体と捉え，複数のプロジェクトの連携，統合，相互作用を通じて価値を高め，組織全体の戦略の実現を図る。"
+        },
+        {
+          "value": "イ",
+          "text": "個々のプロジェクト管理を更に細分化することによって，プロジェクトに必要な技術や確保すべき経営資源の明確化を図る。"
+        },
+        {
+          "value": "ウ",
+          "text": "システムの開発に使用するプログラム言語や開発手法を早期に検討することによって，開発リスクを低減し，投資効果の最大化を図る。"
+        },
+        {
+          "value": "エ",
+          "text": "リスクを最小化するように支援する専門組織を設けることによって，組織全体のプロジェクトマネジメントの能力と品質の向上を図る。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（プログラムマネジメント）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q61.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_aki/q61.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q062",
+      "questionNo": 62,
+      "title": "SOAの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "会計，人事，製造，購買，在庫管理，販売などの企業の業務プロセスを一元管理することによって，業務の効率化や経営資源の全体最適を図る手法"
+        },
+        {
+          "value": "イ",
+          "text": "企業の業務プロセス，システム化要求などのニーズと，ソフトウェアパッケージの機能性がどれだけ適合し，どれだけかい離しているかを分析する手法"
+        },
+        {
+          "value": "ウ",
+          "text": "業務プロセスの問題点を洗い出して，目標設定，実行，チェック，修正行動のマネジメントサイクルを適用し，継続的な改善を図る手法"
+        },
+        {
+          "value": "エ",
+          "text": "利用者の視点から業務システムの機能を幾つかの独立した部品に分けることによって，業務プロセスとの対応付けや他のソフトウェアとの連携を容易にする手法"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "システム戦略（ソフトウェアアーキテクチャ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q62.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_aki/q62.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q063",
+      "questionNo": 63,
+      "title": "データ分析手法の一つである，アソシエーション分析はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "結果となる数値（目的変数）と要因となる数値（説明変数）との関係性について，最小二乗法を用いて分析する。気温の変化が売行きにどの程度影響するかなどの事象の予測に用いられる。"
+        },
+        {
+          "value": "イ",
+          "text": "商品を購買するときの関連性や同時性などのルールを購買データに基づいて見いだすなど，データ間の統計的なパターンや，意味のある関連性を抽出する。信頼度，支持度及びリフト値によってルールを評価し，有効性を確認する。"
+        },
+        {
+          "value": "ウ",
+          "text": "多数の変数の情報（観測変数）に存在する共通因子を仮定し，モデル化して分析する。共通因子を設けることによってデータの数が増加しても複雑になることを防ぎ，現象を分かりやすく捉えることができる。"
+        },
+        {
+          "value": "エ",
+          "text": "多数の変数の情報（観測変数）をできるだけ少ない指標や次元（合成変数）で要約する。データのもつ情報をできる限り損なわずに全体の傾向を可視化することができる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略・データ分析手法",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q63.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q064",
+      "questionNo": 64,
+      "title": "投資の意思決定手法の一つであるPBP法に関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "キャッシュフローの時間的価値が考慮されている。"
+        },
+        {
+          "value": "イ",
+          "text": "投資回収後のキャッシュフローも考慮されている。"
+        },
+        {
+          "value": "ウ",
+          "text": "投資金額の回収期間の長さによって投資を評価する手法である。"
+        },
+        {
+          "value": "エ",
+          "text": "ほかの意思決定手法であるNPV法やIRR法と同様に割引率を用いる手法である。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "技術戦略マネジメント（投資の意思決定手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q64.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q065",
+      "questionNo": 65,
+      "title": "定性的な評価項目を定量化するために評価点を与える方法がある。表に示す4段階評価を用いた場合，重み及び4段階評価の結果から評価されたシステム全体の目標達成度は，評価項目が全て目標どおりだった場合の評価点に対し，何%となるか。\n\n| システムの評価項目 | 重み | 4段階評価の結果 |\n|:--|:--:|:--|\n| 省力化効果 | 5 | 目標どおり |\n| 期間の短縮 | 8 | 変わらず |\n| 情報の統合化 | 12 | 部分改善 |\n\n4段階評価点：3：目標どおり　2：ほぼ目標どおり　1：部分改善　0：変わらず",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "27"
+        },
+        {
+          "value": "イ",
+          "text": "36"
+        },
+        {
+          "value": "ウ",
+          "text": "43"
+        },
+        {
+          "value": "エ",
+          "text": "52"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（評価・分析手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q65.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q066",
+      "questionNo": 66,
+      "title": "IoTを活用した工場管理システムの開発を行う。システムを構築し，サービスを運営するA社は，B社にボード開発を定額契約で委託した。B社はボードの納入前のネットワーク試験のため，工場の設備を管理するC社と実費償還契約を締結し，工場の一部区画とネットワークを借用した。C社のネットワーク設備に故障はなく，B社の人的リソース不足が原因でネットワーク試験の作業が遅延し，追加の費用が発生したとき，その費用を負担すべき会社はどれか。ここで，各社は契約を正当に履行するものとする。また，定額契約を交わした時点では，開発のスコープは十分明確で，契約以降の変更はないものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "A社"
+        },
+        {
+          "value": "イ",
+          "text": "A社及びB社"
+        },
+        {
+          "value": "ウ",
+          "text": "B社"
+        },
+        {
+          "value": "エ",
+          "text": "B社及びC社"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動・契約形態（IoTシステム開発）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q66.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q067",
+      "questionNo": 67,
+      "title": "売手側でのマーケティング要素4Pは，買手側での要素4Cに対応するという考え方がある。4Pの一つであるプロモーションに対応する4Cの構成要素はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "顧客価値（Customer Value）"
+        },
+        {
+          "value": "イ",
+          "text": "顧客コスト（Cost）"
+        },
+        {
+          "value": "ウ",
+          "text": "コミュニケーション（Communication）"
+        },
+        {
+          "value": "エ",
+          "text": "利便性（Convenience）"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "マーケティング",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q67.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q068",
+      "questionNo": 68,
+      "title": "バランススコアカードで使われる戦略マップの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "切り口となる二つの要素をX軸，Y軸として，市場における自社又は自社製品のポジションを表現したもの"
+        },
+        {
+          "value": "イ",
+          "text": "財務，顧客，内部ビジネスプロセス，学習と成長という四つの視点を基に，課題，施策，目標の因果関係を表現したもの"
+        },
+        {
+          "value": "ウ",
+          "text": "市場の魅力度，自社の優位性という二つの軸から成る四象限に自社の製品や事業を分類して表現したもの"
+        },
+        {
+          "value": "エ",
+          "text": "どのような顧客層に対して，どのような経営資源を使用し，どのような製品・サービスを提供するのかを表現したもの"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（バランススコアカード）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q68.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q069",
+      "questionNo": 69,
+      "title": "フィージビリティスタディの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "企業が新規事業立ち上げや海外進出する際の検証，公共事業の採算性検証，情報システムの導入手段の検証など，実現性を調査・検証する投資前評価のこと"
+        },
+        {
+          "value": "イ",
+          "text": "技術革新，社会変動などに関する未来予測によく用いられ，専門家グループなどがもつ直観的な意見や経験的判断を，反復型アンケートを使って組織的に集約・洗練して収束すること"
+        },
+        {
+          "value": "ウ",
+          "text": "集団（小グループ）によるアイディア発想法の一つで，会議の参加メンバー各自が自由奔放にアイディアを出し合い，互いの発想の異質さを利用して，連想を行うことによって，更に多数のアイディアを生み出そうという集団思考法・発想法のこと"
+        },
+        {
+          "value": "エ",
+          "text": "商品が市場に投入されてから，次第に売れなくなり姿を消すまでのプロセスを，導入期，成長期，成熟（市場飽和）期，衰退期の4段階で表現して，その市場における製品の寿命を検討すること"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動・経営戦略",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q69.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q070",
+      "questionNo": 70,
+      "title": "図のアンゾフの成長マトリクスのうち，市場浸透戦略の例として，適切なものはどれか。\n\n〔アンゾフの成長マトリクス〕\n　　　　　　　製品：既存　　　　　　　　製品：新規\n市場：既存　　市場浸透戦略　　　　　　　新製品開発戦略\n市場：新規　　新市場開拓戦略　　　　　　多角化戦略\n\n![図70](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q70.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ある商品が高いシェアを確保したため，最近の技術開発の成果を取り入れた上位機種を，既存のユーザー向けに販売する。"
+        },
+        {
+          "value": "イ",
+          "text": "ある地域において特別価格で販売することで，商品の知名度を上げ，その地域の多くの住民に販売する。"
+        },
+        {
+          "value": "ウ",
+          "text": "ある地方で長年販売してきた商品を，今年から他の地方でも販売する。"
+        },
+        {
+          "value": "エ",
+          "text": "販売実績がないある国の商習慣に合う製品を一から開発し，その国で販売する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（成長戦略フレームワーク）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q70.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q70.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": false
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q071",
+      "questionNo": 71,
+      "title": "生産事業所のシステムを，生産計画などの計画層，各指示や工程管理・製造管理などの実行層，機械・機器の制御を行う制御層の三つの層に大きく分けたとき，MESが運用される層はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "計画層"
+        },
+        {
+          "value": "イ",
+          "text": "実行層"
+        },
+        {
+          "value": "ウ",
+          "text": "制御層"
+        },
+        {
+          "value": "エ",
+          "text": "計画層・実行層・制御層"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略・生産管理（生産システム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q71.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q072",
+      "questionNo": 72,
+      "title": "PLM（Product Lifecycle Management）の目的はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "NC工作機械，自動搬送装置，倉庫などを有機的に結合し，コンピュータで集中管理することで多品種少量生産に対応できる生産の自動化を実現する。"
+        },
+        {
+          "value": "イ",
+          "text": "製品開発，製造，販売，保守，リサイクルに至る製造業のプロセスにおいて，製品に関連する情報を一元管理し，商品力向上やコスト低減を図る。"
+        },
+        {
+          "value": "ウ",
+          "text": "製品の生産計画に基づいてその生産に必要な資材の所要量を展開し，これを基準にして資材の需要とその発注時期を算出する。"
+        },
+        {
+          "value": "エ",
+          "text": "部品の供給から製品の販売までの一連のプロセスの情報をリアルタイムで交換することによって，在庫の削減とリードタイムの短縮を実現する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略・生産管理",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q72.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_aki/q72.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q073",
+      "questionNo": 73,
+      "title": "IoTで活用されているLPWAの特徴として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "GHz帯を使う近距離無線通信であり，4K，8Kの映像などの大容量のデータを高速伝送することに適している。"
+        },
+        {
+          "value": "イ",
+          "text": "電力線を通信に使う有線通信技術であり，スマートメーターの自動検針などに適している。"
+        },
+        {
+          "value": "ウ",
+          "text": "一つの基地局で広範囲をカバーできる低消費電力の無線通信技術であり，複数の機器がつながるネットワークに適している。"
+        },
+        {
+          "value": "エ",
+          "text": "有線のシリアル通信であり，同じ基板上の回路及びLSI間の通信に適している。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "ネットワーク技術（IoT通信技術）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q73.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_aki/q73.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q074",
+      "questionNo": 74,
+      "title": "ある工場で扱っている部品Aは，使用量（需要）が一定であり，定量発注方式を採用して発注されている。この場合の経済的発注量は，グラフの年間の発注費と，年間の保管費が等しくなったときの値を計算することで求めることができる。表の条件の場合の経済的発注量を求めよ。ここで，部品Aに関する安全在庫は考慮しないものとする。\n\n| 項目 | 値 |\n|:--|--:|\n| 年間需要量 | 100,000個 |\n| 1個当たりの年間保管費（金利を含む） | 1,000円 |\n| 1回当たりの発注費用（発注量に関係ない） | 5,000円 |\n\n![図74-1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q74_1.png)\n\n![図74-2](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q74_2.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10"
+        },
+        {
+          "value": "イ",
+          "text": "200"
+        },
+        {
+          "value": "ウ",
+          "text": "500"
+        },
+        {
+          "value": "エ",
+          "text": "1,000"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営科学・在庫管理（経済的発注量）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q74.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q74.md",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q075",
+      "questionNo": 75,
+      "title": "製品X，Yを1台製造するのに必要な部品数は，表のとおりである。製品1台当たりの利益がX，Yともに1万円のとき，利益は最大何万円になるか。ここで，部品Aは120個，部品Bは60個まで使えるものとする。\n\n| 部品＼製品 | X | Y |\n|:--:|:--:|:--:|\n| A | 3 | 2 |\n| B | 1 | 2 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "30"
+        },
+        {
+          "value": "イ",
+          "text": "40"
+        },
+        {
+          "value": "ウ",
+          "text": "45"
+        },
+        {
+          "value": "エ",
+          "text": "60"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営科学（線形計画法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q75.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q076",
+      "questionNo": 76,
+      "title": "A社の貸借対照表の構成は図のとおりであった。A社の自己資本比率は何%か。\n\n| 資産 | 単位：百万円 | 負債・純資産 | 単位：百万円 |\n|:--|--:|:--|--:|\n| 流動資産 | 6,000 | 流動負債 | 4,500 |\n| | | 固定負債 | 2,000 |\n| 固定資産 | 4,000 | 資本金 | 2,000 |\n| | | 資本剰余金 | 1,000 |\n| | | 利益剰余金 | 500 |\n\n![問76の図](https://www.ap-siken.com/kakomon/07_aki/img/76.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "10"
+        },
+        {
+          "value": "イ",
+          "text": "20"
+        },
+        {
+          "value": "ウ",
+          "text": "30"
+        },
+        {
+          "value": "エ",
+          "text": "35"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（財務分析）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q76.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_aki/q76.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": false
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q077",
+      "questionNo": 77,
+      "title": "表のような製品A，Bを製造，販売する場合，考えられる利益は最大で何円になるか。ここで，機械の年間使用可能時間は延べ15,000時間とし，年間の固定費は製品A，Bに関係なく15,000,000円とする。\n\n| 製品 | 販売単価 | 変動費 | 製造時間 |\n|:--:|--:|--:|--:|\n| A | 30,000円 | 18,000円/個 | 8時間/個 |\n| B | 25,000円 | 10,000円/個 | 12時間/個 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "3,750,000"
+        },
+        {
+          "value": "イ",
+          "text": "7,500,000"
+        },
+        {
+          "value": "ウ",
+          "text": "16,250,000"
+        },
+        {
+          "value": "エ",
+          "text": "18,750,000"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営科学（線形計画法・利益最大化）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q77.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q078",
+      "questionNo": 78,
+      "title": "著作権法において，保護の対象となり得ないものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インターネットで公開されたフリーソフトウェア"
+        },
+        {
+          "value": "イ",
+          "text": "ソフトウェアの操作マニュアル"
+        },
+        {
+          "value": "ウ",
+          "text": "データベース"
+        },
+        {
+          "value": "エ",
+          "text": "プログラム言語や規約（プログラム言語の用法についての特別の約束）"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（著作権法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q78.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q079",
+      "questionNo": 79,
+      "title": "意匠法において，保護の対象となり得るものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "独自のGUI"
+        },
+        {
+          "value": "イ",
+          "text": "独自のアルゴリズム"
+        },
+        {
+          "value": "ウ",
+          "text": "独自の通信プロトコル"
+        },
+        {
+          "value": "エ",
+          "text": "独自のビジネスモデル"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "法務（意匠法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q79.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q080",
+      "questionNo": 80,
+      "title": "労働施策総合推進法に関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "いわゆるパワーハラスメントに関し，労働者の相談に応ずることや適切に対応する体制を整備することなどを事業主に義務付けている。"
+        },
+        {
+          "value": "イ",
+          "text": "大学生や高校生が就職を選択して，適切な就職活動を行うために，教育機関が関与すべきインターンシップの理念・原則を定めている。"
+        },
+        {
+          "value": "ウ",
+          "text": "都道府県ごとに時給という形式で金額が決められている最低賃金を労働施策の基礎として位置付け，それを決定する手順を定めている。"
+        },
+        {
+          "value": "エ",
+          "text": "労働組合と使用者との団体交渉が労働条件改善の基本的な方策であると示し，労働組合活動を総合的に推進することを義務付けている。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "法務（労働関連法規）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q80.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

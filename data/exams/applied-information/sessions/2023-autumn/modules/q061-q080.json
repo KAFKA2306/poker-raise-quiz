@@ -1,0 +1,705 @@
+{
+  "id": "q061-q080",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q061",
+      "questionNo": 61,
+      "title": "バックキャスティングの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "システム開発において、先にプロジェクト要員を確定し、リソースの範囲内で優先すべき機能から順次提供する開発手法"
+        },
+        {
+          "value": "イ",
+          "text": "前提として認識すべき制約を受け入れた上で未来のありたい姿を描き、予想される課題や可能性を洗い出し解決策を検討することによって、ありたい姿に近づける思考方法"
+        },
+        {
+          "value": "ウ",
+          "text": "組織において、下位から上位への発議を受け付けて経営の意思決定に反映するマネジメント手法"
+        },
+        {
+          "value": "エ",
+          "text": "投資戦略の有効性を検証する際に、過去のデータを用いてどの程度の利益が期待できるかをシミュレーションする手法"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（思考法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q61.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q062",
+      "questionNo": 62,
+      "title": "A社は、ソリューションプロバイダから、顧客に対するワントゥワンマーケティングを実現する統合的なソリューションの提案を受けた。この提案に該当するソリューションとして、最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CRMソリューション"
+        },
+        {
+          "value": "イ",
+          "text": "HRMソリューション"
+        },
+        {
+          "value": "ウ",
+          "text": "SCMソリューション"
+        },
+        {
+          "value": "エ",
+          "text": "財務管理ソリューション"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（業務システム・ソリューション）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q62.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q063",
+      "questionNo": 63,
+      "title": "SOAを説明したものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "企業改革において既存の組織やビジネスルールを抜本的に見直し、業務フロー、管理機構及び情報システムを再構築する手法のこと"
+        },
+        {
+          "value": "イ",
+          "text": "企業の経営資源を有効に活用して経営の効率を向上させるために、基幹業務を部門ごとではなく統合的に管理するための業務システムのこと"
+        },
+        {
+          "value": "ウ",
+          "text": "発注者とITアウトソーシングサービス提供者との間で、サービスの品質について合意した文書のこと"
+        },
+        {
+          "value": "エ",
+          "text": "ビジネスプロセスの構成要素とそれを支援するIT基盤を、ソフトウェア部品であるサービスとして提供するシステムアーキテクチャのこと"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（システムアーキテクチャ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q63.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q064",
+      "questionNo": 64,
+      "title": "IT投資効果の評価方法において、キャッシュフローベースで初年度の投資によるキャッシュアウトを何年後に回収できるかという指標はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "IRR（Internal Rate of Return）"
+        },
+        {
+          "value": "イ",
+          "text": "NPV（Net Present Value）"
+        },
+        {
+          "value": "ウ",
+          "text": "PBP（Pay Back Period）"
+        },
+        {
+          "value": "エ",
+          "text": "ROI（Return On Investment）"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（IT投資評価）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q64.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q065",
+      "questionNo": 65,
+      "title": "システム開発の成果物が利害関係者の要件（要求事項）を満たしているという客観的な証拠を得るための検証手法として、JIS X 0166:2021（システム及びソフトウェア技術－ライフサイクルプロセス－要求エンジニアリング）では、インスペクション、分析又はシミュレーション、デモンストレーション、テストを挙げている。これらのうち、成果物となる文書について要件（要求事項）への遵守度合いを検査するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インスペクション"
+        },
+        {
+          "value": "イ",
+          "text": "テスト"
+        },
+        {
+          "value": "ウ",
+          "text": "デモンストレーション"
+        },
+        {
+          "value": "エ",
+          "text": "分析又はシミュレーション"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "開発技術（要求エンジニアリング）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q65.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q65.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q066",
+      "questionNo": 66,
+      "title": "半導体メーカーが行っているファウンドリーサービスの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "商号や商標の使用権とともに、一定地域内での商品の独占販売権を与える。"
+        },
+        {
+          "value": "イ",
+          "text": "自社で半導体製品の企画、設計から製造までを一貫して行い、それを自社ブランドで販売する。"
+        },
+        {
+          "value": "ウ",
+          "text": "製造設備をもたず、半導体製品の企画、設計及び開発を専門に行う。"
+        },
+        {
+          "value": "エ",
+          "text": "他社からの製造委託を受けて、半導体製品の製造を行う。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（半導体産業の事業形態）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q66.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q067",
+      "questionNo": 67,
+      "title": "H. I. アンゾフが提唱した成長マトリクスを説明したものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "既存製品か新製品かという製品軸と既存市場か新市場かという市場軸の両方で捉え、事業成長戦略を考える。"
+        },
+        {
+          "value": "イ",
+          "text": "コストで優位に立つかコスト以外で差別化するか、ターゲットを広くするか集中するかによって戦略を考える。"
+        },
+        {
+          "value": "ウ",
+          "text": "市場成長率が高いか低いか、相対的市場シェアが大きいか小さいかによって事業を捉え、資源配分の戦略を考える。"
+        },
+        {
+          "value": "エ",
+          "text": "自社の内部環境の強みと弱み、取り巻く外部環境の機会と脅威を抽出し、取組方針を整理して戦略を考える。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（成長マトリクス）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q67.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q068",
+      "questionNo": 68,
+      "title": "顧客から得る同意の範囲を段階的に広げながら、プロモーションを行うことが特徴的なマーケティング手法はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アフィリエイトマーケティング"
+        },
+        {
+          "value": "イ",
+          "text": "差別型マーケティング"
+        },
+        {
+          "value": "ウ",
+          "text": "パーミッションマーケティング"
+        },
+        {
+          "value": "エ",
+          "text": "バイラルマーケティング"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "マーケティング（手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q68.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q069",
+      "questionNo": 69,
+      "title": "市場を消費者特性でセグメント化する際に、基準となる変数を、地理的変数、人口統計的変数、心理的変数、行動的変数に分類するとき、人口統計的変数に分類されるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "社交性などの性格"
+        },
+        {
+          "value": "イ",
+          "text": "職業"
+        },
+        {
+          "value": "ウ",
+          "text": "人口密度"
+        },
+        {
+          "value": "エ",
+          "text": "製品の使用割合"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "マーケティング（市場セグメンテーション）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q69.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q070",
+      "questionNo": 70,
+      "title": "オープンイノベーションの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "外部の企業に製品開発の一部を任せることで、短期間で市場へ製品を投入する。"
+        },
+        {
+          "value": "イ",
+          "text": "顧客に提供する製品やサービスを自社で開発することで、新たな価値を創造する。"
+        },
+        {
+          "value": "ウ",
+          "text": "自社と外部組織の技術やアイディアなどを組み合わせることで創出した価値を、さらに外部組織へ提供する。"
+        },
+        {
+          "value": "エ",
+          "text": "自社の業務の工程を見直すことで、生産性向上とコスト削減を実現する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（イノベーション）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q70.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q071",
+      "questionNo": 71,
+      "title": "CPS（サイバーフィジカルシステム）を活用している事例はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "仮想化された標準的なシステム資源を用意しておき、業務内容に合わせてシステムの規模や構成をソフトウェアによって設定する。"
+        },
+        {
+          "value": "イ",
+          "text": "機器を販売するのではなく貸し出し、その機器に組み込まれたセンサーで使用状況を検知し、その情報を基に利用者から利用料金を徴収する。"
+        },
+        {
+          "value": "ウ",
+          "text": "業務処理機能やデータ蓄積機能をサーバにもたせ、クライアント側はネットワーク接続と最小限の入出力機能だけをもたせてデスクトップの仮想化を行う。"
+        },
+        {
+          "value": "エ",
+          "text": "現実世界の都市の構造や活動状況のデータによって仮想世界を構築し、災害の発生や時間軸を自由に操作して、現実世界では実現できないシミュレーションを行う。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（先進技術）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q71.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q072",
+      "questionNo": 72,
+      "title": "個人が、インターネットを介して提示された単発の仕事を受託する働き方や、それによって形成される経済形態を表すものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "APIエコノミー"
+        },
+        {
+          "value": "イ",
+          "text": "ギグエコノミー"
+        },
+        {
+          "value": "ウ",
+          "text": "シャドーエコノミー"
+        },
+        {
+          "value": "エ",
+          "text": "トークンエコノミー"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（新しい経済形態）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q72.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q073",
+      "questionNo": 73,
+      "title": "スマートファクトリーで使用されるAIを用いたマシンビジョンの目的として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "作業者が装着したVRゴーグルに作業プロセスを表示することによって、作業効率を向上させる。"
+        },
+        {
+          "value": "イ",
+          "text": "従来の人間の目視検査を自動化し、検査効率を向上させる。"
+        },
+        {
+          "value": "ウ",
+          "text": "需要予測を目的として、クラウドに蓄積した入出荷データを用いて機械学習を行い、生産数の最適化を行う。"
+        },
+        {
+          "value": "エ",
+          "text": "設計変更内容を、AIを用いて吟味して、製造現場に正確に伝達する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（スマートファクトリー）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q73.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q074",
+      "questionNo": 74,
+      "title": "BCM（Business Continuity Management）において考慮すべきレジリエンスの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "競争力の源泉となる、他社に真似のできない自社固有の強み"
+        },
+        {
+          "value": "イ",
+          "text": "想定される全てのリスクを回避して事業継続を行う方針"
+        },
+        {
+          "value": "ウ",
+          "text": "大規模災害などの発生時に事業の継続を可能とするために事前に策定する計画"
+        },
+        {
+          "value": "エ",
+          "text": "不測の事態が生じた場合の組織的対応力や、支障が生じた事業を復元させる力"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（事業継続管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q74.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q075",
+      "questionNo": 75,
+      "title": "リーダーシップ論のうち、F. E. フィードラーが提唱するコンティンジェンシー理論の特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "優れたリーダーシップを発揮する、リーダー個人がもつ性格、知性、外観などの個人的資質の分析に焦点を当てている。"
+        },
+        {
+          "value": "イ",
+          "text": "リーダーシップのスタイルについて、目標達成能力と集団維持能力の二つの次元に焦点を当てている。"
+        },
+        {
+          "value": "ウ",
+          "text": "リーダーシップの有効性は、部下の成熟（自律性）の度合いという状況要因に依存するとしている。"
+        },
+        {
+          "value": "エ",
+          "text": "リーダーシップの有効性は、リーダーがもつパーソナリティと、リーダーがどれだけ統制力や影響力を行使できるかという状況要因に依存するとしている。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（リーダーシップ論）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q75.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q076",
+      "questionNo": 76,
+      "title": "発生した故障について、発生要因ごとの件数の記録を基に、故障発生件数で上位を占める主な要因を明確に表現するのに適している図法はどれか。\n\n![問76の図](https://www.ap-siken.com/kakomon/05_aki/img/76.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "特性要因図"
+        },
+        {
+          "value": "イ",
+          "text": "パレート図"
+        },
+        {
+          "value": "ウ",
+          "text": "マトリックス図"
+        },
+        {
+          "value": "エ",
+          "text": "連関図"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略（品質管理図法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q76.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q76.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q077",
+      "questionNo": 77,
+      "title": "取得原価30万円のPCを2年間使用した後、廃棄処分し、廃棄費用2万円を現金で支払った。このときの固定資産の除却損は廃棄費用も含めて何万円か。ここで、耐用年数は4年、減価償却方法は定額法、定額法の償却率は0.250、残存価額は0円とする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "9.5"
+        },
+        {
+          "value": "イ",
+          "text": "13.0"
+        },
+        {
+          "value": "ウ",
+          "text": "15.0"
+        },
+        {
+          "value": "エ",
+          "text": "17.0"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（固定資産の除却損計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q77.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q078",
+      "questionNo": 78,
+      "title": "プログラムの著作物について、著作権法上、適法である行為はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "海賊版を複製したプログラムと事前に知りながら入手し、業務で使用した。"
+        },
+        {
+          "value": "イ",
+          "text": "業務処理用に購入したプログラムを複製し、社内教育用として各部門に配布した。"
+        },
+        {
+          "value": "ウ",
+          "text": "職務著作のプログラムを、作成した担当者が独断で複製し、他社に貸与した。"
+        },
+        {
+          "value": "エ",
+          "text": "処理速度を向上させるために、購入したプログラムを改変した。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（著作権法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q78.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q079",
+      "questionNo": 79,
+      "title": "匿名加工情報取扱事業者が、適正な匿名加工を行った匿名加工情報を第三者提供する際の義務として、個人情報保護法に規定されているものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "第三者に提供される匿名加工情報に含まれる個人に関する情報の項目及び提供方法を公表しなければならない。"
+        },
+        {
+          "value": "イ",
+          "text": "第三者へ提供した場合は、速やかに個人情報保護委員会へ提供した内容を報告しなければならない。"
+        },
+        {
+          "value": "ウ",
+          "text": "第三者への提供の手段は、ハードコピーなどの物理的な媒体を用いることに限られる。"
+        },
+        {
+          "value": "エ",
+          "text": "匿名加工情報であっても、第三者提供を行う際には事前に本人の承諾が必要である。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "法務（個人情報保護法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q79.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q080",
+      "questionNo": 80,
+      "title": "図は、企業と労働者の関係を表している。企業Bと労働者Cの関係に関する記述のうち、適切なものはどれか。\n\n〔図の構成〕企業Aと労働者Cは雇用関係。企業Aと企業Bは\"契約\"関係。\n\n![問80の図](https://www.ap-siken.com/kakomon/05_aki/img/80.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "\"契約\"が請負契約で、企業Aが受託者、企業Bが委託者であるとき、企業Bと労働者Cとの間には、指揮命令関係が生じる。"
+        },
+        {
+          "value": "イ",
+          "text": "\"契約\"が出向にかかわる契約で、企業Aが企業Bに労働者Cを出向させたとき、企業Bと労働者Cとの間には指揮命令関係が生じる。"
+        },
+        {
+          "value": "ウ",
+          "text": "\"契約\"が労働者派遣契約で、企業Aが派遣元、企業Bが派遣先であるとき、企業Bと労働者Cの間にも、雇用関係が生じる。"
+        },
+        {
+          "value": "エ",
+          "text": "\"契約\"が労働者派遣契約で、企業Aが派遣元、企業Bが派遣先であるとき、企業Bに労働者Cが出向しているといえる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（労働関連法規）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q80.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q80.html",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

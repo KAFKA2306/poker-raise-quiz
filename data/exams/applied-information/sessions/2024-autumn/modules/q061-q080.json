@@ -1,0 +1,705 @@
+{
+  "id": "q061-q080",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q061",
+      "questionNo": 61,
+      "title": "経済産業省が取りまとめた\"デジタル経営改革のための評価指標（DX推進指標）\"によれば，DXを実現する上で基盤となるITシステムの構築に関する指標において，\"ITシステムに求められる要素\"について経営者が確認すべき事項はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ITシステムの全体設計や協働できるベンダーの選定などを行える人材を育成・確保できているか。"
+        },
+        {
+          "value": "イ",
+          "text": "環境変化に迅速に対応し，求められるデリバリースピードに対応できるITシステムとなっているか。"
+        },
+        {
+          "value": "ウ",
+          "text": "データ処理において，リアルタイム性よりも，ビッグデータの蓄積と事後の分析が重視されているか。"
+        },
+        {
+          "value": "エ",
+          "text": "データを迅速に活用するために，全体最適よりも，個別最適を志向したITシステムとなっているか。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（DX推進指標）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q61.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q062",
+      "questionNo": 62,
+      "title": "官民データ活用推進基本法などに基づいて進められているオープンデータバイデザインに関して，行政機関における取組についての記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "行政機関が保有する個人情報を産業振興などの目的でオープン化する場合は，データ公開に先立ち，個人情報保護委員会への届出が義務化されている。"
+        },
+        {
+          "value": "イ",
+          "text": "行政機関において収集・蓄積された既存のデータが公開される場合，営利目的の利用は許されておらず，非営利の用途に限って利用が認められている。"
+        },
+        {
+          "value": "ウ",
+          "text": "行政機関における情報システムの設計において，情報セキュリティを確保する観点から，公開するデータの用途を行政機関同士の相互利用に限定している。"
+        },
+        {
+          "value": "エ",
+          "text": "対象となる行政データを，二次利用や機械判読に適した形態で無償公開することを前提に，情報システムや業務プロセスの企画，整備及び運用を行っている。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（オープンデータ・行政データ活用）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q62.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q063",
+      "questionNo": 63,
+      "title": "業務改善の4原則としてのEliminate，Combine，Rearrange，Simplifyは，業務改善を実現する上での視点を示すものである。次の業務改善例のうち，Rearrangeを適用したものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "経費精算申請業務において，決裁に不要な人を申請フローから外し，決裁までに要する時間を短縮した。"
+        },
+        {
+          "value": "イ",
+          "text": "商品配送ルートを可視化した結果，移動距離の無駄が発見された。そこで，配送順を入れ替えることで，一日に配送できる件数を向上させた。"
+        },
+        {
+          "value": "ウ",
+          "text": "表計算ソフト上で各項目を手入力していたが，一つの項目を入力すれば他の関連項目が自動計算できるように関数を設定し，作業効率を向上させた。"
+        },
+        {
+          "value": "エ",
+          "text": "複数部門が集まる会議の議事録を，各部門のスタッフが，それぞれ独自に作成していた。各部門での作成をやめ，代表者1名が作成し，部門間で共有した。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "業務分析・要件定義（ECRS・業務改善）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q63.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q064",
+      "questionNo": 64,
+      "title": "BPRによって業務を見直した場合，これまで従業員5人で年間計9,000時間掛かっていた業務が7,000時間で実現可能なことと，その7,000時間のうちの2,000時間分の業務は外部委託が可能なことが分かった。この結果を基にBPRを実施した次のシナリオaからdのうち，当該部門において，年間当たりの金額面の効果が最も高いものはどれか。なお，いずれのシナリオも年初から実施することとし，条件に記載した時間や費用以外は考慮しないものとする。\n\n〔条件〕\n(1) 年間計9,000時間の内訳は従業員1人当たり1,800時間とする。\n(2) 従業員1人当たりの年間の人件費は600万円とする。\n(3) 外部委託が可能な2,000時間分の業務を，外部委託した場合の年間費用は700万円とする。外部委託の契約は1年単位で年間費用の700万円は固定である。\n(4) 従業員の空いた時間は別の付加価値業務が行えるようになり，従業員1人につき100時間当たり20万円の利益を得ることができる。\n(5) 従業員4人で当該業務を行う場合は，残り1人は他部門に異動する。当該部門では，1人分の人件費の削減効果だけを考慮する。\n(6) BPR実施後，当該業務に関わらない従業員の人件費は金額面の効果とみなす。\n\n| シナリオ | 当該業務を行う従業員数 | 外部委託 |\n|:--|:--|:--|\n| a | 4人 | する |\n| b | 4人 | しない |\n| c | 5人 | する |\n| d | 5人 | しない |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "シナリオa"
+        },
+        {
+          "value": "イ",
+          "text": "シナリオb"
+        },
+        {
+          "value": "ウ",
+          "text": "シナリオc"
+        },
+        {
+          "value": "エ",
+          "text": "シナリオd"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "業務分析・業務効果計算（BPR）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q64.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q065",
+      "questionNo": 65,
+      "title": "システムの要件を検討する際に用いるUXデザインの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "システム設計時に，システム稼働後の個人情報保護などのセキュリティ対策を組み込む設計思想のこと"
+        },
+        {
+          "value": "イ",
+          "text": "システムの個々のアプリケーションを利用者が享受するサービスとして捉え，その組合せでシステムを構築する設計思想のこと"
+        },
+        {
+          "value": "ウ",
+          "text": "システムを利用する際にシステムの機能が利用者にもたらす有効性，操作性などに加え，快適さ，安心感，楽しさなどの体験価値を重視する設計思想のこと"
+        },
+        {
+          "value": "エ",
+          "text": "接続仕様や仕組みが公開されている他社のアプリケーションを活用してシステムを構築することによって，システム開発の生産性を高める設計思想のこと"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "システム企画（UXデザイン）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q65.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q066",
+      "questionNo": 66,
+      "title": "UMLの図のうち，業務要件定義において，業務フローを記述する際に使用する，処理の分岐や並行処理，処理の同期などを表現できる図はどれか。\n\n![問66の図](https://www.ap-siken.com/kakomon/06_aki/img/66.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アクティビティ図"
+        },
+        {
+          "value": "イ",
+          "text": "クラス図"
+        },
+        {
+          "value": "ウ",
+          "text": "状態マシン図"
+        },
+        {
+          "value": "エ",
+          "text": "ユースケース図"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "システム企画（UML・業務フロー）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q66.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_aki/q66.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q067",
+      "questionNo": 67,
+      "title": "SCMの目的はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "顧客情報や購買履歴，クレームなどを一元管理し，きめ細かな顧客対応を行うことによって，良好な顧客関係の構築を目的とする。"
+        },
+        {
+          "value": "イ",
+          "text": "顧客情報や商談スケジュール，進捗状況などの商談状況を一元管理することによって，営業活動の効率向上を目的とする。"
+        },
+        {
+          "value": "ウ",
+          "text": "生産，販売，在庫管理，財務会計，人事管理など基幹業務のあらゆる情報を統合管理することによって，経営効率の向上を目的とする。"
+        },
+        {
+          "value": "エ",
+          "text": "複数の企業や組織にまたがる調達から販売までの業務プロセス全ての情報を統合的に管理することによって，コスト低減や納期短縮などを目的とする。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（経営管理システム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q67.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q068",
+      "questionNo": 68,
+      "title": "アンゾフの成長マトリクスを説明したものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "外部環境と内部環境の観点から，強み，弱み，機会，脅威という四つの要因について情報を整理し，企業を取り巻く環境を分析する手法である。"
+        },
+        {
+          "value": "イ",
+          "text": "企業のビジョンと戦略を実現するために，財務，顧客，内部ビジネスプロセス，学習と成長という四つの視点から事業活動を検討し，アクションプランまで具体化していくマネジメント手法である。"
+        },
+        {
+          "value": "ウ",
+          "text": "事業戦略を，市場浸透，市場拡大，製品開発，多角化という四つのタイプに分類し，事業の方向性を検討する際に用いる手法である。"
+        },
+        {
+          "value": "エ",
+          "text": "製品ライフサイクルを，導入期，成長期，成熟期，衰退期という四つの段階に分類し，企業にとって最適な戦略を立案する手法である。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（経営戦略フレームワーク）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q68.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q069",
+      "questionNo": 69,
+      "title": "コ・クリエーション戦略の特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "企業の営業部門と製造部門が協働し，特定の商品・サービスに限定して徹底的に自前主義にこだわることによって強みを発揮する。"
+        },
+        {
+          "value": "イ",
+          "text": "顧客が自らのアイデアを商品の仕様に具体的に落とし込み，企業に製品を製造してもらう。"
+        },
+        {
+          "value": "ウ",
+          "text": "顧客や企業ネットワークの力を活用し商品・サービスだけでなく，顧客の経験までを含めて差別化可能な価値を創造する。"
+        },
+        {
+          "value": "エ",
+          "text": "自社に不足する経営資源をM&Aによって強化し，従来にない価値をより素早く創造する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（経営戦略手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q69.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q070",
+      "questionNo": 70,
+      "title": "企業における研究，開発，事業化，そして産業化へとステージが移行する過程の中で，事業化から産業化に移行するときの，競合製品との競争過程にある障壁を何と呼ぶか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "キャズム"
+        },
+        {
+          "value": "イ",
+          "text": "死の谷"
+        },
+        {
+          "value": "ウ",
+          "text": "ダーウィンの海"
+        },
+        {
+          "value": "エ",
+          "text": "魔の川"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "技術戦略マネジメント（技術開発戦略の立案）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q70.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q071",
+      "questionNo": 71,
+      "title": "生成AIのビジネス活用において，独自のデータを学習させることにより基盤モデルを自社の業務やサービスに特化したモデルへとカスタマイズすることを何と呼ぶか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アノテーション"
+        },
+        {
+          "value": "イ",
+          "text": "クラスタリング"
+        },
+        {
+          "value": "ウ",
+          "text": "ファインチューニング"
+        },
+        {
+          "value": "エ",
+          "text": "プロンプトエンジニアリング"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "技術戦略マネジメント（生成AI）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q71.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q072",
+      "questionNo": 72,
+      "title": "製造業のA社では，NC工作機械を用いて，四つの仕事a〜dを行っている。各仕事間の段取り時間は表のとおりである。合計の段取り時間が最小になるように仕事を行った場合の合計段取り時間は何時間か。ここで，仕事はどの順序で行ってもよく，a〜dを一度ずつ行うものとし，FROMからTOへの段取り時間で算出する。\n\n```\n単位 時間\nFROM＼TO | 仕事a | 仕事b | 仕事c | 仕事d\n仕事a    |  ―   |  2   |  1   |  2\n仕事b    |  1   |  ―   |  1   |  2\n仕事c    |  3   |  2   |  ―   |  2\n仕事d    |  4   |  3   |  2   |  ―\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "4"
+        },
+        {
+          "value": "イ",
+          "text": "5"
+        },
+        {
+          "value": "ウ",
+          "text": "6"
+        },
+        {
+          "value": "エ",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "ビジネスインダストリ（エンジニアリングシステム・段取り時間最適化）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q72.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q073",
+      "questionNo": 73,
+      "title": "構成表の製品Aを300個出荷しようとするとき，部品bの正味所要量は何個か。ここで，A，a，b，cの在庫量は在庫表のとおりとする。また，他の仕掛残，注文残，引当残などはないものとする。\n\n```\n構成表（単位 個）\n品名 | 構成部品a | 構成部品b | 構成部品c\nA    |    3     |    2     |    0\na    |    ―     |    1     |    2\n\n在庫表（単位 個）\n品名 | 在庫量\nA    | 100\na    | 100\nb    | 300\nc    | 400\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "200"
+        },
+        {
+          "value": "イ",
+          "text": "600"
+        },
+        {
+          "value": "ウ",
+          "text": "900"
+        },
+        {
+          "value": "エ",
+          "text": "1,500"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "ビジネスインダストリ（資材所要量計画・MRP）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q73.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q074",
+      "questionNo": 74,
+      "title": "企業経営において，経営理念，経営戦略，事業戦略は，経営理念を最上位とするピラミッドを形成している。経営理念，経営戦略，事業戦略の関係性で適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "経営理念，経営戦略，事業戦略のピラミッドは上位ほど具体的な内容であるのに対して，下位にいくほど抽象的な内容となっている。"
+        },
+        {
+          "value": "イ",
+          "text": "経営理念，経営戦略，事業戦略のピラミッドは上位ほど短期的な視点であるのに対して，下位にいくほど中長期的な視点となっている。"
+        },
+        {
+          "value": "ウ",
+          "text": "経営理念を達成するために経営戦略を策定し，経営戦略という目標を達成するために事業戦略に分解する。"
+        },
+        {
+          "value": "エ",
+          "text": "経営理念を達成するために事業戦略を策定し，事業戦略という目標を達成するために経営戦略に分解する。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "経営戦略マネジメント（経営理念・経営戦略・事業戦略）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q74.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q075",
+      "questionNo": 75,
+      "title": "A社とB社がそれぞれ2種類の戦略を採る場合の市場シェアが表のように予想されるとき，ナッシュ均衡，すなわち互いの戦略が相手の戦略に対して最適になっている組合せはどれか。ここで，表の各欄において，左側の数値がA社のシェア，右側の数値がB社のシェアとする。\n\n```\n単位 %\n        | B社戦略b1  | B社戦略b2\nA社戦略a1 | 40, 20    | 50, 30\nA社戦略a2 | 30, 10    | 25, 25\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "A社が戦略a1，B社が戦略b1を採る組合せ"
+        },
+        {
+          "value": "イ",
+          "text": "A社が戦略a1，B社が戦略b2を採る組合せ"
+        },
+        {
+          "value": "ウ",
+          "text": "A社が戦略a2，B社が戦略b1を採る組合せ"
+        },
+        {
+          "value": "エ",
+          "text": "A社が戦略a2，B社が戦略b2を採る組合せ"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（業務分析・データ利活用・ゲーム理論）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q75.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q076",
+      "questionNo": 76,
+      "title": "ベイズ統計の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "経済統計に関する国際条約に基づいて，貿易実態を正確に把握し，国の経済政策や企業の経済活動の資料とすることを目的とした指標を作成する統計手法"
+        },
+        {
+          "value": "イ",
+          "text": "事前分布・事後分布といった確率に関する考え方に基づいて体系化されたものであり，機械学習，迷惑メールフィルターなどに利用されている統計理論"
+        },
+        {
+          "value": "ウ",
+          "text": "収集されたデータの代表値である平均値・中央値・最頻値を求めたり，度数分布表やヒストグラムを作成したりすることによって，データの特徴を捉える統計理論"
+        },
+        {
+          "value": "エ",
+          "text": "ビッグデータの収集・分析に当たり，分析結果の検証可能性を確保し，複数の分析結果を比較可能とするために，対象をオープンデータに限定する統計手法"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（業務分析・データ利活用・ベイズ統計）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q76.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q077",
+      "questionNo": 77,
+      "title": "A社とB社の比較表から分かる，A社の特徴はどれか。\n\n```\n単位 億円\n       | A社    | B社\n売上高  | 1,000  | 1,000\n変動費  |  500   |  800\n固定費  |  400   |  100\n営業利益|  100   |  100\n```",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "売上高の増加が大きな利益に結び付きやすい。"
+        },
+        {
+          "value": "イ",
+          "text": "限界利益率が低い。"
+        },
+        {
+          "value": "ウ",
+          "text": "損益分岐点が低い。"
+        },
+        {
+          "value": "エ",
+          "text": "不況時にも，売上高の減少が大きな損失に結び付かず不況抵抗力は強い。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "企業活動（財務会計・損益分岐点分析）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q77.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q078",
+      "questionNo": 78,
+      "title": "著作権法で保護されるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アルゴリズム"
+        },
+        {
+          "value": "イ",
+          "text": "コンパイラのプログラム"
+        },
+        {
+          "value": "ウ",
+          "text": "プログラム言語"
+        },
+        {
+          "value": "エ",
+          "text": "プロトコル"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（知的財産権・著作権法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q78.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q079",
+      "questionNo": 79,
+      "title": "大規模なシステム開発を受注したA社では，不足する開発要員を派遣事業者であるB社からの労働者派遣によって補うことにした。A社の行為のうち，労働者派遣法に照らして適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "システム開発が長期間となることが予想されるので，開発要員の派遣期間を3年とする契約を結ぶ。"
+        },
+        {
+          "value": "イ",
+          "text": "派遣候補者の履歴書及び業務経歴書の提出をB社に求め，書類選考を行い，面接対象者を絞り込む。"
+        },
+        {
+          "value": "ウ",
+          "text": "派遣された要員が大きな作業負担を負うことが見込まれるので，B社に20代男性の派遣を求める。"
+        },
+        {
+          "value": "エ",
+          "text": "派遣労働者がA社の指揮命令に対して申し立てた苦情に自社で対応せず，その処理をB社に任せる。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "ストラテジ系",
+      "subcategory": "法務（労働関連法規・労働者派遣法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q79.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q080",
+      "questionNo": 80,
+      "title": "デジタル社会形成基本法において掲げられている10項目の基本理念に含まれているものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "インターネット上での権利侵害があった場合のサービスプロバイダなどが負う責任範囲を制限し，同時に被害者が発信者情報の開示を請求できる権利を定めること"
+        },
+        {
+          "value": "イ",
+          "text": "広告宣伝を目的とする電子メールの適正化のための措置を定め，電子メールの利用環境の整備を図ることにより，高度情報通信社会の健全な発展に寄与すること"
+        },
+        {
+          "value": "ウ",
+          "text": "全ての国民が情報通信技術の恵みを享受できる社会の実現を目指し，情報通信技術を用いた情報の活用により信頼性のある情報の自由かつ安全な流通の確保を図ること"
+        },
+        {
+          "value": "エ",
+          "text": "通信販売などの取引を公正にし，購入者等が受ける損害の防止を図り，購入者等の利益を保護することにより，国民経済の健全な発展に寄与すること"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "ストラテジ系",
+      "subcategory": "法務（デジタル社会形成基本法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_autumn_am_q80.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_aki/q80.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

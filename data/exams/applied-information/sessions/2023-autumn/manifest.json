@@ -1,0 +1,15 @@
+{
+  "id": "2023-autumn",
+  "title": "2023年度秋期 午前",
+  "version": "2023-autumn-80-v1",
+  "status": "complete",
+  "answerKey": "ウエアアウウイウウアイイイエエエアイエエウウアアイエアアイアウイイイエウアウアアイウアアエウエアアアエウアエアイイウウイイアエウアエアウイウエイイエエイエエアイ",
+  "coverage": { "from": 1, "to": 80, "count": 80, "total": 80 },
+  "source": {
+    "publisher": "独立行政法人情報処理推進機構（IPA）",
+    "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+    "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_ans.pdf",
+    "note": "正答はIPA公式解答を正準とする。問題文・文字選択肢は公開転記を入力補助として正規化し、図表は元問題図を参照した。第三者の解説文・解説画像は収録していない。"
+  },
+  "modules": ["modules/q001-q020.json", "modules/q021-q040.json", "modules/q041-q060.json", "modules/q061-q080.json"]
+}

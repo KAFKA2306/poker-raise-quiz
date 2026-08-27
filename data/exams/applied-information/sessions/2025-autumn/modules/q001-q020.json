@@ -1,0 +1,705 @@
+{
+  "id": "q001-q020",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q001",
+      "questionNo": 1,
+      "title": "A, B, C, D を論理変数とするとき，次のカルノー図と等価な論理式はどれか。ここで，・は論理積，+は論理和，X̅はXの否定を表す。\n\n| AB＼CD | 00 | 01 | 11 | 10 |\n|:--:|:--:|:--:|:--:|:--:|\n| 00 | 1 | 0 | 0 | 1 |\n| 01 | 0 | 1 | 1 | 0 |\n| 11 | 0 | 1 | 1 | 0 |\n| 10 | 0 | 0 | 0 | 0 |\n\n![図1](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q01.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "A・B・C̅・D + B̅・D̅"
+        },
+        {
+          "value": "イ",
+          "text": "Ā・B̅・C̅・D̅ + B・D"
+        },
+        {
+          "value": "ウ",
+          "text": "A・B・D + B̅・D̅"
+        },
+        {
+          "value": "エ",
+          "text": "Ā・B̅・D̅ + B・D"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q01.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q01.md",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q002",
+      "questionNo": 2,
+      "title": "コンピュータによる伝票処理システムがある。このシステムは，伝票データをためる待ち行列をもち，M/M/1の待ち行列モデルが適用できるものとする。平均待ち時間がT秒以上となるのは，システムの利用率が少なくとも何％以上となったときか。ここで，伝票データをためる待ち行列の特徴は次のとおりである。\n\n・伝票データは，ポアソン分布に従って到着する。\n・伝票データをためる数に制限はない。\n・1件の伝票データの処理時間は，平均T秒の指数分布に従う。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "33"
+        },
+        {
+          "value": "イ",
+          "text": "50"
+        },
+        {
+          "value": "ウ",
+          "text": "67"
+        },
+        {
+          "value": "エ",
+          "text": "80"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "待ち行列理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q02.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q003",
+      "questionNo": 3,
+      "title": "AIにおける機械学習において，2クラス分類モデルの評価方法の一つであるROC曲線で用いられる偽陽性率の説明として，最も適切なものはどれか。ここで，分類されるデータには正しいものと間違っているものが含まれるものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "\"間違い\"と予測したデータのうち，実際は\"正しい\"データの割合"
+        },
+        {
+          "value": "イ",
+          "text": "実際に\"間違い\"であるデータに対し，誤って\"正しい\"と予測したデータの割合"
+        },
+        {
+          "value": "ウ",
+          "text": "実際に\"間違い\"であるデータに対し，正しく\"間違い\"と予測したデータの割合"
+        },
+        {
+          "value": "エ",
+          "text": "全データのうち，実際に正しく予測できなかったデータの割合"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q03.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q004",
+      "questionNo": 4,
+      "title": "誤り検出方式であるCRCに関する記述として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "検査用のデータは，検査対象のデータを生成多項式で処理して得られる1ビットの値である。"
+        },
+        {
+          "value": "イ",
+          "text": "受信側では，付加されてきた検査用のデータで検査対象のデータを割り，余りがなければ送信が正しかったと判断する。"
+        },
+        {
+          "value": "ウ",
+          "text": "送信側では，生成多項式を用いて検査対象のデータから検査用のデータを作り，これを検査対象のデータに付けて送信する。"
+        },
+        {
+          "value": "エ",
+          "text": "送信側と受信側では，異なる生成多項式が用いられる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "基礎理論",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q04.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q005",
+      "questionNo": 5,
+      "title": "記憶領域を管理するアルゴリズムのうち，ベストフィット方式の特徴として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "空きブロック群のうち，アドレスが下位のブロックを高い頻度で使用するので，アドレスが上位の方に大きな空きブロックが残る傾向にある。"
+        },
+        {
+          "value": "イ",
+          "text": "空きブロック群のうち，要求された大きさを満たす最小のものを割り当てるので，最終的には小さな空きブロックが多数残る傾向にある。"
+        },
+        {
+          "value": "ウ",
+          "text": "空きブロックの検索にハッシュ関数を使用しているので，高速に検索することができる。"
+        },
+        {
+          "value": "エ",
+          "text": "空きブロックをアドレスの昇順に管理しているので，隣接する空きブロックを簡単に見つけられ，より大きな空きブロックにまとめることができる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q05.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q006",
+      "questionNo": 6,
+      "title": "異なるn個のデータが昇順に整列された表がある。この表をm個のデータごとのブロックに分割し，各ブロックの最後尾のデータだけを線形探索することによって，目的のデータの存在するブロックを探し出す。次に，当該ブロック内を線形探索して目的のデータを探し出す。このときの平均比較回数を表す式はどれか。ここで，mは十分に大きく，nはmの倍数とし，目的のデータは必ず表の中に存在するものとする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "m + n/m"
+        },
+        {
+          "value": "イ",
+          "text": "m/2 + n/2m"
+        },
+        {
+          "value": "ウ",
+          "text": "n/2m"
+        },
+        {
+          "value": "エ",
+          "text": "n/2m"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "アルゴリズムとプログラミング",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q06.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q007",
+      "questionNo": 7,
+      "title": "OSSとして公開されているプログラム言語であるScalaの特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "オブジェクト指向プログラミングと関数型プログラミングの両方が可能である。"
+        },
+        {
+          "value": "イ",
+          "text": "クラスの多重継承が可能である。"
+        },
+        {
+          "value": "ウ",
+          "text": "実行前にコンパイルして，ネイティブコードを生成する必要がある。"
+        },
+        {
+          "value": "エ",
+          "text": "変数の型が，参照する実際の値によって実行時に決定される動的型付け言語である。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q07.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q008",
+      "questionNo": 8,
+      "title": "プロセッサの高速化技法の一つとして，同時に実行可能な複数の動作を，コンパイルの段階でまとめて一つの複合命令とし，高速化を図る方式はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "CISC"
+        },
+        {
+          "value": "イ",
+          "text": "MIMD"
+        },
+        {
+          "value": "ウ",
+          "text": "RISC"
+        },
+        {
+          "value": "エ",
+          "text": "VLIW"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q08.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/07_aki/q8.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q009",
+      "questionNo": 9,
+      "title": "画面表示用フレームバッファがユニファイドメモリ方式であるシステムの特徴はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "主記憶とは別に専用のフレームバッファをもつ。"
+        },
+        {
+          "value": "イ",
+          "text": "主記憶の一部を表示領域として使用する。"
+        },
+        {
+          "value": "ウ",
+          "text": "シリアル接続した表示デバイスに，描画コマンドを用いて表示する。"
+        },
+        {
+          "value": "エ",
+          "text": "表示リフレッシュが不要である。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q09.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q010",
+      "questionNo": 10,
+      "title": "モーターの軸に装着された回転センサーから出力されるパルスの周期を，1MHzのクロック周波数でカウントアップするタイマーで計測したところ，10,000カウントであった。モーターの回転数は毎秒何回転か。ここで，回転センサーはモーターの軸が1回転するごとに図のようなパルスを2回出力するものとする。\n\n回転センサーの出力信号（10,000カウントの幅を示す図）\n\n![図10](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q10.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "50"
+        },
+        {
+          "value": "イ",
+          "text": "100"
+        },
+        {
+          "value": "ウ",
+          "text": "200"
+        },
+        {
+          "value": "エ",
+          "text": "5,000"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q10.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q10.md",
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": false
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q011",
+      "questionNo": 11,
+      "title": "現状のHPC（High Performance Computing）マシンの構成を，次の条件で更新することにした。更新後の，ノード数と総理論ピーク演算性能はどれか。ここで，総理論ピーク演算性能は，コア数に比例するものとする。\n\n〔現状の構成〕\n(1) 一つのコアの理論ピーク演算性能は10 GFLOPSである。\n(2) 一つのノードのコア数は8である。\n(3) ノード数は1,000である。\n\n〔更新条件〕\n(1) 一つのコアの理論ピーク演算性能を現状の2倍にする。\n(2) 一つのノードのコア数を現状の2倍にする。\n(3) 総コア数を現状の4倍にする。\n\n| | ノード数 | 総理論ピーク演算性能(TFLOPS) |\n|:--|:--|:--|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "2,000 | 320"
+        },
+        {
+          "value": "イ",
+          "text": "2,000 | 640"
+        },
+        {
+          "value": "ウ",
+          "text": "4,000 | 320"
+        },
+        {
+          "value": "エ",
+          "text": "4,000 | 640"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q11.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q012",
+      "questionNo": 12,
+      "title": "IaC（Infrastructure as Code）の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "OS，仮想化ソフトなどが何もインストールされていない，初期状態のサーバーである。"
+        },
+        {
+          "value": "イ",
+          "text": "サーバーなどの新規利用申請があった場合に，資源の割当て，設定などを手動で行い，利用可能な状態にする。"
+        },
+        {
+          "value": "ウ",
+          "text": "システムの構成，設定などをプログラムとして記述し，専用のソフトウェアがその内容に従って自動的にシステムに適用する。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者は，OS，アプリケーションなどの任意のソフトウェアをインフラストラクチャに手動で実装し，操作することができる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q12.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q013",
+      "questionNo": 13,
+      "title": "コンピュータシステムの信頼性に関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "MTBF/(MTBF+MTTR)は，システムが稼働している時間の割合を表す。"
+        },
+        {
+          "value": "イ",
+          "text": "MTBF－MTTRは，システムが正常であった時間を表す。"
+        },
+        {
+          "value": "ウ",
+          "text": "MTBFは，正常なシステムが運用を開始してから初めて故障が起きるまでの時間を表す。"
+        },
+        {
+          "value": "エ",
+          "text": "MTTRは，システムの故障が回復した時点から次に故障が起きるまでの平均時間を表す。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "システムの構成",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q13.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q014",
+      "questionNo": 14,
+      "title": "キャパシティプランニングの目的の一つに関する記述のうち，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "応答時間に最も影響があるボトルネックだけに着目して，適切な変更を行うことによって，そのボトルネックの影響を低減又は排除することである。"
+        },
+        {
+          "value": "イ",
+          "text": "システムの現在の応答時間を調査して，長期的に監視することによって，将来を含めて応答時間を維持することである。"
+        },
+        {
+          "value": "ウ",
+          "text": "ソフトウェアとハードウェアをチューニングして，現状の処理能力を最大限に引き出して，スループットを向上させることである。"
+        },
+        {
+          "value": "エ",
+          "text": "パフォーマンスの問題はリソースの過剰使用によって発生するので，特定のリソースの有効利用を向上させることである。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システムの計画",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q14.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q015",
+      "questionNo": 15,
+      "title": "五つのジョブA～Eに対して，ジョブの多重度が1で，処理時間順方式のスケジューリングを適用した場合，ジョブBのターンアラウンドタイムは何秒か。ここで，OSのオーバーヘッドは考慮しないものとする。\n\n| ジョブ | 到着時刻 | 単独実行時の処理時間 |\n|:--:|:--:|:--:|\n| A | 0 | 2 |\n| B | 1 | 4 |\n| C | 2 | 3 |\n| D | 3 | 2 |\n| E | 4 | 1 |\n\n（単位：秒）",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "8"
+        },
+        {
+          "value": "イ",
+          "text": "9"
+        },
+        {
+          "value": "ウ",
+          "text": "10"
+        },
+        {
+          "value": "エ",
+          "text": "11"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q15.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q016",
+      "questionNo": 16,
+      "title": "一つのI²Cバスに接続された二つのセンサーがある。それぞれのセンサー値を読み込む二つのタスクを排他的に制御したい。利用するリアルタイムOSの機能として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "キュー"
+        },
+        {
+          "value": "イ",
+          "text": "セマフォ"
+        },
+        {
+          "value": "ウ",
+          "text": "マルチスレッド"
+        },
+        {
+          "value": "エ",
+          "text": "メモリプール"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q16.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q017",
+      "questionNo": 17,
+      "title": "スレッドセーフの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "アプリケーションが複数のスレッドから呼び出されないようになっている。"
+        },
+        {
+          "value": "イ",
+          "text": "アプリケーションを複数のスレッドではなく，単一のスレッドで動作させる。"
+        },
+        {
+          "value": "ウ",
+          "text": "アプリケーションを複数のスレッドで並列に実行しても，問題が生じない。"
+        },
+        {
+          "value": "エ",
+          "text": "スレッドの競合が発生したときに，アプリケーションを安全に停止させる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q17.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q018",
+      "questionNo": 18,
+      "title": "二つのタスクが共用する二つの資源を排他的に使用するとき，デッドロックが発生するおそれがある。このデッドロックの発生を防ぐ方法はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "一方のタスクの優先度を高くする。"
+        },
+        {
+          "value": "イ",
+          "text": "資源獲得の順序を両方のタスクで同じにする。"
+        },
+        {
+          "value": "ウ",
+          "text": "資源獲得の順序を両方のタスクで逆にする。"
+        },
+        {
+          "value": "エ",
+          "text": "両方のタスクの優先度を同じにする。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "オペレーティングシステム",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q18.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q019",
+      "questionNo": 19,
+      "title": "4ブロックのキャッシュメモリC0～C3が表に示す状態である。ここで，新たに別のブロックの内容をキャッシュメモリにロードする必要が生じたとき，C2のブロックを置換の対象とするアルゴリズムはどれか。\n\n| キャッシュメモリ | ロード時刻（分：秒） | 最終参照時刻（分：秒） | 参照回数 |\n|:--:|:--:|:--:|:--:|\n| C0 | 0:00 | 0:08 | 10 |\n| C1 | 0:03 | 0:06 | 1 |\n| C2 | 0:04 | 0:05 | 3 |\n| C3 | 0:05 | 0:10 | 5 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "FIFO"
+        },
+        {
+          "value": "イ",
+          "text": "LFU"
+        },
+        {
+          "value": "ウ",
+          "text": "LIFO"
+        },
+        {
+          "value": "エ",
+          "text": "LRU"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "コンピュータ構成要素",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q19.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q020",
+      "questionNo": 20,
+      "title": "図のLED点灯回路において，LEDに10ミリAの電流が流れるように抵抗値を決定したときに，回路全体の消費電力に占めるLEDの消費電力の割合は何％か。ここで，LEDの順方向電圧は2Vとし，電源の消費電力は無視するものとする。\n\n回路図：電源10V－LED（順方向電圧2V）と抵抗の直列回路\n\n![図20](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q20.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "20"
+        },
+        {
+          "value": "イ",
+          "text": "25"
+        },
+        {
+          "value": "ウ",
+          "text": "80"
+        },
+        {
+          "value": "エ",
+          "text": "100"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "ハードウェア",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2025_autumn_am_q20.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2025_autumn_am/ap_2025_autumn_am_q20.md",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

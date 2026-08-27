@@ -37,7 +37,6 @@ const requiredFiles = [
   ".github/workflows/ci.yml",
   ".github/workflows/pages.yml",
 ];
-
 for (const file of requiredFiles) await access(path.join(root, file));
 
 const rootEntries = new Set(await readdir(root));
@@ -51,16 +50,11 @@ const javaScriptFiles = [
   ...(await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js")),
   ...(await walk(path.join(root, "scripts"))).filter((file) => file.endsWith(".mjs")),
 ];
-for (const file of javaScriptFiles) {
-  execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
-}
+for (const file of javaScriptFiles) execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
 
 for (const file of await walk(dataRoot)) {
   const relative = path.relative(dataRoot, file);
-  assert(
-    !/(^|[\\/])(sample|samples|fixture|fixtures|demo|demos|dummy|generated)([\\/]|$)/i.test(relative),
-    `本番データ配下にサンプル用の名前があります: ${relative}`,
-  );
+  assert(!/(^|[\\/])(sample|samples|fixture|fixtures|demo|demos|dummy|generated)([\\/]|$)/i.test(relative), `本番データ配下にサンプル用の名前があります: ${relative}`);
   if (file.endsWith(".json")) await readJson(file);
 }
 
@@ -86,8 +80,13 @@ for (const examEntry of catalog.exams) {
   assert(Array.isArray(exam.sessions) && exam.sessions.length > 0, `試験回がありません: ${exam.id}`);
   assert(typeof exam.defaultSession === "string" && exam.defaultSession, `既定の試験回がありません: ${exam.id}`);
   assert(exam.sessions.some((session) => session.id === exam.defaultSession), `既定の試験回が一覧にありません: ${exam.id}`);
+  if (exam.expectedQuestionCount !== undefined) {
+    assert(Number.isInteger(exam.expectedQuestionCount) && exam.expectedQuestionCount > 0, `expectedQuestionCount が不正です: ${exam.id}`);
+  }
 
   const sessionIds = new Set();
+  let examQuestionCount = 0;
+
   for (const sessionEntry of exam.sessions) {
     assert(typeof sessionEntry.id === "string" && sessionEntry.id, `試験回の id がありません: ${exam.id}`);
     assert(typeof sessionEntry.manifest === "string" && sessionEntry.manifest, `試験回 manifest がありません: ${sessionEntry.id}`);
@@ -112,6 +111,9 @@ for (const examEntry of catalog.exams) {
     assert(session.coverage.from <= session.coverage.to, `coverage の範囲が逆です: ${session.id}`);
     assert(session.coverage.to - session.coverage.from + 1 === session.coverage.count, `coverage の範囲と count が一致しません: ${session.id}`);
     assert(Array.isArray(session.modules) && session.modules.length > 0, `問題モジュールがありません: ${session.id}`);
+    if (session.answerKey !== undefined) {
+      assert(typeof session.answerKey === "string" && [...session.answerKey].length === session.coverage.count, `answerKey が収録問題数と一致しません: ${session.id}`);
+    }
 
     if (session.referenceOnly === true) {
       assert(session.isFullExam === false, `参照専用データは本試験扱いにできません: ${session.id}`);
@@ -165,25 +167,18 @@ for (const examEntry of catalog.exams) {
     }
 
     assert(questions.length === session.coverage.count, `収録問題数と coverage.count が一致しません: ${session.id}`);
-    const expectedQuestionNumbers = Array.from(
-      { length: session.coverage.count },
-      (_, index) => session.coverage.from + index,
-    );
-    assert(
-      questions.map((question) => question.questionNo).join(",") === expectedQuestionNumbers.join(","),
-      `問題番号が coverage の連番と一致しません: ${session.id}`,
-    );
+    const expectedQuestionNumbers = Array.from({ length: session.coverage.count }, (_, index) => session.coverage.from + index);
+    assert(questions.map((question) => question.questionNo).join(",") === expectedQuestionNumbers.join(","), `問題番号が coverage の連番と一致しません: ${session.id}`);
 
-    if (session.referenceOnly === true) {
-      assert(
-        questions.map((question) => question.correctAnswer).join("") === session.answerKey,
-        `正答が answerKey と一致しません: ${session.id}`,
-      );
+    if (session.answerKey !== undefined) {
+      assert(questions.map((question) => question.correctAnswer).join("") === session.answerKey, `正答が answerKey と一致しません: ${session.id}`);
     }
+    if (session.status === "complete") assert(session.coverage.count === session.coverage.total, `complete なのに全問収録ではありません: ${session.id}`);
+    examQuestionCount += questions.length;
+  }
 
-    if (session.status === "complete") {
-      assert(session.coverage.count === session.coverage.total, `complete なのに全問収録ではありません: ${session.id}`);
-    }
+  if (exam.expectedQuestionCount !== undefined) {
+    assert(examQuestionCount === exam.expectedQuestionCount, `試験全体の問題数が expectedQuestionCount と一致しません: ${exam.id} (${examQuestionCount}/${exam.expectedQuestionCount})`);
   }
 }
 

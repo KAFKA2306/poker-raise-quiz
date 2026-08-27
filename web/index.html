@@ -12,10 +12,10 @@
   <main class="shell">
     <header class="header">
       <div class="heading">
-        <label class="exam-picker" for="exam-select">
-          <span>試験</span>
-          <select id="exam-select" aria-label="試験を選ぶ"></select>
-        </label>
+        <div class="pickers">
+          <label class="picker" for="exam-select"><span>試験</span><select id="exam-select" aria-label="試験を選ぶ"></select></label>
+          <label class="picker" for="session-select"><span>試験回</span><select id="session-select" aria-label="試験回を選ぶ"></select></label>
+        </div>
         <h1 id="title">Quiz</h1>
         <p id="summary">読み込み中</p>
         <a id="reference-link" target="_blank" rel="noopener noreferrer" hidden>公式問題を開く</a>
@@ -30,6 +30,7 @@
 
   <script src="https://unpkg.com/survey-core@3.0.2/survey.core.min.js"></script>
   <script src="https://unpkg.com/survey-js-ui@3.0.2/survey-js-ui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
   <script type="module" src="./js/main.js"></script>
   <script type="module" src="./js/quiz/reference.js"></script>
 </body>
