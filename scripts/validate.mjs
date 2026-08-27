@@ -1,4 +1,5 @@
-import { access, readFile, readdir } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { readFile, readdir } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 
@@ -9,15 +10,7 @@ const assert = (condition, message) => {
   if (!condition) throw new Error(message);
 };
 
-const exists = async (relativePath) => {
-  try {
-    await access(path.join(root, relativePath));
-    return true;
-  } catch {
-    return false;
-  }
-};
-
+const exists = (relativePath) => existsSync(path.join(root, relativePath));
 const readJson = async (filePath) => JSON.parse(await readFile(filePath, "utf8"));
 
 const walk = async (directory) => {
@@ -39,7 +32,6 @@ const requiredFiles = [
   "web/js/quiz/data.js",
   "web/js/quiz/session.js",
   "web/js/quiz/export.js",
-  "web/js/quiz/reference.js",
   "data/catalog.json",
   "scripts/verify-pages.mjs",
   ".github/workflows/ci.yml",
@@ -47,19 +39,29 @@ const requiredFiles = [
 ];
 
 for (const file of requiredFiles) {
-  assert(await exists(file), `必要なファイルがありません: ${file}`);
+  assert(exists(file), `必要なファイルがありません: ${file}`);
 }
 
-for (const file of ["index.html", "app.js", "style.css", "data/questions.json"]) {
-  assert(!(await exists(file)), `古い平置きファイルが残っています: ${file}`);
+for (const file of ["index.html", "app.js", "style.css", "data/questions.json", "web/js/quiz/reference.js"]) {
+  assert(!exists(file), `不要なファイルが残っています: ${file}`);
 }
 
+const frontendJavaScriptFiles = (await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js"));
 const javaScriptFiles = [
-  ...(await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js")),
+  ...frontendJavaScriptFiles,
   ...(await walk(path.join(root, "scripts"))).filter((file) => file.endsWith(".mjs")),
 ];
 for (const file of javaScriptFiles) {
   execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
+}
+
+for (const file of frontendJavaScriptFiles) {
+  const source = await readFile(file, "utf8");
+  const relative = path.relative(root, file);
+  assert(!/\btry\s*\{|\bcatch\s*(?:\(|\{)/.test(source), `フロントエンドにtry/catchを置けません: ${relative}`);
+  assert(!/\|\|\s*(?:\[\]|\{\}|["'`])/.test(source), `フロントエンドに代替値fallbackを置けません: ${relative}`);
+  assert(!/\?\?/.test(source), `フロントエンドにnullish fallbackを置けません: ${relative}`);
+  assert(!source.includes(".catch(console.error)"), `例外をconsoleへ捨てています: ${relative}`);
 }
 
 for (const file of await walk(dataRoot)) {
@@ -86,8 +88,7 @@ for (const examEntry of catalog.exams) {
   const exam = await readJson(examPath);
   assert(exam.id === examEntry.id, `試験IDが一致しません: ${examEntry.id}`);
   assert(typeof exam.title === "string" && exam.title.trim(), `試験名がありません: ${exam.id}`);
-  assert((exam.status ?? "active") === "active", `問題がない試験をcatalogへ登録できません: ${exam.id}`);
-  assert(exam.contentMode !== "metadata-only", `metadata-only の試験をcatalogへ登録できません: ${exam.id}`);
+  assert(exam.status === "active", `activeではない試験をcatalogへ登録できません: ${exam.id}`);
   assert(Array.isArray(exam.sessions) && exam.sessions.length > 0, `試験回がありません: ${exam.id}`);
   assert(exam.sessions.some((session) => session.id === exam.defaultSession), `既定の試験回がありません: ${exam.id}`);
 
@@ -98,13 +99,17 @@ for (const examEntry of catalog.exams) {
     assert(session.id === sessionEntry.id, `試験回IDが一致しません: ${sessionEntry.id}`);
     assert(session.title && session.version, `試験回の title または version がありません: ${session.id}`);
     assert(["partial", "complete"].includes(session.status), `試験回の status が不正です: ${session.id}`);
+    assert(typeof session.referenceOnly === "boolean", `referenceOnlyを明示してください: ${session.id}`);
+    assert(typeof session.source?.publisher === "string" && session.source.publisher.trim(), `出典publisherがありません: ${session.id}`);
     assert(session.source?.questionPdfUrl?.startsWith("https://"), `問題出典URLがありません: ${session.id}`);
     assert(session.source?.answerPdfUrl?.startsWith("https://"), `正答出典URLがありません: ${session.id}`);
+    assert(Number.isInteger(session.coverage?.count) && session.coverage.count > 0, `coverage.count が不正です: ${session.id}`);
+    assert(Number.isInteger(session.coverage?.total) && session.coverage.total > 0, `coverage.total が不正です: ${session.id}`);
     assert(Array.isArray(session.modules) && session.modules.length > 0, `問題モジュールがありません: ${session.id}`);
 
-    if (session.referenceOnly === true) {
-      assert(session.source?.referenceUrl?.startsWith("https://"), `参照先URLがありません: ${session.id}`);
-      assert(session.source?.rightsNoticeUrl?.startsWith("https://"), `権利告知URLがありません: ${session.id}`);
+    if (session.referenceOnly) {
+      assert(session.source.referenceUrl?.startsWith("https://"), `参照先URLがありません: ${session.id}`);
+      assert(session.source.rightsNoticeUrl?.startsWith("https://"), `権利告知URLがありません: ${session.id}`);
     }
 
     const names = new Set();
@@ -137,7 +142,7 @@ for (const examEntry of catalog.exams) {
         );
         assert(choiceValues.has(question.correctAnswer), `正答が選択肢にありません: ${question.name}`);
 
-        if (session.referenceOnly === true) {
+        if (session.referenceOnly) {
           assert(question.referenceOnly === true, `参照専用問題ではありません: ${question.name}`);
           assert(question.questionTextStored === false, `問題本文を保存しています: ${question.name}`);
           assert(question.choiceTextStored === false, `選択肢本文を保存しています: ${question.name}`);
@@ -150,10 +155,9 @@ for (const examEntry of catalog.exams) {
       }
     }
 
-    assert(questionCount > 0, `回答できる問題がありません: ${session.id}`);
-    assert(session.coverage?.count === questionCount, `収録問題数と coverage.count が一致しません: ${session.id}`);
+    assert(questionCount === session.coverage.count, `収録問題数と coverage.count が一致しません: ${session.id}`);
     if (session.status === "complete") {
-      assert(session.coverage?.count === session.coverage?.total, `complete なのに全問収録ではありません: ${session.id}`);
+      assert(session.coverage.count === session.coverage.total, `complete なのに全問収録ではありません: ${session.id}`);
     }
   }
 }
