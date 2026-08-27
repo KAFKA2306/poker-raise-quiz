@@ -1,0 +1,49 @@
+{
+  "id": "statistics-grade-2",
+  "title": "統計検定2級",
+  "grade": "2",
+  "contentMode": "metadata-only",
+  "examInfo": {
+    "method": "CBT方式試験",
+    "questionFormat": "4～5肢選択問題",
+    "questionCount": "35問程度",
+    "durationMinutes": 90,
+    "passScore": "100点満点で60点以上",
+    "scopeVersion": "202409版",
+    "scopeUrl": "https://www.toukei-kentei.jp/grade/grade2/",
+    "topics": [
+      "1変数データ",
+      "2変数以上のデータ",
+      "推測のためのデータ収集法",
+      "確率",
+      "確率分布",
+      "標本分布",
+      "推定",
+      "仮説検定",
+      "カイ二乗検定",
+      "線形モデル"
+    ]
+  },
+  "questionPolicy": {
+    "publication": "not-authorized",
+    "requirePerQuestionEvidence": true,
+    "checkedAt": "2026-08-28",
+    "termsUrl": "https://www.toukei-kentei.jp/faq",
+    "note": "統計検定公式FAQでは、CBT方式試験の過去問題は公開されておらず使用できない。また、検定問題を個人のブログやホームページへ掲載することはできず、許諾なく編集した問題の掲載もできない。そのため、この公開リポジトリには問題本文を収録しない。"
+  },
+  "sources": [
+    {
+      "title": "統計検定2級",
+      "url": "https://www.toukei-kentei.jp/grade/grade2/"
+    },
+    {
+      "title": "よくあるご質問",
+      "url": "https://www.toukei-kentei.jp/faq"
+    },
+    {
+      "title": "過去問題",
+      "url": "https://www.toukei-kentei.jp/preparation/kakomon/"
+    }
+  ],
+  "sessions": []
+}
