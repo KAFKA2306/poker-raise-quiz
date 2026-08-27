@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "exam": {
+    "id": "ap",
+    "title": "応用情報技術者試験",
+    "defaultSession": "2025-autumn"
+  },
+  "upstream": {
+    "repository": "sk0517/oyojoho_am",
+    "url": "https://github.com/sk0517/oyojoho_am",
+    "commit": "7ee871e613b4f1013c12935b16f6725bd2c6a120",
+    "dataFile": "viewer/data.js",
+    "answerMapFile": "answer/answers.json",
+    "policy": "問題文・選択肢・図表の入力補助にだけ使う。第三者の解説、難易度、重要度、タグは取り込まない。"
+  },
+  "official": {
+    "publisher": "独立行政法人情報処理推進機構（IPA）",
+    "pastProblemsIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
+    "usageTermsUrl": "https://www.ipa.go.jp/shiken/faq.html"
+  },
+  "expected": {
+    "sessions": 21,
+    "questionsPerSession": 80,
+    "questions": 1680,
+    "moduleSize": 20
+  },
+  "periods": [
+    { "id": "2015-spring", "upstreamKey": "2015_haru", "year": 2015, "season": "spring", "title": "2015年度春期 午前", "sourceLabel": "平成27年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html" },
+    { "id": "2015-autumn", "upstreamKey": "2015_aki", "year": 2015, "season": "autumn", "title": "2015年度秋期 午前", "sourceLabel": "平成27年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html" },
+    { "id": "2016-spring", "upstreamKey": "2016_haru", "year": 2016, "season": "spring", "title": "2016年度春期 午前", "sourceLabel": "平成28年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html" },
+    { "id": "2016-autumn", "upstreamKey": "2016_aki", "year": 2016, "season": "autumn", "title": "2016年度秋期 午前", "sourceLabel": "平成28年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html" },
+    { "id": "2017-spring", "upstreamKey": "2017_haru", "year": 2017, "season": "spring", "title": "2017年度春期 午前", "sourceLabel": "平成29年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html" },
+    { "id": "2017-autumn", "upstreamKey": "2017_aki", "year": 2017, "season": "autumn", "title": "2017年度秋期 午前", "sourceLabel": "平成29年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html" },
+    { "id": "2018-spring", "upstreamKey": "2018_haru", "year": 2018, "season": "spring", "title": "2018年度春期 午前", "sourceLabel": "平成30年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html" },
+    { "id": "2018-autumn", "upstreamKey": "2018_aki", "year": 2018, "season": "autumn", "title": "2018年度秋期 午前", "sourceLabel": "平成30年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html" },
+    { "id": "2019-spring", "upstreamKey": "2019_haru", "year": 2019, "season": "spring", "title": "2019年度春期 午前", "sourceLabel": "平成31年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html" },
+    { "id": "2019-autumn", "upstreamKey": "2019_aki", "year": 2019, "season": "autumn", "title": "2019年度秋期 午前", "sourceLabel": "令和元年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2019h31.html" },
+    { "id": "2020-autumn", "upstreamKey": "2020_aki", "year": 2020, "season": "autumn", "title": "2020年度10月 午前", "sourceLabel": "令和2年度 10月 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html" },
+    { "id": "2021-spring", "upstreamKey": "2021_haru", "year": 2021, "season": "spring", "title": "2021年度春期 午前", "sourceLabel": "令和3年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2021r03.html" },
+    { "id": "2021-autumn", "upstreamKey": "2021_aki", "year": 2021, "season": "autumn", "title": "2021年度秋期 午前", "sourceLabel": "令和3年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2021r03.html" },
+    { "id": "2022-spring", "upstreamKey": "2022_haru", "year": 2022, "season": "spring", "title": "2022年度春期 午前", "sourceLabel": "令和4年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2022r04.html" },
+    { "id": "2022-autumn", "upstreamKey": "2022_aki", "year": 2022, "season": "autumn", "title": "2022年度秋期 午前", "sourceLabel": "令和4年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2022r04.html" },
+    { "id": "2023-spring", "upstreamKey": "2023_haru", "year": 2023, "season": "spring", "title": "2023年度春期 午前", "sourceLabel": "令和5年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2023r05.html" },
+    { "id": "2023-autumn", "upstreamKey": "2023_aki", "year": 2023, "season": "autumn", "title": "2023年度秋期 午前", "sourceLabel": "令和5年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2023r05.html" },
+    { "id": "2024-spring", "upstreamKey": "2024_haru", "year": 2024, "season": "spring", "title": "2024年度春期 午前", "sourceLabel": "令和6年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html" },
+    { "id": "2024-autumn", "upstreamKey": "2024_aki", "year": 2024, "season": "autumn", "title": "2024年度秋期 午前", "sourceLabel": "令和6年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html" },
+    { "id": "2025-spring", "upstreamKey": "2025_haru", "year": 2025, "season": "spring", "title": "2025年度春期 午前", "sourceLabel": "令和7年度 春期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html" },
+    { "id": "2025-autumn", "upstreamKey": "2025_aki", "year": 2025, "season": "autumn", "title": "2025年度秋期 午前", "sourceLabel": "令和7年度 秋期 応用情報技術者試験 午前", "officialPageUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html" }
+  ]
+}
