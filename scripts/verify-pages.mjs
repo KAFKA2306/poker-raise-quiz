@@ -3,13 +3,12 @@ import path from "node:path";
 
 const root = process.cwd();
 const baseUrlText = process.argv[2];
+const revision = process.env.GITHUB_SHA;
 
-if (!baseUrlText) {
-  throw new Error("GitHub PagesのURLを指定してください");
-}
+if (!baseUrlText) throw new Error("GitHub PagesのURLを指定してください");
+if (!revision) throw new Error("GITHUB_SHA がありません");
 
 const baseUrl = new URL(baseUrlText.endsWith("/") ? baseUrlText : `${baseUrlText}/`);
-const sleep = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
 const walk = async (directory) => {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -31,7 +30,7 @@ const publicPathFor = (filePath) => {
 
 const fetchProductionText = async (publicPath) => {
   const url = new URL(publicPath, baseUrl);
-  url.searchParams.set("verify", process.env.GITHUB_SHA || String(Date.now()));
+  url.searchParams.set("verify", revision);
 
   const response = await fetch(url, {
     cache: "no-store",
@@ -46,23 +45,11 @@ const fetchProductionText = async (publicPath) => {
 const verifyFile = async (filePath) => {
   const expected = await readFile(filePath, "utf8");
   const publicPath = publicPathFor(filePath);
-  let lastError;
-
-  for (let attempt = 1; attempt <= 12; attempt += 1) {
-    try {
-      const actual = await fetchProductionText(publicPath);
-      if (actual !== expected) {
-        throw new Error(`公開内容がデプロイ元と一致しません: ${publicPath || "/"}`);
-      }
-      console.log(`確認: ${publicPath || "/"}`);
-      return;
-    } catch (error) {
-      lastError = error;
-      if (attempt < 12) await sleep(5000);
-    }
+  const actual = await fetchProductionText(publicPath);
+  if (actual !== expected) {
+    throw new Error(`公開内容がデプロイ元と一致しません: ${publicPath || "/"}`);
   }
-
-  throw lastError;
+  console.log(`確認: ${publicPath || "/"}`);
 };
 
 const files = [
@@ -70,8 +57,6 @@ const files = [
   ...(await walk(path.join(root, "data"))),
 ].sort();
 
-for (const file of files) {
-  await verifyFile(file);
-}
+for (const file of files) await verifyFile(file);
 
 console.log(`GitHub Pagesの本番確認に成功しました: ${baseUrl}`);
