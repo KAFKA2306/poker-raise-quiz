@@ -3,6 +3,7 @@ import { buildChatGptMarkdown } from "./quiz/export.js";
 import { loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
 
 const $ = (selector) => document.querySelector(selector);
+const markdown = window.markdownit({ html: false, linkify: true, breaks: true });
 
 const choiceText = (element, value) => {
   const choice = (element.choices || []).find((item) => item.value === value);
@@ -18,9 +19,7 @@ const feedbackText = (element, state) => {
 const updateSummary = (dataset, elements, state) => {
   const answered = elements.filter((element) => state[element.name]).length;
   const coverage = dataset.coverage;
-  const coverageText = coverage?.total
-    ? `収録 ${coverage.count} / ${coverage.total}問`
-    : `${elements.length}問`;
+  const coverageText = coverage?.total ? `収録 ${coverage.count} / ${coverage.total}問` : `${elements.length}問`;
   $("#summary").textContent = `回答済み ${answered} / ${elements.length}　${coverageText}`;
   $("#copy-all").disabled = answered === 0;
 };
@@ -28,20 +27,15 @@ const updateSummary = (dataset, elements, state) => {
 const showCopyStatus = (message) => {
   const status = $("#copy-status");
   status.textContent = message;
-  window.setTimeout(() => {
-    if (status.textContent === message) status.textContent = "";
-  }, 1600);
+  window.setTimeout(() => { if (status.textContent === message) status.textContent = ""; }, 1600);
 };
 
 const toSurveyElement = (element) => {
-  const { questionNo, ...surveyElement } = element;
+  const { questionNo, category, subcategory, sourceImage, provenance, ...surveyElement } = element;
   return {
     ...surveyElement,
     title: `問${questionNo}　${element.title}`,
-    choices: (element.choices || []).map((choice) => ({
-      value: choice.value,
-      text: `${choice.value}　${choice.text}`,
-    })),
+    choices: (element.choices || []).map((choice) => ({ value: choice.value, text: `${choice.value}　${choice.text}` })),
   };
 };
 
@@ -61,11 +55,14 @@ const main = async () => {
     showNavigationButtons: false,
   });
 
+  survey.onTextMarkdown.add((_sender, options) => {
+    options.html = markdown.render(options.text);
+  });
+
   for (const [name, cached] of Object.entries(state)) {
     const question = survey.getQuestionByName(name);
     const element = byName[name];
     if (!question || !element) continue;
-
     question.value = cached.answer;
     question.readOnly = true;
     question.description = feedbackText(element, cached);
@@ -75,19 +72,13 @@ const main = async () => {
   survey.onValueChanged.add((sender, options) => {
     const name = options.name;
     if (state[name]) return;
-
     const question = sender.getQuestionByName(name);
     const element = byName[name];
     if (!question || !element) return;
 
-    const cached = {
-      answer: options.value,
-      correct: question.isAnswerCorrect(),
-    };
-
+    const cached = { answer: options.value, correct: question.isAnswerCorrect() };
     state[name] = cached;
     saveSession(storageKey, state);
-
     question.readOnly = true;
     question.description = feedbackText(element, cached);
     question.descriptionLocation = "underInput";
@@ -98,11 +89,10 @@ const main = async () => {
   updateSummary(dataset, elements, state);
 
   $("#copy-all").addEventListener("click", async () => {
-    const markdown = buildChatGptMarkdown(dataset, elements, state);
-    if (!markdown) return;
-
+    const text = buildChatGptMarkdown(dataset, elements, state, document.baseURI);
+    if (!text) return;
     try {
-      await navigator.clipboard.writeText(markdown);
+      await navigator.clipboard.writeText(text);
       showCopyStatus("コピーしました");
     } catch (error) {
       console.error(error);
