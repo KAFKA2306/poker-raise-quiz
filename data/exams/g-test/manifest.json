@@ -6,6 +6,7 @@
   "sessions": [
     {
       "id": "official-past-questions",
+      "title": "JDLA公式公開20問",
       "manifest": "sessions/official-past-questions/manifest.json"
     }
   ]
