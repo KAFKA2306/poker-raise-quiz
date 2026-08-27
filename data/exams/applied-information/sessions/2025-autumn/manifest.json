@@ -3,6 +3,7 @@
   "title": "2025年度秋期 午前 問44〜53",
   "version": "2025-autumn-q044-q053-v1",
   "status": "partial",
+  "referenceOnly": false,
   "coverage": {
     "from": 44,
     "to": 53,
