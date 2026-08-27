@@ -1,0 +1,31 @@
+{
+  "id": "pds-data-ai",
+  "title": "プロフェッショナルデジタルスキル（データ・AI）試験（仮称）",
+  "status": "upcoming",
+  "tentativeName": true,
+  "plannedStart": "2027-summer-autumn",
+  "delivery": "CBT",
+  "examPlan": {
+    "a1": { "title": "科目A-1", "minutes": 90, "questionCount": 60 },
+    "a2": { "title": "科目A-2", "questionCount": 23 },
+    "b": { "title": "科目B", "questionCount": 12 },
+    "a2AndBMinutes": 120
+  },
+  "syllabus": {
+    "status": "preparing",
+    "version": null,
+    "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html"
+  },
+  "sampleQuestions": {
+    "status": "preparing",
+    "officialExam": false,
+    "url": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260622.html"
+  },
+  "officialUrls": {
+    "reform": "https://www.ipa.go.jp/shiken/minaoshi/index.html",
+    "examPlan": "https://www.ipa.go.jp/shiken/syllabus/henkou/2025/20260331.html",
+    "syllabus": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html",
+    "sampleQuestions": "https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260622.html"
+  },
+  "sessions": []
+}
