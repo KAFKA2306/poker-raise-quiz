@@ -39,6 +39,12 @@ jobs:
         with:
           node-version: 24
 
+      - name: PDF解答表の読取りツールを用意
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: 本番問題データを再生成
+        run: node scripts/prepare-data.mjs
+
       - name: 公開前に同じ内容を再確認
         run: node scripts/validate.mjs
 
