@@ -38,6 +38,8 @@ const walk = async (directory) => {
   return files;
 };
 
+const isHttpsUrl = (value) => typeof value === "string" && value.startsWith("https://");
+
 const requiredFiles = [
   "README.md",
   "web/index.html",
@@ -72,7 +74,10 @@ for (const file of javaScriptFiles) {
 const allDataFiles = await walk(dataRoot);
 for (const file of allDataFiles) {
   const relative = path.relative(dataRoot, file);
-  assert(!/(^|[\\/])(sample|samples|fixture|fixtures|demo|demos|dummy)([\\/]|$)/i.test(relative), `本番データ配下にサンプル用の名前があります: ${relative}`);
+  assert(
+    !/(^|[\\/])(sample|samples|fixture|fixtures|demo|demos|dummy|generated)([\\/]|$)/i.test(relative),
+    `本番データ配下にサンプル用の名前があります: ${relative}`,
+  );
   if (file.endsWith(".json")) await readJson(file);
 }
 
@@ -81,13 +86,45 @@ assert(Number.isInteger(catalog.version), "catalog.json の version が不正で
 assert(Array.isArray(catalog.exams) && catalog.exams.length > 0, "catalog.json に試験がありません");
 assert(catalog.exams.some((exam) => exam.id === catalog.defaultExam), "既定の試験が catalog.json にありません");
 
+const catalogIds = new Set();
 for (const examEntry of catalog.exams) {
   assert(examEntry.id && examEntry.manifest, "試験一覧の id または manifest がありません");
+  assert(!catalogIds.has(examEntry.id), `catalog.json の試験IDが重複しています: ${examEntry.id}`);
+  catalogIds.add(examEntry.id);
+
   const examPath = path.join(dataRoot, examEntry.manifest);
   const exam = await readJson(examPath);
   assert(exam.id === examEntry.id, `試験IDが一致しません: ${examEntry.id}`);
   assert(exam.title, `試験名がありません: ${exam.id}`);
-  assert(Array.isArray(exam.sessions) && exam.sessions.length > 0, `試験回がありません: ${exam.id}`);
+
+  const examStatus = exam.status ?? "active";
+  assert(["active", "upcoming"].includes(examStatus), `試験の status が不正です: ${exam.id}`);
+  assert(Array.isArray(exam.sessions), `sessions が配列ではありません: ${exam.id}`);
+
+  if (examStatus === "upcoming") {
+    assert(exam.sessions.length === 0, `未実施の試験に本番問題の試験回があります: ${exam.id}`);
+    assert(!exam.defaultSession, `未実施の試験に既定の試験回があります: ${exam.id}`);
+    assert(typeof exam.tentativeName === "boolean", `仮称かどうかがありません: ${exam.id}`);
+    assert(typeof exam.plannedStart === "string" && exam.plannedStart, `開始予定がありません: ${exam.id}`);
+    assert(typeof exam.delivery === "string" && exam.delivery, `試験方式がありません: ${exam.id}`);
+    assert(exam.examPlan && typeof exam.examPlan === "object", `科目構成がありません: ${exam.id}`);
+    assert(exam.sampleQuestions?.officialExam === false, `サンプル問題を本試験として扱っています: ${exam.id}`);
+    assert(["preparing", "published"].includes(exam.sampleQuestions?.status), `サンプル問題の公開状況が不正です: ${exam.id}`);
+    assert(isHttpsUrl(exam.sampleQuestions?.url), `サンプル問題の公式URLがありません: ${exam.id}`);
+    assert(["preparing", "draft", "final"].includes(exam.syllabus?.status), `シラバスの状態が不正です: ${exam.id}`);
+    if (exam.syllabus?.status === "draft") {
+      assert(exam.syllabus.version, `シラバス案の版がありません: ${exam.id}`);
+    }
+    assert(isHttpsUrl(exam.syllabus?.url), `シラバスの公式URLがありません: ${exam.id}`);
+    const requiredOfficialUrls = ["reform", "examPlan", "syllabus", "sampleQuestions"];
+    assert(
+      requiredOfficialUrls.every((key) => isHttpsUrl(exam.officialUrls?.[key])),
+      `公式URLが不足しています: ${exam.id}`,
+    );
+    continue;
+  }
+
+  assert(exam.sessions.length > 0, `試験回がありません: ${exam.id}`);
   assert(exam.sessions.some((session) => session.id === exam.defaultSession), `既定の試験回がありません: ${exam.id}`);
 
   for (const sessionEntry of exam.sessions) {
@@ -124,6 +161,9 @@ for (const examEntry of catalog.exams) {
         assert(choiceValues.size === 4, `選択肢の値が重複しています: ${question.name}`);
         assert(question.choices.every((choice) => choice.value && typeof choice.text === "string" && choice.text.trim()), `選択肢が不正です: ${question.name}`);
         assert(choiceValues.has(question.correctAnswer), `正答が選択肢にありません: ${question.name}`);
+        if (exam.id.startsWith("pds-")) {
+          assert(question.officialExam === true, `新制度の問題が本試験問題として確認されていません: ${question.name}`);
+        }
       }
     }
 
