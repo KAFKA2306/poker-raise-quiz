@@ -1,5 +1,13 @@
+const LOAD_TIMEOUT_MS = 10_000;
+
 const readJson = async (url) => {
-  const response = await fetch(url, { cache: "no-store" });
+  const request = fetch(url, {
+    cache: "no-store",
+    signal: AbortSignal.timeout(LOAD_TIMEOUT_MS),
+  });
+  const response = await request.then(undefined, (error) => {
+    throw new Error(`読み込みに失敗しました: ${url}\n${error.name}: ${error.message}`);
+  });
   if (!response.ok) throw new Error(`読み込みに失敗しました: ${url} (${response.status})`);
   return response.json();
 };

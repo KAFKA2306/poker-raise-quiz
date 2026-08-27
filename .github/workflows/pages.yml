@@ -64,5 +64,16 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
-      - name: 公開URLを実際に確認
+      - name: 公開URLの全ファイルを確認
         run: node scripts/verify-pages.mjs "${{ steps.deployment.outputs.page_url }}"
+
+      - name: 公開URLを実ブラウザで確認
+        run: node scripts/smoke-browser.mjs "${{ steps.deployment.outputs.page_url }}"
+
+      - name: 本番画面確認画像を保存
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: production-browser-smoke-${{ github.run_id }}
+          path: artifacts/browser-smoke/*.png
+          if-no-files-found: warn
