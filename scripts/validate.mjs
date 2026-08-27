@@ -4,6 +4,8 @@ import path from "node:path";
 
 const root = process.cwd();
 const dataRoot = path.join(root, "data");
+const apSessionIds = ["2023-autumn", "2024-spring", "2024-autumn", "2025-spring", "2025-autumn"];
+const apChoiceValues = ["ア", "イ", "ウ", "エ"];
 
 const assert = (condition, message) => {
   if (!condition) throw new Error(message);
@@ -41,15 +43,15 @@ const requiredFiles = [
   "web/js/quiz/export.js",
   "web/js/quiz/reference.js",
   "data/catalog.json",
+  "data/sources/ipa/official-answer-keys.json",
+  "data/sources/ipa/sessions.json",
+  "scripts/import/import-400.mjs",
   "scripts/verify-pages.mjs",
   ".github/workflows/ci.yml",
   ".github/workflows/pages.yml",
 ];
 
-for (const file of requiredFiles) {
-  assert(await exists(file), `必要なファイルがありません: ${file}`);
-}
-
+for (const file of requiredFiles) assert(await exists(file), `必要なファイルがありません: ${file}`);
 for (const file of ["index.html", "app.js", "style.css", "data/questions.json"]) {
   assert(!(await exists(file)), `古い平置きファイルが残っています: ${file}`);
 }
@@ -58,9 +60,7 @@ const javaScriptFiles = [
   ...(await walk(path.join(root, "web/js"))).filter((file) => file.endsWith(".js")),
   ...(await walk(path.join(root, "scripts"))).filter((file) => file.endsWith(".mjs")),
 ];
-for (const file of javaScriptFiles) {
-  execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
-}
+for (const file of javaScriptFiles) execFileSync(process.execPath, ["--check", file], { stdio: "inherit" });
 
 for (const file of await walk(dataRoot)) {
   const relative = path.relative(dataRoot, file);
@@ -71,12 +71,19 @@ for (const file of await walk(dataRoot)) {
   if (file.endsWith(".json")) await readJson(file);
 }
 
+const apAnswerKeys = await readJson(path.join(dataRoot, "sources/ipa/official-answer-keys.json"));
+for (const sessionId of apSessionIds) {
+  assert(typeof apAnswerKeys[sessionId] === "string" && [...apAnswerKeys[sessionId]].length === 80, `IPA公式解答キーが80問ではありません: ${sessionId}`);
+}
+
 const catalog = await readJson(path.join(dataRoot, "catalog.json"));
 assert(Number.isInteger(catalog.version), "catalog.json の version が不正です");
 assert(Array.isArray(catalog.exams) && catalog.exams.length > 0, "catalog.json に試験がありません");
 assert(catalog.exams.some((exam) => exam.id === catalog.defaultExam), "既定の試験が catalog.json にありません");
 
 const catalogIds = new Set();
+let apTotalQuestions = 0;
+
 for (const examEntry of catalog.exams) {
   assert(examEntry.id && examEntry.manifest, "試験一覧の id または manifest がありません");
   assert(!catalogIds.has(examEntry.id), `catalog.json の試験IDが重複しています: ${examEntry.id}`);
@@ -90,6 +97,10 @@ for (const examEntry of catalog.exams) {
   assert(exam.contentMode !== "metadata-only", `metadata-only の試験をcatalogへ登録できません: ${exam.id}`);
   assert(Array.isArray(exam.sessions) && exam.sessions.length > 0, `試験回がありません: ${exam.id}`);
   assert(exam.sessions.some((session) => session.id === exam.defaultSession), `既定の試験回がありません: ${exam.id}`);
+
+  if (exam.id === "ap") {
+    assert(JSON.stringify(exam.sessions.map((item) => item.id)) === JSON.stringify(apSessionIds), "応用情報の収録試験回が5回と一致しません");
+  }
 
   for (const sessionEntry of exam.sessions) {
     assert(sessionEntry.id && sessionEntry.manifest, `試験回の id または manifest がありません: ${exam.id}`);
@@ -107,34 +118,38 @@ for (const examEntry of catalog.exams) {
       assert(session.source?.rightsNoticeUrl?.startsWith("https://"), `権利告知URLがありません: ${session.id}`);
     }
 
+    if (exam.id === "ap") {
+      assert(session.status === "complete", `応用情報が全問収録ではありません: ${session.id}`);
+      assert(session.coverage?.from === 1 && session.coverage?.to === 80 && session.coverage?.count === 80 && session.coverage?.total === 80, `応用情報の収録範囲が1〜80ではありません: ${session.id}`);
+      assert(session.source.questionPdfUrl.startsWith("https://www.ipa.go.jp/"), `IPA公式問題冊子ではありません: ${session.id}`);
+      assert(session.source.answerPdfUrl.startsWith("https://www.ipa.go.jp/"), `IPA公式解答ではありません: ${session.id}`);
+      assert(session.modules.length === 4, `応用情報の問題モジュールが4個ではありません: ${session.id}`);
+    }
+
     const names = new Set();
     const questionNumbers = new Set();
     let questionCount = 0;
+    const officialAnswers = exam.id === "ap" ? [...apAnswerKeys[session.id]] : null;
 
     for (const modulePath of session.modules) {
       const fullModulePath = path.resolve(path.dirname(sessionPath), modulePath);
       const module = await readJson(fullModulePath);
       assert(module.id, `問題モジュールの id がありません: ${modulePath}`);
       assert(Array.isArray(module.elements) && module.elements.length > 0, `問題がありません: ${modulePath}`);
+      if (exam.id === "ap") assert(module.elements.length === 20, `応用情報のモジュールが20問ではありません: ${session.id}/${modulePath}`);
 
       for (const question of module.elements) {
         questionCount += 1;
         assert(question.type === "radiogroup", `四択以外の問題があります: ${question.name}`);
         assert(question.name && !names.has(question.name), `問題IDが重複しています: ${question.name}`);
         names.add(question.name);
-        assert(
-          Number.isInteger(question.questionNo) && !questionNumbers.has(question.questionNo),
-          `問題番号が不正または重複しています: ${question.name}`,
-        );
+        assert(Number.isInteger(question.questionNo) && !questionNumbers.has(question.questionNo), `問題番号が不正または重複しています: ${question.name}`);
         questionNumbers.add(question.questionNo);
         assert(typeof question.title === "string" && question.title.trim(), `問題文または回答欄名がありません: ${question.name}`);
         assert(Array.isArray(question.choices) && question.choices.length === 4, `選択肢が4個ではありません: ${question.name}`);
         const choiceValues = new Set(question.choices.map((choice) => choice.value));
         assert(choiceValues.size === 4, `選択肢の値が重複しています: ${question.name}`);
-        assert(
-          question.choices.every((choice) => choice.value && typeof choice.text === "string" && choice.text.trim()),
-          `選択肢が不正です: ${question.name}`,
-        );
+        assert(question.choices.every((choice) => choice.value && typeof choice.text === "string" && choice.text.trim()), `選択肢が不正です: ${question.name}`);
         assert(choiceValues.has(question.correctAnswer), `正答が選択肢にありません: ${question.name}`);
 
         if (session.referenceOnly === true) {
@@ -142,20 +157,28 @@ for (const examEntry of catalog.exams) {
           assert(question.questionTextStored === false, `問題本文を保存しています: ${question.name}`);
           assert(question.choiceTextStored === false, `選択肢本文を保存しています: ${question.name}`);
           assert(question.sourceUrl === session.source.referenceUrl, `問題の参照先URLが試験回と一致しません: ${question.name}`);
-          assert(
-            question.choices.every((choice) => choice.text === choice.value),
-            `参照専用問題に選択肢本文が混入しています: ${question.name}`,
-          );
+          assert(question.choices.every((choice) => choice.text === choice.value), `参照専用問題に選択肢本文が混入しています: ${question.name}`);
+        }
+
+        if (exam.id === "ap") {
+          apTotalQuestions += 1;
+          assert(apChoiceValues.every((value) => choiceValues.has(value)), `応用情報の選択肢がア・イ・ウ・エではありません: ${session.id}/${question.name}`);
+          assert(question.questionNo >= 1 && question.questionNo <= 80, `応用情報の問題番号が1〜80ではありません: ${session.id}/${question.name}`);
+          assert(question.correctAnswer === officialAnswers[question.questionNo - 1], `IPA公式正答と一致しません: ${session.id}/問${question.questionNo}`);
+          assert(question.provenance?.canonicalPublisher?.includes("IPA"), `応用情報の正準出典がIPAではありません: ${session.id}/${question.name}`);
         }
       }
     }
 
     assert(questionCount > 0, `回答できる問題がありません: ${session.id}`);
     assert(session.coverage?.count === questionCount, `収録問題数と coverage.count が一致しません: ${session.id}`);
-    if (session.status === "complete") {
-      assert(session.coverage?.count === session.coverage?.total, `complete なのに全問収録ではありません: ${session.id}`);
+    if (session.status === "complete") assert(session.coverage?.count === session.coverage?.total, `complete なのに全問収録ではありません: ${session.id}`);
+    if (exam.id === "ap") {
+      assert(questionCount === 80, `応用情報が80問ではありません: ${session.id}`);
+      assert([...questionNumbers].sort((a, b) => a - b).every((value, index) => value === index + 1), `応用情報の問1〜80が連続していません: ${session.id}`);
     }
   }
 }
 
-console.log("自動確認に成功しました");
+assert(apTotalQuestions === 400, `応用情報の合計問題数が400ではありません: ${apTotalQuestions}`);
+console.log("自動確認に成功しました: 全試験の共通契約 + 応用情報5回×80問=400問 + IPA公式正答一致");

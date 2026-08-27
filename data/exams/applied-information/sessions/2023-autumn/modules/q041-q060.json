@@ -1,0 +1,705 @@
+{
+  "id": "q041-q060",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q041",
+      "questionNo": 41,
+      "title": "暗号機能を実装したIoT機器における脅威のうち、サイドチャネル攻撃に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "暗号化関数を線形近似する式を導き、その線形近似式から秘密情報の取得を試みる。"
+        },
+        {
+          "value": "イ",
+          "text": "機器が発する電磁波を測定することによって秘密情報の取得を試みる。"
+        },
+        {
+          "value": "ウ",
+          "text": "二つの平文の差とそれぞれの暗号文の差の関係から、秘密情報の取得を試みる。"
+        },
+        {
+          "value": "エ",
+          "text": "理論的にあり得る復号鍵の全てを機器に入力して秘密情報の取得を試みる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（IoTセキュリティ・サイドチャネル攻撃）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q41.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q042",
+      "questionNo": 42,
+      "title": "セキュアブートの説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "BIOSにパスワードを設定し、PC起動時にBIOSのパスワード入力を要求することによって、OSの不正な起動を防ぐ技術"
+        },
+        {
+          "value": "イ",
+          "text": "HDD又はSSDにパスワードを設定し、PC起動時にHDD又はSSDのパスワード入力を要求することによって、OSの不正な起動を防ぐ技術"
+        },
+        {
+          "value": "ウ",
+          "text": "PCの起動時にOSのプログラムやドライバのデジタル署名を検証し、デジタル署名が有効なものだけを実行することによって、OS起動完了前のマルウェアの実行を防ぐ技術"
+        },
+        {
+          "value": "エ",
+          "text": "マルウェア対策ソフトをOSのスタートアッププログラムに登録し、OS起動時に自動的にマルウェアスキャンを行うことによって、マルウェアの被害を防ぐ技術"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（PC起動セキュリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q42.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q043",
+      "questionNo": 43,
+      "title": "PCのストレージ上の重要なデータを保護する方法のうち、ランサムウェア感染による被害の低減に効果があるものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "WORM（Write Once Read Many）機能を有するストレージを導入して、そこに重要なデータをバックアップする。"
+        },
+        {
+          "value": "イ",
+          "text": "ストレージをRAID5構成にして、1台のディスク故障時にも重要なデータを利用可能にする。"
+        },
+        {
+          "value": "ウ",
+          "text": "内蔵ストレージを増設して、重要なデータを常時レプリケーションする。"
+        },
+        {
+          "value": "エ",
+          "text": "ネットワーク上のストレージの共有フォルダをネットワークドライブに割り当てて、そこに重要なデータをバックアップする。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（ランサムウェア対策）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q43.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q044",
+      "questionNo": 44,
+      "title": "DKIM（DomainKeys Identified Mail）に関する記述のうち、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "送信側のメールサーバで電子メールにデジタル署名を付与し、受信側のメールサーバでそのデジタル署名を検証して送信元ドメインの認証を行う。"
+        },
+        {
+          "value": "イ",
+          "text": "送信者が電子メールを送信するとき、送信側のメールサーバは、送信者が正規の利用者かどうかの認証を利用者IDとパスワードによって行う。"
+        },
+        {
+          "value": "ウ",
+          "text": "送信元ドメイン認証に失敗した際の電子メールの処理方法を記載したポリシーをDNSサーバに登録し、電子メールの認証結果を監視する。"
+        },
+        {
+          "value": "エ",
+          "text": "電子メールの送信元ドメインでメール送信に使うメールサーバのIPアドレスをDNSサーバに登録しておき、受信側で送信元ドメインのDNSサーバに登録されているIPアドレスと電子メールの送信元メールサーバのIPアドレスとを照合する。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（送信ドメイン認証）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q44.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q045",
+      "questionNo": 45,
+      "title": "DNSSECについての記述のうち、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSサーバへの問合せ時の送信元ポート番号をランダムに選択することによって、DNS問合せへの不正な応答を防止する。"
+        },
+        {
+          "value": "イ",
+          "text": "DNSの再帰的な問合せの送信元として許可するクライアントを制限することによって、DNSを悪用したDoS攻撃を防止する。"
+        },
+        {
+          "value": "ウ",
+          "text": "共通鍵暗号方式によるメッセージ認証を用いることによって、正当なDNSサーバからの応答であることをクライアントが検証できる。"
+        },
+        {
+          "value": "エ",
+          "text": "公開鍵暗号方式によるデジタル署名を用いることによって、正当なDNSサーバからの応答であることをクライアントが検証できる。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（DNSセキュリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q45.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q046",
+      "questionNo": 46,
+      "title": "問題を引き起こす可能性があるデータを大量に入力し、そのときの応答や挙動を監視することによって、ソフトウェアの脆弱性を検出するテスト手法はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "限界値分析"
+        },
+        {
+          "value": "イ",
+          "text": "実験計画法"
+        },
+        {
+          "value": "ウ",
+          "text": "ファジング"
+        },
+        {
+          "value": "エ",
+          "text": "ロードテスト"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（ソフトウェアテスト手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q46.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q047",
+      "questionNo": 47,
+      "title": "アプリケーションソフトウェアの開発環境上で、用意された部品やテンプレートをGUIによる操作で組み合わせたり、必要に応じて一部の処理のソースコードを記述したりして、ソフトウェアを開発する手法はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "継続的インテグレーション"
+        },
+        {
+          "value": "イ",
+          "text": "ノーコード開発"
+        },
+        {
+          "value": "ウ",
+          "text": "プロトタイピング"
+        },
+        {
+          "value": "エ",
+          "text": "ローコード開発"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（ソフトウェア開発手法）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q47.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q048",
+      "questionNo": 48,
+      "title": "問題は発生していないが、プログラムの仕様書と現状のソースコードとの不整合を解消するために、リバースエンジニアリングの手法を使って仕様書を作成し直す。これはソフトウェア保守のどの分類に該当するか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "完全化保守"
+        },
+        {
+          "value": "イ",
+          "text": "是正保守"
+        },
+        {
+          "value": "ウ",
+          "text": "適応保守"
+        },
+        {
+          "value": "エ",
+          "text": "予防保守"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（ソフトウェア保守の分類）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q48.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q049",
+      "questionNo": 49,
+      "title": "アジャイルソフトウェア開発宣言では、\"あることがらに価値があることを認めながらも別のことがらにより価値をおく\"としている。\"別のことがら\"に該当するものの組みはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "個人と対話、動くソフトウェア、顧客との協調、変化への対応"
+        },
+        {
+          "value": "イ",
+          "text": "個人と対話、包括的なドキュメント、顧客との協調、計画に従うこと"
+        },
+        {
+          "value": "ウ",
+          "text": "プロセスやツール、動くソフトウェア、契約交渉、変化への対応"
+        },
+        {
+          "value": "エ",
+          "text": "プロセスやツール、包括的なドキュメント、契約交渉、計画に従うこと"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（アジャイル開発）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q49.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q050",
+      "questionNo": 50,
+      "title": "組込みシステムのソフトウェア開発に使われるIDEの説明として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "エディター，コンパイラ，リンカ，デバッガなどが一体となったツール"
+        },
+        {
+          "value": "イ",
+          "text": "専用のハードウェアインタフェースでCPUの情報を取得する装置"
+        },
+        {
+          "value": "ウ",
+          "text": "ターゲットCPUを搭載した評価ボードなどの実行環境"
+        },
+        {
+          "value": "エ",
+          "text": "タスクスケジューリングの仕組みなどを提供するソフトウェア"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "開発技術（組込みシステム開発ツール）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q50.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q051",
+      "questionNo": 51,
+      "title": "PMBOKガイド第7版によれば、プロジェクト・スコープ記述書に記述する項目はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "WBS"
+        },
+        {
+          "value": "イ",
+          "text": "コスト見積額"
+        },
+        {
+          "value": "ウ",
+          "text": "ステークホルダー分類"
+        },
+        {
+          "value": "エ",
+          "text": "プロジェクトの除外事項"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（PMBOK・スコープ管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q51.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q052",
+      "questionNo": 52,
+      "title": "システム開発のプロジェクトにおいて、EVMを活用したパフォーマンス管理をしている。開発途中のある時点でEV－PVの値が負であるとき、どのような状況を示しているか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "スケジュール効率が、計画よりも良い。"
+        },
+        {
+          "value": "イ",
+          "text": "プロジェクトの完了が、計画よりも遅くなる。"
+        },
+        {
+          "value": "ウ",
+          "text": "プロジェクトの進捗が、計画よりも遅れている。"
+        },
+        {
+          "value": "エ",
+          "text": "プロジェクトの進捗が、計画よりも進んでいる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（EVM）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q52.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q053",
+      "questionNo": 53,
+      "title": "プロジェクトのスケジュールを短縮したい。当初の計画は図1のとおりである。作業Eを作業E1, E2, E3に分けて、図2のとおりに計画を変更すると、スケジュールは全体で何日短縮できるか。\n\n図1（当初の計画）：A(5)→B(8)→{D(7)→G(7), E(9)→F(5)→H(4)→I(2)}、A→C(7)→F合流点\n\n図2（変更後の計画）：作業EをE1(3), E2, E3(2)に分割し、E1から分岐してE2はD側のG経路と合流、E3とダミー作業（所要日数0）でH側に合流する構成。\n\n![問53の図](https://www.ap-siken.com/kakomon/05_aki/img/53.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "1"
+        },
+        {
+          "value": "イ",
+          "text": "2"
+        },
+        {
+          "value": "ウ",
+          "text": "3"
+        },
+        {
+          "value": "エ",
+          "text": "4"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（スケジュール短縮・PERT図）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q53.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/05_aki/q53.html",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q054",
+      "questionNo": 54,
+      "title": "プロジェクトマネジメントにおいて、コンティンジェンシー計画を作成するプロセスはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "リスクの管理"
+        },
+        {
+          "value": "イ",
+          "text": "リスクの特定"
+        },
+        {
+          "value": "ウ",
+          "text": "リスクの評価"
+        },
+        {
+          "value": "エ",
+          "text": "リスクへの対応"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（リスクマネジメント）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q54.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q055",
+      "questionNo": 55,
+      "title": "サービスマネジメントシステム（SMS）における是正処置の説明はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "検出された不適合又はほかの望ましくない状況の原因を除去する、又は再発の起こりやすさを低減するための処置"
+        },
+        {
+          "value": "イ",
+          "text": "構成品目の変更の展開に伴って、構成情報を更新する処置"
+        },
+        {
+          "value": "ウ",
+          "text": "パフォーマンスを向上するために繰り返し行われる活動であって、SMS及びサービスの適切性、妥当性及び有効性を継続的に改善するための処置"
+        },
+        {
+          "value": "エ",
+          "text": "問題を\"記録・分類\"し、\"優先度付け\"し、\"必要ならばエスカレーション\"し、\"可能ならば解決する\"一連の処置"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（SMS）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q55.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q056",
+      "questionNo": 56,
+      "title": "Y社は、受注管理システムを運用し、顧客に受注管理サービスを提供している。日数が30日、月曜日の回数が4回である月において、サービス提供条件を達成するために許容されるサービスの停止時間は最大何時間か。ここで、サービスの停止時間は、小数第1位を切り捨てるものとする。\n\n〔サービス提供条件〕\n・サービスは、計画停止時間を除いて、毎日0時から24時まで提供する。\n・計画停止は、毎週月曜日の0時から6時まで実施する。\n・サービスの可用性は99％以上とする。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "0"
+        },
+        {
+          "value": "イ",
+          "text": "6"
+        },
+        {
+          "value": "ウ",
+          "text": "7"
+        },
+        {
+          "value": "エ",
+          "text": "13"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（可用性計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q56.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q057",
+      "questionNo": 57,
+      "title": "フルバックアップ方式と差分バックアップ方式とを用いた運用に関する記述のうち、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "障害からの復旧時に差分バックアップのデータだけ処理すればよいので、フルバックアップ方式に比べ、差分バックアップ方式は復旧時間が短い。"
+        },
+        {
+          "value": "イ",
+          "text": "フルバックアップのデータで復元した後に、差分バックアップのデータを反映させて復旧する。"
+        },
+        {
+          "value": "ウ",
+          "text": "フルバックアップ方式と差分バックアップ方式とを併用して運用することはできない。"
+        },
+        {
+          "value": "エ",
+          "text": "フルバックアップ方式に比べ、差分バックアップ方式はバックアップに要する時間が長い。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（バックアップ運用）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q57.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q058",
+      "questionNo": 58,
+      "title": "システム監査人が作成する監査調書に関する記述として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "監査調書の作成は任意であり、作成しなくても問題はない。"
+        },
+        {
+          "value": "イ",
+          "text": "監査調書は、監査人自身の行動記録であり、監査チーム内でも他の監査人と共有すべきではない。"
+        },
+        {
+          "value": "ウ",
+          "text": "監査調書は、監査の結論を支える合理的な根拠とするために、発見した事実及び発見事実に関する所見を記載する。"
+        },
+        {
+          "value": "エ",
+          "text": "監査調書は、保管の必要がない監査人の備忘録である。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（監査調書）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q58.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q059",
+      "questionNo": 59,
+      "title": "販売管理システムにおいて、起票された受注伝票の入力が、漏れなく、かつ、重複することなく実施されていることを確かめる監査手続として、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "受注データから値引取引データなどの例外取引データを抽出し、承認の記録を確かめる。"
+        },
+        {
+          "value": "イ",
+          "text": "受注伝票の入力時に論理チェック及びフォーマットチェックが行われているか、テストデータ法で確かめる。"
+        },
+        {
+          "value": "ウ",
+          "text": "販売管理システムから出力したプルーフリストと受注伝票との照合が行われているか、プルーフリストと受注伝票上の照合印を確かめる。"
+        },
+        {
+          "value": "エ",
+          "text": "並行シミュレーション法を用いて、受注伝票を処理するプログラムの論理の正確性を確かめる。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（監査手続）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q59.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q060",
+      "questionNo": 60,
+      "title": "金融庁\"財務報告に係る内部統制の評価及び監査に関する実施基準（令和元年）\"における\"ITへの対応\"に関する記述のうち、適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "IT環境とは、企業内部に限られた範囲でのITの利用状況である。"
+        },
+        {
+          "value": "イ",
+          "text": "ITの統制は、ITに係る全般統制及びITに係る業務処理統制から成る。"
+        },
+        {
+          "value": "ウ",
+          "text": "ITの利用によって統制活動を自動化している場合、当該統制活動は有効であると評価される。"
+        },
+        {
+          "value": "エ",
+          "text": "ITを利用せず手作業だけで内部統制を運用している場合、直ちに内部統制の不備となる。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（内部統制とITへの対応）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2023_autumn_am_q60.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}

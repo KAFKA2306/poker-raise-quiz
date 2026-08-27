@@ -1,0 +1,705 @@
+{
+  "id": "q041-q060",
+  "elements": [
+    {
+      "type": "radiogroup",
+      "name": "q041",
+      "questionNo": 41,
+      "title": "WAFによる防御が有効な攻撃として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "DNSサーバに対するDNSキャッシュポイズニング"
+        },
+        {
+          "value": "イ",
+          "text": "REST APIサービスに対するAPIの脆弱性を狙った攻撃"
+        },
+        {
+          "value": "ウ",
+          "text": "SMTPサーバの第三者不正中継の脆弱性を悪用したフィッシングメールの配信"
+        },
+        {
+          "value": "エ",
+          "text": "電子メールサービスに対する大量，かつ，サイズの大きな電子メールの配信"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（情報セキュリティ対策・WAF）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q41.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q042",
+      "questionNo": 42,
+      "title": "PCからサーバに対し，IPv6を利用した通信を行う場合，ネットワーク層で暗号化を行うときに利用するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "IPsec"
+        },
+        {
+          "value": "イ",
+          "text": "PPP"
+        },
+        {
+          "value": "ウ",
+          "text": "SSH"
+        },
+        {
+          "value": "エ",
+          "text": "TLS"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（ネットワークセキュリティ・暗号化プロトコル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q42.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q043",
+      "questionNo": 43,
+      "title": "SPF（Sender Policy Framework）の仕組みはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "電子メールを受信するサーバが，電子メールに付与されているデジタル署名を使って，送信元ドメインの詐称がないことを確認する。"
+        },
+        {
+          "value": "イ",
+          "text": "電子メールを受信するサーバが，電子メールの送信元のドメイン情報と，電子メールを送信したサーバのIPアドレスから，送信元ドメインの詐称がないことを確認する。"
+        },
+        {
+          "value": "ウ",
+          "text": "電子メールを送信するサーバが，電子メールの宛先のドメインや送信者のメールアドレスを問わず，全ての電子メールをアーカイブする。"
+        },
+        {
+          "value": "エ",
+          "text": "電子メールを送信するサーバが，電子メールの送信者の上司からの承認が得られるまで，一時的に電子メールの送信を保留する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（情報セキュリティ対策・送信ドメイン認証）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q43.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q044",
+      "questionNo": 44,
+      "title": "ICカードの耐タンパ性を高める対策はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ICカードとICカードリーダーとが非接触の状態で利用者を認証して，利用者の利便性を高めるようにする。"
+        },
+        {
+          "value": "イ",
+          "text": "故障に備えてあらかじめ作成した予備のICカードを保管し，故障時に直ちに予備カードに交換して利用者がICカードを使い続けられるようにする。"
+        },
+        {
+          "value": "ウ",
+          "text": "信号の読出し用プローブの取付けを検出するとICチップ内の保存情報を消去する回路を設けて，ICチップ内の情報を容易には解析できないようにする。"
+        },
+        {
+          "value": "エ",
+          "text": "利用者認証にICカードを利用している業務システムにおいて，退職者のICカードは業務システム側で利用を停止して，他の利用者が利用できないようにする。"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "セキュリティ（耐タンパ性・ICカードセキュリティ）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q44.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_haru/q44.html",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q045",
+      "questionNo": 45,
+      "title": "オブジェクト指向におけるクラス間の関係のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "クラス間の関連は，二つのクラス間でだけ定義できる。"
+        },
+        {
+          "value": "イ",
+          "text": "サブクラスではスーパークラスの操作を再定義することができる。"
+        },
+        {
+          "value": "ウ",
+          "text": "サブクラスのインスタンスが，スーパークラスで定義されている操作を実行するときは，スーパークラスのインスタンスに操作を依頼する。"
+        },
+        {
+          "value": "エ",
+          "text": "二つのクラスに集約の関係があるときには，集約オブジェクトは部分となるオブジェクトと，属性及び操作を共有する。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（ソフトウェア方式設計・詳細設計・オブジェクト指向）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q45.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q046",
+      "questionNo": 46,
+      "title": "モジュール結合度に関する記述のうち，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "あるモジュールがCALL命令を使用せずにJUMP命令でほかのモジュールを呼び出すとき，このモジュール間の関係は，外部結合である。"
+        },
+        {
+          "value": "イ",
+          "text": "実行する機能や論理を決定するために引数を受け渡すとき，このモジュール間の関係は，内容結合である。"
+        },
+        {
+          "value": "ウ",
+          "text": "大域的な単一のデータ項目を参照するモジュール間の関係は，制御結合である。"
+        },
+        {
+          "value": "エ",
+          "text": "大域的なデータを参照するモジュール間の関係は，共通結合である。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（ソフトウェア方式設計・モジュール結合度）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q46.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q047",
+      "questionNo": 47,
+      "title": "ソフトウェア信頼度成長モデルの一つであって，テスト工程においてバグが収束したと判定する根拠の一つとして使用するゴンペルツ曲線はどれか。\n\n【選択肢のグラフ（横軸：テスト項目消化数、縦軸：累積誤り検出数）】\n\n![図47](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q47.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "テスト項目消化数の増加とともに、累積誤り検出数が下に凸の形で加速度的に増加し続けるグラフ（指数関数的な右肩上がりの曲線）"
+        },
+        {
+          "value": "イ",
+          "text": "テスト項目消化数の増加に対して、累積誤り検出数がほぼ一定の傾きで直線的に増加するグラフ"
+        },
+        {
+          "value": "ウ",
+          "text": "テスト項目消化数の増加とともに、累積誤り検出数が緩やかに増加し始め、中盤で急激に増加し、その後再び緩やかになり上限に収束していくS字形のグラフ"
+        },
+        {
+          "value": "エ",
+          "text": "テスト項目消化数の増加に対して、累積誤り検出数が初期に急激に増加した後、徐々に伸びが鈍化しながら上に凸の形で収束していくグラフ"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "テクノロジ系",
+      "subcategory": "システム開発技術（システム開発技術・統合・テスト）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q47.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q47.md",
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q048",
+      "questionNo": 48,
+      "title": "リーンソフトウェア開発において，ソフトウェア開発のプロセスとプロセスの所要時間とを可視化し，ボトルネックや無駄がないかどうかを確認するのに用いるものはどれか。\n\n![問48の図](https://www.ap-siken.com/kakomon/06_haru/img/48.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ストーリーカード"
+        },
+        {
+          "value": "イ",
+          "text": "スプリントバックログ"
+        },
+        {
+          "value": "ウ",
+          "text": "バーンダウンチャート"
+        },
+        {
+          "value": "エ",
+          "text": "バリューストリームマップ"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア開発管理技術（開発プロセス・手法・リーンソフトウェア開発）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q48.md",
+        "visualInput": "https://www.ap-siken.com/kakomon/06_haru/q48.html",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q049",
+      "questionNo": 49,
+      "title": "JIS X 33002:2017（プロセスアセスメント実施に対する要求事項）の説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "組織のプロセスを継続的に改善して品質を高めるための要求事項を規定している。"
+        },
+        {
+          "value": "イ",
+          "text": "組織プロセスの品質を客観的に診断するための要求事項を規定している。"
+        },
+        {
+          "value": "ウ",
+          "text": "プロジェクトの実施に重要で，かつ，影響を及ぼすプロジェクトマネジメントの概念及びプロセスに関する包括的な手引きを規定している。"
+        },
+        {
+          "value": "エ",
+          "text": "明確に定義された用語を使用し，ソフトウェアライフサイクルプロセスの共通枠組みを規定している。"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア開発管理技術（開発プロセス・手法・プロセスアセスメント）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q49.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q050",
+      "questionNo": 50,
+      "title": "ドキュメンテーションジェネレーターの説明として，適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "HTML，CSSなどのリソースを読み込んで，画面などに描画又は表示するソフトウェア"
+        },
+        {
+          "value": "イ",
+          "text": "ソースコード中にある，フォーマットに従って記述されたコメント文などから，プログラムのドキュメントを生成するソフトウェア"
+        },
+        {
+          "value": "ウ",
+          "text": "動的にWebページを生成するために，文書のテンプレートと埋込み入力データを合成して出力するソフトウェア"
+        },
+        {
+          "value": "エ",
+          "text": "文書構造がマーク付けされたテキストファイルを読み込んで，印刷可能なドキュメントを組版するソフトウェア"
+        }
+      ],
+      "correctAnswer": "イ",
+      "category": "テクノロジ系",
+      "subcategory": "ソフトウェア開発管理技術（開発プロセス・手法・開発支援ツール）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q50.md",
+        "visualInput": null,
+        "transcriptionAnswer": "イ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q051",
+      "questionNo": 51,
+      "title": "EVMで管理しているプロジェクトがある。図は，プロジェクトの開始から完了予定までの期間の半分が経過した時点での状況である。コスト効率，スケジュール効率がこのままで推移すると仮定した場合の見通しのうち，適切なものはどれか。\n\n【グラフ】（横軸：時間（開始日〜現時点〜完了予定日）、縦軸：累積値）\n\n- PV（計画値）：開始日から完了予定日まで直線的に増加する線\n- AC（実コスト）：現時点でPVよりやや低い位置にある線\n- EV（出来高）：現時点でACよりさらに低い位置にある線\n\nつまり、現時点で **EV ＜ AC ＜ PV** という関係になっている。\n\n![図51](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q51.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "計画に比べてコストは多くなり，プロジェクトの完了は遅くなる。"
+        },
+        {
+          "value": "イ",
+          "text": "計画に比べてコストは多くなり，プロジェクトの完了は早くなる。"
+        },
+        {
+          "value": "ウ",
+          "text": "計画に比べてコストは少なくなり，プロジェクトの完了は遅くなる。"
+        },
+        {
+          "value": "エ",
+          "text": "計画に比べてコストは少なくなり，プロジェクトの完了は早くなる。"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（プロジェクトの時間・EVM）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q51.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q51.md",
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q052",
+      "questionNo": 52,
+      "title": "図のアローダイアグラムで表されるプロジェクトがある。結合点5の最早結合点時刻はプロジェクトの開始から第何日か。ここで，プロジェクトの開始日は0日目とする。\n\n【アローダイアグラムの構造】\n\n- 結合点1 → 結合点2：作業A（3日）\n- 結合点1 → 結合点3：作業B（2日）\n- 結合点2 → 結合点3：作業C（1日）\n- 結合点2 → 結合点4：作業D（4日）\n- 結合点2 → 結合点5：作業E（2日）\n- 結合点3 → 結合点5：作業F（2日）\n- 結合点4 → 結合点6：作業G（1日）\n- 結合点4 → 結合点5：ダミー作業（所要日数0）\n- 結合点5 → 結合点6：作業H（1日）\n\n![図52](https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q52.png)",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "4"
+        },
+        {
+          "value": "イ",
+          "text": "5"
+        },
+        {
+          "value": "ウ",
+          "text": "6"
+        },
+        {
+          "value": "エ",
+          "text": "7"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（プロジェクトの時間・アローダイアグラム）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q52.md",
+        "visualInput": "https://raw.githubusercontent.com/sk0517/ExamPractice/main/exam/2024_spring_am/ap_2024_spring_am_q52.md",
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q053",
+      "questionNo": 53,
+      "title": "JIS Q 21500:2018（プロジェクトマネジメントの手引）によれば，プロセス\"リスクの管理\"の目的はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "特定したリスクに適切な処置を行うためにリスクを測定して，その優先順位を定める。"
+        },
+        {
+          "value": "イ",
+          "text": "発生した場合に，プロジェクトの目標にプラス又はマイナスの影響を与えることがある潜在的リスク事象及びその特性を決定する。"
+        },
+        {
+          "value": "ウ",
+          "text": "プロジェクトの目標への機会を高めて脅威を軽減するために，選択肢を作成して対策を決定する。"
+        },
+        {
+          "value": "エ",
+          "text": "リスクへの対応を実行するかどうか及びそれが期待する効果を上げられるかどうかを明らかにし，プロジェクトの混乱を最小限にする。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（プロジェクトのリスク・JIS Q 21500）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q53.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q054",
+      "questionNo": 54,
+      "title": "工場の生産能力を増強する方法として，新規システムを開発する案と既存システムを改修する案とを検討している。次の条件で，期待金額価値の高い案を採用するとき，採用すべき案と期待金額価値との組合せのうち，適切なものはどれか。ここで，期待金額価値は，収入と投資額との差で求める。\n\n〔条件〕\n\n- 新規システムを開発する場合の投資額は100億円であって，既存システムを改修する場合の投資額は50億円である。\n- 需要が拡大する確率は70%であって，需要が縮小する確率は30%である。\n- 新規システムを開発した場合，需要が拡大したときは180億円の収入が見込まれ，需要が縮小したときは50億円の収入が見込まれる。\n- 既存システムを改修した場合，需要が拡大したときは120億円の収入が見込まれ，需要が縮小したときは40億円の収入が見込まれる。\n- 他の条件は考慮しない。\n\n| | 採用すべき案 | 期待金額価値（億円） |\n|:--:|:--|:--:|",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "既存システムの改修 | 46"
+        },
+        {
+          "value": "イ",
+          "text": "既存システムの改修 | 96"
+        },
+        {
+          "value": "ウ",
+          "text": "新規システムの開発 | 41"
+        },
+        {
+          "value": "エ",
+          "text": "新規システムの開発 | 130"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "プロジェクトマネジメント（意思決定・期待金額価値）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q54.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q055",
+      "questionNo": 55,
+      "title": "SaaS（Software as a Service）による新規サービスを提供するに当たって，顧客への課金方式を検討している。課金方式①～④のうち，想定利用状況に基づいて最も高い利益が得られる課金方式を採用したときの，年間利益は何万円か。ここで，新規サービスの課金は月ごとに行い，各月の想定利用状況は同じとする。また，新規サービスの運用に掛かる費用は1,050万円／年とする。\n\n〔課金方式〕\n\n① 月間のサービス利用時間による従量課金　4,000円／時間\n② 月間のトランザクション件数による従量課金　700円／件\n③ 月末時点のディスク割当て量による従量課金　300円／GB\n④ 月末時点の利用者ID数による従量課金　1,600円／ID\n\n〔想定利用状況〕\n\n- サービス利用時間　250時間／月\n- トランザクション件数　1,500件／月\n- 月末時点のディスク割当て量　3,300GB\n- 月末時点の利用者ID数　650ID",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "150"
+        },
+        {
+          "value": "イ",
+          "text": "198"
+        },
+        {
+          "value": "ウ",
+          "text": "210"
+        },
+        {
+          "value": "エ",
+          "text": "260"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（SaaS課金方式・損益計算）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q55.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q056",
+      "questionNo": 56,
+      "title": "サービスマネジメントにおけるサービスレベル管理の活動はどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "現在の資源の調整と最適化を行い，将来の資源要件に関する予測を記載した計画を作成する。"
+        },
+        {
+          "value": "イ",
+          "text": "サービスの提供に必要な予算に応じて，適切な資金を確保する。"
+        },
+        {
+          "value": "ウ",
+          "text": "災害や障害などで事業が中断しても，要求されたサービス機能を合意された期間内に確実に復旧できるように，事業影響度の評価や復旧優先順位を明確にする。"
+        },
+        {
+          "value": "エ",
+          "text": "提供するサービス及びサービスレベル目標を決定し，サービス提供者が顧客との間で合意文書を交わす。"
+        }
+      ],
+      "correctAnswer": "エ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（サービスマネジメントプロセス・サービスレベル管理）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q56.md",
+        "visualInput": null,
+        "transcriptionAnswer": "エ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q057",
+      "questionNo": 57,
+      "title": "温室効果ガスの排出量の算定基準であるGHGプロトコルでは，事業者の事業活動によって直接的，又は間接的に排出される温室効果ガスについて，スコープを三つに分けている。事業者X社がデータセンター事業者であるとき，スコープ1の例として，適切なものはどれか。\n\n〔GHGプロトコルにおけるスコープの説明〕\n\n| | 内容 |\n|:--:|:--|\n| スコープ1 | 温室効果ガスの直接排出。事業者が所有している，又は管理している排出源から発生する。 |\n| スコープ2 | 電気の使用に伴う温室効果ガスの間接排出。事業者が消費する購入電力の発電に伴う温室効果ガスの排出量を算定する。 |\n| スコープ3 | その他の温室効果ガスの間接排出。事業者の活動に関連して生じる，事業者が所有も管理もしていない排出源から発生する。 |",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "X社が自社で管理するIT機器を使用するために購入した電力の，発電に伴う温室効果ガス"
+        },
+        {
+          "value": "イ",
+          "text": "X社が自社で管理するIT機器を廃棄処分するときに，産業廃棄物処理事業者が排出する温室効果ガス"
+        },
+        {
+          "value": "ウ",
+          "text": "X社が自社で管理する発電装置を稼働させることによって発生する温室効果ガス"
+        },
+        {
+          "value": "エ",
+          "text": "X社が提供するハウジングサービスを利用する企業が自社で管理するIT機器を使用するために購入した電力の，発電に伴う温室効果ガス"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "サービスマネジメント（環境関連の情報システム戦略・GHGプロトコル）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q57.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q058",
+      "questionNo": 58,
+      "title": "システム監査基準（令和5年）が規定している監査調書の説明として，最も適切なものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "監査の結論に至った過程を明らかにし，監査の結論を支える合理的な根拠とするための記録"
+        },
+        {
+          "value": "イ",
+          "text": "監査の目的に応じた適切な形式によって作成し，監査依頼者に提出する，監査の概要と監査の結論を記載した要約版の報告書"
+        },
+        {
+          "value": "ウ",
+          "text": "システム監査対象ごとに，具体的な監査スケジュールを定めた詳細計画"
+        },
+        {
+          "value": "エ",
+          "text": "システム監査の中長期における方針等を明らかにすることを目的として作成する文書"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（システム監査基準・監査調書）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q58.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q059",
+      "questionNo": 59,
+      "title": "システム監査基準（令和5年）によれば，システム監査において，監査人が一定の基準に基づいて総合的に点検・評価を行う対象とするものは，情報システムのマネジメント，コントロールと，あと一つはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "ガバナンス"
+        },
+        {
+          "value": "イ",
+          "text": "コンプライアンス"
+        },
+        {
+          "value": "ウ",
+          "text": "サイバーレジリエンス"
+        },
+        {
+          "value": "エ",
+          "text": "モニタリング"
+        }
+      ],
+      "correctAnswer": "ア",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（システム監査基準・監査対象）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q59.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ア",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    },
+    {
+      "type": "radiogroup",
+      "name": "q060",
+      "questionNo": 60,
+      "title": "情報システムに対する統制をITに係る全般統制とITに係る業務処理統制に分けたとき，ITに係る業務処理統制に該当するものはどれか。",
+      "choices": [
+        {
+          "value": "ア",
+          "text": "サーバ室への入退室を制限・記録するための入退室管理システム"
+        },
+        {
+          "value": "イ",
+          "text": "システム開発業務を適切に委託するために定めた選定手続"
+        },
+        {
+          "value": "ウ",
+          "text": "販売管理システムにおける入力データの正当性チェック機能"
+        },
+        {
+          "value": "エ",
+          "text": "不正アクセスを防止するためのファイアウォールの運用管理"
+        }
+      ],
+      "correctAnswer": "ウ",
+      "category": "マネジメント系",
+      "subcategory": "システム監査（内部統制・IT全般統制と業務処理統制）",
+      "provenance": {
+        "canonicalPublisher": "独立行政法人情報処理推進機構（IPA）",
+        "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_ap_am_qs.pdf",
+        "transcriptionInput": "sk0517/ExamPractice:ap_2024_spring_am_q60.md",
+        "visualInput": null,
+        "transcriptionAnswer": "ウ",
+        "transcriptionAnswerMatchesOfficial": true
+      }
+    }
+  ]
+}
