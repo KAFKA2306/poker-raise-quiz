@@ -1,43 +1,25 @@
-const readJson = async (url) => {
-  const response = await fetch(url, { cache: "no-store" });
-  if (!response.ok) throw new Error(`読み込みに失敗しました: ${url} (${response.status})`);
-  return response.json();
+const requiredObject = (value, label) => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error(`${label}が不正です`);
+  return value;
 };
 
-const requiredElement = (selector) => {
-  const element = document.querySelector(selector);
-  if (!element) throw new Error(`DOM要素がありません: ${selector}`);
-  return element;
+const requiredHttpsUrl = (value, label) => {
+  if (typeof value !== "string" || !value.startsWith("https://")) throw new Error(`${label}がありません`);
+  return value;
 };
 
-const requiredEntry = (entries, id, label) => {
-  if (!Array.isArray(entries)) throw new Error(`${label}一覧が配列ではありません`);
-  const entry = entries.find((item) => item.id === id);
-  if (!entry) throw new Error(`${label}が見つかりません: ${id}`);
-  return entry;
-};
+export const updateReferenceLink = (link, dataset) => {
+  requiredObject(link, "参照リンク要素");
+  requiredObject(dataset, "問題集");
+  if (typeof dataset.referenceOnly !== "boolean") throw new Error(`referenceOnly が不正です: ${dataset.id}`);
 
-const link = requiredElement("#reference-link");
-const examSelect = requiredElement("#exam-select");
-const sessionSelect = requiredElement("#session-select");
-const dataRoot = new URL("./data/", document.baseURI);
+  if (dataset.referenceOnly === false) {
+    link.removeAttribute("href");
+    link.hidden = true;
+    return;
+  }
 
-const updateReferenceLink = async () => {
-  link.hidden = true;
-  link.removeAttribute("href");
-  const catalog = await readJson(new URL("catalog.json", dataRoot));
-  const examEntry = requiredEntry(catalog.exams, examSelect.value, "試験");
-  const examUrl = new URL(examEntry.manifest, dataRoot);
-  const exam = await readJson(examUrl);
-  const sessionId = sessionSelect.value || exam.defaultSession;
-  const sessionEntry = requiredEntry(exam.sessions, sessionId, "試験回");
-  const session = await readJson(new URL(sessionEntry.manifest, examUrl));
-  if (session.referenceOnly !== true) return;
-  if (!session.source?.referenceUrl) throw new Error(`参照専用なのに referenceUrl がありません: ${session.id}`);
-  link.href = session.source.referenceUrl;
+  const source = requiredObject(dataset.source, `出典: ${dataset.id}`);
+  link.href = requiredHttpsUrl(source.referenceUrl, `参照先URL: ${dataset.id}`);
   link.hidden = false;
 };
-
-examSelect.addEventListener("change", () => queueMicrotask(updateReferenceLink));
-sessionSelect.addEventListener("change", updateReferenceLink);
-queueMicrotask(updateReferenceLink);
