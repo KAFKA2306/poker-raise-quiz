@@ -1,6 +1,7 @@
 {
   "id": "ap",
   "title": "応用情報技術者試験",
+  "status": "active",
   "defaultSession": "2025-autumn",
   "sessions": [
     {
