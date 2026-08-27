@@ -12,15 +12,19 @@
   <main class="shell">
     <header class="header">
       <div class="heading">
+        <label class="exam-picker" for="exam-select">
+          <span>試験</span>
+          <select id="exam-select" aria-label="試験を選ぶ"></select>
+        </label>
         <h1 id="title">Quiz</h1>
         <p id="summary">読み込み中</p>
       </div>
       <div class="tools">
-        <label class="session-control" for="session-select">
+        <label id="session-control" class="session-control" for="session-select" hidden>
           <span>試験回</span>
-          <select id="session-select" aria-label="試験回を選択"></select>
+          <select id="session-select" aria-label="試験回を選ぶ"></select>
         </label>
-        <a id="source-link" class="source-link" target="_blank" rel="noopener noreferrer">IPA公式</a>
+        <a id="source-link" class="source-link" target="_blank" rel="noopener noreferrer" hidden>IPA公式</a>
         <button id="copy-all" class="copy-button" type="button" disabled>回答をChatGPT用にコピー</button>
         <span id="copy-status" role="status" aria-live="polite"></span>
       </div>
