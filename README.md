@@ -26,6 +26,8 @@ web/
       export.js
 data/
   catalog.json
+  policies/
+    qc.json
   exams/
     applied-information/
       manifest.json
@@ -49,7 +51,7 @@ scripts/
 ```
 
 - `web/`：ブラウザで使う画面と処理
-- `data/`：本番問題データ、公開可能な試験情報、未実施試験の公式メタデータ
+- `data/`：本番問題データ、公開可能な試験情報、未実施試験の公式メタデータ、公開可否の確認結果
 - `scripts/`：自動確認と公開後確認に使う処理
 - `.github/workflows/`：自動確認とGitHub Pages公開
 
@@ -114,6 +116,31 @@ https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260622.html
 新制度のシラバス案
 https://www.ipa.go.jp/shiken/syllabus/henkou/2026/20260630.html
 
+## QC検定
+
+品質管理検定（QC検定）は、2026年8月28日時点では公開問題集として収録しません。
+
+日本規格協会はQC検定の試験問題・基準解答について、コピーやホームページなどへの掲載・公開を断っています。第39回3級の販売ページにも、その条件が明記されています。そのため、購入した過去問題や第三者が転載した問題をこの公開リポジトリへ転記しません。
+
+公式情報
+https://webdesk.jsa.or.jp/common/W10K0500/index/qc
+
+各級の問題例
+https://webdesk.jsa.or.jp/common/W10K0500/index/qc/qc_mondai
+
+3級・4級のCBT情報
+https://webdesk.jsa.or.jp/common/W10K0500/index/qc/qc_cbt
+
+第39回3級試験問題の販売ページ
+https://webdesk.jsa.or.jp/books/W11M0100/index/?syohin_cd=350674
+
+著作権について
+https://webdesk.jsa.or.jp/common/W10K0030/?page_id=b_j_tyosakuken&post_type=book_common
+
+公式の各級問題例には基準解答が掲載されていません。一方、第39回までの基準解答PDFは公式サイトで公開されていますが、問題本文を公開できないため、正答だけを使って問題集を作ることもしません。
+
+確認結果は `data/policies/qc.json` に機械可読な形で保存しています。再配布の許諾を確認できるまでは、CIが `qc-*` の試験を `data/catalog.json` に登録できないようにします。
+
 ## 自動確認と公開
 
 Pull Requestと`main`への変更では、GitHub Actionsが次を自動確認します。
@@ -131,6 +158,7 @@ Pull Requestと`main`への変更では、GitHub Actionsが次を自動確認し
 - `upcoming` の試験に本番問題の試験回が置かれていないこと
 - 未実施試験に公式URL、試験方式、科目構成、シラバス状態があること
 - 新制度の問題を将来追加するとき、公式の本試験問題であることを明示していること
+- QC検定の再配布許諾が確認できない間はQC検定を公開問題カタログへ登録しないこと
 
 `main` の自動確認に成功したコミットだけをGitHub Pagesへ公開し、公開後は本番URLの内容がデプロイ元と一致することも自動確認します。
 
