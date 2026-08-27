@@ -17,7 +17,7 @@ export const loadQuizCatalog = async () => {
   const catalog = await readJson(new URL("catalog.json", dataRoot));
 
   const exams = await Promise.all(
-    (catalog.exams || []).map(async (entry) => {
+    catalog.exams.map(async (entry) => {
       const examUrl = new URL(entry.manifest, dataRoot);
       const exam = await readJson(examUrl);
       return {
@@ -39,14 +39,14 @@ export const loadQuizCatalog = async () => {
 
 export const loadQuiz = async (examEntry) => {
   const { exam, examUrl } = examEntry;
-  const sessionEntry = requiredEntry(exam.sessions || [], exam.defaultSession, "既定の試験回");
+  const sessionEntry = requiredEntry(exam.sessions, exam.defaultSession, "既定の試験回");
   const sessionUrl = new URL(sessionEntry.manifest, examUrl);
   const session = await readJson(sessionUrl);
 
   const elements = [];
-  for (const modulePath of session.modules || []) {
+  for (const modulePath of session.modules) {
     const module = await readJson(new URL(modulePath, sessionUrl));
-    elements.push(...(module.elements || []));
+    elements.push(...module.elements);
   }
 
   return {
@@ -57,6 +57,7 @@ export const loadQuiz = async (examEntry) => {
       source: session.source,
       coverage: session.coverage,
       status: session.status,
+      referenceOnly: session.referenceOnly,
     },
     elements,
   };
