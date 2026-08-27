@@ -1,0 +1,49 @@
+name: 400問本番データ生成
+
+on:
+  push:
+    branches:
+      - feat/400-production-questions
+    paths:
+      - data/sources/ipa/**
+      - scripts/import/import-400.mjs
+      - .github/workflows/import-400.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    name: 5回分400問を生成
+    runs-on: ubuntu-latest
+    steps:
+      - name: 対象ブランチを取得
+        uses: actions/checkout@v7
+        with:
+          ref: feat/400-production-questions
+          fetch-depth: 0
+
+      - name: Node.js 24を用意
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: 400問を取得してIPA公式正答と照合
+        run: node scripts/import/import-400.mjs
+
+      - name: 既存の自動確認も実行
+        run: node scripts/validate.mjs
+
+      - name: 生成した本番データをブランチへ保存
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/exams/applied-information
+          if git diff --cached --quiet; then
+            echo "変更はありません"
+            exit 0
+          fi
+          git commit -m "data: import 400 verified production questions"
+          git push origin HEAD:feat/400-production-questions
