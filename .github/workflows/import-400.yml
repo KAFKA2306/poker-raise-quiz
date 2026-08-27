@@ -33,6 +33,11 @@ jobs:
         with:
           python-version: "3.13"
 
+      - name: 問番号検出用の日本語OCRを用意
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-jpn
+
       - name: PDF処理ライブラリを用意
         run: python -m pip install --disable-pip-version-check --no-cache-dir PyMuPDF==1.26.4
 
