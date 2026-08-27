@@ -1,16 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>raise-calculator-pal</title>
-    <meta name="description" content="GPT Engineer Generated Project" />
-    <meta name="author" content="GPT Engineer" />
-    <meta property="og:image" content="/og-image.svg" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script src="/.gpt_engineer/index.js" type="module"></script>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz</title>
+  <link rel="stylesheet" href="https://unpkg.com/survey-core@3.0.2/survey-core.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="header">
+      <h1 id="title">Quiz</h1>
+      <span id="summary">回答済み 0 / 0</span>
+      <button id="copy-all" class="copy-button" type="button" disabled>回答をChatGPT用にコピー</button>
+      <span id="copy-status" role="status" aria-live="polite"></span>
+    </header>
+    <section id="quiz" aria-label="クイズ"></section>
+  </main>
+
+  <script src="https://unpkg.com/survey-core@3.0.2/survey.core.min.js"></script>
+  <script src="https://unpkg.com/survey-js-ui@3.0.2/survey-js-ui.min.js"></script>
+  <script src="./app.js"></script>
+</body>
 </html>
