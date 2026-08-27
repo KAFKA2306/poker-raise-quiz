@@ -1,0 +1,21 @@
+{
+  "id": "2025-autumn",
+  "title": "2025年度秋期 午前 問44〜53",
+  "version": "2025-autumn-q044-q053-v1",
+  "status": "partial",
+  "coverage": {
+    "from": 44,
+    "to": 53,
+    "count": 10,
+    "total": 80
+  },
+  "source": {
+    "publisher": "独立行政法人情報処理推進機構（IPA）",
+    "questionPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+    "answerPdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_ans.pdf",
+    "note": "IPA公式の2025年度秋期 応用情報技術者試験 午前問題冊子と解答例を確認して収録。第三者サイトの解説文は使用していない。"
+  },
+  "modules": [
+    "modules/q044-q053.json"
+  ]
+}
