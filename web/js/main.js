@@ -1,15 +1,12 @@
-import { loadQuiz } from "./quiz/data.js";
+import { loadQuiz, loadQuizCatalog } from "./quiz/data.js";
 import { buildChatGptMarkdown } from "./quiz/export.js";
 import { loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
 
 const $ = (selector) => document.querySelector(selector);
+let activeQuiz = null;
 
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
-  "&": "&amp;",
-  "<": "&lt;",
-  ">": "&gt;",
-  "\"": "&quot;",
-  "'": "&#39;",
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;",
 }[character]));
 
 const choiceText = (element, value) => {
@@ -52,43 +49,115 @@ const toSurveyElements = (element) => {
       text: choice.text ? `${choice.value}　${choice.text}` : choice.value,
     })),
   };
-
   if (!images.length) return [radio];
   const html = `<div class="question-images">${images.map((src) => `<img src="${escapeHtml(src)}" alt="問${questionNo}の図表" loading="lazy">`).join("")}</div>`;
   return [{ type: "html", name: `${element.name}-images`, html }, radio];
 };
 
-const configureSessionSelector = (sessions, selectedSessionId) => {
-  const select = $("#session-select");
-  select.replaceChildren(...sessions.map((session) => {
-    const option = document.createElement("option");
-    option.value = session.id;
-    option.textContent = session.title || session.id;
-    option.selected = session.id === selectedSessionId;
-    return option;
-  }));
-
-  select.addEventListener("change", () => {
-    const url = new URL(window.location.href);
-    url.searchParams.set("session", select.value);
-    window.location.assign(url);
-  });
+const addTextRow = (list, label, value) => {
+  if (value === undefined || value === null || value === "") return;
+  const term = document.createElement("dt");
+  term.textContent = label;
+  const description = document.createElement("dd");
+  description.textContent = String(value);
+  list.append(term, description);
 };
 
-const main = async () => {
-  const requestedSessionId = new URL(window.location.href).searchParams.get("session");
-  const { dataset, elements, sessions, selectedSessionId } = await loadQuiz(requestedSessionId);
+const examPlanText = (plan) => {
+  if (!plan || typeof plan !== "object") return "";
+  const parts = [];
+  for (const [key, value] of Object.entries(plan)) {
+    if (key.endsWith("Minutes")) {
+      parts.push(`${key}: ${value}分`);
+      continue;
+    }
+    if (!value || typeof value !== "object") continue;
+    const detail = [value.title, value.questionCount ? `${value.questionCount}問` : "", value.minutes ? `${value.minutes}分` : ""]
+      .filter(Boolean).join(" / ");
+    if (detail) parts.push(detail);
+  }
+  return parts.join("、");
+};
+
+const renderInformation = (dataset) => {
+  activeQuiz = null;
+  $("#copy-all").disabled = true;
+  $("#session-control").hidden = true;
+  $("#source-link").hidden = true;
+
+  const isUpcoming = dataset.status === "upcoming";
+  $("#summary").textContent = isUpcoming ? "本試験前のため問題は収録していません" : "問題本文は収録していません";
+  const quiz = $("#quiz");
+  quiz.replaceChildren();
+
+  const card = document.createElement("section");
+  card.className = "notice-card";
+  const heading = document.createElement("h2");
+  heading.textContent = isUpcoming ? "公式に確認できる予定情報だけを掲載しています" : "公開できる試験情報だけを掲載しています";
+  const note = document.createElement("p");
+  note.textContent = isUpcoming
+    ? `この試験は未実施です。開始予定は ${dataset.plannedStart || "未定"} です。サンプル問題を本試験問題として扱いません。`
+    : dataset.questionPolicy?.note || "公開可能な問題本文が確認できていないため、問題は収録していません。";
+  const details = document.createElement("dl");
+  details.className = "exam-details";
+
+  if (isUpcoming) {
+    addTextRow(details, "開始予定", dataset.plannedStart);
+    addTextRow(details, "試験方式", dataset.delivery);
+    addTextRow(details, "科目構成", examPlanText(dataset.examPlan));
+    addTextRow(details, "シラバス", [dataset.syllabus?.status, dataset.syllabus?.version].filter(Boolean).join(" / "));
+    addTextRow(details, "サンプル問題", dataset.sampleQuestions?.status);
+  } else {
+    const info = dataset.examInfo || {};
+    addTextRow(details, "受験方法", info.method);
+    addTextRow(details, "出題形式", info.questionFormat);
+    addTextRow(details, "問題数", info.questionCount);
+    addTextRow(details, "試験時間", info.durationMinutes ? `${info.durationMinutes}分` : "");
+    addTextRow(details, "合格水準", info.passScore);
+    addTextRow(details, "出題範囲", info.scopeVersion);
+  }
+  card.append(heading, note, details);
+
+  const topics = dataset.examInfo?.topics || [];
+  if (topics.length) {
+    const topicsHeading = document.createElement("h3");
+    topicsHeading.textContent = "主な出題範囲";
+    const list = document.createElement("ul");
+    for (const topic of topics) {
+      const item = document.createElement("li");
+      item.textContent = topic;
+      list.append(item);
+    }
+    card.append(topicsHeading, list);
+  }
+
+  if ((dataset.sources || []).length) {
+    const sourcesHeading = document.createElement("h3");
+    sourcesHeading.textContent = "公式情報";
+    const sources = document.createElement("ul");
+    sources.className = "source-list";
+    for (const source of dataset.sources) {
+      const item = document.createElement("li");
+      const link = document.createElement("a");
+      link.href = source.url;
+      link.textContent = source.title;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      item.append(link);
+      sources.append(item);
+    }
+    card.append(sourcesHeading, sources);
+  }
+  quiz.append(card);
+};
+
+const renderQuestions = (dataset, elements) => {
   const byName = Object.fromEntries(elements.map((element) => [element.name, element]));
   const storageKey = storageKeyFor(dataset);
   const state = loadSession(storageKey);
-
-  document.title = dataset.title;
-  $("#title").textContent = dataset.title;
-  configureSessionSelector(sessions, selectedSessionId);
-
-  const sourceLink = $("#source-link");
-  if (dataset.source?.sourcePageUrl) sourceLink.href = dataset.source.sourcePageUrl;
-  else sourceLink.hidden = true;
+  activeQuiz = { dataset, elements, state };
+  const quiz = $("#quiz");
+  quiz.replaceChildren();
 
   const survey = new Survey.Model({
     elements: elements.flatMap(toSurveyElements),
@@ -113,7 +182,6 @@ const main = async () => {
     const question = sender.getQuestionByName(name);
     const element = byName[name];
     if (!question || !element) return;
-
     const cached = { answer: options.value, correct: question.isAnswerCorrect() };
     state[name] = cached;
     saveSession(storageKey, state);
@@ -123,10 +191,86 @@ const main = async () => {
     updateSummary(dataset, elements, state);
   });
 
-  survey.render(document.getElementById("quiz"));
+  survey.render(quiz);
   updateSummary(dataset, elements, state);
+};
+
+const configureSessionSelector = (examEntry, sessions, selectedSessionId) => {
+  const control = $("#session-control");
+  const select = $("#session-select");
+  control.hidden = sessions.length <= 1;
+  select.replaceChildren(...sessions.map((session) => {
+    const option = document.createElement("option");
+    option.value = session.id;
+    option.textContent = session.title || session.id;
+    option.selected = session.id === selectedSessionId;
+    return option;
+  }));
+  select.onchange = async () => {
+    try {
+      await renderExam(examEntry, select.value);
+    } catch (error) {
+      console.error(error);
+      activeQuiz = null;
+      $("#summary").textContent = "読み込みに失敗しました";
+      $("#copy-all").disabled = true;
+      $("#quiz").textContent = "問題データを読み込めませんでした。";
+    }
+  };
+};
+
+const renderExam = async (examEntry, requestedSessionId = null) => {
+  $("#summary").textContent = "読み込み中";
+  $("#copy-all").disabled = true;
+  $("#quiz").replaceChildren();
+
+  const { dataset, elements, sessions, selectedSessionId } = await loadQuiz(examEntry, requestedSessionId);
+  document.title = dataset.title;
+  $("#title").textContent = dataset.title;
+
+  if (["metadata-only", "upcoming"].includes(dataset.status)) {
+    renderInformation(dataset);
+    return;
+  }
+
+  configureSessionSelector(examEntry, sessions, selectedSessionId);
+  const sourceLink = $("#source-link");
+  sourceLink.hidden = !dataset.source?.sourcePageUrl;
+  if (!sourceLink.hidden) sourceLink.href = dataset.source.sourcePageUrl;
+  renderQuestions(dataset, elements);
+};
+
+const main = async () => {
+  const catalog = await loadQuizCatalog();
+  const select = $("#exam-select");
+  for (const exam of catalog.exams) {
+    const option = document.createElement("option");
+    option.value = exam.id;
+    option.textContent = exam.title;
+    select.append(option);
+  }
+
+  const selectAndRender = async (examId) => {
+    const exam = catalog.exams.find((item) => item.id === examId);
+    if (exam) await renderExam(exam);
+  };
+
+  select.value = catalog.defaultExam;
+  await selectAndRender(catalog.defaultExam);
+  select.addEventListener("change", async () => {
+    try { await selectAndRender(select.value); }
+    catch (error) {
+      console.error(error);
+      activeQuiz = null;
+      $("#summary").textContent = "読み込みに失敗しました";
+      $("#copy-all").disabled = true;
+      $("#quiz").textContent = "問題データを読み込めませんでした。";
+    }
+  });
 
   $("#copy-all").addEventListener("click", async () => {
+    if (!activeQuiz) return;
+    const { dataset, elements, state } = activeQuiz;
     const markdown = buildChatGptMarkdown(dataset, elements, state);
     if (!markdown) return;
     try {
@@ -141,5 +285,6 @@ const main = async () => {
 
 main().catch((error) => {
   console.error(error);
+  $("#summary").textContent = "読み込みに失敗しました";
   $("#quiz").textContent = "問題データを読み込めませんでした。";
 });
