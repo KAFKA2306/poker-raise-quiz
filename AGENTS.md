@@ -1,5 +1,9 @@
 # AGENTS.md
 
+## Short-context start
+
+最初に読むのはこのファイルと、現在のtaskを所有するdata / web / validator / workflowだけです。全試験データ、全Issue、過去PRを先読みしません。同じ目的のIssue/PRがあれば継続し、途中状態はそこへ「現在state・blocker・次の1 action」だけ残します。
+
 ## 正本
 
 - 公開対象: `data/catalog.json`
