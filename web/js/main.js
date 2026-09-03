@@ -136,14 +136,15 @@ const renderQuestions = (dataset, elements) => {
   updateSummary(dataset, elements, state);
 };
 
-const currentExam = () => {
-  const examId = $("#exam-select").value;
+const examById = (examId) => {
   const exam = catalog.exams.find((item) => item.id === examId);
   if (!exam) throw new Error(`試験が見つかりません: ${examId}`);
   return exam;
 };
 
-const populateSessions = (examEntry) => {
+const currentExam = () => examById($("#exam-select").value);
+
+const populateSessions = (examEntry, selectedSessionId = examEntry.exam.defaultSession) => {
   const select = $("#session-select");
   select.replaceChildren();
   for (const session of examEntry.exam.sessions) {
@@ -153,9 +154,28 @@ const populateSessions = (examEntry) => {
     option.textContent = session.title;
     select.append(option);
   }
-  select.value = examEntry.exam.defaultSession;
-  if (select.value !== examEntry.exam.defaultSession) throw new Error(`既定の試験回を選択できません: ${examEntry.exam.defaultSession}`);
+  const sessionExists = examEntry.exam.sessions.some((session) => session.id === selectedSessionId);
+  select.value = sessionExists ? selectedSessionId : examEntry.exam.defaultSession;
+  if (!select.value) throw new Error(`試験回を選択できません: ${examEntry.id}`);
   select.disabled = examEntry.exam.sessions.length <= 1;
+};
+
+const readSelectionFromUrl = () => {
+  const params = new URLSearchParams(window.location.search);
+  const requestedExamId = params.get("exam");
+  const examEntry = catalog.exams.find((item) => item.id === requestedExamId) ?? examById(catalog.defaultExam);
+  const requestedSessionId = params.get("session");
+  const sessionId = examEntry.exam.sessions.some((session) => session.id === requestedSessionId)
+    ? requestedSessionId
+    : examEntry.exam.defaultSession;
+  return { examEntry, sessionId };
+};
+
+const syncSelectionUrl = () => {
+  const url = new URL(window.location.href);
+  url.searchParams.set("exam", $("#exam-select").value);
+  url.searchParams.set("session", $("#session-select").value);
+  window.history.replaceState(null, "", url);
 };
 
 const renderSelectedQuiz = async (generation, examEntry, sessionId) => {
@@ -182,6 +202,7 @@ const startSelectedQuizRender = () => {
   const examEntry = currentExam();
   const sessionId = $("#session-select").value;
   if (!sessionId) throw new Error(`試験回が選択されていません: ${examEntry.id}`);
+  syncSelectionUrl();
 
   const generation = ++renderGeneration;
   renderSelectedQuiz(generation, examEntry, sessionId).then(undefined, (error) => {
@@ -208,9 +229,11 @@ const main = async () => {
     option.textContent = exam.title;
     examSelect.append(option);
   }
-  examSelect.value = catalog.defaultExam;
-  if (examSelect.value !== catalog.defaultExam) throw new Error(`既定の試験を選択できません: ${catalog.defaultExam}`);
-  populateSessions(currentExam());
+
+  const initialSelection = readSelectionFromUrl();
+  examSelect.value = initialSelection.examEntry.id;
+  if (examSelect.value !== initialSelection.examEntry.id) throw new Error(`試験を選択できません: ${initialSelection.examEntry.id}`);
+  populateSessions(initialSelection.examEntry, initialSelection.sessionId);
 
   examSelect.addEventListener("change", () => {
     populateSessions(currentExam());
