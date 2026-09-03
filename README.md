@@ -1,6 +1,6 @@
-# One-tap Quiz
-
 https://kafka2306.github.io/poker-raise-quiz/
+
+# One-tap Quiz
 
 四択を1回タップして、その場で正誤を確認する静的な資格クイズです。回答状態はブラウザに保存され、回答履歴をChatGPT向けにコピーできます。
 
