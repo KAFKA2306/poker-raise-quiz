@@ -20,3 +20,7 @@ export const loadSession = (key) => {
 export const saveSession = (key, state) => {
   localStorage.setItem(key, JSON.stringify(state));
 };
+
+export const clearSession = (key) => {
+  localStorage.removeItem(key);
+};
