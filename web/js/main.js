@@ -1,6 +1,6 @@
 import { loadQuiz, loadQuizCatalog } from "./quiz/data.js";
 import { buildChatGptMarkdown } from "./quiz/export.js";
-import { loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
+import { clearSession, loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
 
 const $ = (selector) => {
   const element = document.querySelector(selector);
@@ -50,11 +50,59 @@ const choiceText = (element, value) => {
 const feedbackChoiceText = (element, value) => choiceText(element, value).replace(/!\[[^\]]*\]\([^)]+\)/g, "図").replace(/\s+/g, " ").trim();
 const feedbackText = (element, state) => `${state.correct ? "正解" : "不正解"}　自分の回答: ${state.answer} ${feedbackChoiceText(element, state.answer)}　正答: ${element.correctAnswer} ${feedbackChoiceText(element, element.correctAnswer)}`;
 
+const answerSummary = (elements, state) => {
+  let correct = 0;
+  let incorrect = 0;
+  for (const element of elements) {
+    const answer = state[element.name];
+    if (answer === undefined) continue;
+    if (answer.correct) correct += 1;
+    else incorrect += 1;
+  }
+  const answered = correct + incorrect;
+  return { answered, correct, incorrect, unanswered: elements.length - answered };
+};
+
 const updateSummary = (dataset, elements, state) => {
   if (!dataset.coverage) throw new Error("coverage がありません");
-  const answered = elements.filter((element) => state[element.name] !== undefined).length;
-  $("#summary").textContent = `回答済み ${answered} / ${elements.length}　収録 ${dataset.coverage.count} / ${dataset.coverage.total}問`;
-  $("#copy-all").disabled = answered === 0;
+  const summary = answerSummary(elements, state);
+  $("#summary").textContent = `回答済み ${summary.answered} / ${elements.length}　正解 ${summary.correct}　不正解 ${summary.incorrect}　未回答 ${summary.unanswered}　収録 ${dataset.coverage.count} / ${dataset.coverage.total}問`;
+  $("#copy-all").disabled = summary.answered === 0;
+  $("#reset-session").disabled = summary.answered === 0;
+};
+
+const reviewFilterMatches = (filter, element, state) => {
+  if (filter === "all") return true;
+  const answer = state[element.name];
+  if (filter === "unanswered") return answer === undefined;
+  if (filter === "incorrect") return answer?.correct === false;
+  throw new Error(`未知の復習フィルターです: ${filter}`);
+};
+
+const updateReviewControls = () => {
+  for (const button of document.querySelectorAll("[data-review-filter]")) {
+    button.disabled = activeQuiz === null;
+    button.setAttribute("aria-pressed", String(activeQuiz !== null && button.dataset.reviewFilter === activeQuiz.filter));
+  }
+  $("#reset-session").disabled = activeQuiz === null || answerSummary(activeQuiz.elements, activeQuiz.state).answered === 0;
+};
+
+const applyReviewFilter = () => {
+  if (!activeQuiz) return;
+  for (const element of activeQuiz.elements) {
+    const question = activeQuiz.survey.getQuestionByName(element.name);
+    if (!question) throw new Error(`復習対象の問題が見つかりません: ${element.name}`);
+    question.visible = reviewFilterMatches(activeQuiz.filter, element, activeQuiz.state);
+  }
+  updateReviewControls();
+};
+
+const resetReviewControls = () => {
+  for (const button of document.querySelectorAll("[data-review-filter]")) {
+    button.disabled = true;
+    button.setAttribute("aria-pressed", String(button.dataset.reviewFilter === "all"));
+  }
+  $("#reset-session").disabled = true;
 };
 
 const showCopyStatus = (message) => {
@@ -99,9 +147,9 @@ const renderQuestions = (dataset, elements) => {
   if (Object.keys(byName).length !== elements.length) throw new Error("問題IDが重複しています");
   const storageKey = storageKeyFor(dataset);
   const state = loadSession(storageKey);
-  activeQuiz = { dataset, elements, state };
 
   const survey = new Survey.Model({ elements: elements.map(toSurveyElement), showQuestionNumbers: "off", showCompleteButton: false, showNavigationButtons: false });
+  activeQuiz = { dataset, elements, state, survey, filter: "all", storageKey };
   survey.onTextMarkdown.add((_sender, options) => { options.html = markdownRenderer.render(options.text); });
 
   for (const [name, cached] of Object.entries(state)) {
@@ -130,10 +178,12 @@ const renderQuestions = (dataset, elements) => {
     question.description = feedbackText(element, cached);
     question.descriptionLocation = "underInput";
     updateSummary(dataset, elements, state);
+    applyReviewFilter();
   });
 
   window.SurveyUI.renderSurvey(survey, $("#quiz"));
   updateSummary(dataset, elements, state);
+  applyReviewFilter();
 };
 
 const examById = (examId) => {
@@ -184,6 +234,7 @@ const renderSelectedQuiz = async (generation, examEntry, sessionId) => {
 
   activeQuiz = null;
   resetReferenceLink();
+  resetReviewControls();
   clearQuizRenderer();
   $("#title").textContent = `${examEntry.title} ${sessionEntry.title}`;
   $("#summary").textContent = `読み込み中: ${examEntry.id} / ${sessionId}`;
@@ -221,6 +272,7 @@ const main = async () => {
   if (!window.SurveyUI || typeof window.SurveyUI.renderSurvey !== "function" || typeof window.SurveyUI.unmountComponentAtNode !== "function") throw new Error("SurveyJS UI rendererを読み込めません");
   markdownRenderer = window.markdownit({ html: false, linkify: true, breaks: true });
 
+  resetReviewControls();
   catalog = await loadQuizCatalog();
   const examSelect = $("#exam-select");
   for (const exam of catalog.exams) {
@@ -240,6 +292,23 @@ const main = async () => {
     startSelectedQuizRender();
   });
   $("#session-select").addEventListener("change", () => {
+    startSelectedQuizRender();
+  });
+
+  for (const button of document.querySelectorAll("[data-review-filter]")) {
+    button.addEventListener("click", () => {
+      if (!activeQuiz) throw new Error("有効な問題集がありません");
+      const filter = button.dataset.reviewFilter;
+      if (!filter) throw new Error("復習フィルターがありません");
+      activeQuiz.filter = filter;
+      applyReviewFilter();
+    });
+  }
+
+  $("#reset-session").addEventListener("click", () => {
+    if (!activeQuiz) throw new Error("有効な問題集がありません");
+    if (!window.confirm("この試験回の回答履歴だけを消して、最初からやり直しますか？")) return;
+    clearSession(activeQuiz.storageKey);
     startSelectedQuizRender();
   });
 
