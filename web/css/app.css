@@ -18,6 +18,15 @@ h1 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; letter-s
 .tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
 .copy-button { min-height: 44px; padding: 9px 14px; border: 1px solid #c9c0b2; border-radius: 10px; background: #fffdf8; color: #322d27; font: inherit; cursor: pointer; }
 .copy-button:disabled { opacity: 0.45; cursor: default; }
+:where(a, button, select, input, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+  scroll-margin-top: 180px;
+}
+.sd-selectbase__item:has(input:focus-visible) {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
 #quiz { margin-top: 8px; }
 .sd-root-modern, .sd-body, .sd-page { background: transparent !important; }
 .sd-container-modern { max-width: none !important; }
