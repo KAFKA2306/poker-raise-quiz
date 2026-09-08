@@ -1,24 +1,29 @@
 :root {
   color-scheme: light;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #f3eee4;
-  color: #24211d;
+  background: #f7f5ef;
+  color: #17233f;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: #f3eee4; color: #24211d; }
+body { margin: 0; background: #f7f5ef; color: #17233f; }
 .fatal-error { min-height: 100vh; margin: 0; padding: 24px; white-space: pre-wrap; overflow-wrap: anywhere; background: #2b0000; color: #fff; font: 700 15px/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
 .shell { width: min(960px, 100%); margin: 0 auto; padding: 24px 18px 64px; }
-.header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 14px 0; background: color-mix(in srgb, #f3eee4 94%, transparent); backdrop-filter: blur(8px); }
-.heading { flex: 1 1 420px; }
-.pickers { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 8px; }
-.picker { display: flex; align-items: center; gap: 8px; color: #6b645a; font-size: 0.9rem; }
-.picker select { min-height: 40px; max-width: min(100%, 420px); padding: 7px 34px 7px 10px; border: 1px solid #c9c0b2; border-radius: 9px; background: #fffdf8; color: #322d27; font: inherit; }
+.header { position: sticky; top: 0; z-index: 10; padding: 14px 0 10px; background: color-mix(in srgb, #f7f5ef 94%, transparent); backdrop-filter: blur(8px); }
+.heading { width: 100%; }
+.pickers { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 8px 0; }
+.picker { display: flex; align-items: center; gap: 8px; color: #667085; font-size: 0.9rem; }
+.picker select { min-height: 44px; max-width: min(100%, 420px); padding: 7px 34px 7px 10px; border: 1px solid #d9d6ce; border-radius: 2px; background: #fff; color: #17233f; font: inherit; }
 h1 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; letter-spacing: -0.02em; }
-#summary, #copy-status { margin: 4px 0 0; color: #6b645a; font-size: 0.92rem; }
+#summary, #copy-status { margin: 4px 0 0; color: #667085; font-size: 0.92rem; }
+.review-tools { width: fit-content; max-width: 100%; }
+.review-tools summary { min-height: 44px; display: flex; align-items: center; width: fit-content; padding: 8px 0; color: #2563eb; cursor: pointer; font-weight: 600; }
+.review-tools summary::before { content: "＋"; width: 1.4em; }
+.review-tools[open] summary::before { content: "−"; }
+.review-tools .tools { padding: 4px 0 8px; }
 .tools { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.copy-button { min-height: 44px; padding: 9px 14px; border: 1px solid #c9c0b2; border-radius: 10px; background: #fffdf8; color: #322d27; font: inherit; cursor: pointer; }
+.copy-button { min-height: 44px; padding: 9px 14px; border: 1px solid #d9d6ce; border-radius: 2px; background: #fff; color: #17233f; font: inherit; cursor: pointer; }
 .copy-button:disabled { opacity: 0.45; cursor: default; }
-:where(a, button, select, input, textarea, [tabindex]):focus-visible {
+:where(a, button, select, summary, input, textarea, [tabindex]):focus-visible {
   outline: 3px solid #2563eb;
   outline-offset: 2px;
   scroll-margin-top: 180px;
@@ -30,19 +35,19 @@ h1 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; letter-s
 #quiz { margin-top: 8px; }
 .sd-root-modern, .sd-body, .sd-page { background: transparent !important; }
 .sd-container-modern { max-width: none !important; }
-.sd-question { margin: 0 0 18px !important; padding: clamp(18px, 3vw, 28px) !important; border: 1px solid #ddd4c6; border-radius: 16px; background: #fffdf8 !important; box-shadow: none !important; }
-.sd-question__title { font-size: clamp(1.08rem, 2.2vw, 1.35rem) !important; line-height: 1.55 !important; color: #24211d !important; }
+.sd-question { margin: 0 0 18px !important; padding: clamp(18px, 3vw, 28px) !important; border: 1px solid #d9d6ce; border-radius: 2px; background: #fff !important; box-shadow: none !important; }
+.sd-question__title { font-size: clamp(1.08rem, 2.2vw, 1.35rem) !important; line-height: 1.55 !important; color: #17233f !important; }
 .sd-question__title img, .sd-selectbase__label img { display: block; max-width: 100%; height: auto; margin: 12px 0; object-fit: contain; }
 .sd-selectbase__label img { max-height: 260px; }
 .sd-question__title table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.94em; }
-.sd-question__title th, .sd-question__title td { padding: 7px 9px; border: 1px solid #cfc6b8; text-align: center; vertical-align: middle; }
-.sd-question__title th { background: #f1ece2; }
+.sd-question__title th, .sd-question__title td { padding: 7px 9px; border: 1px solid #d9d6ce; text-align: center; vertical-align: middle; }
+.sd-question__title th { background: #f7f5ef; }
 .sd-question__title > div { max-width: 100%; overflow-x: auto; }
-.sd-selectbase__item { min-height: 58px; margin: 8px 0 !important; border: 1px solid #d8d0c4; border-radius: 12px; background: #faf7f0; }
+.sd-selectbase__item { min-height: 58px; margin: 8px 0 !important; border: 1px solid #d9d6ce; border-radius: 2px; background: #fff; }
 .sd-selectbase__label { width: 100%; min-height: 58px; display: flex !important; align-items: center; padding: 12px 14px !important; cursor: pointer; }
-.sd-selectbase__item:hover { background: #f5f0e7; }
+.sd-selectbase__item:hover { background: #f7f5ef; }
 .sd-question--readonly .sd-selectbase__label, .sd-question--disabled .sd-selectbase__label { cursor: default; }
-.sd-description { margin-top: 14px !important; padding: 12px 14px; border-radius: 10px; background: #f1ece2; color: #39342d !important; font-weight: 600; line-height: 1.5; }
+.sd-description { margin-top: 14px !important; padding: 12px 14px; border-radius: 2px; background: #f7f5ef; color: #17233f !important; font-weight: 600; line-height: 1.5; }
 .sd-navigation, .sd-completedpage { display: none !important; }
 @media (max-width: 640px) {
   .shell { padding: 14px 10px 48px; }
@@ -50,6 +55,5 @@ h1 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; letter-s
   .pickers { align-items: stretch; }
   .picker { width: 100%; justify-content: space-between; }
   .picker select { flex: 1; }
-  .sd-question { border-radius: 12px; }
   .sd-question__title table { font-size: 0.86em; }
 }
