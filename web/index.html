@@ -19,16 +19,17 @@
           <label class="picker" for="exam-select"><span>試験</span><select id="exam-select" aria-label="試験を選ぶ"></select></label>
           <label class="picker" for="session-select"><span>試験回</span><select id="session-select" aria-label="試験回を選ぶ"></select></label>
         </div>
-        <div class="tools" aria-label="復習する問題を選ぶ">
-          <button class="copy-button" type="button" data-review-filter="all" aria-pressed="true">すべて</button>
-          <button class="copy-button" type="button" data-review-filter="unanswered" aria-pressed="false">未回答</button>
-          <button class="copy-button" type="button" data-review-filter="incorrect" aria-pressed="false">不正解</button>
-          <button id="reset-session" class="copy-button" type="button" disabled>この試験回をやり直す</button>
-        </div>
-      </div>
-      <div class="tools">
-        <button id="copy-all" class="copy-button" type="button" disabled>回答をChatGPT用にコピー</button>
-        <span id="copy-status" role="status" aria-live="polite"></span>
+        <details class="review-tools">
+          <summary>復習・回答の操作</summary>
+          <div class="tools" aria-label="復習する問題を選ぶ">
+            <button class="copy-button" type="button" data-review-filter="all" aria-pressed="true">すべて</button>
+            <button class="copy-button" type="button" data-review-filter="unanswered" aria-pressed="false">未回答</button>
+            <button class="copy-button" type="button" data-review-filter="incorrect" aria-pressed="false">不正解</button>
+            <button id="reset-session" class="copy-button" type="button" disabled>この試験回をやり直す</button>
+            <button id="copy-all" class="copy-button" type="button" disabled>回答をChatGPT用にコピー</button>
+            <span id="copy-status" role="status" aria-live="polite"></span>
+          </div>
+        </details>
       </div>
     </header>
     <section id="quiz" aria-label="クイズ"></section>
