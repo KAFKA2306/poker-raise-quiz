@@ -13,21 +13,11 @@ const renderFatal = (error, context = {}) => {
   const output = document.createElement("pre");
   const details = Object.entries(context).map(([key, value]) => `${key}: ${value}`);
   output.className = "fatal-error";
-  output.textContent = [
-    "FATAL ERROR",
-    "",
-    `URL: ${window.location.href}`,
-    ...details,
-    "",
-    failure.stack,
-  ].join("\n");
+  output.textContent = ["FATAL ERROR", "", `URL: ${window.location.href}`, ...details, "", failure.stack].join("\n");
   document.body.replaceChildren(output);
 };
 
-window.addEventListener("unhandledrejection", (event) => {
-  renderFatal(event.reason, { 段階: "未処理Promise" });
-});
-
+window.addEventListener("unhandledrejection", (event) => renderFatal(event.reason, { 段階: "未処理Promise" }));
 window.addEventListener("error", (event) => {
   if (event.error instanceof Error) {
     renderFatal(event.error, { 段階: "JavaScript実行" });
@@ -258,9 +248,7 @@ const readSelectionFromUrl = () => {
   const requestedExamId = params.get("exam");
   const examEntry = catalog.exams.find((item) => item.id === requestedExamId) ?? examById(catalog.defaultExam);
   const requestedSessionId = params.get("session");
-  const sessionId = examEntry.exam.sessions.some((session) => session.id === requestedSessionId)
-    ? requestedSessionId
-    : examEntry.exam.defaultSession;
+  const sessionId = examEntry.exam.sessions.some((session) => session.id === requestedSessionId) ? requestedSessionId : examEntry.exam.defaultSession;
   return { examEntry, sessionId };
 };
 
@@ -271,7 +259,7 @@ const syncSelectionUrl = () => {
   window.history.replaceState(null, "", url);
 };
 
-const renderSelectedModule = async (generation, moduleIndex) => {
+const renderSelectedModule = (generation, moduleIndex) => {
   if (!activeSession) throw new Error("有効な試験回がありません");
   const moduleEntry = activeSession.context.modules[moduleIndex];
   if (!moduleEntry) throw new Error(`問題範囲が見つかりません: ${moduleIndex}`);
@@ -280,14 +268,13 @@ const renderSelectedModule = async (generation, moduleIndex) => {
   clearQuizRenderer();
   $("#summary").textContent = `${moduleEntry.label}を読み込み中…`;
 
-  try {
-    const { elements } = await loadQuizModule(activeSession.context, moduleIndex);
+  return loadQuizModule(activeSession.context, moduleIndex).then(({ elements }) => {
     if (generation !== renderGeneration) return;
     renderQuestions(activeSession.dataset, activeSession.context, moduleIndex, elements);
-  } catch (error) {
+  }, (error) => {
     if (generation !== renderGeneration) return;
     renderModuleFailure(error, moduleEntry);
-  }
+  });
 };
 
 const startModuleRender = () => {
@@ -301,7 +288,6 @@ const startModuleRender = () => {
 const renderSelectedSession = async (generation, examEntry, sessionId) => {
   const sessionEntry = examEntry.exam.sessions.find((session) => session.id === sessionId);
   if (!sessionEntry) throw new Error(`試験回が見つかりません: ${examEntry.id}/${sessionId}`);
-
   activeQuiz = null;
   activeSession = null;
   resetReferenceLink();
@@ -328,15 +314,10 @@ const startSelectedQuizRender = () => {
   const sessionId = $("#session-select").value;
   if (!sessionId) throw new Error(`試験回が選択されていません: ${examEntry.id}`);
   syncSelectionUrl();
-
   const generation = ++renderGeneration;
   renderSelectedSession(generation, examEntry, sessionId).then(undefined, (error) => {
     if (generation !== renderGeneration) return;
-    renderFatal(error, {
-      段階: "試験回データ読み込み・表示",
-      試験: examEntry.id,
-      試験回: sessionId,
-    });
+    renderFatal(error, { 段階: "試験回データ読み込み・表示", 試験: examEntry.id, 試験回: sessionId });
   });
 };
 
@@ -365,12 +346,8 @@ const main = async () => {
     populateSessions(currentExam());
     startSelectedQuizRender();
   });
-  $("#session-select").addEventListener("change", () => {
-    startSelectedQuizRender();
-  });
-  $("#module-select").addEventListener("change", () => {
-    startModuleRender();
-  });
+  $("#session-select").addEventListener("change", startSelectedQuizRender);
+  $("#module-select").addEventListener("change", startModuleRender);
 
   for (const button of document.querySelectorAll("[data-review-filter]")) {
     button.addEventListener("click", () => {
@@ -392,19 +369,17 @@ const main = async () => {
   $("#copy-all").addEventListener("click", async () => {
     if (!activeQuiz || !activeSession) throw new Error("有効な問題集がありません");
     showCopyStatus("試験回の回答済み問題を読み込み中…");
-    try {
-      const elements = await loadAllQuizElements(activeSession.context);
-      const output = buildChatGptMarkdown(activeSession.dataset, elements, activeQuiz.state);
-      await navigator.clipboard.writeText(output);
-      showCopyStatus("コピーしました");
-    } catch (error) {
+    const elements = await loadAllQuizElements(activeSession.context).then(undefined, (error) => {
       showCopyStatus(error instanceof Error ? error.message : String(error));
-    }
+      return null;
+    });
+    if (!elements) return;
+    const output = buildChatGptMarkdown(activeSession.dataset, elements, activeQuiz.state);
+    await navigator.clipboard.writeText(output);
+    showCopyStatus("コピーしました");
   });
 
   startSelectedQuizRender();
 };
 
-main().then(undefined, (error) => {
-  renderFatal(error, { 段階: "起動" });
-});
+main().then(undefined, (error) => renderFatal(error, { 段階: "起動" }));
