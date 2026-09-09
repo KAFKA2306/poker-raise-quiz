@@ -19,6 +19,17 @@ const requiredEntry = (entries, id, label) => {
   return entry;
 };
 
+const moduleRange = (modulePath) => {
+  const match = modulePath.match(/(?:^|\/)q(\d+)-q(\d+)\.json$/);
+  if (!match) throw new Error(`問題範囲を判定できないモジュール名です: ${modulePath}`);
+  const from = Number(match[1]);
+  const to = Number(match[2]);
+  if (!Number.isInteger(from) || !Number.isInteger(to) || from < 1 || to < from) {
+    throw new Error(`問題範囲が不正です: ${modulePath}`);
+  }
+  return { from, to, label: `問${from}〜${to}` };
+};
+
 export const loadQuizCatalog = async () => {
   const dataRoot = new URL("./data/", document.baseURI);
   const catalog = await readJson(new URL("catalog.json", dataRoot));
@@ -37,7 +48,7 @@ export const loadQuizCatalog = async () => {
   return { defaultExam: catalog.defaultExam, exams };
 };
 
-export const loadQuiz = async (examEntry, sessionId) => {
+export const loadQuizSession = async (examEntry, sessionId) => {
   const { exam, examUrl } = examEntry;
   if (!sessionId) throw new Error(`試験回が指定されていません: ${exam.id}`);
   const sessionEntry = requiredEntry(exam.sessions, sessionId, "試験回");
@@ -47,14 +58,7 @@ export const loadQuiz = async (examEntry, sessionId) => {
   if (typeof session.referenceOnly !== "boolean") throw new Error(`referenceOnly を明示してください: ${session.id}`);
   if (!Array.isArray(session.modules) || session.modules.length === 0) throw new Error(`問題モジュールがありません: ${session.id}`);
 
-  const elements = [];
-  for (const modulePath of session.modules) {
-    const module = await readJson(new URL(modulePath, sessionUrl));
-    if (!Array.isArray(module.elements) || module.elements.length === 0) throw new Error(`問題がありません: ${modulePath}`);
-    elements.push(...module.elements);
-  }
-  if (elements.length === 0) throw new Error(`回答できる問題がありません: ${session.id}`);
-
+  const modules = session.modules.map((path, index) => ({ index, path, ...moduleRange(path) }));
   return {
     dataset: {
       id: `${exam.id}:${session.id}`,
@@ -65,6 +69,29 @@ export const loadQuiz = async (examEntry, sessionId) => {
       status: session.status,
       referenceOnly: session.referenceOnly,
     },
-    elements,
+    context: { sessionUrl, modules },
   };
+};
+
+export const loadQuizModule = async (context, moduleIndex) => {
+  const moduleEntry = context.modules[moduleIndex];
+  if (!moduleEntry) throw new Error(`問題範囲が見つかりません: ${moduleIndex}`);
+  const module = await readJson(new URL(moduleEntry.path, context.sessionUrl));
+  if (!Array.isArray(module.elements) || module.elements.length === 0) throw new Error(`問題がありません: ${moduleEntry.path}`);
+
+  const first = Number(module.elements[0].questionNo);
+  const last = Number(module.elements[module.elements.length - 1].questionNo);
+  if (first !== moduleEntry.from || last !== moduleEntry.to) {
+    throw new Error(`モジュール範囲と問題番号が一致しません: ${moduleEntry.path} (${first}-${last})`);
+  }
+  return { moduleEntry, elements: module.elements };
+};
+
+export const loadAllQuizElements = async (context) => {
+  const elements = [];
+  for (const moduleEntry of context.modules) {
+    const loaded = await loadQuizModule(context, moduleEntry.index);
+    elements.push(...loaded.elements);
+  }
+  return elements;
 };
