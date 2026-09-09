@@ -33,6 +33,8 @@ h1 { margin: 0; font-size: clamp(1.35rem, 3vw, 2rem); font-weight: 650; letter-s
   outline-offset: 2px;
 }
 #quiz { margin-top: 8px; }
+.module-error { padding: 18px; border: 1px solid #8f1d1d; background: #fff; }
+.module-error h2 { margin-top: 0; font-size: 1.1rem; }
 .sd-root-modern, .sd-body, .sd-page { background: transparent !important; }
 .sd-container-modern { max-width: none !important; }
 .sd-question { margin: 0 0 18px !important; padding: clamp(18px, 3vw, 28px) !important; border: 1px solid #d9d6ce; border-radius: 2px; background: #fff !important; box-shadow: none !important; }
