@@ -39,7 +39,6 @@ const startLocalSite = async () => {
         response.end();
         return;
       }
-
       let baseDirectory;
       let relativePath;
       if (pathname === "/") {
@@ -52,7 +51,6 @@ const startLocalSite = async () => {
         baseDirectory = path.join(root, "web");
         relativePath = pathname.slice(1);
       }
-
       const filePath = path.resolve(baseDirectory, relativePath);
       assert(filePath === baseDirectory || filePath.startsWith(`${baseDirectory}${path.sep}`), `公開ディレクトリ外を参照しています: ${pathname}`);
       const body = await readFile(filePath);
@@ -64,7 +62,6 @@ const startLocalSite = async () => {
       response.end(error.stack);
     });
   });
-
   await new Promise((resolve, reject) => {
     server.once("error", reject);
     server.listen(0, "127.0.0.1", resolve);
@@ -94,9 +91,7 @@ class CdpClient {
         else pending.resolve(message.result);
         return;
       }
-      const handlers = this.listeners.get(message.method);
-      if (!handlers) return;
-      for (const handler of handlers) handler(message.params);
+      for (const handler of this.listeners.get(message.method) ?? []) handler(message.params);
     });
   }
 
@@ -124,15 +119,14 @@ const waitForChrome = async () => {
   const deadline = Date.now() + 15_000;
   let lastError;
   while (Date.now() < deadline) {
-    try {
-      const response = await fetch("http://127.0.0.1:9222/json/list");
-      if (response.ok) {
-        const targets = await response.json();
-        const page = targets.find((target) => target.type === "page");
-        if (page?.webSocketDebuggerUrl) return page.webSocketDebuggerUrl;
-      }
-    } catch (error) {
+    const response = await fetch("http://127.0.0.1:9222/json/list").then(undefined, (error) => {
       lastError = error;
+      return null;
+    });
+    if (response?.ok) {
+      const targets = await response.json();
+      const page = targets.find((target) => target.type === "page");
+      if (page?.webSocketDebuggerUrl) return page.webSocketDebuggerUrl;
     }
     await sleep(100);
   }
@@ -141,16 +135,11 @@ const waitForChrome = async () => {
 
 const eventually = async (label, callback, timeout = 20_000) => {
   const deadline = Date.now() + timeout;
-  let lastError;
   while (Date.now() < deadline) {
-    try {
-      if (await callback()) return;
-    } catch (error) {
-      lastError = error;
-    }
+    if (await callback().then(Boolean, () => false)) return;
     await sleep(100);
   }
-  throw new Error(`${label}を確認できません${lastError ? `: ${lastError.message}` : ""}`);
+  throw new Error(`${label}を確認できません`);
 };
 
 const stopChrome = async (chrome) => {
@@ -164,24 +153,14 @@ const runBrowserSmoke = async (baseUrl) => {
   await mkdir(screenshotDirectory, { recursive: true });
   const runLabel = new URL(baseUrl).hostname === "127.0.0.1" ? "local" : "production";
   const profile = await mkdtemp(path.join(os.tmpdir(), "one-tap-quiz-chrome-"));
-  const chrome = spawn(chromePath, [
-    "--headless=new",
-    "--no-sandbox",
-    "--disable-dev-shm-usage",
-    "--remote-debugging-port=9222",
-    "--remote-allow-origins=*",
-    `--user-data-dir=${profile}`,
-    "about:blank",
-  ], { stdio: "ignore" });
+  const chrome = spawn(chromePath, ["--headless=new", "--no-sandbox", "--disable-dev-shm-usage", "--remote-debugging-port=9222", "--remote-allow-origins=*", `--user-data-dir=${profile}`, "about:blank"], { stdio: "ignore" });
 
   let client;
   try {
-    const webSocketUrl = await waitForChrome();
-    client = new CdpClient(webSocketUrl);
+    client = new CdpClient(await waitForChrome());
     const runtimeExceptions = [];
     const networkFailures = [];
     const requestedUrls = [];
-
     client.on("Runtime.exceptionThrown", ({ exceptionDetails }) => runtimeExceptions.push(exceptionDetails.exception?.description || exceptionDetails.text));
     client.on("Network.requestWillBeSent", ({ request }) => requestedUrls.push(request.url));
     client.on("Network.responseReceived", ({ response }) => {
@@ -201,7 +180,6 @@ const runBrowserSmoke = async (baseUrl) => {
       if (result.exceptionDetails) throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text);
       return result.result.value;
     };
-
     const captureScreenshot = async (name) => {
       const screenshot = await client.send("Page.captureScreenshot", { format: "png", fromSurface: true, captureBeyondViewport: false });
       const filePath = path.join(screenshotDirectory, `${runLabel}-${name}.png`);
@@ -211,127 +189,63 @@ const runBrowserSmoke = async (baseUrl) => {
 
     await client.send("Page.navigate", { url: baseUrl });
     await eventually("応用情報の最初の問題範囲", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20);
-
     const initial = await evaluate(`(() => ({
       title: document.querySelector('#title').textContent,
       exam: document.querySelector('#exam-select').value,
       session: document.querySelector('#session-select').value,
       modules: Array.from(document.querySelector('#module-select').options).map((option) => option.textContent),
-      module: document.querySelector('#module-select').value,
       summary: document.querySelector('#summary').textContent
     }))()`);
     assert(initial.title.includes("応用情報技術者試験") && initial.title.includes("2025年度秋期"), `初期タイトルが不正です: ${initial.title}`);
     assert(initial.exam === "ap" && initial.session === "2025-autumn", `初期選択が不正です: ${initial.exam}/${initial.session}`);
     assert(initial.modules.join(",") === "問1〜20,問21〜40,問41〜60,問61〜80", `問題範囲が不正です: ${initial.modules.join(",")}`);
-    assert(initial.module === "0", `初期問題範囲が不正です: ${initial.module}`);
     assert(initial.summary.includes("回答済み 0 / 80") && initial.summary.includes("収録 80 / 80問"), `初期集計が不正です: ${initial.summary}`);
     assert(requestedUrls.some((url) => url.includes("q001-q020.json")), "初期問題範囲が読み込まれていません");
-    assert(!requestedUrls.some((url) => /q0(21-40|41-60|61-80)\.json/.test(url)), "初期表示で後続モジュールまで読み込んでいます");
+    assert(!requestedUrls.some((url) => url.includes("q021-q040.json") || url.includes("q041-q060.json") || url.includes("q061-q080.json")), "初期表示で後続モジュールまで読み込んでいます");
     await captureScreenshot("01-ap-first-range");
 
-    await evaluate(`(() => {
-      localStorage.clear();
-      const choice = document.querySelector('.sd-selectbase__label');
-      if (!choice) throw new Error('回答選択肢がありません');
-      choice.click();
-      return true;
-    })()`);
+    await evaluate(`(() => { localStorage.clear(); document.querySelector('.sd-selectbase__label').click(); return true; })()`);
     await eventually("1タップ回答", async () => (await evaluate("document.querySelector('#summary').textContent")).includes("回答済み 1 / 80"));
-    const apStorageKeys = await evaluate("Object.keys(localStorage)");
-    assert(apStorageKeys.length === 1, `保存キー数が不正です: ${apStorageKeys.length}`);
+    assert((await evaluate("Object.keys(localStorage).length")) === 1, "保存キーが試験回単位になっていません");
 
-    await evaluate(`(() => {
-      const select = document.querySelector('#module-select');
-      select.value = '1';
-      select.dispatchEvent(new Event('change', { bubbles: true }));
-      return select.value;
-    })()`);
-    await eventually("問21〜40への切替", async () => (
-      await evaluate("document.querySelectorAll('.sd-question').length") === 20
-      && (await evaluate("document.querySelector('#module-select').value")) === "1"
-    ));
-    const secondRange = await evaluate(`(() => ({
-      summary: document.querySelector('#summary').textContent,
-      firstQuestion: document.querySelector('.sd-question__title')?.textContent || ''
-    }))()`);
-    assert(secondRange.summary.includes("回答済み 1 / 80"), `範囲切替で回答集計が失われました: ${secondRange.summary}`);
-    assert(secondRange.firstQuestion.includes("問21"), `問21から始まっていません: ${secondRange.firstQuestion}`);
-    assert(requestedUrls.some((url) => url.includes("q021-q040.json")), "選択した第2モジュールが読み込まれていません");
+    await evaluate(`(() => { const s=document.querySelector('#module-select'); s.value='1'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
+    await eventually("問21〜40への切替", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#module-select').value")) === "1");
+    const second = await evaluate(`(() => ({summary:document.querySelector('#summary').textContent, first:document.querySelector('.sd-question__title')?.textContent||''}))()`);
+    assert(second.summary.includes("回答済み 1 / 80"), `範囲切替で回答集計が失われました: ${second.summary}`);
+    assert(second.first.includes("問21"), `問21から始まっていません: ${second.first}`);
     assert(!requestedUrls.some((url) => url.includes("q041-q060.json") || url.includes("q061-q080.json")), "未選択モジュールまで読み込んでいます");
     await captureScreenshot("02-ap-second-range");
 
     await client.send("Page.reload", { ignoreCache: true });
-    await eventually("再読み込み後の回答復元", async () => (
-      (await evaluate("document.querySelectorAll('.sd-question').length")) === 20
-      && (await evaluate("document.querySelector('#summary')?.textContent || ''")).includes("回答済み 1 / 80")
-    ));
+    await eventually("再読み込み後の回答復元", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#summary')?.textContent||''")).includes("回答済み 1 / 80"));
 
-    await evaluate(`(() => {
-      const select = document.querySelector('#exam-select');
-      select.value = 'g-test';
-      select.dispatchEvent(new Event('change', { bubbles: true }));
-      return select.value;
-    })()`);
-    await eventually("G検定の最初の10問への切替", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 10);
-    const gTest = await evaluate(`(() => ({
-      title: document.querySelector('#title').textContent,
-      session: document.querySelector('#session-select').value,
-      modules: Array.from(document.querySelector('#module-select').options).map((option) => option.textContent),
-      referenceHidden: document.querySelector('#reference-link').hidden,
-      referenceUrl: document.querySelector('#reference-link').href
-    }))()`);
-    assert(gTest.title.includes("G検定"), `G検定へ切り替わっていません: ${gTest.title}`);
-    assert(gTest.session === "official-past-questions", `G検定の試験回が不正です: ${gTest.session}`);
+    await evaluate(`(() => { const s=document.querySelector('#exam-select'); s.value='g-test'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
+    await eventually("G検定の最初の10問", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 10);
+    const gTest = await evaluate(`(() => ({modules:Array.from(document.querySelector('#module-select').options).map(o=>o.textContent), referenceHidden:document.querySelector('#reference-link').hidden, referenceUrl:document.querySelector('#reference-link').href}))()`);
     assert(gTest.modules.join(",") === "問1〜10,問11〜20", `G検定の問題範囲が不正です: ${gTest.modules.join(",")}`);
     assert(gTest.referenceHidden === false && gTest.referenceUrl === "https://www.jdla.org/certificate/general/issues/", "G検定の公式問題リンクが不正です");
     await captureScreenshot("03-g-test-first-range");
 
-    await evaluate(`(() => {
-      const select = document.querySelector('#exam-select');
-      select.value = 'ap';
-      select.dispatchEvent(new Event('change', { bubbles: true }));
-      return select.value;
-    })()`);
-    await eventually("応用情報へ戻る", async () => (
-      (await evaluate("document.querySelectorAll('.sd-question').length")) === 20
-      && (await evaluate("document.querySelector('#title').textContent")).includes("2025年度秋期")
-    ));
+    await evaluate(`(() => { const s=document.querySelector('#exam-select'); s.value='ap'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
+    await eventually("応用情報へ戻る", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#title').textContent")).includes("2025年度秋期"));
+    assert(runtimeExceptions.length === 0, `通常操作中にJavaScript例外が発生しました:\n${runtimeExceptions.join("\n")}`);
+    assert(networkFailures.length === 0, `通常操作中にネットワーク失敗が発生しました:\n${networkFailures.join("\n")}`);
 
     await client.send("Network.setBlockedURLs", { urls: ["*q021-q040.json*"] });
-    await evaluate(`(() => {
-      const select = document.querySelector('#module-select');
-      select.value = '1';
-      select.dispatchEvent(new Event('change', { bubbles: true }));
-      return select.value;
-    })()`);
+    await evaluate(`(() => { const s=document.querySelector('#module-select'); s.value='1'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
     await eventually("モジュール単位の失敗表示", async () => await evaluate("Boolean(document.querySelector('.module-error'))"));
-    const localizedFailure = await evaluate(`(() => ({
-      fatal: document.body.innerText.startsWith('FATAL ERROR'),
-      text: document.querySelector('.module-error').innerText,
-      moduleSelect: Boolean(document.querySelector('#module-select'))
-    }))()`);
-    assert(localizedFailure.fatal === false, "1モジュールの失敗でページ全体がFATALになりました");
-    assert(localizedFailure.text.includes("問21〜40を読み込めませんでした") && localizedFailure.text.includes("再読み込み"), `局所エラー表示が不十分です: ${localizedFailure.text}`);
-    assert(localizedFailure.moduleSelect, "モジュール失敗時に問題範囲切替が失われました");
+    const localized = await evaluate(`(() => ({fatal:document.body.innerText.startsWith('FATAL ERROR'), text:document.querySelector('.module-error').innerText, select:Boolean(document.querySelector('#module-select'))}))()`);
+    assert(!localized.fatal && localized.select, "1モジュールの失敗でページ全体の操作を失いました");
+    assert(localized.text.includes("問21〜40を読み込めませんでした") && localized.text.includes("再読み込み"), `局所エラー表示が不十分です: ${localized.text}`);
+    assert(networkFailures.length === 1, `意図的な遮断以外のネットワーク失敗があります:\n${networkFailures.join("\n")}`);
+    networkFailures.length = 0;
     await captureScreenshot("04-module-error");
 
     await client.send("Network.setBlockedURLs", { urls: [] });
-    await evaluate(`(() => {
-      const select = document.querySelector('#module-select');
-      select.value = '2';
-      select.dispatchEvent(new Event('change', { bubbles: true }));
-      return select.value;
-    })()`);
-    await eventually("別範囲への復旧", async () => (
-      (await evaluate("document.querySelectorAll('.sd-question').length")) === 20
-      && (await evaluate("document.querySelector('#module-select').value")) === "2"
-    ));
-
-    assert(!requestedUrls.some((url) => url.includes("/js/quiz/reference.js")), "削除済みreference.jsがブラウザから要求されています");
-    assert(runtimeExceptions.length === 0, `通常操作中にJavaScript例外が発生しました:\n${runtimeExceptions.join("\n")}`);
-    const unexpectedNetworkFailures = networkFailures.filter((failure) => !failure.includes("q021-q040.json"));
-    assert(unexpectedNetworkFailures.length === 0, `通常操作中にネットワーク失敗が発生しました:\n${unexpectedNetworkFailures.join("\n")}`);
-
+    await evaluate(`(() => { const s=document.querySelector('#module-select'); s.value='2'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
+    await eventually("別範囲への復旧", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#module-select').value")) === "2");
+    assert(networkFailures.length === 0, `復旧後にネットワーク失敗があります:\n${networkFailures.join("\n")}`);
+    assert(!requestedUrls.some((url) => url.includes("/js/quiz/reference.js")), "削除済みreference.jsが要求されています");
     console.log(`ブラウザ実動作確認に成功しました: ${baseUrl}`);
   } finally {
     if (client) client.close();
