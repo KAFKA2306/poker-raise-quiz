@@ -1,4 +1,4 @@
-import { loadQuiz, loadQuizCatalog } from "./quiz/data.js";
+import { loadAllQuizElements, loadQuizCatalog, loadQuizModule, loadQuizSession } from "./quiz/data.js";
 import { buildChatGptMarkdown } from "./quiz/export.js";
 import { clearSession, loadSession, saveSession, storageKeyFor } from "./quiz/session.js";
 
@@ -38,8 +38,10 @@ window.addEventListener("error", (event) => {
 
 let markdownRenderer = null;
 let activeQuiz = null;
+let activeSession = null;
 let catalog = null;
 let renderGeneration = 0;
+let reviewFilter = "all";
 
 const choiceText = (element, value) => {
   const choice = element.choices.find((item) => item.value === value);
@@ -50,23 +52,23 @@ const choiceText = (element, value) => {
 const feedbackChoiceText = (element, value) => choiceText(element, value).replace(/!\[[^\]]*\]\([^)]+\)/g, "図").replace(/\s+/g, " ").trim();
 const feedbackText = (element, state) => `${state.correct ? "正解" : "不正解"}　自分の回答: ${state.answer} ${feedbackChoiceText(element, state.answer)}　正答: ${element.correctAnswer} ${feedbackChoiceText(element, element.correctAnswer)}`;
 
-const answerSummary = (elements, state) => {
+const answerSummary = (dataset, state) => {
+  if (!dataset.coverage || !Number.isInteger(dataset.coverage.count)) throw new Error("coverage がありません");
   let correct = 0;
   let incorrect = 0;
-  for (const element of elements) {
-    const answer = state[element.name];
-    if (answer === undefined) continue;
+  for (const [name, answer] of Object.entries(state)) {
+    if (!answer || typeof answer !== "object" || typeof answer.correct !== "boolean") throw new Error(`保存データが不正です: ${name}`);
     if (answer.correct) correct += 1;
     else incorrect += 1;
   }
   const answered = correct + incorrect;
-  return { answered, correct, incorrect, unanswered: elements.length - answered };
+  if (answered > dataset.coverage.count) throw new Error(`回答数が収録数を超えています: ${answered} > ${dataset.coverage.count}`);
+  return { answered, correct, incorrect, unanswered: dataset.coverage.count - answered };
 };
 
-const updateSummary = (dataset, elements, state) => {
-  if (!dataset.coverage) throw new Error("coverage がありません");
-  const summary = answerSummary(elements, state);
-  $("#summary").textContent = `回答済み ${summary.answered} / ${elements.length}　正解 ${summary.correct}　不正解 ${summary.incorrect}　未回答 ${summary.unanswered}　収録 ${dataset.coverage.count} / ${dataset.coverage.total}問`;
+const updateSummary = (dataset, state) => {
+  const summary = answerSummary(dataset, state);
+  $("#summary").textContent = `回答済み ${summary.answered} / ${dataset.coverage.count}　正解 ${summary.correct}　不正解 ${summary.incorrect}　未回答 ${summary.unanswered}　収録 ${dataset.coverage.count} / ${dataset.coverage.total}問`;
   $("#copy-all").disabled = summary.answered === 0;
   $("#reset-session").disabled = summary.answered === 0;
 };
@@ -82,9 +84,13 @@ const reviewFilterMatches = (filter, element, state) => {
 const updateReviewControls = () => {
   for (const button of document.querySelectorAll("[data-review-filter]")) {
     button.disabled = activeQuiz === null;
-    button.setAttribute("aria-pressed", String(activeQuiz !== null && button.dataset.reviewFilter === activeQuiz.filter));
+    button.setAttribute("aria-pressed", String(activeQuiz !== null && button.dataset.reviewFilter === reviewFilter));
   }
-  $("#reset-session").disabled = activeQuiz === null || answerSummary(activeQuiz.elements, activeQuiz.state).answered === 0;
+  if (!activeQuiz) {
+    $("#reset-session").disabled = true;
+    return;
+  }
+  $("#reset-session").disabled = answerSummary(activeQuiz.dataset, activeQuiz.state).answered === 0;
 };
 
 const applyReviewFilter = () => {
@@ -92,12 +98,13 @@ const applyReviewFilter = () => {
   for (const element of activeQuiz.elements) {
     const question = activeQuiz.survey.getQuestionByName(element.name);
     if (!question) throw new Error(`復習対象の問題が見つかりません: ${element.name}`);
-    question.visible = reviewFilterMatches(activeQuiz.filter, element, activeQuiz.state);
+    question.visible = reviewFilterMatches(reviewFilter, element, activeQuiz.state);
   }
   updateReviewControls();
 };
 
 const resetReviewControls = () => {
+  reviewFilter = "all";
   for (const button of document.querySelectorAll("[data-review-filter]")) {
     button.disabled = true;
     button.setAttribute("aria-pressed", String(button.dataset.reviewFilter === "all"));
@@ -108,7 +115,7 @@ const resetReviewControls = () => {
 const showCopyStatus = (message) => {
   const status = $("#copy-status");
   status.textContent = message;
-  window.setTimeout(() => { if (status.textContent === message) status.textContent = ""; }, 1600);
+  window.setTimeout(() => { if (status.textContent === message) status.textContent = ""; }, 2400);
 };
 
 const toSurveyElement = (element) => {
@@ -142,22 +149,44 @@ const clearQuizRenderer = () => {
   quiz.replaceChildren();
 };
 
-const renderQuestions = (dataset, elements) => {
+const renderModuleFailure = (error, moduleEntry) => {
+  activeQuiz = null;
+  resetReviewControls();
+  clearQuizRenderer();
+  const panel = document.createElement("div");
+  panel.className = "module-error";
+  panel.setAttribute("role", "alert");
+  const heading = document.createElement("h2");
+  heading.textContent = `${moduleEntry.label}を読み込めませんでした`;
+  const detail = document.createElement("p");
+  detail.textContent = error instanceof Error ? error.message : String(error);
+  const retry = document.createElement("button");
+  retry.type = "button";
+  retry.className = "copy-button";
+  retry.textContent = "この問題範囲を再読み込み";
+  retry.addEventListener("click", () => startModuleRender());
+  panel.append(heading, detail, retry);
+  $("#quiz").replaceChildren(panel);
+};
+
+const renderQuestions = (dataset, context, moduleIndex, elements) => {
   const byName = Object.fromEntries(elements.map((element) => [element.name, element]));
   if (Object.keys(byName).length !== elements.length) throw new Error("問題IDが重複しています");
   const storageKey = storageKeyFor(dataset);
   const state = loadSession(storageKey);
+  answerSummary(dataset, state);
 
   const survey = new Survey.Model({ elements: elements.map(toSurveyElement), showQuestionNumbers: "off", showCompleteButton: false, showNavigationButtons: false });
-  activeQuiz = { dataset, elements, state, survey, filter: "all", storageKey };
+  activeQuiz = { dataset, context, moduleIndex, elements, state, survey, storageKey };
   survey.onTextMarkdown.add((_sender, options) => { options.html = markdownRenderer.render(options.text); });
 
-  for (const [name, cached] of Object.entries(state)) {
-    const question = survey.getQuestionByName(name);
-    const element = byName[name];
-    if (!question || !element) throw new Error(`保存データが現行問題と一致しません: ${name}`);
-    if (!cached || typeof cached !== "object" || typeof cached.correct !== "boolean") throw new Error(`保存データが不正です: ${name}`);
+  for (const element of elements) {
+    const cached = state[element.name];
+    if (cached === undefined) continue;
+    if (!cached || typeof cached !== "object" || typeof cached.correct !== "boolean") throw new Error(`保存データが不正です: ${element.name}`);
     choiceText(element, cached.answer);
+    const question = survey.getQuestionByName(element.name);
+    if (!question) throw new Error(`保存対象の問題が見つかりません: ${element.name}`);
     question.value = cached.answer;
     question.readOnly = true;
     question.description = feedbackText(element, cached);
@@ -177,12 +206,12 @@ const renderQuestions = (dataset, elements) => {
     question.readOnly = true;
     question.description = feedbackText(element, cached);
     question.descriptionLocation = "underInput";
-    updateSummary(dataset, elements, state);
+    updateSummary(dataset, state);
     applyReviewFilter();
   });
 
   window.SurveyUI.renderSurvey(survey, $("#quiz"));
-  updateSummary(dataset, elements, state);
+  updateSummary(dataset, state);
   applyReviewFilter();
 };
 
@@ -210,6 +239,20 @@ const populateSessions = (examEntry, selectedSessionId = examEntry.exam.defaultS
   select.disabled = examEntry.exam.sessions.length <= 1;
 };
 
+const populateModules = (context, selectedIndex = 0) => {
+  const select = $("#module-select");
+  select.replaceChildren();
+  for (const moduleEntry of context.modules) {
+    const option = document.createElement("option");
+    option.value = String(moduleEntry.index);
+    option.textContent = moduleEntry.label;
+    select.append(option);
+  }
+  select.value = String(selectedIndex);
+  if (select.value !== String(selectedIndex)) throw new Error(`問題範囲を選択できません: ${selectedIndex}`);
+  select.disabled = context.modules.length <= 1;
+};
+
 const readSelectionFromUrl = () => {
   const params = new URLSearchParams(window.location.search);
   const requestedExamId = params.get("exam");
@@ -228,25 +271,56 @@ const syncSelectionUrl = () => {
   window.history.replaceState(null, "", url);
 };
 
-const renderSelectedQuiz = async (generation, examEntry, sessionId) => {
+const renderSelectedModule = async (generation, moduleIndex) => {
+  if (!activeSession) throw new Error("有効な試験回がありません");
+  const moduleEntry = activeSession.context.modules[moduleIndex];
+  if (!moduleEntry) throw new Error(`問題範囲が見つかりません: ${moduleIndex}`);
+  activeQuiz = null;
+  resetReviewControls();
+  clearQuizRenderer();
+  $("#summary").textContent = `${moduleEntry.label}を読み込み中…`;
+
+  try {
+    const { elements } = await loadQuizModule(activeSession.context, moduleIndex);
+    if (generation !== renderGeneration) return;
+    renderQuestions(activeSession.dataset, activeSession.context, moduleIndex, elements);
+  } catch (error) {
+    if (generation !== renderGeneration) return;
+    renderModuleFailure(error, moduleEntry);
+  }
+};
+
+const startModuleRender = () => {
+  if (!activeSession) throw new Error("有効な試験回がありません");
+  const moduleIndex = Number($("#module-select").value);
+  if (!Number.isInteger(moduleIndex)) throw new Error("問題範囲が選択されていません");
+  const generation = ++renderGeneration;
+  renderSelectedModule(generation, moduleIndex);
+};
+
+const renderSelectedSession = async (generation, examEntry, sessionId) => {
   const sessionEntry = examEntry.exam.sessions.find((session) => session.id === sessionId);
   if (!sessionEntry) throw new Error(`試験回が見つかりません: ${examEntry.id}/${sessionId}`);
 
   activeQuiz = null;
+  activeSession = null;
   resetReferenceLink();
   resetReviewControls();
   clearQuizRenderer();
+  $("#module-select").replaceChildren();
+  $("#module-select").disabled = true;
   $("#title").textContent = `${examEntry.title} ${sessionEntry.title}`;
   $("#summary").textContent = `読み込み中: ${examEntry.id} / ${sessionId}`;
   $("#copy-all").disabled = true;
 
-  const { dataset, elements } = await loadQuiz(examEntry, sessionId);
+  const session = await loadQuizSession(examEntry, sessionId);
   if (generation !== renderGeneration) return;
-
-  document.title = dataset.title;
-  $("#title").textContent = dataset.title;
-  renderReferenceLink(dataset);
-  renderQuestions(dataset, elements);
+  activeSession = session;
+  document.title = session.dataset.title;
+  $("#title").textContent = session.dataset.title;
+  renderReferenceLink(session.dataset);
+  populateModules(session.context);
+  await renderSelectedModule(generation, 0);
 };
 
 const startSelectedQuizRender = () => {
@@ -256,10 +330,10 @@ const startSelectedQuizRender = () => {
   syncSelectionUrl();
 
   const generation = ++renderGeneration;
-  renderSelectedQuiz(generation, examEntry, sessionId).then(undefined, (error) => {
+  renderSelectedSession(generation, examEntry, sessionId).then(undefined, (error) => {
     if (generation !== renderGeneration) return;
     renderFatal(error, {
-      段階: "問題データ読み込み・表示",
+      段階: "試験回データ読み込み・表示",
       試験: examEntry.id,
       試験回: sessionId,
     });
@@ -294,13 +368,16 @@ const main = async () => {
   $("#session-select").addEventListener("change", () => {
     startSelectedQuizRender();
   });
+  $("#module-select").addEventListener("change", () => {
+    startModuleRender();
+  });
 
   for (const button of document.querySelectorAll("[data-review-filter]")) {
     button.addEventListener("click", () => {
       if (!activeQuiz) throw new Error("有効な問題集がありません");
       const filter = button.dataset.reviewFilter;
       if (!filter) throw new Error("復習フィルターがありません");
-      activeQuiz.filter = filter;
+      reviewFilter = filter;
       applyReviewFilter();
     });
   }
@@ -309,14 +386,20 @@ const main = async () => {
     if (!activeQuiz) throw new Error("有効な問題集がありません");
     if (!window.confirm("この試験回の回答履歴だけを消して、最初からやり直しますか？")) return;
     clearSession(activeQuiz.storageKey);
-    startSelectedQuizRender();
+    startModuleRender();
   });
 
   $("#copy-all").addEventListener("click", async () => {
-    if (!activeQuiz) throw new Error("有効な問題集がありません");
-    const output = buildChatGptMarkdown(activeQuiz.dataset, activeQuiz.elements, activeQuiz.state);
-    await navigator.clipboard.writeText(output);
-    showCopyStatus("コピーしました");
+    if (!activeQuiz || !activeSession) throw new Error("有効な問題集がありません");
+    showCopyStatus("試験回の回答済み問題を読み込み中…");
+    try {
+      const elements = await loadAllQuizElements(activeSession.context);
+      const output = buildChatGptMarkdown(activeSession.dataset, elements, activeQuiz.state);
+      await navigator.clipboard.writeText(output);
+      showCopyStatus("コピーしました");
+    } catch (error) {
+      showCopyStatus(error instanceof Error ? error.message : String(error));
+    }
   });
 
   startSelectedQuizRender();
