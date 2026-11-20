@@ -161,6 +161,8 @@ const runBrowserSmoke = async (baseUrl) => {
     const runtimeExceptions = [];
     const networkFailures = [];
     const requestedUrls = [];
+    const dialogs = [];
+    client.on("Page.javascriptDialogOpening", (dialog) => dialogs.push(dialog));
     client.on("Runtime.exceptionThrown", ({ exceptionDetails }) => runtimeExceptions.push(exceptionDetails.exception?.description || exceptionDetails.text));
     client.on("Network.requestWillBeSent", ({ request }) => requestedUrls.push(request.url));
     client.on("Network.responseReceived", ({ response }) => {
@@ -180,6 +182,23 @@ const runBrowserSmoke = async (baseUrl) => {
       if (result.exceptionDetails) throw new Error(result.exceptionDetails.exception?.description || result.exceptionDetails.text);
       return result.result.value;
     };
+    const visibleQuestions = async () => evaluate("document.querySelectorAll('#quiz .sd-question').length");
+    const summaryText = async () => evaluate("document.querySelector('#summary')?.textContent || ''");
+    const expectSummary = async (label, answered, correct, incorrect) => {
+      const expected = `回答済み ${answered} / 80　正解 ${correct}　不正解 ${incorrect}　未回答 ${80 - answered}`;
+      await eventually(label, async () => (await summaryText()).includes(expected));
+    };
+    const chooseAnswer = async (questionIndex, choiceIndex) => evaluate(`(() => {
+      const question = document.querySelectorAll('#quiz .sd-question')[${questionIndex}];
+      question.querySelectorAll('.sd-selectbase__label')[${choiceIndex}].click();
+      return true;
+    })()`);
+    const selectSession = async (session) => evaluate(`(() => {
+      const select = document.querySelector('#session-select');
+      select.value = ${JSON.stringify(session)};
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+      return true;
+    })()`);
     const captureScreenshot = async (name) => {
       const screenshot = await client.send("Page.captureScreenshot", { format: "png", fromSurface: true, captureBeyondViewport: false });
       const filePath = path.join(screenshotDirectory, `${runLabel}-${name}.png`);
@@ -204,20 +223,60 @@ const runBrowserSmoke = async (baseUrl) => {
     assert(!requestedUrls.some((url) => url.includes("q021-q040.json") || url.includes("q041-q060.json") || url.includes("q061-q080.json")), "初期表示で後続モジュールまで読み込んでいます");
     await captureScreenshot("01-ap-first-range");
 
-    await evaluate(`(() => { localStorage.clear(); document.querySelector('.sd-selectbase__label').click(); return true; })()`);
-    await eventually("1タップ回答", async () => (await evaluate("document.querySelector('#summary').textContent")).includes("回答済み 1 / 80"));
+    await expectSummary("未回答の初期集計", 0, 0, 0);
+    await chooseAnswer(0, 3);
+    await expectSummary("正解の集計", 1, 1, 0);
+    await chooseAnswer(1, 0);
+    await expectSummary("不正解の集計", 2, 1, 1);
     assert((await evaluate("Object.keys(localStorage).length")) === 1, "保存キーが試験回単位になっていません");
+
+    await evaluate(`document.querySelector('[data-review-filter="unanswered"]').click()`);
+    await eventually("未回答の絞り込み", async () => await visibleQuestions() === 18 &&
+      (await evaluate("document.querySelector('.sd-question__title')?.textContent || ''")).includes("問3"));
+    await evaluate(`document.querySelector('[data-review-filter="incorrect"]').click()`);
+    await eventually("不正解の絞り込み", async () => await visibleQuestions() === 1 &&
+      (await evaluate("document.querySelector('.sd-question__title')?.textContent || ''")).includes("問2"));
+    await evaluate(`document.querySelector('[data-review-filter="all"]').click()`);
+    await eventually("全問表示に戻す", async () => await visibleQuestions() === 20);
 
     await evaluate(`(() => { const s=document.querySelector('#module-select'); s.value='1'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
     await eventually("問21〜40への切替", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#module-select').value")) === "1");
     const second = await evaluate(`(() => ({summary:document.querySelector('#summary').textContent, first:document.querySelector('.sd-question__title')?.textContent||''}))()`);
-    assert(second.summary.includes("回答済み 1 / 80"), `範囲切替で回答集計が失われました: ${second.summary}`);
+    assert(second.summary.includes("回答済み 2 / 80"), `範囲切替で回答集計が失われました: ${second.summary}`);
     assert(second.first.includes("問21"), `問21から始まっていません: ${second.first}`);
     assert(!requestedUrls.some((url) => url.includes("q041-q060.json") || url.includes("q061-q080.json")), "未選択モジュールまで読み込んでいます");
     await captureScreenshot("02-ap-second-range");
 
     await client.send("Page.reload", { ignoreCache: true });
-    await eventually("再読み込み後の回答復元", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#summary')?.textContent||''")).includes("回答済み 1 / 80"));
+    await eventually("再読み込み後の問題表示", async () => await visibleQuestions() === 20);
+    await expectSummary("再読み込み後の回答復元", 2, 1, 1);
+
+    await selectSession("2025-spring");
+    await eventually("春期の問題表示", async () => await visibleQuestions() === 20);
+    await expectSummary("春期は未回答", 0, 0, 0);
+    await chooseAnswer(0, 3);
+    await expectSummary("春期の回答を保存", 1, 1, 0);
+    await selectSession("2025-autumn");
+    await eventually("秋期の問題表示", async () => await visibleQuestions() === 20);
+    await expectSummary("秋期の回答を復元", 2, 1, 1);
+
+    const resetSession = async (accept) => {
+      await evaluate(`void setTimeout(() => document.querySelector('#reset-session').click(), 0)`);
+      await eventually("やり直しの確認ダイアログ", async () => dialogs.length > 0);
+      const { type } = dialogs.shift();
+      await client.send("Page.handleJavaScriptDialog", { accept });
+      assert(type === "confirm", "やり直す前に確認が表示されていません");
+    };
+    await resetSession(false);
+    await expectSummary("確認を取り消すと秋期の回答を保持", 2, 1, 1);
+    await resetSession(true);
+    await expectSummary("確認を確定すると秋期の回答を初期化", 0, 0, 0);
+    await selectSession("2025-spring");
+    await eventually("春期の問題へ戻る", async () => await visibleQuestions() === 20);
+    await expectSummary("秋期の初期化後も春期の回答を保持", 1, 1, 0);
+    await selectSession("2025-autumn");
+    await eventually("秋期の問題へ戻る", async () => await visibleQuestions() === 20);
+    await expectSummary("秋期は初期化したまま", 0, 0, 0);
 
     await evaluate(`(() => { const s=document.querySelector('#exam-select'); s.value='g-test'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
     await eventually("G検定の最初の10問", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 10);
