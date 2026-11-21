@@ -265,6 +265,7 @@ const renderSelectedModule = (generation, moduleIndex) => {
   if (!moduleEntry) throw new Error(`問題範囲が見つかりません: ${moduleIndex}`);
   activeQuiz = null;
   resetReviewControls();
+  $("#copy-all").disabled = true;
   clearQuizRenderer();
   $("#summary").textContent = `${moduleEntry.label}を読み込み中…`;
 

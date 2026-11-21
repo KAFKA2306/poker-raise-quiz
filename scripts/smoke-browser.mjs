@@ -290,11 +290,17 @@ const runBrowserSmoke = async (baseUrl) => {
     assert(runtimeExceptions.length === 0, `通常操作中にJavaScript例外が発生しました:\n${runtimeExceptions.join("\n")}`);
     assert(networkFailures.length === 0, `通常操作中にネットワーク失敗が発生しました:\n${networkFailures.join("\n")}`);
 
+    await chooseAnswer(0, 3);
+    await expectSummary("問題範囲変更前の回答保存", 1, 1, 0);
+    assert(!(await evaluate("document.querySelector('#copy-all').disabled")), "回答済みのコピー操作ができません");
+
     await client.send("Network.setBlockedURLs", { urls: ["*q021-q040.json*"] });
     await evaluate(`(() => { const s=document.querySelector('#module-select'); s.value='1'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
+    assert(await evaluate("document.querySelector('#copy-all').disabled"), "読み込み中にコピー操作が有効です");
     await eventually("モジュール単位の失敗表示", async () => await evaluate("Boolean(document.querySelector('.module-error'))"));
     const localized = await evaluate(`(() => ({fatal:document.body.innerText.startsWith('FATAL ERROR'), text:document.querySelector('.module-error').innerText, select:Boolean(document.querySelector('#module-select'))}))()`);
     assert(!localized.fatal && localized.select, "1モジュールの失敗でページ全体の操作を失いました");
+    assert(await evaluate("document.querySelector('#copy-all').disabled"), "読み込み失敗中にコピー操作が有効です");
     assert(localized.text.includes("問21〜40を読み込めませんでした") && localized.text.includes("再読み込み"), `局所エラー表示が不十分です: ${localized.text}`);
     assert(networkFailures.length === 1, `意図的な遮断以外のネットワーク失敗があります:\n${networkFailures.join("\n")}`);
     networkFailures.length = 0;
@@ -303,6 +309,7 @@ const runBrowserSmoke = async (baseUrl) => {
     await client.send("Network.setBlockedURLs", { urls: [] });
     await evaluate(`(() => { const s=document.querySelector('#module-select'); s.value='2'; s.dispatchEvent(new Event('change',{bubbles:true})); return true; })()`);
     await eventually("別範囲への復旧", async () => await evaluate("document.querySelectorAll('.sd-question').length") === 20 && (await evaluate("document.querySelector('#module-select').value")) === "2");
+    assert(!(await evaluate("document.querySelector('#copy-all').disabled")), "復旧後に回答コピーが再び有効になりません");
     assert(networkFailures.length === 0, `復旧後にネットワーク失敗があります:\n${networkFailures.join("\n")}`);
     assert(!requestedUrls.some((url) => url.includes("/js/quiz/reference.js")), "削除済みreference.jsが要求されています");
     console.log(`ブラウザ実動作確認に成功しました: ${baseUrl}`);
