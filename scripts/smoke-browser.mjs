@@ -312,6 +312,24 @@ const runBrowserSmoke = async (baseUrl) => {
     assert(!(await evaluate("document.querySelector('#copy-all').disabled")), "復旧後に回答コピーが再び有効になりません");
     assert(networkFailures.length === 0, `復旧後にネットワーク失敗があります:\n${networkFailures.join("\n")}`);
     assert(!requestedUrls.some((url) => url.includes("/js/quiz/reference.js")), "削除済みreference.jsが要求されています");
+    await client.send("Emulation.setDeviceMetricsOverride", { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+    await client.send("Page.reload", { ignoreCache: true });
+    await eventually("スマホ幅での20問表示", async () => await visibleQuestions() === 20);
+    const mobile = await evaluate(`(() => ({
+      viewport: window.innerWidth,
+      contentWidth: document.documentElement.scrollWidth,
+      summary: document.querySelector('#summary').textContent,
+      options: document.querySelectorAll('#quiz .sd-question')[1]?.querySelectorAll('.sd-selectbase__label').length
+    }))()`);
+    assert(mobile.viewport === 390, `スマホ画面幅が不正です: ${mobile.viewport}`);
+    assert(mobile.contentWidth <= mobile.viewport + 1, `スマホ画面が横にはみ出しています: ${mobile.contentWidth}px`);
+    assert(mobile.summary.includes("回答済み 1 / 80") && mobile.options === 4, `スマホで回答を復元できません: ${JSON.stringify(mobile)}`);
+    await chooseAnswer(1, 0);
+    await expectSummary("スマホ幅での正誤判定", 2, 1, 1);
+    await captureScreenshot("05-mobile-390");
+    assert(runtimeExceptions.length === 0, `スマホ操作中にJavaScript例外が発生しました:\n${runtimeExceptions.join("\n")}`);
+    assert(networkFailures.length === 0, `スマホ操作中に通信失敗が発生しました:\n${networkFailures.join("\n")}`);
+
     console.log(`ブラウザ実動作確認に成功しました: ${baseUrl}`);
   } finally {
     if (client) client.close();
